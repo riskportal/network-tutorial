@@ -1,4 +1,4 @@
-# risk-examples
+# RISK examples
 
 This repository contains example scripts and Jupyter notebooks that demonstrate how to use the **RISK** Python package for biological network analysis. These examples cover various use cases and features of RISK, providing users with practical insights into how to analyze and visualize complex biological networks.
 
