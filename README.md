@@ -20,7 +20,7 @@ Clone this repository and explore the notebooks to see how **RISK** can be appli
 Simply open the Jupyter notebooks to get started.
 
 ## License
-This project is licensed under the GPL-3.0 License.
+This project is licensed under the MIT License.
 
 # RISK-examples Notebook
 
