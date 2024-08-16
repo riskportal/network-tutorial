@@ -1,0 +1,5 @@
+annotations:
+  filepath: ./data/json/annotations/go_biological_process.json
+  filetype: JSON
+
+datetime:
