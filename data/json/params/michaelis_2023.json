@@ -3,17 +3,17 @@
         "filepath": "./data/json/annotations/go_biological_process.json",
         "filetype": "JSON"
     },
-    "datetime": "2024-08-15 19:31:10",
+    "datetime": "2024-08-15 21:12:01",
     "graph": {
         "tail": "right",
         "pval_cutoff": 0.01,
-        "fdr_cutoff": 0.999,
+        "fdr_cutoff": 0.75,
         "impute_depth": 0,
-        "prune_threshold": 0.1,
+        "prune_threshold": 0.22,
         "linkage_criterion": "distance",
         "linkage_method": "average",
         "linkage_metric": "yule",
-        "min_cluster_size": 5,
+        "min_cluster_size": 10,
         "max_cluster_size": 1000
     },
     "neighborhoods": {
@@ -25,11 +25,11 @@
     },
     "network": {
         "compute_sphere": true,
-        "surface_depth": 0.5,
-        "distance_metric": "dijkstra",
-        "louvain_resolution": 0.01,
+        "surface_depth": 0.1,
+        "distance_metric": "louvain",
+        "louvain_resolution": 8,
         "min_edges_per_node": 0,
-        "edge_length_threshold": 0.25,
+        "edge_length_threshold": 0.6,
         "include_edge_weight": false,
         "weight_label": "weight",
         "filetype": "Cytoscape",

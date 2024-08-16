@@ -1,16 +1,16 @@
 parent_key,child_key,value
 annotations,filepath,./data/json/annotations/go_biological_process.json
 annotations,filetype,JSON
-datetime,,2024-08-15 19:31:10
+datetime,,2024-08-15 21:12:01
 graph,tail,right
 graph,pval_cutoff,0.01
-graph,fdr_cutoff,0.999
+graph,fdr_cutoff,0.75
 graph,impute_depth,0
-graph,prune_threshold,0.1
+graph,prune_threshold,0.22
 graph,linkage_criterion,distance
 graph,linkage_method,average
 graph,linkage_metric,yule
-graph,min_cluster_size,5
+graph,min_cluster_size,10
 graph,max_cluster_size,1000
 neighborhoods,score_metric,stdev
 neighborhoods,null_distribution,network
@@ -18,11 +18,11 @@ neighborhoods,num_permutations,100
 neighborhoods,random_seed,887
 neighborhoods,max_workers,4
 network,compute_sphere,True
-network,surface_depth,0.5
-network,distance_metric,dijkstra
-network,louvain_resolution,0.01
+network,surface_depth,0.1
+network,distance_metric,louvain
+network,louvain_resolution,8
 network,min_edges_per_node,0
-network,edge_length_threshold,0.25
+network,edge_length_threshold,0.6
 network,include_edge_weight,False
 network,weight_label,weight
 network,filetype,Cytoscape
