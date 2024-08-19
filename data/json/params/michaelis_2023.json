@@ -3,7 +3,7 @@
         "filepath": "./data/json/annotations/go_biological_process.json",
         "filetype": "JSON"
     },
-    "datetime": "2024-08-16 12:54:53",
+    "datetime": "2024-08-19 10:36:56",
     "graph": {
         "tail": "right",
         "pval_cutoff": 0.05,
@@ -60,15 +60,28 @@
         "contour_bandwidth": 0.8,
         "contour_grid_size": 250,
         "contour_alpha": 0.2,
-        "contour_color": "white",
+        "contour_color": "custom",
+        "subcontour_levels": 5,
+        "subcontour_bandwidth": 0.8,
+        "subcontour_grid_size": 250,
+        "subcontour_alpha": 0.2,
+        "subcontour_color": "white",
         "label_perimeter_scale": 1.25,
         "label_offset": 0.1,
         "label_font": "Arial",
         "label_fontsize": 10,
-        "label_fontcolor": "custom",
+        "label_fontcolor": "white",
         "label_arrow_linewidth": 1,
-        "label_arrow_color": "custom",
+        "label_arrow_color": "white",
         "label_max_words": 4,
-        "label_min_words": 2
+        "label_min_words": 2,
+        "sublabel_perimeter_scale": 1.6,
+        "sublabel_offset": 0.1,
+        "sublabel_font": "Arial",
+        "sublabel_fontsize": 14,
+        "sublabel_fontcolor": "white",
+        "sublabel_arrow_linewidth": 1.5,
+        "sublabel_arrow_color": "white",
+        "sublabel_radial_position": 73
     }
 }
