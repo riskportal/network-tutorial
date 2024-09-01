@@ -3,7 +3,7 @@
         "filepath": "./data/json/annotations/go_biological_process.json",
         "filetype": "JSON"
     },
-    "datetime": "2024-08-19 10:36:56",
+    "datetime": "2024-08-31 22:50:36",
     "graph": {
         "tail": "right",
         "pval_cutoff": 0.05,
@@ -20,11 +20,12 @@
         "distance_metric": "louvain",
         "louvain_resolution": 10,
         "edge_length_threshold": 0.25,
+        "statistical_test_function": "permutation",
         "score_metric": "stdev",
         "null_distribution": "network",
         "num_permutations": 1000,
         "random_seed": 887,
-        "max_workers": 5
+        "max_workers": 4
     },
     "network": {
         "compute_sphere": true,
@@ -70,11 +71,16 @@
         "label_offset": 0.1,
         "label_font": "Arial",
         "label_fontsize": 10,
-        "label_fontcolor": "white",
+        "label_fontcolor": "custom",
         "label_arrow_linewidth": 1,
-        "label_arrow_color": "white",
+        "label_arrow_color": "custom",
+        "label_max_labels": 50,
         "label_max_words": 4,
         "label_min_words": 2,
+        "label_words_to_omit": [
+            "process",
+            "biosynthetic"
+        ],
         "sublabel_perimeter_scale": 1.6,
         "sublabel_offset": 0.1,
         "sublabel_font": "Arial",

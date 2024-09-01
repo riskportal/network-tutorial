@@ -1,7 +1,7 @@
 parent_key,child_key,value
 annotations,filepath,./data/json/annotations/go_biological_process.json
 annotations,filetype,JSON
-datetime,,2024-08-19 10:36:56
+datetime,,2024-08-31 22:50:36
 graph,tail,right
 graph,pval_cutoff,0.05
 graph,fdr_cutoff,1.0
@@ -15,11 +15,12 @@ graph,max_cluster_size,1000
 neighborhoods,distance_metric,louvain
 neighborhoods,louvain_resolution,10
 neighborhoods,edge_length_threshold,0.25
+neighborhoods,statistical_test_function,permutation
 neighborhoods,score_metric,stdev
 neighborhoods,null_distribution,network
 neighborhoods,num_permutations,1000
 neighborhoods,random_seed,887
-neighborhoods,max_workers,5
+neighborhoods,max_workers,4
 network,compute_sphere,True
 network,surface_depth,0.1
 network,min_edges_per_node,0
@@ -58,11 +59,13 @@ plotter,label_perimeter_scale,1.25
 plotter,label_offset,0.1
 plotter,label_font,Arial
 plotter,label_fontsize,10
-plotter,label_fontcolor,white
+plotter,label_fontcolor,custom
 plotter,label_arrow_linewidth,1
-plotter,label_arrow_color,white
+plotter,label_arrow_color,custom
+plotter,label_max_labels,50
 plotter,label_max_words,4
 plotter,label_min_words,2
+plotter,label_words_to_omit,"['process', 'biosynthetic']"
 plotter,sublabel_perimeter_scale,1.6
 plotter,sublabel_offset,0.1
 plotter,sublabel_font,Arial
