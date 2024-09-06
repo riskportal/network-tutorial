@@ -10,10 +10,10 @@ This repository contains Jupyter notebooks that demonstrate how to use the **RIS
 Clone this repository and explore the notebooks to see how **RISK** can be applied to your own biological network analysis projects.
 
 ## Requirements
-- Python 3.7+
+- Python 3.8+
 - **RISK** package installed with:
   ```bash
-  pip install risk-network==0.0.5b0
+  pip install risk-network==0.0.5b1
   ```
 
 ## Usage
