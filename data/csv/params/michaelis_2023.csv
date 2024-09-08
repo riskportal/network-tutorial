@@ -1,7 +1,7 @@
 parent_key,child_key,value
 annotations,filepath,./data/json/annotations/go_biological_process.json
 annotations,filetype,JSON
-datetime,,2024-08-31 22:50:36
+datetime,,2024-09-07 15:58:26
 graph,tail,right
 graph,pval_cutoff,0.05
 graph,fdr_cutoff,1.0
@@ -33,6 +33,7 @@ plotter,background_color,black
 plotter,plot_outline,True
 plotter,outline_color,white
 plotter,outline_scale,1.05
+plotter,linestyle,dashed
 plotter,network_node_size,custom
 plotter,network_edge_width,0.0
 plotter,network_node_color,custom
@@ -65,6 +66,8 @@ plotter,label_arrow_color,custom
 plotter,label_max_labels,50
 plotter,label_max_words,4
 plotter,label_min_words,2
+plotter,label_max_word_length,30
+plotter,label_min_word_length,3
 plotter,label_words_to_omit,"['process', 'biosynthetic']"
 plotter,sublabel_perimeter_scale,1.6
 plotter,sublabel_offset,0.1
