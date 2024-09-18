@@ -3,7 +3,7 @@
         "filepath": "./data/json/annotations/go_biological_process.json",
         "filetype": "JSON"
     },
-    "datetime": "2024-09-18 14:47:07",
+    "datetime": "2024-09-18 15:24:27",
     "graph": {
         "tail": "right",
         "pval_cutoff": 0.05,
@@ -23,7 +23,7 @@
         "statistical_test_function": "permutation",
         "score_metric": "stdev",
         "null_distribution": "network",
-        "num_permutations": 100,
+        "num_permutations": 1000,
         "random_seed": 887,
         "max_workers": 5
     },
@@ -49,6 +49,9 @@
         "perimeter_color": "white",
         "perimeter_outline_alpha": 1.0,
         "perimeter_fill_alpha": 0.0,
+        "perimeter_levels": 3,
+        "perimeter_bandwidth": 0.6,
+        "perimeter_grid_size": 250,
         "network_node_size": "custom",
         "network_node_shape": "o",
         "network_node_edgewidth": 1.0,

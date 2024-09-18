@@ -1,7 +1,7 @@
 parent_key,child_key,value
 annotations,filepath,./data/json/annotations/go_biological_process.json
 annotations,filetype,JSON
-datetime,,2024-09-18 14:47:07
+datetime,,2024-09-18 15:24:27
 graph,tail,right
 graph,pval_cutoff,0.05
 graph,fdr_cutoff,1.0
@@ -18,7 +18,7 @@ neighborhoods,edge_length_threshold,0.25
 neighborhoods,statistical_test_function,permutation
 neighborhoods,score_metric,stdev
 neighborhoods,null_distribution,network
-neighborhoods,num_permutations,100
+neighborhoods,num_permutations,1000
 neighborhoods,random_seed,887
 neighborhoods,max_workers,5
 network,compute_sphere,True
@@ -37,6 +37,9 @@ plotter,perimeter_linewidth,1.5
 plotter,perimeter_color,white
 plotter,perimeter_outline_alpha,1.0
 plotter,perimeter_fill_alpha,0.0
+plotter,perimeter_levels,3
+plotter,perimeter_bandwidth,0.6
+plotter,perimeter_grid_size,250
 plotter,network_node_size,custom
 plotter,network_node_shape,o
 plotter,network_node_edgewidth,1.0
