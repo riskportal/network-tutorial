@@ -1,7 +1,7 @@
 parent_key,child_key,value
 annotations,filepath,./data/json/annotations/go_biological_process.json
 annotations,filetype,JSON
-datetime,,2024-09-10 17:25:33
+datetime,,2024-09-18 14:47:07
 graph,tail,right
 graph,pval_cutoff,0.05
 graph,fdr_cutoff,1.0
@@ -18,9 +18,9 @@ neighborhoods,edge_length_threshold,0.25
 neighborhoods,statistical_test_function,permutation
 neighborhoods,score_metric,stdev
 neighborhoods,null_distribution,network
-neighborhoods,num_permutations,1000
+neighborhoods,num_permutations,100
 neighborhoods,random_seed,887
-neighborhoods,max_workers,4
+neighborhoods,max_workers,5
 network,compute_sphere,True
 network,surface_depth,0.1
 network,min_edges_per_node,0
@@ -32,16 +32,14 @@ plotter,figsize,"(15, 15)"
 plotter,background_color,black
 plotter,perimeter_type,circle
 plotter,perimeter_scale,1.05
-plotter,perimeter_linestyle,solid
+plotter,perimeter_linestyle,dashed
 plotter,perimeter_linewidth,1.5
 plotter,perimeter_color,white
 plotter,perimeter_outline_alpha,1.0
 plotter,perimeter_fill_alpha,0.0
-plotter,perimeter_levels,3
-plotter,perimeter_bandwidth,0.6
-plotter,perimeter_grid_size,250
 plotter,network_node_size,custom
 plotter,network_node_shape,o
+plotter,network_node_edgewidth,1.0
 plotter,network_edge_width,0.0
 plotter,network_node_color,custom
 plotter,network_node_edgecolor,black
@@ -52,7 +50,8 @@ plotter,contour_levels,5
 plotter,contour_bandwidth,0.8
 plotter,contour_grid_size,250
 plotter,contour_color,custom
-plotter,contour_alpha,0.2
+plotter,contour_alpha,1.0
+plotter,contour_fill_alpha,0.2
 plotter,label_perimeter_scale,1.25
 plotter,label_offset,0.1
 plotter,label_font,Arial
@@ -60,11 +59,17 @@ plotter,label_fontsize,10
 plotter,label_fontcolor,custom
 plotter,label_fontalpha,1.0
 plotter,label_arrow_linewidth,1
+plotter,label_arrow_style,->
 plotter,label_arrow_color,white
 plotter,label_arrow_alpha,1.0
+plotter,label_arrow_base_shrink,0.0
+plotter,label_arrow_tip_shrink,0.0
 plotter,label_max_labels,50
 plotter,label_max_words,4
 plotter,label_min_words,2
 plotter,label_max_word_length,30
 plotter,label_min_word_length,3
 plotter,label_words_to_omit,"['process', 'biosynthetic']"
+plotter,label_overlay_ids,False
+plotter,label_ids_to_keep,
+plotter,label_ids_to_replace,
