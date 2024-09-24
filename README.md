@@ -19,7 +19,7 @@ Clone this repository and explore the notebook to see how **RISK** can be applie
 - Python 3.8+
 - **RISK** package installed with:
   ```bash
-  pip install risk-network==0.0.6
+  pip install risk-network==0.0.7b1
   ```
 
 ## Usage
