@@ -1,26 +1,26 @@
 parent_key,child_key,value
 annotations,filepath,./data/json/annotations/go_biological_process.json
 annotations,filetype,JSON
-datetime,,2024-09-18 15:24:27
+datetime,,2024-10-14 11:15:16
 graph,tail,right
-graph,pval_cutoff,0.05
+graph,pval_cutoff,0.02
 graph,fdr_cutoff,1.0
 graph,impute_depth,0
-graph,prune_threshold,0.25
+graph,prune_threshold,0.15
 graph,linkage_criterion,distance
 graph,linkage_method,average
-graph,linkage_metric,yule
+graph,linkage_metric,cosine
 graph,min_cluster_size,6
 graph,max_cluster_size,1000
 neighborhoods,distance_metric,louvain
 neighborhoods,louvain_resolution,10
-neighborhoods,edge_length_threshold,0.25
+neighborhoods,edge_length_threshold,0.3
 neighborhoods,statistical_test_function,permutation
 neighborhoods,score_metric,stdev
 neighborhoods,null_distribution,network
-neighborhoods,num_permutations,1000
+neighborhoods,num_permutations,10000
 neighborhoods,random_seed,887
-neighborhoods,max_workers,5
+neighborhoods,max_workers,4
 network,compute_sphere,True
 network,surface_depth,0.1
 network,min_edges_per_node,0
@@ -30,9 +30,19 @@ network,filetype,Cytoscape
 network,filepath,./data/cytoscape/michaelis_2023.cys
 plotter,figsize,"(15, 15)"
 plotter,background_color,black
+plotter,title,Yeast Interactome Network
+plotter,subtitle,"Michaelis et al., 2023"
+plotter,title_fontsize,24
+plotter,subtitle_fontsize,18
+plotter,title_subtitle_font,Lato
+plotter,title_color,white
+plotter,subtitle_color,lightblue
+plotter,subtitle_offset,0.025
+plotter,title_y,0.96
+plotter,title_space_offset,0.08
 plotter,perimeter_type,circle
 plotter,perimeter_scale,1.05
-plotter,perimeter_linestyle,dashed
+plotter,perimeter_linestyle,solid
 plotter,perimeter_linewidth,1.5
 plotter,perimeter_color,white
 plotter,perimeter_outline_alpha,1.0
@@ -43,7 +53,7 @@ plotter,perimeter_grid_size,250
 plotter,network_node_size,custom
 plotter,network_node_shape,o
 plotter,network_node_edgewidth,1.0
-plotter,network_edge_width,0.0
+plotter,network_edge_width,0.04
 plotter,network_node_color,custom
 plotter,network_node_edgecolor,black
 plotter,network_edge_color,white
@@ -54,25 +64,25 @@ plotter,contour_bandwidth,0.8
 plotter,contour_grid_size,250
 plotter,contour_color,custom
 plotter,contour_alpha,1.0
-plotter,contour_fill_alpha,0.2
-plotter,label_perimeter_scale,1.25
-plotter,label_offset,0.1
-plotter,label_font,Arial
-plotter,label_fontsize,10
-plotter,label_fontcolor,custom
+plotter,contour_fill_alpha,0.25
+plotter,label_perimeter_scale,1.1
+plotter,label_offset,0.12
+plotter,label_font,Lato
+plotter,label_fontsize,15
+plotter,label_fontcolor,white
 plotter,label_fontalpha,1.0
-plotter,label_arrow_linewidth,1
-plotter,label_arrow_style,->
-plotter,label_arrow_color,white
+plotter,label_arrow_linewidth,2.0
+plotter,label_arrow_style,-
+plotter,label_arrow_color,custom
 plotter,label_arrow_alpha,1.0
-plotter,label_arrow_base_shrink,0.0
+plotter,label_arrow_base_shrink,10.0
 plotter,label_arrow_tip_shrink,0.0
-plotter,label_max_labels,50
+plotter,label_max_labels,28
 plotter,label_max_words,4
-plotter,label_min_words,2
-plotter,label_max_word_length,30
+plotter,label_min_words,3
+plotter,label_max_word_length,13
 plotter,label_min_word_length,3
-plotter,label_words_to_omit,"['process', 'biosynthetic']"
+plotter,label_words_to_omit,"['into', 'via', 'novo']"
 plotter,label_overlay_ids,False
 plotter,label_ids_to_keep,
 plotter,label_ids_to_replace,
