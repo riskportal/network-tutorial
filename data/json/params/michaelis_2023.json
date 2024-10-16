@@ -3,10 +3,10 @@
         "filepath": "./data/json/annotations/go_biological_process.json",
         "filetype": "JSON"
     },
-    "datetime": "2024-10-14 11:15:16",
+    "datetime": "2024-10-15 17:55:45",
     "graph": {
         "tail": "right",
-        "pval_cutoff": 0.02,
+        "pval_cutoff": 0.05,
         "fdr_cutoff": 1.0,
         "impute_depth": 0,
         "prune_threshold": 0.15,
@@ -23,7 +23,7 @@
         "statistical_test_function": "permutation",
         "score_metric": "stdev",
         "null_distribution": "network",
-        "num_permutations": 10000,
+        "num_permutations": 1000,
         "random_seed": 887,
         "max_workers": 4
     },
@@ -90,11 +90,13 @@
         "label_arrow_base_shrink": 10.0,
         "label_arrow_tip_shrink": 0.0,
         "label_max_labels": 28,
-        "label_max_words": 4,
-        "label_min_words": 3,
-        "label_max_word_length": 13,
-        "label_min_word_length": 3,
+        "label_min_label_lines": 3,
+        "label_max_label_lines": 4,
+        "label_max_chars_per_line": 12,
+        "label_min_chars_per_line": 3,
         "label_words_to_omit": [
+            "from",
+            "the",
             "into",
             "via",
             "novo"
