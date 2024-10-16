@@ -1,42 +1,95 @@
-# RISK Examples
+# RISK Network Tutorial
 
-[![pypiv](https://img.shields.io/pypi/v/risk-network.svg)](https://pypi.python.org/pypi/risk-network)
-[![Python 3.7+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/irahorecka/chrono24/main/LICENSE)
+<p align="center">
+  <img src="https://i.imgur.com/8TleEJs.png" width="50%" alt="RISK Network logo" />
+</p>
 
-This repository contains a Jupyter notebook that demonstrates how to use the **RISK** Python package for biological network analysis. The example provides practical insights into analyzing and visualizing complex biological networks using **RISK**.
+<br>
 
-![Yeast Interactome Network Demo](./docs/github/network.png)
+![Python](https://img.shields.io/badge/python-3.8%2B-yellow)
+![License](https://img.shields.io/badge/license-GPLv3-purple)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.xxxxxxx.svg)](https://doi.org/10.5281/zenodo.xxxxxxx)
+![Platforms](https://img.shields.io/badge/platform-linux%20%7C%20macos%20%7C%20windows-lightgrey)
 
-## Features
-- A Jupyter notebook with a step-by-step tutorial.
-- Demonstration using a real-world biological dataset, specifically the Michaelis 2023 yeast interactome network.
+This repository provides an in-depth guide to **RISK**, a next-generation tool for network analysis and visualization. RISK simplifies the exploration of biological networks through its modular architecture and advanced clustering algorithms. Whether you are a first-time user or looking to harness RISK's full potential, this tutorial covers key functionalities and practical applications.
 
-## Getting Started
-Clone this repository and explore the notebook to see how **RISK** can be applied to your own biological network analysis projects.
+## Yeast Interactome Network Demonstration
 
-## Requirements
-- Python 3.8+
-- **RISK** package installed with:
-  ```bash
-  pip install risk-network==0.0.7b7
-  ```
+In this demonstration, we use the yeast interactome network published by Michaelis et al. (2023), which contains 3,927 proteins and 31,004 interactions. For this example, the dataset is refined to focus on proteins with six or more interactions, yielding a final network of 2,059 nodes and 27,690 edges. RISK is applied to perform analyses such as network clustering, interaction mapping, and identification of key protein complexes, offering insights into cellular organization and regulatory mechanisms.
 
-## Usage
-Simply open the Jupyter notebook (`examples.ipynb`) to get started.
+Below is a visual representation of the yeast protein–protein interaction network, annotated with **Gene Ontology Biological Processes (GO BP)** terms:
 
-## For New Users
-If you're new to Python or Jupyter Notebook, here are some resources to help you set up your environment:
-- [Download Python](https://www.python.org/downloads/)
-- [Install Jupyter Notebook](https://jupyter.org/install)
-- [Jupyter Notebook Quick Start Guide](https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/)
+<p align="center">
+  <img src="https://i.imgur.com/xfKYhrm.png" width="70%" alt="GO BP annotated yeast interactome" />
+</p>
 
-## Demonstration Using the Yeast Interactome Network
-In this notebook, we utilize the comprehensive yeast interactome network published by Michaelis et al. in 2023. This dataset offers a highly structured interactome of *Saccharomyces cerevisiae*, consisting of 3,927 proteins connected by 31,004 interactions. The network is particularly valuable for exploring complex biological systems and understanding protein interactions at a large scale.
+## Party and Date Hubs
 
-By applying the **RISK** package to this yeast interactome network, we demonstrate how to perform various analyses, including network clustering, interaction mapping, and identification of key protein complexes. This example showcases the power of **RISK** in handling and deriving insights from large-scale biological networks.
+RISK also identifies **party hubs** and **date hubs**, representing different types of central nodes in the network. The following visualization shows the yeast network with nodes colored by their role as either a party hub or a date hub:
 
-**Importantly, this specific analysis and demonstration using the yeast interactome network has not been done before.** This makes our exploration both novel and uniquely valuable for researchers working in systems biology and proteomics.
+<p align="center">
+  <img src="https://i.imgur.com/zyI9CF8.png" width="70%" alt="GO BP contour overlay with party hub and date hub color coding" />
+</p>
+
+The **GO BP contour overlay** helps illustrate the spatial distribution of biological processes, allowing for the interpretation of party hubs and date hubs in context.
+
+## Setting Up Python and Jupyter for RISK
+
+### Step 1: Install Python 3.8+
+
+Download and install Python 3.8 or higher from the official [Python website](https://www.python.org/downloads/). 
+
+- On Windows, make sure to check the box that says **Add Python to PATH** during installation. If you missed this step, follow this [guide](https://datatofish.com/add-python-to-windows-path/) to manually set the PATH.
+
+### Step 2: Create a Virtual Environment (Optional but Recommended)
+
+Create a virtual environment to isolate dependencies for this project:
+
+- For Windows:
+    ```shell
+    python -m venv risk-env
+    risk-env\Scripts\activate
+    ```
+- For macOS/Linux:
+    ```bash
+    python3 -m venv risk-env
+    source risk-env/bin/activate
+    ```
+
+### Step 3: Configure Jupyter to Use the Virtual Environment
+
+To link your virtual environment with Jupyter, follow this [useful guide](https://janakiev.com/blog/jupyter-virtual-envs/). After configuring, remember to select your virtual environment from the kernel dropdown menu in Jupyter Notebook. This ensures you're running the notebook within the correct environment.
+
+### Step 4: Install Jupyter
+
+With your virtual environment activated, install Jupyter Notebook:
+
+```bash
+pip install jupyter
+```
+
+### Step 5: Install RISK
+
+Now, install RISK:
+
+```
+pip install risk-network
+```
+
+### Step 6: Launch Jupyter Notebook
+
+Start Jupyter Notebook to run the RISK tutorial:
+
+```
+jupyter notebook
+```
+
+## Citation
+
+If you use RISK in your research, please cite the following:
+
+**Horecka**, *et al.*, "RISK: a next-generation tool for biological network annotation and visualization", **[Journal Name]**, 2024. DOI: [10.1234/zenodo.xxxxxxx](https://doi.org/10.1234/zenodo.xxxxxxx)
 
 ## License
-This project is licensed under the MIT License.
+
+This tutorial and the RISK tool are released under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
