@@ -106,7 +106,7 @@ jupyter notebook
 
 For more information about RISK, including source code and detailed documentation, please visit the following resources:
 
-- **Source Code**: Access the full RISK Network repository on GitHub [here](https://github.com/risportal/network).
+- **Source Code**: Access the full RISK Network repository on GitHub [here](https://github.com/riskportal/network).
 - **Documentation**: Comprehensive usage guides, API references, and developer notes can be found in the official RISK Network documentation [here](Documentation link).
 
 These resources provide in-depth coverage of RISK’s capabilities and help ensure you can fully utilize the tool for your network analysis needs.
