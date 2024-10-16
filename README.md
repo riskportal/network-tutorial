@@ -3,9 +3,7 @@
 <p align="center">
   <img src="https://i.imgur.com/8TleEJs.png" width="50%" alt="RISK Network logo" />
 </p>
-
 <br>
-
 ![Python](https://img.shields.io/badge/python-3.8%2B-yellow)
 ![License](https://img.shields.io/badge/license-GPLv3-purple)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.xxxxxxx.svg)](https://doi.org/10.5281/zenodo.xxxxxxx)
@@ -35,54 +33,72 @@ The **GO BP contour overlay** helps illustrate the spatial distribution of biolo
 
 ## Setting Up Python and Jupyter for RISK
 
-### Step 1: Install Python 3.8+
+<details>
+<summary><strong>Step 1: Install Python 3.8+</strong></summary>
+<br>
+Download and install Python 3.8 or higher from the official [Python website](https://www.python.org/downloads/).
 
-Download and install Python 3.8 or higher from the official [Python website](https://www.python.org/downloads/). 
+- On Windows, ensure you check the box that says **Add Python to PATH** during installation. If you missed this step, follow this [guide](https://datatofish.com/add-python-to-windows-path/) to manually set the PATH.
+</details>
 
-- On Windows, make sure to check the box that says **Add Python to PATH** during installation. If you missed this step, follow this [guide](https://datatofish.com/add-python-to-windows-path/) to manually set the PATH.
-
-### Step 2: Create a Virtual Environment (Optional but Recommended)
-
+<details>
+<summary><strong>Step 2: Create a Virtual Environment (Optional but Recommended)</strong></summary>
+<br>
 Create a virtual environment to isolate dependencies for this project:
 
-- For Windows:
-    ```shell
+- **For Windows:**
+    ```
     python -m venv risk-env
     risk-env\Scripts\activate
     ```
-- For macOS/Linux:
-    ```bash
+
+- **For macOS/Linux:**
+    ```
     python3 -m venv risk-env
     source risk-env/bin/activate
     ```
+</details>
 
-### Step 3: Configure Jupyter to Use the Virtual Environment
+<details>
+<summary><strong>Step 3: Configure Jupyter to Use the Virtual Environment</strong></summary>
+<br>
+To link your virtual environment with Jupyter, follow this [guide](https://janakiev.com/blog/jupyter-virtual-envs/).
 
-To link your virtual environment with Jupyter, follow this [useful guide](https://janakiev.com/blog/jupyter-virtual-envs/). After configuring, remember to select your virtual environment from the kernel dropdown menu in Jupyter Notebook. This ensures you're running the notebook within the correct environment.
+After configuring, ensure you select the virtual environment in Jupyter Notebook:
+1. Click **Kernel** in the menu.
+2. Choose **Change kernel**.
+3. Select your virtual environment (e.g., `risk-env`).
+</details>
 
-### Step 4: Install Jupyter
-
+<details>
+<summary><strong>Step 4: Install Jupyter</strong></summary>
+<br>
 With your virtual environment activated, install Jupyter Notebook:
 
-```bash
+```
 pip install jupyter
 ```
+</details>
 
-### Step 5: Install RISK
-
+<details>
+<summary><strong>Step 5: Install RISK</strong></summary>
+<br>
 Now, install RISK:
 
 ```
 pip install risk-network
 ```
+</details>
 
-### Step 6: Launch Jupyter Notebook
-
+<details>
+<summary><strong>Step 6: Launch Jupyter Notebook</strong></summary>
+<br>
 Start Jupyter Notebook to run the RISK tutorial:
 
 ```
 jupyter notebook
 ```
+</details>
 
 ## Citation
 
