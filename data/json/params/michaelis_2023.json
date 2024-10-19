@@ -3,7 +3,7 @@
         "filepath": "./data/json/annotations/go_biological_process.json",
         "filetype": "JSON"
     },
-    "datetime": "2024-10-15 17:55:45",
+    "datetime": "2024-10-19 15:11:46",
     "graph": {
         "tail": "right",
         "pval_cutoff": 0.05,
@@ -42,6 +42,8 @@
             15
         ],
         "background_color": "black",
+        "background_alpha": 1.0,
+        "pad": 0.3,
         "title": "Yeast Interactome Network",
         "subtitle": "Michaelis et al., 2023",
         "title_fontsize": 24,
@@ -50,8 +52,8 @@
         "title_color": "white",
         "subtitle_color": "lightblue",
         "subtitle_offset": 0.025,
-        "title_y": 0.96,
-        "title_space_offset": 0.08,
+        "title_y": 1.02,
+        "title_space_offset": 0.15,
         "perimeter_type": "circle",
         "perimeter_scale": 1.05,
         "perimeter_linestyle": "solid",
@@ -59,9 +61,6 @@
         "perimeter_color": "white",
         "perimeter_outline_alpha": 1.0,
         "perimeter_fill_alpha": 0.0,
-        "perimeter_levels": 3,
-        "perimeter_bandwidth": 0.6,
-        "perimeter_grid_size": 250,
         "network_node_size": "custom",
         "network_node_shape": "o",
         "network_node_edgewidth": 1.0,
@@ -80,6 +79,9 @@
         "label_perimeter_scale": 1.1,
         "label_offset": 0.12,
         "label_font": "Lato",
+        "label_fontcase": {
+            "title": "lower"
+        },
         "label_fontsize": 15,
         "label_fontcolor": "white",
         "label_fontalpha": 1.0,
