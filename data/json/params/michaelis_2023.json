@@ -3,7 +3,7 @@
         "filepath": "./data/json/annotations/go_biological_process.json",
         "filetype": "JSON"
     },
-    "datetime": "2024-10-19 15:11:46",
+    "datetime": "2024-11-01 13:44:50",
     "graph": {
         "tail": "right",
         "pval_cutoff": 0.05,
@@ -48,14 +48,16 @@
         "subtitle": "Michaelis et al., 2023",
         "title_fontsize": 24,
         "subtitle_fontsize": 18,
-        "title_subtitle_font": "Lato",
+        "title_subtitle_font": "Arial",
         "title_color": "white",
         "subtitle_color": "lightblue",
         "subtitle_offset": 0.025,
-        "title_y": 1.02,
-        "title_space_offset": 0.15,
+        "title_y": 0.925,
+        "title_space_offset": 0.08,
         "perimeter_type": "circle",
         "perimeter_scale": 1.05,
+        "perimeter_center_offset_x": 0.0,
+        "perimeter_center_offset_y": 0.0,
         "perimeter_linestyle": "solid",
         "perimeter_linewidth": 1.5,
         "perimeter_color": "white",
@@ -78,7 +80,7 @@
         "contour_fill_alpha": 0.25,
         "label_perimeter_scale": 1.1,
         "label_offset": 0.12,
-        "label_font": "Lato",
+        "label_font": "Arial",
         "label_fontcase": {
             "title": "lower"
         },

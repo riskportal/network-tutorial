@@ -1,7 +1,7 @@
 parent_key,child_key,value
 annotations,filepath,./data/json/annotations/go_biological_process.json
 annotations,filetype,JSON
-datetime,,2024-10-19 15:11:46
+datetime,,2024-11-01 13:44:50
 graph,tail,right
 graph,pval_cutoff,0.05
 graph,fdr_cutoff,1.0
@@ -36,14 +36,16 @@ plotter,title,Yeast Interactome Network
 plotter,subtitle,"Michaelis et al., 2023"
 plotter,title_fontsize,24
 plotter,subtitle_fontsize,18
-plotter,title_subtitle_font,Lato
+plotter,title_subtitle_font,Arial
 plotter,title_color,white
 plotter,subtitle_color,lightblue
 plotter,subtitle_offset,0.025
-plotter,title_y,1.02
-plotter,title_space_offset,0.15
+plotter,title_y,0.925
+plotter,title_space_offset,0.08
 plotter,perimeter_type,circle
 plotter,perimeter_scale,1.05
+plotter,perimeter_center_offset_x,0.0
+plotter,perimeter_center_offset_y,0.0
 plotter,perimeter_linestyle,solid
 plotter,perimeter_linewidth,1.5
 plotter,perimeter_color,white
@@ -66,7 +68,7 @@ plotter,contour_alpha,1.0
 plotter,contour_fill_alpha,0.25
 plotter,label_perimeter_scale,1.1
 plotter,label_offset,0.12
-plotter,label_font,Lato
+plotter,label_font,Arial
 plotter,label_fontcase,{'title': 'lower'}
 plotter,label_fontsize,15
 plotter,label_fontcolor,white
