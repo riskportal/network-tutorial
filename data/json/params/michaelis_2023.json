@@ -1,31 +1,33 @@
 {
     "annotations": {
+        "filetype": "JSON",
         "filepath": "./data/json/annotations/go_biological_process.json",
-        "filetype": "JSON"
+        "min_nodes_per_term": 1
     },
-    "datetime": "2024-11-02 12:19:58",
+    "datetime": "2025-01-06 11:20:20",
     "graph": {
         "tail": "right",
-        "pval_cutoff": 0.05,
+        "pval_cutoff": 0.01,
         "fdr_cutoff": 1.0,
         "impute_depth": 0,
-        "prune_threshold": 0.15,
+        "prune_threshold": 0.125,
         "linkage_criterion": "distance",
-        "linkage_method": "average",
-        "linkage_metric": "cosine",
+        "linkage_method": "single",
+        "linkage_metric": "rogerstanimoto",
         "min_cluster_size": 6,
         "max_cluster_size": 1000
     },
     "neighborhoods": {
         "distance_metric": "louvain",
-        "louvain_resolution": 10,
-        "edge_length_threshold": 0.3,
+        "louvain_resolution": 10.0,
+        "leiden_resolution": 1.0,
+        "fraction_shortest_edges": 0.275,
         "statistical_test_function": "permutation",
         "score_metric": "stdev",
         "null_distribution": "network",
         "num_permutations": 1000,
         "random_seed": 887,
-        "max_workers": 4
+        "max_workers": 6
     },
     "network": {
         "compute_sphere": true,
