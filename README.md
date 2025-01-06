@@ -11,7 +11,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.xxxxxxx.svg)](https://doi.org/10.5281/zenodo.xxxxxxx)
 ![Platforms](https://img.shields.io/badge/platform-linux%20%7C%20macos%20%7C%20windows-lightgrey)
 
-This repository provides an in-depth guide to **RISK**, a next-generation tool for network analysis and visualization. RISK simplifies the exploration of biological networks through its modular architecture and advanced clustering algorithms. Whether you are a first-time user or looking to harness RISK's full potential, this tutorial covers key functionalities and practical applications.
+This repository provides an in-depth guide to **RISK** (Regional Inference of Significant Enrichment), a next-generation tool for network analysis and visualization. RISK simplifies the exploration of biological networks through its modular architecture and advanced clustering algorithms. Whether you are a first-time user or looking to harness RISK's full potential, this tutorial covers key functionalities and practical applications.
 
 ## Yeast Interactome Network Demonstration
 
