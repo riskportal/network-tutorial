@@ -13,9 +13,16 @@
 
 This repository provides an in-depth guide to **RISK** (Regional Inference of Significant Enrichment), a next-generation tool for network analysis and visualization. RISK simplifies the exploration of biological networks through its modular architecture and advanced clustering algorithms. Whether you are a first-time user or looking to harness RISK's full potential, this tutorial covers key functionalities and practical applications.
 
+## Key Features of RISK
+
+- Advanced Clustering Algorithms: Supports Louvain, Leiden, Markov Clustering, and more.
+- Statistical Analysis: Includes hypergeometric, permutation, and Poisson tests to evaluate annotation enrichment.
+- Broad File Format Support: Compatible with JSON, CSV, Cytoscape, and GPickle formats.
+- Publication-Ready Visualizations: Customizable figures exported in SVG, PNG, or PDF formats.
+
 ## Yeast Interactome Network Demonstration
 
-In this demonstration, we use the yeast interactome network published by Michaelis et al. (2023), which contains 3,927 proteins and 31,004 interactions. For this example, the dataset is refined to focus on proteins with six or more interactions, yielding a final network of 2,059 nodes and 27,690 edges. RISK is applied to perform analyses such as network clustering, interaction mapping, and identification of key protein complexes, offering insights into cellular organization and regulatory mechanisms.
+In this demonstration, we use the yeast interactome network published by Michaelis et al. (2023), which contains 3,927 proteins and 31,004 interactions. Following the manuscript, we pruned the dataset to include proteins with six or more interaction partners, resulting in a final network of 2,059 nodes and 27,690 edges. RISK is applied to perform analyses such as network clustering, interaction mapping, and identification of key protein complexes, offering insights into cellular organization and regulatory mechanisms.
 
 Below is a visual representation of the yeast protein–protein interaction network, annotated with **Gene Ontology Biological Processes (GO BP)** terms:
 
