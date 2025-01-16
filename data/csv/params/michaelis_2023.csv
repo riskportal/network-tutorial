@@ -2,15 +2,15 @@ parent_key,child_key,value
 annotations,filetype,JSON
 annotations,filepath,./data/json/annotations/go_biological_process.json
 annotations,min_nodes_per_term,1
-datetime,,2025-01-06 11:20:20
+datetime,,2025-01-16 11:55:29
 graph,tail,right
-graph,pval_cutoff,0.01
+graph,pval_cutoff,0.05
 graph,fdr_cutoff,1.0
 graph,impute_depth,0
 graph,prune_threshold,0.125
 graph,linkage_criterion,distance
 graph,linkage_method,single
-graph,linkage_metric,rogerstanimoto
+graph,linkage_metric,jaccard
 graph,min_cluster_size,6
 graph,max_cluster_size,1000
 neighborhoods,distance_metric,louvain
@@ -22,7 +22,7 @@ neighborhoods,score_metric,stdev
 neighborhoods,null_distribution,network
 neighborhoods,num_permutations,1000
 neighborhoods,random_seed,887
-neighborhoods,max_workers,6
+neighborhoods,max_workers,1
 network,compute_sphere,True
 network,surface_depth,0.1
 network,min_edges_per_node,0
@@ -92,3 +92,6 @@ plotter,label_words_to_omit,"['from', 'the', 'into', 'via', 'novo', 'process', '
 plotter,label_overlay_ids,False
 plotter,label_ids_to_keep,
 plotter,label_ids_to_labels,
+plotter,perimeter_levels,3
+plotter,perimeter_bandwidth,0.6
+plotter,perimeter_grid_size,250
