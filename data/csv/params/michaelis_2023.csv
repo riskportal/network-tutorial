@@ -2,7 +2,7 @@ parent_key,child_key,value
 annotations,filetype,JSON
 annotations,filepath,./data/json/annotations/go_biological_process.json
 annotations,min_nodes_per_term,1
-datetime,,2025-01-16 11:55:29
+datetime,,2025-01-16 15:14:30
 graph,tail,right
 graph,pval_cutoff,0.05
 graph,fdr_cutoff,1.0
@@ -92,6 +92,3 @@ plotter,label_words_to_omit,"['from', 'the', 'into', 'via', 'novo', 'process', '
 plotter,label_overlay_ids,False
 plotter,label_ids_to_keep,
 plotter,label_ids_to_labels,
-plotter,perimeter_levels,3
-plotter,perimeter_bandwidth,0.6
-plotter,perimeter_grid_size,250

@@ -4,7 +4,7 @@
         "filepath": "./data/json/annotations/go_biological_process.json",
         "min_nodes_per_term": 1
     },
-    "datetime": "2025-01-16 11:55:29",
+    "datetime": "2025-01-16 15:14:30",
     "graph": {
         "tail": "right",
         "pval_cutoff": 0.05,
@@ -113,9 +113,6 @@
         ],
         "label_overlay_ids": false,
         "label_ids_to_keep": null,
-        "label_ids_to_labels": null,
-        "perimeter_levels": 3,
-        "perimeter_bandwidth": 0.6,
-        "perimeter_grid_size": 250
+        "label_ids_to_labels": null
     }
 }
