@@ -35,7 +35,7 @@ Below is a visual representation of the yeast protein–protein interaction netw
 RISK also identifies **party hubs** and **date hubs**, representing different types of central nodes in the network. The following visualization shows the yeast network with nodes colored by their role as either a party hub or a date hub:
 
 <p align="center">
-  <img src="https://i.imgur.com/zyI9CF8.png" width="70%" alt="GO BP contour overlay with party hub and date hub color coding" />
+  <img src="https://raw.githubusercontent.com/riskportal/network-tutorial/refs/heads/main/docs/github/date_party_hub.png" width="70%" alt="GO BP contour overlay with party hub and date hub color coding" />
 </p>
 
 The **GO BP contour overlay** helps illustrate the spatial distribution of biological processes, allowing for the interpretation of party hubs and date hubs in context.
