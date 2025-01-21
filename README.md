@@ -27,7 +27,7 @@ In this demonstration, we use the yeast interactome network published by Michael
 Below is a visual representation of the yeast protein–protein interaction network, annotated with **Gene Ontology Biological Processes (GO BP)** terms:
 
 <p align="center">
-  <img src="https://i.imgur.com/xfKYhrm.png" width="70%" alt="GO BP annotated yeast interactome" />
+  <img src="https://github.com/riskportal/network-tutorial/blob/main/docs/github/network.png?raw=true" width="70%" alt="GO BP annotated yeast interactome" />
 </p>
 
 ## Party and Date Hubs
