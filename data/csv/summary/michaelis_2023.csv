@@ -1,4 +1,4 @@
-Annotation,Domain ID,Annotation Members in Network,Annotation Members in Network Count,Summed Significance Score,Enrichment P-value,Enrichment Q-value,Depletion P-value,Depletion Q-value
+Annotation,Domain ID,Annotation Members in Network,Annotation Members in Network Count,Summed Significance Score,Enrichment P-Value,Enrichment Q-value,Depletion P-Value,Depletion Q-value
 negative regulation of meiotic cell cycle phase transition,-1,,0,0.0,1.0,1.0,1.0,1.0
 maintenance of protein location in cell,-1,,0,0.0,1.0,1.0,1.0,1.0
 positive regulation of G2/M transition of mitotic cell cycle,-1,,0,0.0,1.0,1.0,1.0,1.0

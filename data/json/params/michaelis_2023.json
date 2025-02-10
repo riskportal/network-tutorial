@@ -4,7 +4,7 @@
         "filepath": "./data/json/annotations/go_biological_process.json",
         "min_nodes_per_term": 1
     },
-    "datetime": "2025-01-26 15:50:27",
+    "datetime": "2025-02-10 07:09:51",
     "graph": {
         "tail": "right",
         "pval_cutoff": 0.05,
@@ -14,6 +14,7 @@
         "linkage_criterion": "distance",
         "linkage_method": "single",
         "linkage_metric": "jaccard",
+        "linkage_threshold": "auto",
         "min_cluster_size": 6,
         "max_cluster_size": 1000
     },
@@ -33,8 +34,6 @@
         "compute_sphere": true,
         "surface_depth": 0.1,
         "min_edges_per_node": 0,
-        "include_edge_weight": false,
-        "weight_label": "weight",
         "filetype": "Cytoscape",
         "filepath": "./data/cytoscape/michaelis_2023.cys"
     },
