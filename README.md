@@ -11,119 +11,138 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.xxxxxxx.svg)](https://doi.org/10.5281/zenodo.xxxxxxx)
 ![Platforms](https://img.shields.io/badge/platform-linux%20%7C%20macos%20%7C%20windows-lightgrey)
 
-This repository provides an in-depth guide to **RISK** (Regional Inference of Significant Enrichment), a next-generation tool for network analysis and visualization. RISK simplifies the exploration of biological networks through its modular architecture and advanced clustering algorithms. Whether you are a first-time user or looking to harness RISK's full potential, this tutorial covers key functionalities and practical applications.
+**RISK Network Tutorial** offers a detailed guide on using **RISK** (Regional Inference of Significant Kinships), a next-generation tool for biological network annotation and visualization. This guide details key functionalities and practical applications for network analysis using RISK.
 
 ## Key Features of RISK
 
-- Advanced Clustering Algorithms: Supports Louvain, Leiden, Markov Clustering, and more.
-- Statistical Analysis: Includes hypergeometric, permutation, and Poisson tests to evaluate annotation enrichment.
-- Broad File Format Support: Compatible with JSON, CSV, Cytoscape, and GPickle formats.
-- Publication-Ready Visualizations: Customizable figures exported in SVG, PNG, or PDF formats.
+- Clustering Algorithms: Implements Louvain, Leiden, Markov Clustering, Greedy Modularity, Label Propagation, Spinglass, and Walktrap to identify structured network regions.
+- Statistical Analysis: Includes hypergeometric, permutation, binomial, chi-squared, Poisson, and z-score tests to assess functional enrichment with statistical rigor.
+- Supports multiple file formats: Compatible with JSON, CSV, Cytoscape, and GPickle formats.
+- Publication-Ready Visualizations: Customizable figures with kernel density estimate overlays, node/edge adjustments, and high-resolution exports in multiple formats, including SVG, PNG, and PDF.
 
 ## Yeast Interactome Network Demonstration
 
-In this demonstration, we use the yeast interactome network published by Michaelis et al. (2023), which contains 3,927 proteins and 31,004 interactions. Following the manuscript, we pruned the dataset to include proteins with six or more interaction partners, resulting in a final network of 2,059 nodes and 27,690 edges. RISK is applied to perform analyses such as network clustering, interaction mapping, and identification of key protein complexes, offering insights into cellular organization and regulatory mechanisms.
+In this demonstration, we use the yeast interactome network published by Michaelis et al. (2023), which contains 3,927 proteins and 31,004 interactions. We filtered the dataset to retain proteins with six or more interactions, emphasizing core functional interactions. The final dataset contains 2,059 nodes and 27,690 edges. RISK is applied to perform analyses such as network clustering and statistical overrepresentation of annotations.
 
 Below is a visual representation of the yeast protein–protein interaction network, annotated with **Gene Ontology Biological Processes (GO BP)** terms:
 
 <p align="center">
-  <img src="https://github.com/riskportal/network-tutorial/blob/main/docs/github/network.png?raw=true" width="70%" alt="GO BP annotated yeast interactome" />
+  <img src="https://i.imgur.com/lJHJrJr.jpeg" width="70%" alt="Figure 1" />
 </p>
 
 ## Party and Date Hubs
 
-RISK also identifies **party hubs** and **date hubs**, representing different types of central nodes in the network. The following visualization shows the yeast network with nodes colored by their role as either a party hub or a date hub:
+RISK also identifies [**party hubs** and **date hubs**](https://www.nature.com/articles/nature02555.pdf), two distinct types of central nodes in the network. Party hubs (orange) are highly connected proteins that interact with many partners simultaneously, often forming stable protein complexes. In contrast, date hubs (cyan) connect with different partners at different times or conditions, playing roles in dynamic regulatory interactions. This visualization highlights party and date hubs in the yeast network:
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/riskportal/network-tutorial/refs/heads/main/docs/github/date_party_hub.png" width="70%" alt="GO BP contour overlay with party hub and date hub color coding" />
+  <img src="https://i.imgur.com/4g7JxtI.png" width="70%" alt="GO BP contour overlay with party hub and date hub color coding" />
 </p>
 
-The **GO BP contour overlay** helps illustrate the spatial distribution of biological processes, allowing for the interpretation of party hubs and date hubs in context.
+The **GO BP contour overlay** highlights the spatial organization of biological processes, providing additional context for interpreting these hubs.
 
 ## Setting Up Python and Jupyter for RISK
 
 <details>
+
 <summary><strong>Step 1: Install Python 3.8+</strong></summary>
+
 <br>
-Download and install Python 3.8 or higher from the official [Python website](https://www.python.org/downloads/).
+
+Download and install Python 3.8 or later (recommended) from the official [Python website](https://www.python.org/downloads/). RISK is tested on Python 3.8–3.11.
 
 - On Windows, ensure you check the box that says **Add Python to PATH** during installation. If you missed this step, follow this [guide](https://datatofish.com/add-python-to-windows-path/) to manually set the PATH.
+
 </details>
 
 <details>
+
 <summary><strong>Step 2: Create a Virtual Environment (Optional but Recommended)</strong></summary>
+
 <br>
-Create a virtual environment to isolate dependencies for this project:
+
+Set up a virtual environment to manage dependencies for RISK:
 
 - **For Windows:**
-    ```
+    ```bash
     python -m venv risk-env
     risk-env\Scripts\activate
     ```
 
 - **For macOS/Linux:**
-    ```
+    ```bash
     python3 -m venv risk-env
     source risk-env/bin/activate
     ```
+
 </details>
 
 <details>
-<summary><strong>Step 3: Configure Jupyter to Use the Virtual Environment</strong></summary>
-<br>
-To link your virtual environment with Jupyter, follow this [guide](https://janakiev.com/blog/jupyter-virtual-envs/).
 
-After configuring, ensure you select the virtual environment in Jupyter Notebook:
+<summary><strong>Step 3: Configure Jupyter to Use the Virtual Environment</strong></summary>
+
+<br>
+
+Follow this [guide](https://janakiev.com/blog/jupyter-virtual-envs/) to link your virtual environment with Jupyter.
+
+After setup, select the virtual environment in Jupyter Notebook:
 1. Click **Kernel** in the menu.
 2. Choose **Change kernel**.
 3. Select your virtual environment (e.g., `risk-env`).
+
 </details>
 
 <details>
+
 <summary><strong>Step 4: Install Jupyter</strong></summary>
+
 <br>
+
 With your virtual environment activated, install Jupyter Notebook:
 
-```
+```bash
 pip install jupyter
 ```
+
 </details>
 
 <details>
+
 <summary><strong>Step 5: Install RISK</strong></summary>
-<br>
-Now, install RISK:
 
+<br>
+
+To install the latest version of RISK, run:
+
+```bash
+pip install risk-network --upgrade
 ```
-pip install risk-network
-```
+
 </details>
 
 <details>
+
 <summary><strong>Step 6: Launch Jupyter Notebook</strong></summary>
+
 <br>
+
 Start Jupyter Notebook to run the RISK tutorial:
 
-```
+```bash
 jupyter notebook
 ```
+
 </details>
 
-## RISK Source Code and Documentation
+## RISK Source Code
 
-For more information about RISK, including source code and detailed documentation, please visit the following resources:
-
-- **Source Code**: Access the full RISK Network repository on GitHub [here](https://github.com/riskportal/network).
-- **Documentation**: Comprehensive usage guides, API references, and developer notes can be found in the official RISK Network documentation [here](Documentation link).
-
-These resources provide in-depth coverage of RISK’s capabilities and help ensure you can fully utilize the tool for your network analysis needs.
+RISK’s source code is available [here](https://github.com/riskportal/network).  
 
 ## Citation
 
-If you use RISK in your research, please cite the following:
+If you use RISK in your research, please cite:
 
-**Horecka**, *et al.*, "RISK: a next-generation tool for biological network annotation and visualization", **[Journal Name]**, 2024. DOI: [10.1234/zenodo.xxxxxxx](https://doi.org/10.1234/zenodo.xxxxxxx)
+**Horecka et al.**, "RISK: a next-generation tool for biological network annotation and visualization", **Bioinformatics**, 2025. DOI: [10.1234/zenodo.xxxxxxx](https://doi.org/10.1234/zenodo.xxxxxxx)
 
 ## License
 
-This tutorial and the RISK tool are released under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
+This tutorial follows the [MIT License](https://raw.githubusercontent.com/riskportal/network-tutorial/refs/heads/main/LICENSE).
