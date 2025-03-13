@@ -110,10 +110,10 @@ pip install jupyter
 
 <br>
 
-To install the latest version of RISK, run:
+To install the dependencies for this tutorial, run:
 
 ```bash
-pip install risk-network --upgrade
+pip install -r requirements.txt
 ```
 
 </details>
