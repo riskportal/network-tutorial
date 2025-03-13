@@ -106,7 +106,22 @@ pip install jupyter
 
 <details>
 
-<summary><strong>Step 5: Install RISK</strong></summary>
+<summary><strong>Step 5: Clone Repository</strong></summary>
+
+<br>
+
+To install the dependencies for this tutorial, run:
+
+```bash
+git clone https://github.com/riskportal/network-tutorial.git
+cd network-tutorial
+```
+
+</details>
+
+<details>
+
+<summary><strong>Step 6: Install Dependencies</strong></summary>
 
 <br>
 
@@ -120,7 +135,7 @@ pip install -r requirements.txt
 
 <details>
 
-<summary><strong>Step 6: Launch Jupyter Notebook</strong></summary>
+<summary><strong>Step 7: Launch Jupyter Notebook</strong></summary>
 
 <br>
 
