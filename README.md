@@ -26,16 +26,14 @@ In this demonstration, we use the yeast interactome network published by Michael
 
 Below is a visual representation of the yeast protein–protein interaction network, annotated with **Gene Ontology Biological Processes (GO BP)** terms:
 
-<p align="center">
-  <img src="https://i.imgur.com/lJHJrJr.jpeg" width="70%" alt="Figure 1" />
-</p>
+![[Figure 1](https://i.imgur.com/lJHJrJr.jpeg)](https://i.imgur.com/lJHJrJr.jpeg)
 
 ## Party and Date Hubs
 
 RISK also identifies [**party hubs** and **date hubs**](https://www.nature.com/articles/nature02555.pdf), two distinct types of central nodes in the network. Party hubs (orange) are highly connected proteins that interact with many partners simultaneously, often forming stable protein complexes. In contrast, date hubs (cyan) connect with different partners at different times or conditions, playing roles in dynamic regulatory interactions. This visualization highlights party and date hubs in the yeast network:
 
 <p align="center">
-  <img src="https://i.imgur.com/4g7JxtI.png" width="70%" alt="GO BP contour overlay with party hub and date hub color coding" />
+  <img src="https://i.imgur.com/ghXLwP0.png" width="75%" alt="Party and Date Hubs" />
 </p>
 
 The **GO BP contour overlay** highlights the spatial organization of biological processes, providing additional context for interpreting these hubs.
@@ -85,6 +83,7 @@ Set up a virtual environment to manage dependencies for RISK:
 Follow this [guide](https://janakiev.com/blog/jupyter-virtual-envs/) to link your virtual environment with Jupyter.
 
 After setup, select the virtual environment in Jupyter Notebook:
+
 1. Click **Kernel** in the menu.
 2. Choose **Change kernel**.
 3. Select your virtual environment (e.g., `risk-env`).
