@@ -20,11 +20,11 @@
 - Supports multiple file formats: Compatible with JSON, CSV, Cytoscape, and GPickle formats.
 - Publication-Ready Visualizations: Customizable figures with kernel density estimate overlays, node/edge adjustments, and high-resolution exports in multiple formats, including SVG, PNG, and PDF.
 
-## Yeast Interactome Network Demonstration
+## Yeast Protein–Protein Interaction (PPI) Network Demonstration
 
-In this demonstration, we use the yeast interactome network published by Michaelis et al. (2023), which contains 3,927 proteins and 31,004 interactions. We filtered the dataset to retain proteins with six or more interactions, emphasizing core functional interactions. The final dataset contains 2,059 nodes and 27,690 edges. RISK is applied to perform analyses such as network clustering and statistical overrepresentation of annotations.
+In this demonstration, we use the yeast PPI network published by Michaelis et al. (2023), which contains 3,927 proteins and 31,004 interactions. We filtered the dataset to retain proteins with six or more interactions, emphasizing core functional interactions. The final dataset contains 2,059 nodes and 27,690 edges. RISK is applied to perform analyses such as network clustering and statistical overrepresentation of annotations.
 
-Below is a visual representation of the yeast protein–protein interaction network, annotated with **Gene Ontology Biological Processes (GO BP)** terms:
+Below is a visual representation of the yeast PPI interaction network, annotated with **Gene Ontology Biological Processes (GO BP)** terms:
 
 ![[Figure 1](https://i.imgur.com/lJHJrJr.jpeg)](https://i.imgur.com/lJHJrJr.jpeg)
 
