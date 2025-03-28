@@ -16,7 +16,7 @@
 ## Key Features of RISK
 
 - Clustering Algorithms: Implements Louvain, Leiden, Markov Clustering, Greedy Modularity, Label Propagation, Spinglass, and Walktrap to identify structured network regions.
-- Statistical Analysis: Includes hypergeometric, permutation, binomial, chi-squared, Poisson, and z-score tests to assess functional enrichment with statistical rigor.
+- Statistical Analysis: Includes hypergeometric, permutation, binomial, chi-squared, Poisson, and z-score tests to assess annotation enrichment and significance.
 - Supports multiple file formats: Compatible with JSON, CSV, Cytoscape, and GPickle formats.
 - Publication-Ready Visualizations: Customizable figures with kernel density estimate overlays, node/edge adjustments, and high-resolution exports in multiple formats, including SVG, PNG, and PDF.
 
@@ -36,7 +36,7 @@ RISK also identifies [**party hubs** and **date hubs**](https://www.nature.com/a
   <img src="https://i.imgur.com/ghXLwP0.png" width="75%" alt="Party and Date Hubs" />
 </p>
 
-The **GO BP contour overlay** highlights the spatial organization of biological processes, providing additional context for interpreting these hubs.
+The **GO BP contour overlay** highlights the spatial organization of biological processes, providing additional context for interpreting these hubs. All steps are implemented in [`tutorial.ipynb`](tutorial.ipynb), which walks through loading, annotating, analyzing, and visualizing the yeast PPI network using RISK.
 
 ## Setting Up Python and Jupyter for RISK
 
@@ -155,7 +155,7 @@ RISK’s source code is available [here](https://github.com/riskportal/network).
 
 If you use RISK in your research, please cite:
 
-**Horecka et al.**, "RISK: a next-generation tool for biological network annotation and visualization", **Bioinformatics**, 2025. DOI: [10.1234/zenodo.xxxxxxx](https://doi.org/10.1234/zenodo.xxxxxxx)
+**Horecka et al.**, "RISK: a next-generation tool for biological network annotation and visualization", **Bioinformatics**, 2025. DOI: [10.5281/zenodo.xxxxxxx](https://doi.org/10.5281/zenodo.xxxxxxx)
 
 ## License
 
