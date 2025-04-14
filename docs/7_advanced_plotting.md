@@ -45,16 +45,17 @@ plotter = risk.load_plotter(
 ## Step 3: Draw the Full Network and Frame
 
 ```python
-plotter.plot_network(
-    node_colors=plotter.get_annotated_node_colors(),
-    node_sizes=plotter.get_annotated_node_sizes(),
-)
 plotter.plot_circle_perimeter(
     radius=1.0,
     color="white",
     linewidth=2.0,
     linestyle="solid",
     alpha=1.0,
+)
+
+plotter.plot_network(
+    node_colors=plotter.get_annotated_node_colors(),
+    node_sizes=plotter.get_annotated_node_sizes(),
 )
 ```
 
@@ -162,7 +163,10 @@ def get_labels(domain_ids):
         domain_ids = [domain_ids]
     return sum([graph.domain_id_to_node_labels_map[d] for d in domain_ids], [])
 
+# Note: These domain IDs are based on a specific random seed. They may differ if layout or clustering is reinitialized.
 ribosome_nodes = get_labels([69, 72, 28, 79])
+
+# Domain IDs for metabolic processes; adjust as needed if using a different seed or graph instance.
 metabolism_nodes = get_labels([16, 18, 41, 99])
 
 plotter.plot_sublabel(nodes=ribosome_nodes, label="Ribosomal\nProcesses", radial_position=240)
@@ -179,7 +183,7 @@ This overlay highlights the spatial and functional separation of coexpression-ba
 Display or save the composite figure.
 
 ```python
-plotter.savefig("advanced_plot.svg", dpi=300)
+plotter.savefig("advanced_plot.png", dpi=300)
 plotter.show()
 ```
 

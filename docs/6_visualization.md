@@ -74,46 +74,47 @@ plotter.plot_circle_perimeter(
 
 ### Plot the Annotated Network
 
-You can further customize node shape, color edges, and tune transparency using optional parameters. See the function documentation for more.
+The `plot_network()` method draws the full network, automatically applying visual styles based on enrichment results. This is the most common way to visualize domain significance directly on the graph.
 
 ```python
-plotter.plot_network(
-    node_colors=plotter.get_annotated_node_colors(),
-    node_sizes=plotter.get_annotated_node_sizes(),
-)
+plotter.plot_network()
 ```
 
-For more advanced usage, here is a fully parameterized example that mirrors the visualization seen in the notebook.
+For more control, RISK provides helper methods to customize node size and color dynamically based on statistical significance:
 
 ```python
+node_sizes = plotter.get_annotated_node_sizes(
+    significant_size=200,
+    nonsignificant_size=10,
+)
+
+node_colors = plotter.get_annotated_node_colors(
+    cmap="gist_rainbow",
+    blend_colors=False,
+    blend_gamma=2.2,
+    min_scale=0.8,
+    max_scale=1.0,
+    scale_factor=0.5,
+    alpha=1.0,
+    nonsignificant_color="white",
+    nonsignificant_alpha=0.75,
+    random_seed=888,
+)
+
 plotter.plot_network(
-    node_size=plotter.get_annotated_node_sizes(
-        significant_size=200,
-        nonsignificant_size=10,
-    ),
+    node_size=node_sizes,
+    node_color=node_colors,
     node_shape="o",
     node_edgewidth=1.0,
     edge_width=0.04,
-    node_color=plotter.get_annotated_node_colors(
-        cmap="gist_rainbow",
-        color=None,
-        blend_colors=False,
-        blend_gamma=2.2,
-        min_scale=0.7,
-        max_scale=1.0,
-        scale_factor=0.5,
-        alpha=1.0,
-        nonsignificant_color="white",
-        nonsignificant_alpha=0.75,
-        ids_to_colors=None,
-        random_seed=888,
-    ),
     node_edgecolor="black",
     edge_color="white",
     node_alpha=1.0,
     edge_alpha=1.0,
 )
 ```
+
+You can also use `plotter.get_annotated_contour_colors()` and `plotter.get_annotated_label_colors()` for consistent domain-based color themes across contours and labels.
 
 ### Highlight a Subnetwork
 
@@ -265,7 +266,7 @@ plotter.plot_sublabel(
 ### Save your figure
 
 ```python
-plotter.savefig("my_plot.svg", dpi=300)
+plotter.savefig("my_plot.png", dpi=300)
 ```
 
 ### Display the figure in a notebook/script
