@@ -281,4 +281,4 @@ plotter.show()
 
 ## Next Step
 
-You’re now ready to export your results or continue exploring [Advanced Plotting](./7_advanced_plotting.md) features like background layers, dynamic coloring, and multi-panel layouts.
+You’re now ready to export your results or continue exploring [7. Advanced Plotting](./7_advanced_plotting.md) features like background layers, dynamic coloring, and multi-panel layouts.
