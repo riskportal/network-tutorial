@@ -1180,41 +1180,41 @@
 </code></pre></div>
 <p><em>For a more flexible KDE-based layout boundary, see <code>plot_contour_perimeter()</code>.</em></p>
 <h3 id="plot-the-annotated-network">Plot the Annotated Network<a class="headerlink" href="#plot-the-annotated-network" title="Permanent link">&para;</a></h3>
-<p>You can further customize node shape, color edges, and tune transparency using optional parameters. See the function documentation for more.</p>
-<div class="highlight"><pre><span></span><code><span class="n">plotter</span><span class="o">.</span><span class="n">plot_network</span><span class="p">(</span>
-    <span class="n">node_colors</span><span class="o">=</span><span class="n">plotter</span><span class="o">.</span><span class="n">get_annotated_node_colors</span><span class="p">(),</span>
-    <span class="n">node_sizes</span><span class="o">=</span><span class="n">plotter</span><span class="o">.</span><span class="n">get_annotated_node_sizes</span><span class="p">(),</span>
-<span class="p">)</span>
+<p>The <code>plot_network()</code> method draws the full network, automatically applying visual styles based on enrichment results. This is the most common way to visualize domain significance directly on the graph.</p>
+<div class="highlight"><pre><span></span><code><span class="n">plotter</span><span class="o">.</span><span class="n">plot_network</span><span class="p">()</span>
 </code></pre></div>
-<p>For more advanced usage, here is a fully parameterized example that mirrors the visualization seen in the notebook.</p>
-<div class="highlight"><pre><span></span><code><span class="n">plotter</span><span class="o">.</span><span class="n">plot_network</span><span class="p">(</span>
-    <span class="n">node_size</span><span class="o">=</span><span class="n">plotter</span><span class="o">.</span><span class="n">get_annotated_node_sizes</span><span class="p">(</span>
-        <span class="n">significant_size</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
-        <span class="n">nonsignificant_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-    <span class="p">),</span>
+<p>For more control, RISK provides helper methods to customize node size and color dynamically based on statistical significance:</p>
+<div class="highlight"><pre><span></span><code><span class="n">node_sizes</span> <span class="o">=</span> <span class="n">plotter</span><span class="o">.</span><span class="n">get_annotated_node_sizes</span><span class="p">(</span>
+    <span class="n">significant_size</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">nonsignificant_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">node_colors</span> <span class="o">=</span> <span class="n">plotter</span><span class="o">.</span><span class="n">get_annotated_node_colors</span><span class="p">(</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gist_rainbow&quot;</span><span class="p">,</span>
+    <span class="n">blend_colors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">blend_gamma</span><span class="o">=</span><span class="mf">2.2</span><span class="p">,</span>
+    <span class="n">min_scale</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
+    <span class="n">max_scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">scale_factor</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">nonsignificant_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
+    <span class="n">nonsignificant_alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
+    <span class="n">random_seed</span><span class="o">=</span><span class="mi">888</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">plotter</span><span class="o">.</span><span class="n">plot_network</span><span class="p">(</span>
+    <span class="n">node_size</span><span class="o">=</span><span class="n">node_sizes</span><span class="p">,</span>
+    <span class="n">node_color</span><span class="o">=</span><span class="n">node_colors</span><span class="p">,</span>
     <span class="n">node_shape</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span>
     <span class="n">node_edgewidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
     <span class="n">edge_width</span><span class="o">=</span><span class="mf">0.04</span><span class="p">,</span>
-    <span class="n">node_color</span><span class="o">=</span><span class="n">plotter</span><span class="o">.</span><span class="n">get_annotated_node_colors</span><span class="p">(</span>
-        <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gist_rainbow&quot;</span><span class="p">,</span>
-        <span class="n">color</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">blend_colors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="n">blend_gamma</span><span class="o">=</span><span class="mf">2.2</span><span class="p">,</span>
-        <span class="n">min_scale</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
-        <span class="n">max_scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-        <span class="n">scale_factor</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-        <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-        <span class="n">nonsignificant_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
-        <span class="n">nonsignificant_alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
-        <span class="n">ids_to_colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-        <span class="n">random_seed</span><span class="o">=</span><span class="mi">888</span><span class="p">,</span>
-    <span class="p">),</span>
     <span class="n">node_edgecolor</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
     <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
     <span class="n">node_alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
     <span class="n">edge_alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
+<p>You can also use <code>plotter.get_annotated_contour_colors()</code> and <code>plotter.get_annotated_label_colors()</code> for consistent domain-based color themes across contours and labels.</p>
 <h3 id="highlight-a-subnetwork">Highlight a Subnetwork<a class="headerlink" href="#highlight-a-subnetwork" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">plotter</span><span class="o">.</span><span class="n">plot_subnetwork</span><span class="p">(</span>
     <span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;RPL1A&quot;</span><span class="p">,</span> <span class="s2">&quot;RPL2B&quot;</span><span class="p">,</span> <span class="s2">&quot;RPL3&quot;</span><span class="p">,</span> <span class="s2">&quot;RPL5&quot;</span><span class="p">],</span>
@@ -1322,7 +1322,7 @@
 <hr />
 <h2 id="export-and-display">Export and Display<a class="headerlink" href="#export-and-display" title="Permanent link">&para;</a></h2>
 <h3 id="save-your-figure">Save your figure<a class="headerlink" href="#save-your-figure" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">plotter</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;my_plot.svg&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">plotter</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;my_plot.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="display-the-figure-in-a-notebookscript">Display the figure in a notebook/script<a class="headerlink" href="#display-the-figure-in-a-notebookscript" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>

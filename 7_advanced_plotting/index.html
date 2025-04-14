@@ -1010,16 +1010,17 @@
 </code></pre></div>
 <hr />
 <h2 id="step-3-draw-the-full-network-and-frame">Step 3: Draw the Full Network and Frame<a class="headerlink" href="#step-3-draw-the-full-network-and-frame" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">plotter</span><span class="o">.</span><span class="n">plot_network</span><span class="p">(</span>
-    <span class="n">node_colors</span><span class="o">=</span><span class="n">plotter</span><span class="o">.</span><span class="n">get_annotated_node_colors</span><span class="p">(),</span>
-    <span class="n">node_sizes</span><span class="o">=</span><span class="n">plotter</span><span class="o">.</span><span class="n">get_annotated_node_sizes</span><span class="p">(),</span>
-<span class="p">)</span>
-<span class="n">plotter</span><span class="o">.</span><span class="n">plot_circle_perimeter</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="n">plotter</span><span class="o">.</span><span class="n">plot_circle_perimeter</span><span class="p">(</span>
     <span class="n">radius</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
     <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
     <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
     <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;solid&quot;</span><span class="p">,</span>
     <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">plotter</span><span class="o">.</span><span class="n">plot_network</span><span class="p">(</span>
+    <span class="n">node_colors</span><span class="o">=</span><span class="n">plotter</span><span class="o">.</span><span class="n">get_annotated_node_colors</span><span class="p">(),</span>
+    <span class="n">node_sizes</span><span class="o">=</span><span class="n">plotter</span><span class="o">.</span><span class="n">get_annotated_node_sizes</span><span class="p">(),</span>
 <span class="p">)</span>
 </code></pre></div>
 <hr />
@@ -1102,7 +1103,10 @@
         <span class="n">domain_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">domain_ids</span><span class="p">]</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">graph</span><span class="o">.</span><span class="n">domain_id_to_node_labels_map</span><span class="p">[</span><span class="n">d</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">domain_ids</span><span class="p">],</span> <span class="p">[])</span>
 
+<span class="c1"># Note: These domain IDs are based on a specific random seed. They may differ if layout or clustering is reinitialized.</span>
 <span class="n">ribosome_nodes</span> <span class="o">=</span> <span class="n">get_labels</span><span class="p">([</span><span class="mi">69</span><span class="p">,</span> <span class="mi">72</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">79</span><span class="p">])</span>
+
+<span class="c1"># Domain IDs for metabolic processes; adjust as needed if using a different seed or graph instance.</span>
 <span class="n">metabolism_nodes</span> <span class="o">=</span> <span class="n">get_labels</span><span class="p">([</span><span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">99</span><span class="p">])</span>
 
 <span class="n">plotter</span><span class="o">.</span><span class="n">plot_sublabel</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">ribosome_nodes</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Ribosomal</span><span class="se">\n</span><span class="s2">Processes&quot;</span><span class="p">,</span> <span class="n">radial_position</span><span class="o">=</span><span class="mi">240</span><span class="p">)</span>
@@ -1113,7 +1117,7 @@
 <hr />
 <h2 id="final-output">Final Output<a class="headerlink" href="#final-output" title="Permanent link">&para;</a></h2>
 <p>Display or save the composite figure.</p>
-<div class="highlight"><pre><span></span><code><span class="n">plotter</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;advanced_plot.svg&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">plotter</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;advanced_plot.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 <span class="n">plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 <p><img alt="Party &amp; Date Hubs" src="../images/party_date_hub.png" /></p>
