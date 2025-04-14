@@ -6,25 +6,30 @@ Whether you're new to RISK or just looking to fine-tune your workflow, these doc
 
 ![RISK](images/risk_fig1.jpeg)
 
-## Get Started
+## Getting Started
 
-- [Overview & Concepts](0_intro.md)
-- [Installation](1_installation.md)
-- [Download Quickstart (.ipynb)](quickstart.ipynb)
-- [View Quickstart (HTML)](quickstart.html)
+Start here to set up and understand the basics:
+
+- [0. Intro](0_intro.md): Overview and key concepts
+- [1. Installation](1_installation.md): Install RISK on your system
+
+You can also explore the tutorial notebook:
+
+- [View Quickstart Notebook (HTML)](quickstart.html)
+- [Download Quickstart Notebook (.ipynb)](quickstart.ipynb)
 
 ## Core Features
 
-- [Network Input](2_network_input.md)
-- [Annotations](3_annotations.md)
-- [Statistics](4_statistics.md)
-- [Load & Analyze Graph](5_load_graph.md)
-- [Visualization](6_visualization.md)
+- [2. Network Input](2_network_input.md)
+- [3. Annotations](3_annotations.md)
+- [4. Statistics](4_statistics.md)
+- [5. Load & Analyze Graph](5_load_graph.md)
+- [6. Visualization](6_visualization.md)
 
 ## Advanced Use
 
-- [Advanced Plotting](7_advanced_plotting.md)
-- [Parameter Export](8_parameters.md)
+- [7. Advanced Plotting](7_advanced_plotting.md)
+- [8. Parameter Export](8_parameters.md)
 
 ---
 
