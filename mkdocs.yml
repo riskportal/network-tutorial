@@ -5,8 +5,8 @@ repo_name: network-tutorial
 theme:
   name: material
   custom_dir: docs/overrides
-  logo: images/risk-logo-avatar-compressed.png
-  favicon: images/risk-logo-avatar-compressed.png
+  logo: images/risk_logo_avatar_compressed.png
+  favicon: images/risk_logo_avatar_compressed.png
   features:
     - navigation.tabs
     - navigation.top
