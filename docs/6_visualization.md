@@ -156,15 +156,6 @@ plotter.plot_labels(
 
 ---
 
-### Export and Display
-
-```python
-plotter.savefig("figure.pdf", dpi=300)
-plotter.show()
-```
-
----
-
 ## Dynamic Node Styling
 
 Node colors and sizes are controlled using significance-aware helpers.
