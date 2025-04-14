@@ -204,4 +204,4 @@ plotter.show()
 
 ## Next Step
 
-Explore example notebooks or [Parameter Reference](./8_parameters.md) for a complete list of available options.
+Explore example notebooks or [8. Parameters](./8_parameters.md) for a complete list of available options.

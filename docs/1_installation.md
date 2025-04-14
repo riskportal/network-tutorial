@@ -53,4 +53,4 @@ risk = RISK(verbose=True)
 
 ## Next Step
 
-Continue to [2. Loading the Network](./2_network_input.md) to import your first graph.
+Continue to [2. Network Input](./2_network_input.md) to import your first graph.

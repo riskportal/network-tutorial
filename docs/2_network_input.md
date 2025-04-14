@@ -112,4 +112,4 @@ For a complete network loading and analysis example, see [quickstart.ipynb](http
 
 ## Next Step
 
-Proceed to [3. Loading Annotations](./3_annotations.md) to map biological terms onto network nodes.
+Proceed to [3. Annotations](./3_annotations.md) to map biological terms onto network nodes.

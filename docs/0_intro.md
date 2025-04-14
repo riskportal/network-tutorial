@@ -61,4 +61,4 @@ This notebook complements the Markdown documentation in this repository, but doe
 
 ## Getting Started
 
-Continue to [Installation](./1_installation.md) to install RISK and set up your environment.
+Continue to [1. Installation](./1_installation.md) to install RISK and set up your environment.

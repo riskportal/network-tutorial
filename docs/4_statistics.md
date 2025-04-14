@@ -160,4 +160,4 @@ Use this result to create a `NetworkGraph` in the next step.
 
 ## Next Step
 
-Proceed to [5. Loading NetworkGraph](./5_load_graph.md) to build a cluster-aware network object.
+Proceed to [5. Load Graph](./5_load_graph.md) to build a cluster-aware network object.
