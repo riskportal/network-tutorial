@@ -58,7 +58,7 @@ risk.params.to_json(filepath="./data/json/params/michaelis_2023.json")
 **Parameters:**
 
 - `filepath` (str): Destination path for the JSON file  
-  *Best for reloading parameters in future sessions.*
+  *Best for reference in future sessions (note: reloading from file is not currently supported).*
 
 ---
 
@@ -77,7 +77,7 @@ risk.params.to_txt(filepath="./data/txt/params/michaelis_2023.txt")
 
 ---
 
-These export functions allow parameters to be easily shared, archived, or reloaded in a different session.
+These export functions allow parameters to be easily shared and archived.
 
 For downstream processing, combine these with summary exports from:
 

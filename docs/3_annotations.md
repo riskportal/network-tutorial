@@ -113,7 +113,7 @@ Use this method to work with annotations already in memory.
 
 ## Why Filter with `min_nodes_per_term`?
 
-This parameter helps remove annotation terms that are rarely used, reducing noise and increasing power in downstream statistical analysis.
+This parameter sets a minimum threshold for the number of network nodes linked to each annotation term. Terms with fewer than this number are excluded, helping remove underpowered annotations and reduce statistical noise.
 
 ---
 
