@@ -4,6 +4,8 @@
 
 Whether you're new to RISK or just looking to fine-tune your workflow, these docs walk you through setup, usage, and advanced features.
 
+![RISK](images/risk_fig1.jpeg)
+
 ## Get Started
 
 - [Installation](1_installation.md)

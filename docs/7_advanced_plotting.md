@@ -182,6 +182,8 @@ plotter.savefig("advanced_plot.svg", dpi=300)
 plotter.show()
 ```
 
+![Party & Date Hubs](images/party_date_hub.png)
+
 ---
 
 ## Recap: What You Learned
