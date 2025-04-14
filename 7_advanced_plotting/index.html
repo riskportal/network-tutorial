@@ -999,6 +999,7 @@
 </code></pre></div>
 <hr />
 <h2 id="step-2-initialize-the-plotter">Step 2: Initialize the Plotter<a class="headerlink" href="#step-2-initialize-the-plotter" title="Permanent link">&para;</a></h2>
+<p>Before plotting, ensure that the <code>graph</code> object has been instantiated. This should be the same <code>NetworkGraph</code> object created during the setup in the <a href="../5_load_graph/">Load Graph</a> section. The <code>graph</code> instance provides the structural and annotation context necessary for visual overlays such as coexpression subnetworks or GO BP contours.</p>
 <p>We create a new <code>NetworkPlotter</code> instance and set background preferences.</p>
 <div class="highlight"><pre><span></span><code><span class="n">plotter</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_plotter</span><span class="p">(</span>
     <span class="n">graph</span><span class="o">=</span><span class="n">graph</span><span class="p">,</span>
