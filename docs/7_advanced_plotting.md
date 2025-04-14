@@ -7,6 +7,7 @@ Once you're familiar with RISK’s core plotting methods, you can begin layering
 ## Use Case: Dual Overlay of Coexpression Subgroups
 
 In this example, we highlight two functionally distinct sets of genes:
+
 - Highly coexpressed nodes
 - Weakly coexpressed nodes
 

@@ -149,6 +149,7 @@ neighborhoods = risk.load_neighborhoods_by_zscore(
 ## Output
 
 All test functions return a `neighborhoods` dictionary with:
+
 - Cluster IDs
 - Term-wise enrichment scores
 - Optional p-values or z-scores depending on method
