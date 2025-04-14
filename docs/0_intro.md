@@ -10,6 +10,8 @@ RISK is designed to:
 - Scale to hundreds of thousands of edges on standard hardware
 - Generalize beyond biology to interdisciplinary networks
 
+![RISK](images/risk_fig1.jpeg)
+
 ## What makes RISK different?
 
 | Feature                    | RISK                                      |
