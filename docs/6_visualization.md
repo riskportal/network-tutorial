@@ -287,10 +287,6 @@ plotter.show()
 
 ---
 
-## Full API Parameters
-
-For a complete list of parameters accepted by `load_plotter()` and other functions, see [8. Advanced Plotting](./7_advanced_plotting.md). That section includes additional controls for color blending, custom layouts, font tuning, background themes, and more.
-
 ## Next Step
 
 You’re now ready to export your results or continue exploring [Advanced Plotting](./7_advanced_plotting.md) features like background layers, dynamic coloring, and multi-panel layouts.
