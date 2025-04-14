@@ -8,13 +8,13 @@ _A comprehensive Jupyter notebook–based guide to the RISK network analysis pla
 <br>
 
 ![Python](https://img.shields.io/badge/python-3.8%2B-yellow)
-[![Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/risportal/network-tutorial/main/LICENSE)
+[![Licence](https://img.shields.io/badge/license-GPLv3-purple.svg)](https://raw.githubusercontent.com/riskportal/network-tutorial/main/LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.xxxxxxx.svg)](https://doi.org/10.5281/zenodo.xxxxxxx)
 
 **RISK Network Tutorial** offers a detailed guide on using **RISK** (Regional Inference of Significant Kinships), a next-generation tool for biological network annotation and visualization. This guide details key functionalities and practical applications for network analysis using RISK.
 
-**📘 Full Documentation:** [riskportal.github.io/network-tutorial](https://riskportal.github.io/network-tutorial)  
-**💻 Source Code:** [github.com/riskportal/network](https://github.com/riskportal/network)
+- **Full Documentation:** [riskportal.github.io/network-tutorial](https://riskportal.github.io/network-tutorial)  
+- **Source Code:** [github.com/riskportal/network](https://github.com/riskportal/network)
 
 ## Key Features of RISK
 
@@ -158,5 +158,4 @@ If you use RISK in your research, please cite:
 
 ## License
 
-This tutorial follows the [MIT License](https://raw.githubusercontent.com/riskportal/network-tutorial/refs/heads/main/LICENSE).  
-Note: The RISK software itself is licensed under [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
+This tutorial follows the [GPLv3 License](https://www.gnu.org/licenses/gpl-3.0.en.html).
