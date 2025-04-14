@@ -13,6 +13,8 @@
 
 **RISK Network Tutorial** offers a detailed guide on using **RISK** (Regional Inference of Significant Kinships), a next-generation tool for biological network annotation and visualization. This guide details key functionalities and practical applications for network analysis using RISK.
 
+📘 **Documentation:** Visit the [official RISK Documentation](https://your-site-url.com) for a full overview of usage, statistical methods, and visualization examples.
+
 ## Key Features of RISK
 
 - Clustering Algorithms: Implements Louvain, Leiden, Markov Clustering, Greedy Modularity, Label Propagation, Spinglass, and Walktrap to identify structured network regions.
@@ -36,7 +38,7 @@ RISK also identifies [**party hubs** and **date hubs**](https://www.nature.com/a
   <img src="https://i.imgur.com/ghXLwP0.png" width="75%" alt="Party and Date Hubs" />
 </p>
 
-The **GO BP contour overlay** highlights the spatial organization of biological processes, providing additional context for interpreting these hubs. All steps are implemented in [`tutorial.ipynb`](tutorial.ipynb), which walks through loading, annotating, analyzing, and visualizing the yeast PPI network using RISK.
+The **GO BP contour overlay** highlights the spatial organization of biological processes, providing additional context for interpreting these hubs. For a full demonstration of this analysis, please refer to the [Quickstart Tutorial](docs/quickstart.ipynb) in the documentation. This notebook walks through loading, annotating, analyzing, and visualizing the yeast PPI network using RISK.
 
 ## Setting Up Python and Jupyter for RISK
 
