@@ -1,0 +1,52 @@
+site_name: RISK Documentation
+site_url: https://github.com/riskportal/network
+repo_url: https://github.com/riskportal/network-tutorial
+repo_name: network-tutorial
+theme:
+  name: material
+  custom_dir: docs/overrides
+  logo: images/risk-logo-avatar-compressed.png
+  favicon: images/risk-logo-avatar-compressed.png
+  features:
+    - navigation.tabs
+    - navigation.top
+    - content.code.copy
+    - toc.integrate
+  palette:
+    - scheme: default
+      primary: custom
+      accent: light blue
+    - scheme: slate
+      primary: custom
+      accent: light blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - codehilite
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+nav:
+  - Home: index.md
+  - Quickstart Notebook (HTML): quickstart.html
+  - Download Notebook (.ipynb): quickstart.ipynb
+  - Getting Started:
+      - 0. Intro: 0_intro.md
+      - 1. Installation: 1_installation.md
+  - Core Features:
+      - 2. Network Input: 2_network_input.md
+      - 3. Annotations: 3_annotations.md
+      - 4. Statistics: 4_statistics.md
+      - 5. Load Graph: 5_load_graph.md
+      - 6. Visualization: 6_visualization.md
+  - Advanced:
+      - 7. Advanced Plotting: 7_advanced_plotting.md
+      - 8. Parameters: 8_parameters.md
+extra_css:
+  - stylesheets/extra.css
