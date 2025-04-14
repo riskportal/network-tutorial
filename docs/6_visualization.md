@@ -283,6 +283,8 @@ plotter.savefig("my_plot.svg", dpi=300)
 plotter.show()
 ```
 
+![GO BP PPI Network](images/go_bp_annotated.png)
+
 ---
 
 ## Full API Parameters
