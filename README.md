@@ -1,4 +1,5 @@
 # RISK Network Tutorial
+_A comprehensive Jupyter notebook–based guide to the RISK network analysis platform._
 
 <p align="center">
   <img src="https://i.imgur.com/8TleEJs.png" width="50%" alt="RISK Network logo" />
@@ -7,13 +8,13 @@
 <br>
 
 ![Python](https://img.shields.io/badge/python-3.8%2B-yellow)
-![License](https://img.shields.io/badge/license-GPLv3-purple)
 [![Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/risportal/network-tutorial/main/LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.xxxxxxx.svg)](https://doi.org/10.5281/zenodo.xxxxxxx)
 
 **RISK Network Tutorial** offers a detailed guide on using **RISK** (Regional Inference of Significant Kinships), a next-generation tool for biological network annotation and visualization. This guide details key functionalities and practical applications for network analysis using RISK.
 
-**Documentation and Source Code:** Full documentation is available at [riskportal.github.io/network-tutorial](https://riskportal.github.io/network-tutorial). The RISK source code is available on GitHub at [riskportal/network](https://github.com/riskportal/network).
+**📘 Full Documentation:** [riskportal.github.io/network-tutorial](https://riskportal.github.io/network-tutorial)  
+**💻 Source Code:** [github.com/riskportal/network](https://github.com/riskportal/network)
 
 ## Key Features of RISK
 
@@ -28,7 +29,7 @@ In this demonstration, we use the yeast PPI network published by Michaelis et al
 
 Below is a visual representation of the yeast PPI interaction network, annotated with **Gene Ontology Biological Processes (GO BP)** terms:
 
-![[Figure 1](https://i.imgur.com/lJHJrJr.jpeg)](https://i.imgur.com/lJHJrJr.jpeg)
+[![Yeast PPI network annotated with GO BP terms](https://i.imgur.com/lJHJrJr.jpeg)](https://i.imgur.com/lJHJrJr.jpeg)
 
 ## Party and Date Hubs
 
@@ -38,7 +39,7 @@ RISK also identifies [**party hubs** and **date hubs**](https://www.nature.com/a
   <img src="https://i.imgur.com/ghXLwP0.png" width="75%" alt="Party and Date Hubs" />
 </p>
 
-The **GO BP contour overlay** highlights the spatial organization of biological processes, providing additional context for interpreting these hubs. For a full demonstration of this analysis, please refer to the [Quickstart Tutorial](docs/quickstart.ipynb) in the documentation. This notebook walks through loading, annotating, analyzing, and visualizing the yeast PPI network using RISK.
+The **GO BP contour overlay** highlights the spatial organization of biological processes, providing additional context for interpreting these hubs. For a full demonstration of this analysis, please refer to the [Quickstart Tutorial 📥](docs/quickstart.ipynb), which can be downloaded and run locally.
 
 ## Setting Up Python and Jupyter for RISK
 
@@ -157,4 +158,5 @@ If you use RISK in your research, please cite:
 
 ## License
 
-This tutorial follows the [MIT License](https://raw.githubusercontent.com/riskportal/network-tutorial/refs/heads/main/LICENSE).
+This tutorial follows the [MIT License](https://raw.githubusercontent.com/riskportal/network-tutorial/refs/heads/main/LICENSE).  
+Note: The RISK software itself is licensed under [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
