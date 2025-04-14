@@ -1,5 +1,4 @@
 # RISK Network Tutorial
-_A comprehensive Jupyter notebook–based guide to the RISK network analysis platform._
 
 <p align="center">
   <img src="https://i.imgur.com/8TleEJs.png" width="50%" alt="RISK Network logo" />
