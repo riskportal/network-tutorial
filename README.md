@@ -13,7 +13,7 @@
 
 **RISK Network Tutorial** offers a detailed guide on using **RISK** (Regional Inference of Significant Kinships), a next-generation tool for biological network annotation and visualization. This guide details key functionalities and practical applications for network analysis using RISK.
 
-📘 **Documentation:** Visit the [official RISK Documentation](https://your-site-url.com) for a full overview of usage, statistical methods, and visualization examples.
+📘 **Documentation:** Visit the [official RISK Documentation](https://riskportal.github.io/network-tutorial/) for a full overview of usage, statistical methods, and visualization examples.
 
 ## Key Features of RISK
 
