@@ -8,10 +8,10 @@ Whether you're new to RISK or just looking to fine-tune your workflow, these doc
 
 ## Get Started
 
+- [Overview & Concepts](0_intro.md)
 - [Installation](1_installation.md)
 - [Download Quickstart (.ipynb)](quickstart.ipynb)
 - [View Quickstart (HTML)](quickstart.html)
-- [Overview & Concepts](0_intro.md)
 
 ## Core Features
 
