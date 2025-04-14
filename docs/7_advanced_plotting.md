@@ -28,6 +28,8 @@ low_coexpression_nodes = ["YGR103W", "YDL064W", "YML082W", "YOR204W"]
 
 ## Step 2: Initialize the Plotter
 
+Before plotting, ensure that the `graph` object has been instantiated. This should be the same `NetworkGraph` object created during the setup in the [Load Graph](./5_load_graph.md) section. The `graph` instance provides the structural and annotation context necessary for visual overlays such as coexpression subnetworks or GO BP contours.
+
 We create a new `NetworkPlotter` instance and set background preferences.
 
 ```python
