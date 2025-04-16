@@ -1,6 +1,6 @@
 # Overview of `risk.params`
 
-The `risk.params` module (accessed via an initialized RISK instance) lets you inspect and export the internal configuration used in your RISK analysis. This supports reproducibility by preserving parameter states across formats. *Note: reloading a RISK instance from a parameter file is not currently supported*.
+The `risk.params` module (accessed via an initialized RISK instance) lets you inspect and export the internal configuration used in your RISK analysis. This supports reproducibility by preserving parameter states across formats. _Note: reloading a RISK instance from a parameter file is not currently supported_.
 
 ---
 
