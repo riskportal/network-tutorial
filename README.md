@@ -12,7 +12,7 @@
 
 **RISK Network Tutorial** offers a detailed guide on using **RISK** (Regional Inference of Significant Kinships), a next-generation tool for biological network annotation and visualization. This guide details key functionalities and practical applications for network analysis using RISK.
 
-- **Full Documentation:** [riskportal.github.io/network-tutorial](https://riskportal.github.io/network-tutorial)  
+- **Full Documentation:** [riskportal.github.io/network-tutorial](https://riskportal.github.io/network-tutorial)
 - **Source Code:** [github.com/riskportal/network](https://github.com/riskportal/network)
 
 ## Key Features of RISK
@@ -63,16 +63,17 @@ Download and install Python 3.8 or later (recommended) from the official [Python
 Set up a virtual environment to manage dependencies for RISK:
 
 - **For Windows:**
-    ```bash
-    python -m venv risk-env
-    risk-env\Scripts\activate
-    ```
+
+  ```bash
+  python -m venv risk-env
+  risk-env\Scripts\activate
+  ```
 
 - **For macOS/Linux:**
-    ```bash
-    python3 -m venv risk-env
-    source risk-env/bin/activate
-    ```
+  ```bash
+  python3 -m venv risk-env
+  source risk-env/bin/activate
+  ```
 
 </details>
 
