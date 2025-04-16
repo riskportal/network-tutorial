@@ -1,6 +1,6 @@
 # Visualization
 
-RISK provides a flexible and powerful plotting interface via the `NetworkPlotter` object. This enables you to generate publication-quality figures with detailed domain annotations, significance-driven coloring, KDE-based contours, and rich label customization.
+RISK provides a flexible and powerful plotting interface via the `NetworkPlotter` object. This enables generation of publication-ready figures with detailed domain annotations, significance-driven coloring, KDE-based contours, and rich label customization.
 
 ---
 

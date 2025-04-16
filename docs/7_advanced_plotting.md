@@ -1,6 +1,6 @@
 # Advanced Plotting
 
-Once you're familiar with RISK’s core plotting methods, you can begin layering multiple annotations, subnetworks, and styles to highlight specific biological themes. This section walks through advanced plotting features using a real-world example.
+Once you're familiar with RISK’s core plotting methods, layer multiple annotations, subnetworks, and styles to highlight specific biological themes. This section walks through advanced plotting features using a real-world example.
 
 ---
 

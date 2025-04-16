@@ -1,6 +1,6 @@
 # Loading and Associating Annotations
 
-Annotations link network nodes to biological terms (e.g., Gene Ontology categories). RISK supports multiple file formats, each with a dedicated loader. All annotation loaders return a dictionary with:
+Annotations map network nodes to biological terms (e.g., Gene Ontology categories). RISK supports multiple input formats with dedicated loaders, each returning:
 
 - Ordered list of nodes
 - Ordered list of terms
