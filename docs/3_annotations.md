@@ -119,4 +119,4 @@ This parameter sets a minimum threshold for the number of network nodes linked t
 
 ## Next Step
 
-Proceed to [4. Statistics](./4_statistics.md) to evaluate term enrichment.
+Proceed to [4. Statistics](./4_statistics.md) to evaluate term overrepresentation.

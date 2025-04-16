@@ -18,7 +18,7 @@
 ## Key Features of RISK
 
 - Clustering Algorithms: Implements Louvain, Leiden, Markov Clustering, Greedy Modularity, Label Propagation, Spinglass, and Walktrap to identify structured network regions.
-- Statistical Analysis: Includes hypergeometric, permutation, binomial, chi-squared, Poisson, and z-score tests to assess annotation enrichment and significance.
+- Statistical Analysis: Includes hypergeometric, permutation, binomial, chi-squared, Poisson, and z-score tests to assess annotation overrepresentation and significance.
 - Supports multiple file formats: Compatible with JSON, CSV, Cytoscape, and GPickle formats.
 - Publication-Ready Visualizations: Customizable figures with kernel density estimate overlays, node/edge adjustments, and high-resolution exports in multiple formats, including SVG, PNG, and PDF.
 

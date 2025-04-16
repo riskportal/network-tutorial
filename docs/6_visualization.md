@@ -29,7 +29,7 @@ The following methods control different aspects of the visualization:
 | `plot_title()`            | Add a title and subtitle overlay in the center of the network |
 | `plot_circle_perimeter()` | Draw a circular boundary around the network layout for visual framing |
 | `plot_contour_perimeter()` | Draw a KDE-based contour around the entire network layout perimeter |
-| `plot_network()`          | Render nodes and edges based on statistical significance, using size and color to reflect enrichment |
+| `plot_network()`          | Render nodes and edges based on statistical significance, using size and color to reflect overrepresentation |
 | `plot_subnetwork()`       | Highlight a selected group of nodes in a different style (e.g., metabolic vs. ribosomal) |
 | `plot_contours()`         | Draw shaded KDE contours around clustered domains (e.g., GO term regions) |
 | `plot_subcontour()`       | Draw a KDE contour around a specific list of nodes or a small subgraph |
@@ -51,7 +51,7 @@ The following sequence illustrates the most commonly used core plotting methods 
 ```python
 plotter.plot_title(
     title="Yeast Genetic Interaction Network",
-    subtitle="Colored by Enrichment Score",
+    subtitle="Colored by Overrepresentation Score",
     fontcolor="white",
     fontsize=20,
     subtitle_color="white",
@@ -74,7 +74,7 @@ plotter.plot_circle_perimeter(
 
 ### Plot the Annotated Network
 
-The `plot_network()` method draws the full network, automatically applying visual styles based on enrichment results. This is the most common way to visualize domain significance directly on the graph.
+The `plot_network()` method draws the full network, automatically applying visual styles based on overrepresentation results. This is the most common way to visualize domain significance directly on the graph.
 
 ```python
 plotter.plot_network()
@@ -161,7 +161,7 @@ plotter.plot_labels(
 
 Node colors and sizes are controlled using significance-aware helpers.
 
-### Color nodes by enrichment
+### Color nodes by overrepresentation
 
 ```python
 node_colors = plotter.get_annotated_node_colors(
