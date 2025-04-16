@@ -15,12 +15,12 @@ RISK is designed to:
 | Feature                    | RISK                                      |
 |---------------------------|-------------------------------------------|
 | **Clustering**            | Louvain, Leiden, Markov, Spinglass, more |
-| **Statistics**            | Permutation, hypergeometric, chi-squared, z, etc. |
+| **Statistics**            | Permutation, hypergeometric, chi-squared, z, more |
 | **File Formats**          | NetworkX, Cytoscape (.cys, .cyjs), GPickle |
 | **Annotations**           | JSON, CSV, Excel, TSV, Python dict        |
-| **Scalability**           | Networks with 500k+ edges                 |
-| **Visual Output**         | High-resolution SVG, PNG, PDF             |
-| **Beyond Biology**        | Used on citation networks (Supp. Fig. S9) |
+| **Scalability**           | Networks with 500k+ edges on standard hardware |
+| **Visual Output**         | High-resolution SVG, PNG, PDF, etc.          |
+| **Beyond Biology**        | Used on physics citation network (Supp. Fig. S9) |
 
 ## Example Applications
 
@@ -35,7 +35,7 @@ For more examples, see [7. Advanced Plotting](./7_advanced_plotting.md).
 
 ## Full Interactive Example
 
-If you prefer an interactive, all-in-one workflow, see [quickstart.ipynb](https://github.com/riskportal/network-tutorial/blob/main/notebooks/quickstart.ipynb). It walks through all key steps—from loading a network to generating publication-quality figures—in a single notebook.
+If you prefer an interactive, all-in-one workflow, see [quickstart.ipynb](quickstart.html). It walks through all key steps—from loading a network to generating publication-quality figures—in a single notebook.
 
 The notebook focuses on a curated yeast PPI network (Michaelis et al., 2023), filtered to retain proteins with six or more interactions (2,059 nodes, 27,690 edges). Throughout the tutorial, we showcase:
 
