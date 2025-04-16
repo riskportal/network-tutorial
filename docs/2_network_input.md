@@ -106,7 +106,7 @@ These features improve layout clarity and biological interpretability.
 
 ## Full Walkthrough
 
-For a complete network loading and analysis example, see [quickstart.ipynb](https://github.com/riskportal/network-tutorial/blob/main/notebooks/quickstart.ipynb).
+For a complete network loading and analysis example, see [quickstart.ipynb](quickstart.ipynb).
 
 ---
 
