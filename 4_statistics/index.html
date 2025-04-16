@@ -949,7 +949,7 @@
 
 
 <h1 id="statistical-tests-for-annotation-significance">Statistical Tests for Annotation Significance<a class="headerlink" href="#statistical-tests-for-annotation-significance" title="Permanent link">&para;</a></h1>
-<p>RISK provides six statistical methods for testing enrichment or depletion of functional annotations within local network neighborhoods. Each method has different strengths depending on your data size, structure, and goals.</p>
+<p>RISK provides six statistical methods for testing overrepresentation or underrepresentation of functional annotations within local network neighborhoods. Each method has different strengths depending on your data size, structure, and goals.</p>
 <hr />
 <h2 id="summary-of-methods">Summary of Methods<a class="headerlink" href="#summary-of-methods" title="Permanent link">&para;</a></h2>
 <table>
@@ -1109,7 +1109,7 @@
 </code></pre></div>
 <hr />
 <h2 id="6-z-score-test">6. Z-score Test<a class="headerlink" href="#6-z-score-test" title="Permanent link">&para;</a></h2>
-<p>Computes standardized enrichment scores for each cluster.</p>
+<p>Computes standardized overrepresentation scores for each cluster.</p>
 <div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_by_zscore</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
     <span class="n">annotations</span><span class="o">=</span><span class="n">annotations</span><span class="p">,</span>
@@ -1125,7 +1125,7 @@
 <p>All test functions return a <code>neighborhoods</code> dictionary with:</p>
 <ul>
 <li>Cluster IDs</li>
-<li>Term-wise enrichment scores</li>
+<li>Term-wise overrepresentation scores</li>
 <li>Optional p-values or z-scores depending on method</li>
 </ul>
 <p>Use this result to create a <code>NetworkGraph</code> in the next step.</p>

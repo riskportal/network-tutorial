@@ -937,14 +937,14 @@
 
 
 <h1 id="creating-a-networkgraph">Creating a NetworkGraph<a class="headerlink" href="#creating-a-networkgraph" title="Permanent link">&para;</a></h1>
-<p>The <code>load_graph()</code> function in RISK generates a <code>NetworkGraph</code> object for enrichment-based analysis and visualization. This step consolidates the network, annotations, and enrichment statistics into a cohesive object with clustering, domain-level significance, and downstream plotting support.</p>
+<p>The <code>load_graph()</code> function in RISK generates a <code>NetworkGraph</code> object for overrepresentation-based analysis and visualization. This step integrates the network, annotations, and overrepresentation results into a cohesive object with clustering, domain-level significance, and downstream plotting support.</p>
 <hr />
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>To build a <code>NetworkGraph</code>, you’ll need:</p>
 <ul>
-<li>A preprocessed <code>network</code> (e.g., from <code>load_networkx_network()</code>)</li>
+<li>A preprocessed <code>network</code> (e.g., from <code>load_*_network()</code>)</li>
 <li>An <code>annotations</code> object (from <code>load_*_annotation()</code>)</li>
-<li>A <code>neighborhoods</code> object (from one of the enrichment tests)</li>
+<li>A <code>neighborhoods</code> object (from one of the overrepresentation tests)</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="n">graph</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_graph</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
@@ -975,15 +975,15 @@
 <tbody>
 <tr>
 <td><code>network</code></td>
-<td>The NetworkX graph</td>
+<td>A preprocessed <code>network</code></td>
 </tr>
 <tr>
 <td><code>annotations</code></td>
-<td>Functional annotation dictionary</td>
+<td>An <code>annotations</code> object</td>
 </tr>
 <tr>
 <td><code>neighborhoods</code></td>
-<td>Enrichment results per neighborhood</td>
+<td>A <code>neighborhoods</code> object</td>
 </tr>
 <tr>
 <td><code>tail</code></td>
@@ -999,11 +999,11 @@
 </tr>
 <tr>
 <td><code>impute_depth</code></td>
-<td>Hop distance to fill in missing scores</td>
+<td>Hop depth for stratified overrepresentation imputation</td>
 </tr>
 <tr>
 <td><code>prune_threshold</code></td>
-<td>Removes weak edges from layout</td>
+<td>Prune distant nodes from cluster layout</td>
 </tr>
 <tr>
 <td><code>linkage_criterion</code></td>
@@ -1023,11 +1023,11 @@
 </tr>
 <tr>
 <td><code>min_cluster_size</code></td>
-<td>Minimum domain size</td>
+<td>Minimum size for functional domains (clusters)</td>
 </tr>
 <tr>
 <td><code>max_cluster_size</code></td>
-<td>Maximum domain size</td>
+<td>Maximum size for functional domains</td>
 </tr>
 </tbody>
 </table>
@@ -1046,7 +1046,7 @@
 <li><code>node_id_to_node_label_map</code></li>
 <li><code>node_label_to_node_id_map</code></li>
 <li><code>node_label_to_significance_map</code></li>
-<li><code>node_significance_sums</code> (NumPy array)</li>
+<li><code>node_significance_sums</code></li>
 </ul>
 <p>These mappings drive all visualization, labeling, and export methods.</p>
 <hr />
@@ -1067,7 +1067,7 @@
 </code></pre></div>
 <hr />
 <h2 id="next-step">Next Step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h2>
-<p>Proceed to <a href="../6_visualization/">6. Visualization</a> to plot enriched clusters and explore domain layout.</p>
+<p>Proceed to <a href="../6_visualization/">6. Visualization</a> to plot overrepresented clusters and explore domain layout.</p>
 
 
 

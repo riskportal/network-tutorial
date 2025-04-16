@@ -749,57 +749,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#add-domain-contours" class="md-nav__link">
-    <span class="md-ellipsis">
-      Add Domain Contours
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#add-domain-labels" class="md-nav__link">
-    <span class="md-ellipsis">
-      Add Domain Labels
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dynamic-node-styling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dynamic Node Styling
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Dynamic Node Styling">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#color-nodes-by-enrichment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Color nodes by enrichment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#scale-nodes-by-significance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Scale nodes by significance
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1087,7 +1036,7 @@
 
 
 <h1 id="visualization">Visualization<a class="headerlink" href="#visualization" title="Permanent link">&para;</a></h1>
-<p>RISK provides a flexible and powerful plotting interface via the <code>NetworkPlotter</code> object. This enables you to generate publication-quality figures with detailed domain annotations, significance-driven coloring, KDE-based contours, and rich label customization.</p>
+<p>RISK provides a flexible and powerful plotting interface via the <code>NetworkPlotter</code> object. This enables generation of publication-ready figures with detailed domain annotations, significance-driven coloring, KDE-based contours, and rich label customization.</p>
 <hr />
 <h2 id="create-a-plotter">Create a Plotter<a class="headerlink" href="#create-a-plotter" title="Permanent link">&para;</a></h2>
 <p>You must first load your <code>NetworkGraph</code> object into a <code>NetworkPlotter</code>.</p>
@@ -1124,7 +1073,7 @@
 </tr>
 <tr>
 <td><code>plot_network()</code></td>
-<td>Render nodes and edges based on statistical significance, using size and color to reflect enrichment</td>
+<td>Render nodes and edges based on statistical significance, using size and color to reflect overrepresentation</td>
 </tr>
 <tr>
 <td><code>plot_subnetwork()</code></td>
@@ -1148,7 +1097,7 @@
 </tr>
 <tr>
 <td><code>savefig()</code></td>
-<td>Save the current figure as a <code>.png</code>, <code>.svg</code>, or <code>.pdf</code> file</td>
+<td>Save the current figure as a SVG, PNG, PDF, etc.</td>
 </tr>
 <tr>
 <td><code>show()</code></td>
@@ -1163,7 +1112,7 @@
 <h3 id="add-a-title">Add a Title<a class="headerlink" href="#add-a-title" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">plotter</span><span class="o">.</span><span class="n">plot_title</span><span class="p">(</span>
     <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Yeast Genetic Interaction Network&quot;</span><span class="p">,</span>
-    <span class="n">subtitle</span><span class="o">=</span><span class="s2">&quot;Colored by Enrichment Score&quot;</span><span class="p">,</span>
+    <span class="n">subtitle</span><span class="o">=</span><span class="s2">&quot;Colored by Overrepresentation Score&quot;</span><span class="p">,</span>
     <span class="n">fontcolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
     <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
     <span class="n">subtitle_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
@@ -1180,10 +1129,8 @@
 </code></pre></div>
 <p><em>For a more flexible KDE-based layout boundary, see <code>plot_contour_perimeter()</code>.</em></p>
 <h3 id="plot-the-annotated-network">Plot the Annotated Network<a class="headerlink" href="#plot-the-annotated-network" title="Permanent link">&para;</a></h3>
-<p>The <code>plot_network()</code> method draws the full network, automatically applying visual styles based on enrichment results. This is the most common way to visualize domain significance directly on the graph.</p>
-<div class="highlight"><pre><span></span><code><span class="n">plotter</span><span class="o">.</span><span class="n">plot_network</span><span class="p">()</span>
-</code></pre></div>
-<p>For more control, RISK provides helper methods to customize node size and color dynamically based on statistical significance:</p>
+<p>The <code>plot_network()</code> method draws the full network similarly to networkx.draw, but with enhanced styling and layout control. It is the primary way to visualize domain-level significance on the graph.</p>
+<p>While <code>plot_network()</code> can be used as-is, RISK provides helper functions such as <code>get_annotated_node_sizes()</code> and <code>get_annotated_node_colors()</code> to automatically generate node styles based on annotation significance. These outputs plug directly into <code>plot_network()</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="n">node_sizes</span> <span class="o">=</span> <span class="n">plotter</span><span class="o">.</span><span class="n">get_annotated_node_sizes</span><span class="p">(</span>
     <span class="n">significant_size</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
     <span class="n">nonsignificant_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
@@ -1216,6 +1163,7 @@
 </code></pre></div>
 <p>You can also use <code>plotter.get_annotated_contour_colors()</code> and <code>plotter.get_annotated_label_colors()</code> for consistent domain-based color themes across contours and labels.</p>
 <h3 id="highlight-a-subnetwork">Highlight a Subnetwork<a class="headerlink" href="#highlight-a-subnetwork" title="Permanent link">&para;</a></h3>
+<p>Use <code>plot_subnetwork()</code> to overlay a custom set of nodes with distinct styling—useful for emphasizing known complexes or pathway members.</p>
 <div class="highlight"><pre><span></span><code><span class="n">plotter</span><span class="o">.</span><span class="n">plot_subnetwork</span><span class="p">(</span>
     <span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;RPL1A&quot;</span><span class="p">,</span> <span class="s2">&quot;RPL2B&quot;</span><span class="p">,</span> <span class="s2">&quot;RPL3&quot;</span><span class="p">,</span> <span class="s2">&quot;RPL5&quot;</span><span class="p">],</span>
     <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
@@ -1223,51 +1171,9 @@
     <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
-<p>This method overlays a custom node set with distinct styling. It is useful for emphasizing known complexes or pathway members.</p>
-<p><em>To highlight a specific group of nodes separately, use <code>plot_subnetwork()</code>.</em></p>
-<h3 id="add-domain-contours">Add Domain Contours<a class="headerlink" href="#add-domain-contours" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">plotter</span><span class="o">.</span><span class="n">plot_contours</span><span class="p">(</span>
-    <span class="n">color</span><span class="o">=</span><span class="n">plotter</span><span class="o">.</span><span class="n">get_annotated_contour_colors</span><span class="p">(),</span>
-    <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-    <span class="n">fill_alpha</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
-<span class="p">)</span>
-</code></pre></div>
-<p><em>For finer control, you can apply <code>plot_subcontour()</code> to highlight specific regions.</em></p>
-<h3 id="add-domain-labels">Add Domain Labels<a class="headerlink" href="#add-domain-labels" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">plotter</span><span class="o">.</span><span class="n">plot_labels</span><span class="p">(</span>
-    <span class="n">arrow_color</span><span class="o">=</span><span class="n">plotter</span><span class="o">.</span><span class="n">get_annotated_label_colors</span><span class="p">(),</span>
-    <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
-    <span class="n">fontcolor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
-<span class="p">)</span>
-</code></pre></div>
-<p><em>To manually label specific regions, use <code>plot_sublabel()</code>.</em></p>
-<hr />
-<h2 id="dynamic-node-styling">Dynamic Node Styling<a class="headerlink" href="#dynamic-node-styling" title="Permanent link">&para;</a></h2>
-<p>Node colors and sizes are controlled using significance-aware helpers.</p>
-<h3 id="color-nodes-by-enrichment">Color nodes by enrichment<a class="headerlink" href="#color-nodes-by-enrichment" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">node_colors</span> <span class="o">=</span> <span class="n">plotter</span><span class="o">.</span><span class="n">get_annotated_node_colors</span><span class="p">(</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gist_rainbow&quot;</span><span class="p">,</span>
-    <span class="n">blend_colors</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">blend_gamma</span><span class="o">=</span><span class="mf">2.2</span><span class="p">,</span>
-    <span class="n">min_scale</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
-    <span class="n">max_scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-    <span class="n">scale_factor</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-    <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-    <span class="n">nonsignificant_color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span>
-    <span class="n">nonsignificant_alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
-    <span class="n">ids_to_colors</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">random_seed</span><span class="o">=</span><span class="mi">888</span><span class="p">,</span>
-<span class="p">)</span>
-</code></pre></div>
-<h3 id="scale-nodes-by-significance">Scale nodes by significance<a class="headerlink" href="#scale-nodes-by-significance" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">node_sizes</span> <span class="o">=</span> <span class="n">plotter</span><span class="o">.</span><span class="n">get_annotated_node_sizes</span><span class="p">(</span>
-    <span class="n">significant_size</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
-    <span class="n">nonsignificant_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-<span class="p">)</span>
-</code></pre></div>
 <hr />
 <h2 id="domain-overlays-with-kde-contours">Domain Overlays with KDE Contours<a class="headerlink" href="#domain-overlays-with-kde-contours" title="Permanent link">&para;</a></h2>
-<p>You can highlight functionally enriched domains using KDE-based contours.</p>
+<p>You can highlight functionally overrepresented domains using KDE-based contours.</p>
 <h3 id="all-domains">All domains:<a class="headerlink" href="#all-domains" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">plotter</span><span class="o">.</span><span class="n">plot_contours</span><span class="p">(</span>
     <span class="n">levels</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>

@@ -982,7 +982,7 @@
 
 
 <h1 id="advanced-plotting">Advanced Plotting<a class="headerlink" href="#advanced-plotting" title="Permanent link">&para;</a></h1>
-<p>Once you're familiar with RISK’s core plotting methods, you can begin layering multiple annotations, subnetworks, and styles to highlight specific biological themes. This section walks through advanced plotting features using a real-world example.</p>
+<p>Once you’re familiar with RISK’s core plotting methods, you can start layering annotations, subnetworks, and styles to highlight specific biological themes. This section walks through advanced features using a real-world example.</p>
 <hr />
 <h2 id="use-case-dual-overlay-of-coexpression-subgroups">Use Case: Dual Overlay of Coexpression Subgroups<a class="headerlink" href="#use-case-dual-overlay-of-coexpression-subgroups" title="Permanent link">&para;</a></h2>
 <p>In this example, we highlight two functionally distinct sets of genes:</p>
@@ -1043,7 +1043,7 @@
 </code></pre></div>
 <hr />
 <h2 id="step-5-add-kde-domain-contours">Step 5: Add KDE Domain Contours<a class="headerlink" href="#step-5-add-kde-domain-contours" title="Permanent link">&para;</a></h2>
-<p>Highlight enriched domains using KDE-based clustering.</p>
+<p>Highlight overrepresented domains from <code>graph</code> using KDE-based clustering.</p>
 <div class="highlight"><pre><span></span><code><span class="n">plotter</span><span class="o">.</span><span class="n">plot_contours</span><span class="p">(</span>
     <span class="n">levels</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
     <span class="n">grid_size</span><span class="o">=</span><span class="mi">250</span><span class="p">,</span>
@@ -1054,7 +1054,7 @@
 </code></pre></div>
 <hr />
 <h2 id="step-6-annotate-regions-with-sublabels">Step 6: Annotate Regions with Sublabels<a class="headerlink" href="#step-6-annotate-regions-with-sublabels" title="Permanent link">&para;</a></h2>
-<p>Draw manual labels and arrows pointing to known complexes or pathways.</p>
+<p>Draw manual labels and arrows pointing to desired subnetwork regions.</p>
 <div class="highlight"><pre><span></span><code><span class="n">plotter</span><span class="o">.</span><span class="n">plot_sublabel</span><span class="p">(</span>
     <span class="n">nodes</span><span class="o">=</span><span class="n">high_coexpression_nodes</span><span class="p">,</span>
     <span class="n">label</span><span class="o">=</span><span class="s2">&quot;High Coexpression (Ribosomal)&quot;</span><span class="p">,</span>
@@ -1077,7 +1077,7 @@
 </code></pre></div>
 <hr />
 <h2 id="use-case-highlighting-party-hubs-and-date-hubs">Use Case: Highlighting Party Hubs and Date Hubs<a class="headerlink" href="#use-case-highlighting-party-hubs-and-date-hubs" title="Permanent link">&para;</a></h2>
-<p>In this advanced example, we visualize <strong>party hubs</strong> and <strong>date hubs</strong> based on coexpression scores from the SPELL database. We use precomputed color mappings for each subgroup and annotate regions of the network linked to ribosomal and metabolic functions.</p>
+<p>In this advanced example, we visualize <a href="https://www.nature.com/articles/nature02555.pdf"><strong>party hubs</strong> and <strong>date hubs</strong></a> based on coexpression scores from the SPELL database. We use precomputed color mappings for each subgroup and annotate regions of the network linked to ribosomal and metabolic functions.</p>
 <h3 id="step-1-load-and-plot-colored-subnetworks">Step 1: Load and Plot Colored Subnetworks<a class="headerlink" href="#step-1-load-and-plot-colored-subnetworks" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 
@@ -1114,7 +1114,7 @@
 <span class="n">plotter</span><span class="o">.</span><span class="n">plot_sublabel</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">metabolism_nodes</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Metabolic</span><span class="se">\n</span><span class="s2">Processes&quot;</span><span class="p">,</span> <span class="n">radial_position</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
 <span class="n">plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
-<p>This overlay highlights the spatial and functional separation of coexpression-based hub classes in the yeast interactome.</p>
+<p>This overlay highlights the spatial and functional separation of coexpression-based hub classes in the yeast PPI network.</p>
 <hr />
 <h2 id="final-output">Final Output<a class="headerlink" href="#final-output" title="Permanent link">&para;</a></h2>
 <p>Display or save the composite figure.</p>
@@ -1125,9 +1125,9 @@
 <hr />
 <h2 id="recap-what-you-learned">Recap: What You Learned<a class="headerlink" href="#recap-what-you-learned" title="Permanent link">&para;</a></h2>
 <ul>
-<li>How to highlight custom biological subgroups  </li>
-<li>How to blend annotation significance with custom overlays  </li>
-<li>How to label specific domains using radial positioning  </li>
+<li>How to highlight custom biological subgroups</li>
+<li>How to blend annotation significance with custom overlays</li>
+<li>How to label specific domains using radial positioning</li>
 <li>How to layer multiple visual features for storytelling</li>
 </ul>
 <hr />

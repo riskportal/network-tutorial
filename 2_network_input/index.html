@@ -648,15 +648,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#full-walkthrough" class="md-nav__link">
-    <span class="md-ellipsis">
-      Full Walkthrough
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#next-step" class="md-nav__link">
     <span class="md-ellipsis">
       Next Step
@@ -931,7 +922,7 @@
 
 
 <h1 id="loading-a-network">Loading a Network<a class="headerlink" href="#loading-a-network" title="Permanent link">&para;</a></h1>
-<p>RISK supports multiple file formats for network input, each with its own dedicated loader function. These loaders return a processed <code>network</code> object compatible with clustering, annotation, enrichment, and visualization.</p>
+<p>RISK includes dedicated loader functions for multiple network formats. Each returns a standardized <code>networkx</code> graph object for downstream analysis.</p>
 <hr />
 <h2 id="supported-input-formats">Supported Input Formats<a class="headerlink" href="#supported-input-formats" title="Permanent link">&para;</a></h2>
 <table>
@@ -968,7 +959,7 @@
     <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/cytoscape/michaelis_2023.cys&quot;</span><span class="p">,</span>
     <span class="n">source_label</span><span class="o">=</span><span class="s2">&quot;source&quot;</span><span class="p">,</span>
     <span class="n">target_label</span><span class="o">=</span><span class="s2">&quot;target&quot;</span><span class="p">,</span>
-    <span class="n">view_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>             
+    <span class="n">view_name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
     <span class="n">compute_sphere</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">surface_depth</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
 <span class="p">)</span>
@@ -1025,9 +1016,6 @@
 <li><code>min_edges_per_node</code>: Removes low-degree noise</li>
 </ul>
 <p>These features improve layout clarity and biological interpretability.</p>
-<hr />
-<h2 id="full-walkthrough">Full Walkthrough<a class="headerlink" href="#full-walkthrough" title="Permanent link">&para;</a></h2>
-<p>For a complete network loading and analysis example, see <a href="https://github.com/riskportal/network-tutorial/blob/main/notebooks/quickstart.ipynb">quickstart.ipynb</a>.</p>
 <hr />
 <h2 id="next-step">Next Step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h2>
 <p>Proceed to <a href="../3_annotations/">3. Annotations</a> to map biological terms onto network nodes.</p>
