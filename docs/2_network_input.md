@@ -1,6 +1,6 @@
 # Loading a Network
 
-RISK supports multiple file formats for network input, each with its own dedicated loader function. These loaders return a processed `network` object compatible with clustering, annotation, enrichment, and visualization.
+RISK supports multiple file formats for network input, each with its own dedicated loader function. These loaders return a processed `network` object compatible with clustering, annotation, overrepresentation, and visualization.
 
 ---
 

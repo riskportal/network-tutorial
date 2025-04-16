@@ -5,7 +5,7 @@ RISK (Regional Inference of Significant Kinships) is a next-generation tool for 
 RISK is designed to:
 
 - Identify biologically meaningful modules in large-scale networks
-- Perform fast and flexible enrichment testing
+- Perform fast and flexible overrepresentation testing
 - Generate publication-ready visualizations
 - Scale to hundreds of thousands of edges on standard hardware
 - Generalize beyond biology to interdisciplinary networks
@@ -26,7 +26,7 @@ RISK is designed to:
 
 - Functional module identification in yeast PPI and GI networks
 - Synthetic lethality pathway mapping
-- Drug-target prediction via annotation enrichment
+- Drug-target prediction via annotation overrepresentation
 - Cross-domain network exploration in physics and other disciplines
 
 For more examples, see [7. Advanced Plotting](./7_advanced_plotting.md).
@@ -40,7 +40,7 @@ If you prefer an interactive, all-in-one workflow, see [quickstart.ipynb](quicks
 The notebook focuses on a curated yeast PPI network (Michaelis et al., 2023), filtered to retain proteins with six or more interactions (2,059 nodes, 27,690 edges). Throughout the tutorial, we showcase:
 
 - Network clustering and module detection
-- Annotation-based enrichment analysis
+- Annotation-based overrepresentation analysis
 - Interactive and advanced visualization features
 - Exporting parameters and reproducibility tools
 

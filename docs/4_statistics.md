@@ -1,6 +1,6 @@
 # Statistical Tests for Annotation Significance
 
-RISK provides six statistical methods for testing enrichment or depletion of functional annotations within local network neighborhoods. Each method has different strengths depending on your data size, structure, and goals.
+RISK provides six statistical methods for testing overrepresentation or depletion of functional annotations within local network neighborhoods. Each method has different strengths depending on your data size, structure, and goals.
 
 ---
 
@@ -130,7 +130,7 @@ neighborhoods = risk.load_neighborhoods_by_poisson(
 
 ## 6. Z-score Test
 
-Computes standardized enrichment scores for each cluster.
+Computes standardized overrepresentation scores for each cluster.
 
 ```python
 neighborhoods = risk.load_neighborhoods_by_zscore(
@@ -151,7 +151,7 @@ neighborhoods = risk.load_neighborhoods_by_zscore(
 All test functions return a `neighborhoods` dictionary with:
 
 - Cluster IDs
-- Term-wise enrichment scores
+- Term-wise overrepresentation scores
 - Optional p-values or z-scores depending on method
 
 Use this result to create a `NetworkGraph` in the next step.

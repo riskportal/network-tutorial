@@ -1,6 +1,6 @@
 # Creating a NetworkGraph
 
-The `load_graph()` function in RISK generates a `NetworkGraph` object for enrichment-based analysis and visualization. This step consolidates the network, annotations, and enrichment statistics into a cohesive object with clustering, domain-level significance, and downstream plotting support.
+The `load_graph()` function in RISK generates a `NetworkGraph` object for overrepresentation-based analysis and visualization. This step consolidates the network, annotations, and overrepresentation statistics into a cohesive object with clustering, domain-level significance, and downstream plotting support.
 
 ---
 
@@ -10,7 +10,7 @@ To build a `NetworkGraph`, you’ll need:
 
 - A preprocessed `network` (e.g., from `load_networkx_network()`)
 - An `annotations` object (from `load_*_annotation()`)
-- A `neighborhoods` object (from one of the enrichment tests)
+- A `neighborhoods` object (from one of the overrepresentation tests)
 
 ```python
 graph = risk.load_graph(
@@ -39,7 +39,7 @@ graph = risk.load_graph(
 |----------|-------------|
 | `network` | The NetworkX graph |
 | `annotations` | Functional annotation dictionary |
-| `neighborhoods` | Enrichment results per neighborhood |
+| `neighborhoods` | Overrepresentation results per neighborhood |
 | `tail` | Test direction: `'right'` (default), `'left'`, or `'both'` |
 | `pval_cutoff` | Raw p-value threshold (e.g., 0.01–0.05) |
 | `fdr_cutoff` | Adjusted p-value threshold (e.g., 0.05–1.0) |
