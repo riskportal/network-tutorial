@@ -10,13 +10,13 @@ Annotations map network nodes to biological terms (e.g., Gene Ontology categorie
 
 ## Supported Input Formats
 
-| Format       | Function                  | Example File                         |
-|--------------|---------------------------|--------------------------------------|
-| `.json`      | `load_json_annotation()`  | `go_biological_process.json`         |
-| `.csv`       | `load_csv_annotation()`   | `go_biological_process.csv`          |
-| `.tsv`       | `load_tsv_annotation()`   | `go_biological_process.tsv`          |
-| `.xlsx`/`.xls`| `load_excel_annotation()` | `go_biological_process.xlsx`         |
-| `dict`       | `load_dict_annotation()`  | Python-loaded JSON                   |
+| Format         | Function                  | Example File                 |
+| -------------- | ------------------------- | ---------------------------- |
+| `.json`        | `load_json_annotation()`  | `go_biological_process.json` |
+| `.csv`         | `load_csv_annotation()`   | `go_biological_process.csv`  |
+| `.tsv`         | `load_tsv_annotation()`   | `go_biological_process.tsv`  |
+| `.xlsx`/`.xls` | `load_excel_annotation()` | `go_biological_process.xlsx` |
+| `dict`         | `load_dict_annotation()`  | Python-loaded JSON           |
 
 Each method also accepts a `min_nodes_per_term` argument to exclude underpowered annotations.
 

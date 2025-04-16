@@ -6,12 +6,12 @@ RISK includes dedicated loader functions for multiple network formats. Each retu
 
 ## Supported Input Formats
 
-| Format       | Function                          |
-|--------------|-----------------------------------|
-| `.cys`       | `load_cytoscape_network()`        |
-| `.cyjs`      | `load_cytoscape_json_network()`   |
-| `.gpickle`   | `load_gpickle_network()`          |
-| `NetworkX`   | `load_networkx_network()`         |
+| Format     | Function                        |
+| ---------- | ------------------------------- |
+| `.cys`     | `load_cytoscape_network()`      |
+| `.cyjs`    | `load_cytoscape_json_network()` |
+| `.gpickle` | `load_gpickle_network()`        |
+| `NetworkX` | `load_networkx_network()`       |
 
 Each loader supports optional spherical projection, depth tuning, and node filtering.
 
@@ -26,7 +26,7 @@ network = risk.load_cytoscape_network(
     filepath="./data/cytoscape/michaelis_2023.cys",
     source_label="source",
     target_label="target",
-    view_name="",             
+    view_name="",
     compute_sphere=True,
     surface_depth=0.1,
 )
@@ -101,12 +101,6 @@ All formats support these shared preprocessing parameters:
 - `min_edges_per_node`: Removes low-degree noise
 
 These features improve layout clarity and biological interpretability.
-
----
-
-## Full Walkthrough
-
-For a complete network loading and analysis example, see [quickstart.ipynb](quickstart.ipynb).
 
 ---
 

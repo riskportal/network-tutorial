@@ -1,6 +1,6 @@
 # Advanced Plotting
 
-Once you're familiar with RISK’s core plotting methods, layer multiple annotations, subnetworks, and styles to highlight specific biological themes. This section walks through advanced plotting features using a real-world example.
+Once you’re familiar with RISK’s core plotting methods, you can start layering annotations, subnetworks, and styles to highlight specific biological themes. This section walks through advanced features using a real-world example.
 
 ---
 
@@ -87,7 +87,7 @@ plotter.plot_subnetwork(
 
 ## Step 5: Add KDE Domain Contours
 
-Highlight enriched domains using KDE-based clustering.
+Highlight overrepresented domains from `graph` using KDE-based clustering.
 
 ```python
 plotter.plot_contours(
@@ -103,7 +103,7 @@ plotter.plot_contours(
 
 ## Step 6: Annotate Regions with Sublabels
 
-Draw manual labels and arrows pointing to known complexes or pathways.
+Draw manual labels and arrows pointing to desired subnetwork regions.
 
 ```python
 plotter.plot_sublabel(
@@ -131,7 +131,7 @@ plotter.plot_sublabel(
 
 ## Use Case: Highlighting Party Hubs and Date Hubs
 
-In this advanced example, we visualize **party hubs** and **date hubs** based on coexpression scores from the SPELL database. We use precomputed color mappings for each subgroup and annotate regions of the network linked to ribosomal and metabolic functions.
+In this advanced example, we visualize [**party hubs** and **date hubs**](https://www.nature.com/articles/nature02555.pdf) based on coexpression scores from the SPELL database. We use precomputed color mappings for each subgroup and annotate regions of the network linked to ribosomal and metabolic functions.
 
 ### Step 1: Load and Plot Colored Subnetworks
 
@@ -176,7 +176,7 @@ plotter.plot_sublabel(nodes=metabolism_nodes, label="Metabolic\nProcesses", radi
 plotter.show()
 ```
 
-This overlay highlights the spatial and functional separation of coexpression-based hub classes in the yeast interactome.
+This overlay highlights the spatial and functional separation of coexpression-based hub classes in the yeast PPI network.
 
 ---
 
@@ -195,9 +195,9 @@ plotter.show()
 
 ## Recap: What You Learned
 
-- How to highlight custom biological subgroups  
-- How to blend annotation significance with custom overlays  
-- How to label specific domains using radial positioning  
+- How to highlight custom biological subgroups
+- How to blend annotation significance with custom overlays
+- How to label specific domains using radial positioning
 - How to layer multiple visual features for storytelling
 
 ---

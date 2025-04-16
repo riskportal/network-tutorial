@@ -1,19 +1,19 @@
 # Statistical Tests for Annotation Significance
 
-RISK provides six statistical methods for testing overrepresentation or depletion of functional annotations within local network neighborhoods. Each method has different strengths depending on your data size, structure, and goals.
+RISK provides six statistical methods for testing overrepresentation or underrepresentation of functional annotations within local network neighborhoods. Each method has different strengths depending on your data size, structure, and goals.
 
 ---
 
 ## Summary of Methods
 
 | Test           | Speed     | Best For                            |
-|----------------|-----------|-------------------------------------|
-| Permutation    | 🐢 Slow    | Most robust, no assumptions         |
+| -------------- | --------- | ----------------------------------- |
+| Permutation    | 🐢 Slow   | Most robust, no assumptions         |
 | Hypergeometric | ⚖️ Medium | GO/pathway analysis, exact sampling |
-| Binomial       | ⚡ Fast    | Binary trials, scalable             |
-| Chi-squared    | ⚡ Fast    | Contingency tables, large datasets  |
-| Poisson        | ⚡ Fast    | Rare events, sparse networks        |
-| Z-score        | ⚡ Fast    | Approximate, fast scanning          |
+| Binomial       | ⚡ Fast   | Binary trials, scalable             |
+| Chi-squared    | ⚡ Fast   | Contingency tables, large datasets  |
+| Poisson        | ⚡ Fast   | Rare events, sparse networks        |
+| Z-score        | ⚡ Fast   | Approximate, fast scanning          |
 
 ---
 
@@ -21,16 +21,16 @@ RISK provides six statistical methods for testing overrepresentation or depletio
 
 All methods use a shared API and return a `neighborhoods` dictionary with per-cluster statistics.
 
-| Parameter               | Description |
-|-------------------------|-------------|
-| `network`               | NetworkX graph |
-| `annotations`           | Annotation dict |
-| `distance_metric`       | Method(s) for neighborhood detection (e.g., `'louvain'`) |
-| `louvain_resolution`    | Resolution for Louvain clustering |
-| `leiden_resolution`     | Resolution for Leiden clustering |
-| `fraction_shortest_edges` | Filter for edge-based subgraphs |
-| `null_distribution`     | `"network"` or `"annotations"` |
-| `random_seed`           | Random state for reproducibility |
+| Parameter                 | Description                                              |
+| ------------------------- | -------------------------------------------------------- |
+| `network`                 | NetworkX graph                                           |
+| `annotations`             | Annotation dict                                          |
+| `distance_metric`         | Method(s) for neighborhood detection (e.g., `'louvain'`) |
+| `louvain_resolution`      | Resolution for Louvain clustering                        |
+| `leiden_resolution`       | Resolution for Leiden clustering                         |
+| `fraction_shortest_edges` | Filter for edge-based subgraphs                          |
+| `null_distribution`       | `"network"` or `"annotations"`                           |
+| `random_seed`             | Random state for reproducibility                         |
 
 ---
 
