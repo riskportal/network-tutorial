@@ -35,7 +35,7 @@ The following methods control different aspects of the visualization:
 | `plot_subcontour()`        | Draw a KDE contour around a specific list of nodes or a small subgraph                                       |
 | `plot_labels()`            | Automatically generate text labels and arrows for each domain or functional region                           |
 | `plot_sublabel()`          | Manually add a label and arrow for a user-defined node set                                                   |
-| `savefig()`                | Save the current figure as a SVG, PNG, PDF, etc.                                                  |
+| `savefig()`                | Save the current figure as a SVG, PNG, PDF, etc.                                                             |
 | `show()`                   | Display the current plot in a notebook or interactive window                                                 |
 
 Many of these methods support additional customization parameters beyond the examples shown below. For a full list, use `help(plotter.method_name)` in a Python environment or refer to the in-notebook documentation.
