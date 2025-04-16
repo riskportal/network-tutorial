@@ -33,7 +33,7 @@ You can also explore the tutorial notebook:
 
 ---
 
-If you're working in a Jupyter notebook, check out the [Download Quickstart (.ipynb)](quickstart.ipynb) for a fully interactive example.
+If you're working in a Jupyter notebook, check out [quickstart.ipynb](quickstart.ipynb) for a fully interactive example. Or view the static HTML version at [quickstart.html](quickstart.html).
 
 Contributions welcome on [GitHub](https://github.com/riskportal/network-tutorial).
 You can also explore the [RISK source code](https://github.com/riskportal/network) on GitHub.

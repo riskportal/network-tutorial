@@ -8,7 +8,7 @@ The `load_graph()` function in RISK generates a `NetworkGraph` object for overre
 
 To build a `NetworkGraph`, you’ll need:
 
-- A preprocessed `network` (e.g., from `load_networkx_network()`)
+- A preprocessed `network` (e.g., from `load_*_network()`)
 - An `annotations` object (from `load_*_annotation()`)
 - A `neighborhoods` object (from one of the overrepresentation tests)
 
@@ -35,22 +35,22 @@ graph = risk.load_graph(
 
 ## Parameters
 
-| Parameter | Description |
-|----------|-------------|
-| `network` | The NetworkX graph |
-| `annotations` | Functional annotation dictionary |
-| `neighborhoods` | Overrepresentation results per neighborhood |
-| `tail` | Test direction: `'right'` (default), `'left'`, or `'both'` |
-| `pval_cutoff` | Raw p-value threshold (e.g., 0.01–0.05) |
-| `fdr_cutoff` | Adjusted p-value threshold (e.g., 0.05–1.0) |
-| `impute_depth` | Hop distance to fill in missing scores |
-| `prune_threshold` | Removes weak edges from layout |
-| `linkage_criterion` | `'distance'`, `'maxclust'`, or `'off'` |
-| `linkage_method` | `'single'`, `'average'`, `'auto'`, etc. |
-| `linkage_metric` | `'jaccard'`, `'cosine'`, `'auto'`, etc. |
-| `linkage_threshold` | Float (0–1) or `'auto'` for optimization |
-| `min_cluster_size` | Minimum domain size |
-| `max_cluster_size` | Maximum domain size |
+| Parameter           | Description                                                |
+| ------------------- | ---------------------------------------------------------- |
+| `network`           | A preprocessed `network`                                   |
+| `annotations`       | An `annotations` object                                    |
+| `neighborhoods`     | A `neighborhoods` object                                   |
+| `tail`              | Test direction: `'right'` (default), `'left'`, or `'both'` |
+| `pval_cutoff`       | Raw p-value threshold (e.g., 0.01–0.05)                    |
+| `fdr_cutoff`        | Adjusted p-value threshold (e.g., 0.05–1.0)                |
+| `impute_depth`      | Hop depth for stratified overrepresentation imputation     |
+| `prune_threshold`   | Prune distant nodes from cluster layout                    |
+| `linkage_criterion` | `'distance'`, `'maxclust'`, or `'off'`                     |
+| `linkage_method`    | `'single'`, `'average'`, `'auto'`, etc.                    |
+| `linkage_metric`    | `'jaccard'`, `'cosine'`, `'auto'`, etc.                    |
+| `linkage_threshold` | Float (0–1) or `'auto'` for optimization                   |
+| `min_cluster_size`  | Minimum size for functional domains (clusters)             |
+| `max_cluster_size`  | Maximum size for functional domains                        |
 
 ---
 
@@ -70,7 +70,7 @@ After creation, the `NetworkGraph` object contains cluster- and node-level mappi
 - `node_id_to_node_label_map`
 - `node_label_to_node_id_map`
 - `node_label_to_significance_map`
-- `node_significance_sums` (NumPy array)
+- `node_significance_sums`
 
 These mappings drive all visualization, labeling, and export methods.
 
@@ -107,4 +107,4 @@ graph.pop(1)
 
 ## Next Step
 
-Proceed to [6. Visualization](./6_visualization.md) to plot enriched clusters and explore domain layout.
+Proceed to [6. Visualization](./6_visualization.md) to plot overrepresented clusters and explore domain layout.

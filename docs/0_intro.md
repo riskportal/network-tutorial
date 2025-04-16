@@ -12,15 +12,15 @@ RISK is designed to:
 
 ## What makes RISK different?
 
-| Feature                    | RISK                                      |
-|---------------------------|-------------------------------------------|
-| **Clustering**            | Louvain, Leiden, Markov, Spinglass, more |
-| **Statistics**            | Permutation, hypergeometric, chi-squared, z, more |
-| **File Formats**          | NetworkX, Cytoscape (.cys, .cyjs), GPickle |
-| **Annotations**           | JSON, CSV, Excel, TSV, Python dict        |
-| **Scalability**           | Networks with 500k+ edges on standard hardware |
-| **Visual Output**         | High-resolution SVG, PNG, PDF, etc.          |
-| **Beyond Biology**        | Used on physics citation network (Supp. Fig. S9) |
+| Feature            | RISK                                              |
+| ------------------ | ------------------------------------------------- |
+| **Clustering**     | Louvain, Leiden, Markov, Spinglass, etc.          |
+| **Statistics**     | Permutation, hypergeometric, chi-squared, z, etc. |
+| **File Formats**   | NetworkX, Cytoscape (.cys, .cyjs), GPickle        |
+| **Annotations**    | JSON, CSV, Excel, TSV, Python dict                |
+| **Scalability**    | Networks with 500k+ edges on standard hardware    |
+| **Visual Output**  | High-resolution SVG, PNG, PDF, etc.               |
+| **Beyond Biology** | Used on physics citation network (Supp. Fig. S9)  |
 
 ## Example Applications
 
@@ -46,15 +46,15 @@ The notebook focuses on a curated yeast PPI network (Michaelis et al., 2023), fi
 
 This notebook complements the Markdown documentation in this repository, but does not follow a strict 1-to-1 mapping. Use it for end-to-end examples and contextual guidance. The notebook covers the following topics, each reflected in this documentation:
 
-0. Installing RISK  
-1. Importing RISK  
-2. Initializing RISK  
-3. Network Input  
-4. Annotations  
-5. Statistical Tests  
-6. Graph Analysis  
-7. Visualization  
-8. Parameters  
+0. Installing RISK
+1. Importing RISK
+2. Initializing RISK
+3. Network Input
+4. Annotations
+5. Statistical Tests
+6. Graph Analysis
+7. Visualization
+8. Parameters
 9. Advanced Plotting
 
 ---

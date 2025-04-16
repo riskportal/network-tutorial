@@ -24,19 +24,19 @@ plotter = risk.load_plotter(
 
 The following methods control different aspects of the visualization:
 
-| Method                    | Purpose |
-|---------------------------|---------|
-| `plot_title()`            | Add a title and subtitle overlay in the center of the network |
-| `plot_circle_perimeter()` | Draw a circular boundary around the network layout for visual framing |
-| `plot_contour_perimeter()` | Draw a KDE-based contour around the entire network layout perimeter |
-| `plot_network()`          | Render nodes and edges based on statistical significance, using size and color to reflect overrepresentation |
-| `plot_subnetwork()`       | Highlight a selected group of nodes in a different style (e.g., metabolic vs. ribosomal) |
-| `plot_contours()`         | Draw shaded KDE contours around clustered domains (e.g., GO term regions) |
-| `plot_subcontour()`       | Draw a KDE contour around a specific list of nodes or a small subgraph |
-| `plot_labels()`           | Automatically generate text labels and arrows for each domain or functional region |
-| `plot_sublabel()`         | Manually add a label and arrow for a user-defined node set |
-| `savefig()`               | Save the current figure as a `.png`, `.svg`, or `.pdf` file |
-| `show()`                  | Display the current plot in a notebook or interactive window |
+| Method                     | Purpose                                                                                                      |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `plot_title()`             | Add a title and subtitle overlay in the center of the network                                                |
+| `plot_circle_perimeter()`  | Draw a circular boundary around the network layout for visual framing                                        |
+| `plot_contour_perimeter()` | Draw a KDE-based contour around the entire network layout perimeter                                          |
+| `plot_network()`           | Render nodes and edges based on statistical significance, using size and color to reflect overrepresentation |
+| `plot_subnetwork()`        | Highlight a selected group of nodes in a different style (e.g., metabolic vs. ribosomal)                     |
+| `plot_contours()`          | Draw shaded KDE contours around clustered domains (e.g., GO term regions)                                    |
+| `plot_subcontour()`        | Draw a KDE contour around a specific list of nodes or a small subgraph                                       |
+| `plot_labels()`            | Automatically generate text labels and arrows for each domain or functional region                           |
+| `plot_sublabel()`          | Manually add a label and arrow for a user-defined node set                                                   |
+| `savefig()`                | Save the current figure as a SVG, PNG, PDF, etc.                                                  |
+| `show()`                   | Display the current plot in a notebook or interactive window                                                 |
 
 Many of these methods support additional customization parameters beyond the examples shown below. For a full list, use `help(plotter.method_name)` in a Python environment or refer to the in-notebook documentation.
 
@@ -70,17 +70,13 @@ plotter.plot_circle_perimeter(
 )
 ```
 
-*For a more flexible KDE-based layout boundary, see `plot_contour_perimeter()`.*
+_For a more flexible KDE-based layout boundary, see `plot_contour_perimeter()`._
 
 ### Plot the Annotated Network
 
-The `plot_network()` method draws the full network, automatically applying visual styles based on overrepresentation results. This is the most common way to visualize domain significance directly on the graph.
+The `plot_network()` method draws the full network similarly to networkx.draw, but with enhanced styling and layout control. It is the primary way to visualize domain-level significance on the graph.
 
-```python
-plotter.plot_network()
-```
-
-For more control, RISK provides helper methods to customize node size and color dynamically based on statistical significance:
+While `plot_network()` can be used as-is, RISK provides helper functions such as `get_annotated_node_sizes()` and `get_annotated_node_colors()` to automatically generate node styles based on annotation significance. These outputs plug directly into `plot_network()`.
 
 ```python
 node_sizes = plotter.get_annotated_node_sizes(
@@ -118,6 +114,8 @@ You can also use `plotter.get_annotated_contour_colors()` and `plotter.get_annot
 
 ### Highlight a Subnetwork
 
+Use `plot_subnetwork()` to overlay a custom set of nodes with distinct styling—useful for emphasizing known complexes or pathway members.
+
 ```python
 plotter.plot_subnetwork(
     nodes=["RPL1A", "RPL2B", "RPL3", "RPL5"],
@@ -127,72 +125,11 @@ plotter.plot_subnetwork(
 )
 ```
 
-This method overlays a custom node set with distinct styling. It is useful for emphasizing known complexes or pathway members.
-
-*To highlight a specific group of nodes separately, use `plot_subnetwork()`.*
-
-### Add Domain Contours
-
-```python
-plotter.plot_contours(
-    color=plotter.get_annotated_contour_colors(),
-    alpha=1.0,
-    fill_alpha=0.25,
-)
-```
-
-*For finer control, you can apply `plot_subcontour()` to highlight specific regions.*
-
-### Add Domain Labels
-
-```python
-plotter.plot_labels(
-    arrow_color=plotter.get_annotated_label_colors(),
-    fontsize=12,
-    fontcolor="white",
-)
-```
-
-*To manually label specific regions, use `plot_sublabel()`.*
-
----
-
-## Dynamic Node Styling
-
-Node colors and sizes are controlled using significance-aware helpers.
-
-### Color nodes by overrepresentation
-
-```python
-node_colors = plotter.get_annotated_node_colors(
-    cmap="gist_rainbow",
-    blend_colors=False,
-    blend_gamma=2.2,
-    min_scale=0.8,
-    max_scale=1.0,
-    scale_factor=0.5,
-    alpha=1.0,
-    nonsignificant_color="white",
-    nonsignificant_alpha=0.75,
-    ids_to_colors=None,
-    random_seed=888,
-)
-```
-
-### Scale nodes by significance
-
-```python
-node_sizes = plotter.get_annotated_node_sizes(
-    significant_size=200,
-    nonsignificant_size=10,
-)
-```
-
 ---
 
 ## Domain Overlays with KDE Contours
 
-You can highlight functionally enriched domains using KDE-based contours.
+You can highlight functionally overrepresented domains using KDE-based contours.
 
 ### All domains:
 
