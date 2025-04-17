@@ -1,6 +1,6 @@
 # Creating a NetworkGraph
 
-The `load_graph()` function in RISK generates a `NetworkGraph` object for overrepresentation-based analysis and visualization. This step integrates the network, annotations, and overrepresentation results into a cohesive object with clustering, domain-level significance, and downstream plotting support.
+RISK generates a `NetworkGraph` object for overrepresentation-based analysis and visualization. This step integrates the network, annotations, and overrepresentation results into a cohesive structure with clustering, domain-level significance, and downstream plotting support.
 
 ---
 

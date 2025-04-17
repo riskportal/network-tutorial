@@ -1,10 +1,6 @@
 # Loading and Associating Annotations
 
-Annotations map biological terms to network nodes (e.g., Gene Ontology categories mapping GO terms to genes). RISK supports multiple input formats with dedicated loaders, each returning:
-
-- Ordered list of nodes
-- Ordered list of terms
-- Binary annotation matrix
+Annotations map biological terms to network nodes (e.g., Gene Ontology categories mapping GO terms to genes). RISK supports multiple input formats with dedicated loaders.
 
 ---
 
