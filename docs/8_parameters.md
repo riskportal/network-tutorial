@@ -72,4 +72,4 @@ For downstream processing, combine these with summary exports from:
 
 ---
 
-For a complete interactive example showing how these parameters fit into a full RISK analysis workflow, see [quickstart.html](quickstart.html) or download the interactive version as [quickstart.ipynb](quickstart.ipynb).
+For a complete interactive example showing how these parameters fit into a full RISK analysis workflow, see [quickstart.html](quickstart.html) or [download the notebook and data as quickstart.zip](quickstart.zip).
