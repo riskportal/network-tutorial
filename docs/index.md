@@ -16,7 +16,7 @@ Start here to set up and understand the basics:
 You can also explore the tutorial notebook:
 
 - [View Quickstart Notebook (HTML)](quickstart.html)
-- [Download Quickstart Notebook (.ipynb)](quickstart.ipynb)
+- [Download Notebook and Data (.zip)](quickstart.zip)
 
 ## Core Features
 
@@ -33,7 +33,7 @@ You can also explore the tutorial notebook:
 
 ---
 
-If you're working in a Jupyter notebook, check out [quickstart.ipynb](quickstart.ipynb) for a fully interactive example. Or view the static HTML version at [quickstart.html](quickstart.html).
+If you’re working in a Jupyter notebook, download [quickstart.zip](quickstart.zip) for a fully interactive example. Or view the static HTML version at [quickstart.html](quickstart.html).
 
 Contributions welcome on [GitHub](https://github.com/riskportal/network-tutorial).
 You can also explore the [RISK source code](https://github.com/riskportal/network) on GitHub.

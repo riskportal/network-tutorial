@@ -47,6 +47,6 @@ nav:
       - 7. Advanced Plotting: 7_advanced_plotting.md
       - 8. Parameters: 8_parameters.md
   - Quickstart Notebook (HTML): quickstart.html
-  - Download Notebook (.ipynb): quickstart.ipynb
+  - Download Notebook & Data (quickstart.zip): quickstart.zip
 extra_css:
   - stylesheets/extra.css
