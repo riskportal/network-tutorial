@@ -7,7 +7,7 @@ clean: ## Remove caches, checkpoints, and distribution artifacts
 	find . -type d \( -name ".ipynb_checkpoints" -o -name "__pycache__" -o -name ".pytest_cache" \) | xargs rm -rf
 	rm -rf dist/ build/ *.egg-info
 
-build-docs: ## Rebuild docs by converting the notebook to standalone HTML
+build-notebook-docs: ## Rebuild Jupyter notebook docs by converting it to standalone HTML
 	rm -f docs/quickstart.html docs/quickstart.ipynb
 	cp notebooks/quickstart.ipynb docs/
 	jupyter nbconvert --to html docs/quickstart.ipynb --output-dir docs
