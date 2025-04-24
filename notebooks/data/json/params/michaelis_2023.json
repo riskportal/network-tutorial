@@ -4,7 +4,7 @@
         "filepath": "./data/json/annotations/go_biological_process.json",
         "min_nodes_per_term": 1
     },
-    "datetime": "2025-02-10 07:09:51",
+    "datetime": "2025-04-24 17:36:38",
     "graph": {
         "tail": "right",
         "pval_cutoff": 0.05,
@@ -45,7 +45,7 @@
         "background_color": "black",
         "background_alpha": 1.0,
         "pad": 0.3,
-        "title": "Yeast Interactome Network",
+        "title": "Yeast PPI Network",
         "subtitle": "Michaelis et al., 2023",
         "title_fontsize": 24,
         "subtitle_fontsize": 18,

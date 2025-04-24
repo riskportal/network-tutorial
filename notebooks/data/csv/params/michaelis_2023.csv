@@ -2,7 +2,7 @@ parent_key,child_key,value
 annotations,filetype,JSON
 annotations,filepath,./data/json/annotations/go_biological_process.json
 annotations,min_nodes_per_term,1
-datetime,,2025-02-10 07:09:51
+datetime,,2025-04-24 17:36:38
 graph,tail,right
 graph,pval_cutoff,0.05
 graph,fdr_cutoff,1.0
@@ -33,7 +33,7 @@ plotter,figsize,"(15, 15)"
 plotter,background_color,black
 plotter,background_alpha,1.0
 plotter,pad,0.3
-plotter,title,Yeast Interactome Network
+plotter,title,Yeast PPI Network
 plotter,subtitle,"Michaelis et al., 2023"
 plotter,title_fontsize,24
 plotter,subtitle_fontsize,18
