@@ -29,8 +29,10 @@ All methods use a shared API and return a `neighborhoods` dictionary with per-cl
 | `louvain_resolution`      | Resolution for Louvain clustering                        |
 | `leiden_resolution`       | Resolution for Leiden clustering                         |
 | `fraction_shortest_edges` | Filter for edge-based subgraphs                          |
-| `null_distribution`       | `"network"` or `"annotations"`                           |
+| `null_distribution`       | `'network'` or `'annotations'`                           |
 | `random_seed`             | Random state for reproducibility                         |
+
+Choose from several distance metrics such as `'louvain'`, `'leiden'`, `'walktrap'`, and more. See the [Quickstart Notebook](quickstart.html) for full details. For `null_distribution`, choose `'network'` (default) or `'annotations'`.
 
 ---
 

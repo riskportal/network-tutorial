@@ -45,9 +45,9 @@ graph = risk.load_graph(
 | `fdr_cutoff`        | Adjusted p-value threshold (e.g., 0.05–1.0)                |
 | `impute_depth`      | Hop depth for stratified overrepresentation imputation     |
 | `prune_threshold`   | Prune distant nodes from cluster layout                    |
-| `linkage_criterion` | `'distance'`, `'maxclust'`, or `'off'`                     |
-| `linkage_method`    | `'single'`, `'average'`, `'auto'`, etc.                    |
-| `linkage_metric`    | `'jaccard'`, `'cosine'`, `'auto'`, etc.                    |
+| `linkage_criterion` | Clustering criterion. Choose from: `'distance'`, `'maxclust'`, or `'off'` (disable clustering). |
+| `linkage_method`    | Linkage method for clustering. Choose from: `'single'`, `'complete'`, `'average'`, `'weighted'`, `'centroid'`, `'median'`, `'ward'`, or `'auto'` (automatically selects best method). |
+| `linkage_metric`    | Distance metric for clustering. Choose from: `'jaccard'`, `'cosine'`, `'euclidean'`, `'cityblock'`, `'yule'`, `'braycurtis'`, `'hamming'`, and more; or use `'auto'` to select automatically. |
 | `linkage_threshold` | Float (0–1) or `'auto'` for optimization                   |
 | `min_cluster_size`  | Minimum size for functional domains (clusters)             |
 | `max_cluster_size`  | Maximum size for functional domains                        |
