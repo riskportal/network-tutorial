@@ -97,10 +97,10 @@ graph.summary.to_txt("./data/txt/summary/michaelis_2023.txt")
 
 ## Cleaning Domains
 
-Use `.pop()` to remove a domain from all internal structures:
+Use `.pop()` to remove a domain from all internal structures. This method returns the node labels associated with the removed domain.
 
 ```python
-graph.pop(1)
+domain_1_labels = graph.pop(1)
 ```
 
 ---
