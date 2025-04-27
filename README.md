@@ -38,7 +38,7 @@ RISK also identifies [**party hubs** and **date hubs**](https://www.nature.com/a
   <img src="https://i.imgur.com/ghXLwP0.png" width="75%" alt="Party and Date Hubs" />
 </p>
 
-The **GO BP contour overlay** highlights the spatial organization of biological processes, providing additional context for interpreting these hubs. For a full demonstration of this analysis, please refer to the [Quickstart Tutorial 📥](notebooks/quickstart.ipynb), which can be downloaded and run locally.
+The **GO BP contour overlay** highlights the spatial organization of biological processes, providing additional context for interpreting these hubs. For a full demonstration of this analysis, please refer to the [Quickstart Tutorial](notebooks/quickstart.ipynb), which can be downloaded and run locally.
 
 ## Setting Up Python and Jupyter for RISK
 
