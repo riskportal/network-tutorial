@@ -14,8 +14,11 @@
 
 - **Full Documentation:** [riskportal.github.io/network-tutorial](https://riskportal.github.io/network-tutorial)
 - **Source Code:** [github.com/riskportal/network](https://github.com/riskportal/network)
+- **Interactive Tutorial:** [![Launch Tutorial in Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb)
 
 ## Key Features of RISK
+
+Launch RISK tutorial instantly in Binder to interactively explore the workflow and analyses without any installation required.
 
 - Clustering Algorithms: Implements Louvain, Leiden, Markov Clustering, Greedy Modularity, Label Propagation, Spinglass, and Walktrap to identify structured network regions.
 - Statistical Analysis: Includes hypergeometric, permutation, binomial, chi-squared, Poisson, and z-score tests to assess annotation overrepresentation and significance.
