@@ -1,3 +1,5 @@
 matplotlib
 mkdocs-material
+networkx
+pandas
 risk-network
