@@ -32,7 +32,7 @@ All methods use a shared API and return a `neighborhoods` dictionary with per-cl
 | `null_distribution`       | `'network'` or `'annotations'`                           |
 | `random_seed`             | Random state for reproducibility                         |
 
-Choose from several distance metrics such as `'louvain'`, `'leiden'`, `'walktrap'`, and more. See the [Tutorial Notebook](tutorial.html) for full details. For `null_distribution`, choose `'network'` (default) or `'annotations'`.
+Choose from several distance metrics such as `'louvain'`, `'leiden'`, `'walktrap'`, and more. See the [tutorial notebook](tutorial.html) for full details. For `null_distribution`, choose `'network'` (default) or `'annotations'`.
 
 ---
 
