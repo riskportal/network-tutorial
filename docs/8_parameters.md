@@ -76,4 +76,4 @@ For a complete interactive example showing how these parameters fit into a full 
 
 ---
 
-You can also [launch the Quickstart notebook on Binder](https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart_binder.ipynb) to explore a full RISK workflow interactively without installing anything locally.
+You can also [launch the Quickstart notebook on Binder](https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb) to explore a full RISK workflow interactively without installing anything locally.

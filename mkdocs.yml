@@ -48,6 +48,6 @@ nav:
       - 8. Parameters: 8_parameters.md
   - Full Tutorial (HTML): tutorial.html
   - Download Tutorial Notebook & Data: tutorial.zip
-  - Interactive Quickstart (Binder): https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart_binder.ipynb
+  - Interactive Quickstart (Binder): https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb
 extra_css:
   - stylesheets/extra.css

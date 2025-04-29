@@ -46,7 +46,7 @@ The notebook focuses on a curated yeast PPI network (Michaelis et al., 2023), fi
 
 This notebook complements the Markdown documentation in this repository, but does not follow a strict 1-to-1 mapping. Use it for end-to-end examples and contextual guidance.
 
-You can also [launch the Quickstart notebook on Binder](https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart_binder.ipynb) for a fully interactive experience without installing anything locally.
+You can also [launch the Quickstart notebook on Binder](https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb) for a fully interactive experience without installing anything locally.
 
 ---
 

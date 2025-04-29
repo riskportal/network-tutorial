@@ -15,7 +15,7 @@ Start here to set up and understand the basics:
 
 You can also explore the tutorial notebook:
 
-- [Launch Quickstart in Binder (no install)](https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart_binder.ipynb)
+- [Launch Quickstart in Binder (no install)](https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb)
 - [View Full Tutorial (HTML)](tutorial.html)
 - [Download Tutorial Notebook and Data (.zip)](tutorial.zip)
 
