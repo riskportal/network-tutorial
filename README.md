@@ -14,7 +14,7 @@
 
 - **Full Documentation:** [riskportal.github.io/network-tutorial](https://riskportal.github.io/network-tutorial)
 - **Source Code:** [github.com/riskportal/network](https://github.com/riskportal/network)
-- **Interactive Tutorial:** [![Launch Tutorial in Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb)
+- **Interactive Quickstart:** [![Launch in Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb)
 
 ## Key Features of RISK
 
