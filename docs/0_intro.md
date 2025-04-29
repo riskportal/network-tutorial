@@ -35,8 +35,7 @@ For more examples, see [7. Advanced Plotting](./7_advanced_plotting.md).
 
 ## Full Interactive Example
 
-If you prefer an interactive, all-in-one workflow, see [quickstart.html](quickstart.html). It walks through all key steps—from loading a network to generating publication-quality figures—in a single notebook.
-You can also [download the notebook and data as a ZIP](quickstart.zip).
+If you prefer an interactive, all-in-one workflow, see [quickstart.html](quickstart.html). It walks through all key steps—from loading a network to generating publication-quality figures—in a single notebook. You can also [download the notebook and data as a ZIP](quickstart.zip).
 
 The notebook focuses on a curated yeast PPI network (Michaelis et al., 2023), filtered to retain proteins with six or more interactions (2,059 nodes, 27,690 edges). Throughout the tutorial, we showcase:
 
@@ -45,18 +44,9 @@ The notebook focuses on a curated yeast PPI network (Michaelis et al., 2023), fi
 - Interactive and advanced visualization features
 - Exporting parameters and reproducibility tools
 
-This notebook complements the Markdown documentation in this repository, but does not follow a strict 1-to-1 mapping. Use it for end-to-end examples and contextual guidance. The notebook covers the following topics, each reflected in this documentation:
+This notebook complements the Markdown documentation in this repository, but does not follow a strict 1-to-1 mapping. Use it for end-to-end examples and contextual guidance.
 
-0. Installing RISK
-1. Importing RISK
-2. Initializing RISK
-3. Network Input
-4. Annotations
-5. Statistical Tests
-6. Graph Analysis
-7. Visualization
-8. Parameters
-9. Advanced Plotting
+You can also [launch the Quickstart notebook on Binder](https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart_binder.ipynb) for a fully interactive experience without installing anything locally.
 
 ---
 

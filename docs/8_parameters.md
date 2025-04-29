@@ -72,4 +72,8 @@ For downstream processing, combine these with summary exports from:
 
 ---
 
-For a complete interactive example showing how these parameters fit into a full RISK analysis workflow, see [quickstart.html](quickstart.html) or [download the notebook and data as quickstart.zip](quickstart.zip).
+For a complete interactive example showing how these parameters fit into a full RISK analysis workflow, see [tutorial.html](tutorial.html) or [download the tutorial notebook and data](tutorial.zip).
+
+---
+
+You can also [launch the Quickstart notebook on Binder](https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart_binder.ipynb) to explore a full RISK workflow interactively without installing anything locally.

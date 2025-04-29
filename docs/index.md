@@ -15,8 +15,9 @@ Start here to set up and understand the basics:
 
 You can also explore the tutorial notebook:
 
-- [View Quickstart Notebook (HTML)](quickstart.html)
-- [Download Notebook and Data (.zip)](quickstart.zip)
+- [Launch Quickstart in Binder (no install)](https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart_binder.ipynb)
+- [View Full Tutorial (HTML)](tutorial.html)
+- [Download Tutorial Notebook and Data (.zip)](tutorial.zip)
 
 ## Core Features
 
@@ -33,7 +34,7 @@ You can also explore the tutorial notebook:
 
 ---
 
-If you’re working in a Jupyter notebook, download [quickstart.zip](quickstart.zip) for a fully interactive example. Or view the static HTML version at [quickstart.html](quickstart.html).
+If you’re working in a Jupyter notebook, download [tutorial.zip](tutorial.zip) for a fully interactive example. Or view the static HTML version at [tutorial.html](tutorial.html).
 
 Contributions welcome on [GitHub](https://github.com/riskportal/network-tutorial).
 You can also explore the [RISK source code](https://github.com/riskportal/network) on GitHub.
