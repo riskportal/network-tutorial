@@ -1,6 +1,6 @@
 # Creating a NetworkGraph
 
-RISK generates a `NetworkGraph` object for overrepresentation-based analysis and visualization. This step integrates the network, annotations, and overrepresentation results into a cohesive structure with clustering, domain-level significance, and downstream plotting support.
+RISK generates a `NetworkGraph` object for overrepresentation-based analysis and visualization. This step integrates the network, annotation, and overrepresentation results into a cohesive structure with clustering, domain-level significance, and downstream plotting support.
 
 ---
 
@@ -9,13 +9,13 @@ RISK generates a `NetworkGraph` object for overrepresentation-based analysis and
 To build a `NetworkGraph`, you’ll need:
 
 - A preprocessed `network` (e.g., from `load_*_network()`)
-- An `annotations` object (from `load_*_annotation()`)
+- An `annotation` object (from `load_*_annotation()`)
 - A `neighborhoods` object (from one of the overrepresentation tests)
 
 ```python
 graph = risk.load_graph(
     network=network,
-    annotations=annotations,
+    annotation=annotation,
     neighborhoods=neighborhoods,
     tail="right",
     pval_cutoff=0.05,
@@ -38,7 +38,7 @@ graph = risk.load_graph(
 | Parameter           | Description                                                |
 | ------------------- | ---------------------------------------------------------- |
 | `network`           | A preprocessed `network`                                   |
-| `annotations`       | An `annotations` object                                    |
+| `annotation`       | An `annotation` object                                    |
 | `neighborhoods`     | A `neighborhoods` object                                   |
 | `tail`              | Test direction: `'right'` (default), `'left'`, or `'both'` |
 | `pval_cutoff`       | Raw p-value threshold (e.g., 0.01–0.05)                    |

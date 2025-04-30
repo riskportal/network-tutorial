@@ -21,7 +21,7 @@ Returns:
 
 The printed dictionary contains configuration blocks used throughout the RISK pipeline, including:
 
-- `annotations`: Metadata for understanding the context of the analysis
+- `annotation`: Metadata for understanding the context of the analysis
 - `datetime`: Timestamp indicating when the parameters were created or last modified
 - `graph`: Configuration settings related to the graph structure used in the analysis
 - `neighborhoods`: Parameters defining the neighborhoods within the graph

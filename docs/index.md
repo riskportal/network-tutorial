@@ -22,7 +22,7 @@ You can also explore the tutorial notebook:
 ## Core Features
 
 - [2. Network Input](2_network_input.md)
-- [3. Annotations](3_annotations.md)
+- [3. Annotation](3_annotation.md)
 - [4. Statistics](4_statistics.md)
 - [5. Load & Analyze Graph](5_load_graph.md)
 - [6. Visualization](6_visualization.md)

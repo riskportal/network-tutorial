@@ -106,4 +106,4 @@ These features improve layout clarity and biological interpretability.
 
 ## Next Step
 
-Proceed to [3. Annotations](./3_annotations.md) to map biological terms onto network nodes.
+Proceed to [3. Annotation](./3_annotation.md) to map biological terms onto network nodes.

@@ -24,15 +24,15 @@ All methods use a shared API and return a `neighborhoods` dictionary with per-cl
 | Parameter                 | Description                                              |
 | ------------------------- | -------------------------------------------------------- |
 | `network`                 | NetworkX graph                                           |
-| `annotations`             | Annotation dict                                          |
+| `annotation`             | Annotation dict                                          |
 | `distance_metric`         | Method(s) for neighborhood detection (e.g., `'louvain'`) |
 | `louvain_resolution`      | Resolution for Louvain clustering                        |
 | `leiden_resolution`       | Resolution for Leiden clustering                         |
 | `fraction_shortest_edges` | Filter for edge-based subgraphs                          |
-| `null_distribution`       | `'network'` or `'annotations'`                           |
+| `null_distribution`       | `'network'` or `'annotation'`                           |
 | `random_seed`             | Random state for reproducibility                         |
 
-Choose from several distance metrics such as `'louvain'`, `'leiden'`, `'walktrap'`, and more. See the [tutorial notebook](tutorial.html) for full details. For `null_distribution`, choose `'network'` (default) or `'annotations'`.
+Choose from several distance metrics such as `'louvain'`, `'leiden'`, `'walktrap'`, and more. See the [tutorial notebook](tutorial.html) for full details. For `null_distribution`, choose `'network'` (default) or `'annotation'`.
 
 ---
 
@@ -43,7 +43,7 @@ Most robust method. Shuffles graph or annotations to build a null.
 ```python
 neighborhoods = risk.load_neighborhoods_by_permutation(
     network=network,
-    annotations=annotations,
+    annotation=annotation,
     distance_metric="louvain",
     louvain_resolution=10.0,
     leiden_resolution=1.0,
@@ -65,7 +65,7 @@ Exact test based on finite sampling without replacement.
 ```python
 neighborhoods = risk.load_neighborhoods_by_hypergeom(
     network=network,
-    annotations=annotations,
+    annotation=annotation,
     distance_metric="louvain",
     louvain_resolution=10.0,
     fraction_shortest_edges=0.275,
@@ -83,7 +83,7 @@ Models binary outcomes assuming independent trials.
 ```python
 neighborhoods = risk.load_neighborhoods_by_binom(
     network=network,
-    annotations=annotations,
+    annotation=annotation,
     distance_metric="louvain",
     louvain_resolution=10.0,
     fraction_shortest_edges=0.275,
@@ -101,7 +101,7 @@ Tests significance via contingency tables.
 ```python
 neighborhoods = risk.load_neighborhoods_by_chi2(
     network=network,
-    annotations=annotations,
+    annotation=annotation,
     distance_metric="louvain",
     louvain_resolution=10.0,
     fraction_shortest_edges=0.275,
@@ -119,7 +119,7 @@ Evaluates deviation from expected frequency under Poisson.
 ```python
 neighborhoods = risk.load_neighborhoods_by_poisson(
     network=network,
-    annotations=annotations,
+    annotation=annotation,
     distance_metric="louvain",
     louvain_resolution=10.0,
     fraction_shortest_edges=0.275,
@@ -137,7 +137,7 @@ Computes standardized overrepresentation scores for each cluster.
 ```python
 neighborhoods = risk.load_neighborhoods_by_zscore(
     network=network,
-    annotations=annotations,
+    annotation=annotation,
     distance_metric="louvain",
     louvain_resolution=10.0,
     fraction_shortest_edges=0.275,

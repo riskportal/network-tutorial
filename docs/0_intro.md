@@ -17,7 +17,7 @@ RISK is designed to:
 | **Clustering**     | Louvain, Leiden, Markov, Spinglass, etc.          |
 | **Statistics**     | Permutation, hypergeometric, chi-squared, z, etc. |
 | **File Formats**   | NetworkX, Cytoscape (.cys, .cyjs), GPickle        |
-| **Annotations**    | JSON, CSV, Excel, TSV, Python dict                |
+| **Annotation**    | JSON, CSV, Excel, TSV, Python dict                |
 | **Scalability**    | Networks with 500k+ edges on standard hardware    |
 | **Visual Output**  | High-resolution SVG, PNG, PDF, etc.               |
 | **Beyond Biology** | Used on physics citation network (Supp. Fig. S9)  |

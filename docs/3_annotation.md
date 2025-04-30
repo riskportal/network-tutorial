@@ -1,6 +1,6 @@
-# Loading and Associating Annotations
+# Loading and Associating Annotation Data
 
-Annotations map biological terms to network nodes (e.g., Gene Ontology categories mapping GO terms to genes). RISK supports multiple input formats with dedicated loaders.
+An annotation maps biological terms to network nodes (e.g., Gene Ontology categories mapping GO terms to genes). RISK supports multiple input formats with dedicated loaders.
 
 ---
 
@@ -18,12 +18,12 @@ Each method also accepts a `min_nodes_per_term` argument to exclude underpowered
 
 ---
 
-## JSON Annotations
+## JSON Annotation
 
 ```python
-annotations = risk.load_json_annotation(
+annotation = risk.load_json_annotation(
     network=network,
-    filepath="./data/json/annotations/go_biological_process.json",
+    filepath="./data/json/annotation/go_biological_process.json",
     min_nodes_per_term=1,
 )
 ```
@@ -33,12 +33,12 @@ annotations = risk.load_json_annotation(
 
 ---
 
-## CSV Annotations
+## CSV Annotation
 
 ```python
-annotations = risk.load_csv_annotation(
+annotation = risk.load_csv_annotation(
     network=network,
-    filepath="./data/csv/annotations/go_biological_process.csv",
+    filepath="./data/csv/annotation/go_biological_process.csv",
     label_colname="label",
     nodes_colname="nodes",
     nodes_delimiter=";",
@@ -51,12 +51,12 @@ annotations = risk.load_csv_annotation(
 
 ---
 
-## TSV Annotations
+## TSV Annotation
 
 ```python
-annotations = risk.load_tsv_annotation(
+annotation = risk.load_tsv_annotation(
     network=network,
-    filepath="./data/tsv/annotations/go_biological_process.tsv",
+    filepath="./data/tsv/annotation/go_biological_process.tsv",
     label_colname="label",
     nodes_colname="nodes",
     nodes_delimiter=";",
@@ -68,12 +68,12 @@ annotations = risk.load_tsv_annotation(
 
 ---
 
-## Excel Annotations
+## Excel Annotation
 
 ```python
-annotations = risk.load_excel_annotation(
+annotation = risk.load_excel_annotation(
     network=network,
-    filepath="./data/excel/annotations/go_biological_process.xlsx",
+    filepath="./data/excel/annotation/go_biological_process.xlsx",
     label_colname="label",
     nodes_colname="nodes",
     sheet_name="Sheet1",
@@ -93,12 +93,12 @@ If you already have a dictionary loaded from another source:
 ```python
 import json
 
-with open("./data/json/annotations/go_biological_process.json") as file:
-    annotations_dict = json.load(file)
+with open("./data/json/annotation/go_biological_process.json") as file:
+    annotation_dict = json.load(file)
 
-annotations = risk.load_dict_annotation(
+annotation = risk.load_dict_annotation(
     network=network,
-    content=annotations_dict,
+    content=annotation_dict,
     min_nodes_per_term=1,
 )
 ```
