@@ -41,7 +41,7 @@ Choose from several distance metrics such as `'louvain'`, `'leiden'`, `'walktrap
 Most robust method. Shuffles graph or annotations to build a null.
 
 ```python
-neighborhoods = risk.load_neighborhoods_by_permutation(
+neighborhoods = risk.load_neighborhoods_permutation(
     network=network,
     annotation=annotation,
     distance_metric="louvain",
@@ -63,7 +63,7 @@ neighborhoods = risk.load_neighborhoods_by_permutation(
 Exact test based on finite sampling without replacement.
 
 ```python
-neighborhoods = risk.load_neighborhoods_by_hypergeom(
+neighborhoods = risk.load_neighborhoods_hypergeom(
     network=network,
     annotation=annotation,
     distance_metric="louvain",
@@ -81,7 +81,7 @@ neighborhoods = risk.load_neighborhoods_by_hypergeom(
 Models binary outcomes assuming independent trials.
 
 ```python
-neighborhoods = risk.load_neighborhoods_by_binom(
+neighborhoods = risk.load_neighborhoods_binom(
     network=network,
     annotation=annotation,
     distance_metric="louvain",
@@ -99,7 +99,7 @@ neighborhoods = risk.load_neighborhoods_by_binom(
 Tests significance via contingency tables.
 
 ```python
-neighborhoods = risk.load_neighborhoods_by_chi2(
+neighborhoods = risk.load_neighborhoods_chi2(
     network=network,
     annotation=annotation,
     distance_metric="louvain",
@@ -117,7 +117,7 @@ neighborhoods = risk.load_neighborhoods_by_chi2(
 Evaluates deviation from expected frequency under Poisson.
 
 ```python
-neighborhoods = risk.load_neighborhoods_by_poisson(
+neighborhoods = risk.load_neighborhoods_poisson(
     network=network,
     annotation=annotation,
     distance_metric="louvain",
@@ -135,7 +135,7 @@ neighborhoods = risk.load_neighborhoods_by_poisson(
 Computes standardized overrepresentation scores for each cluster.
 
 ```python
-neighborhoods = risk.load_neighborhoods_by_zscore(
+neighborhoods = risk.load_neighborhoods_zscore(
     network=network,
     annotation=annotation,
     distance_metric="louvain",

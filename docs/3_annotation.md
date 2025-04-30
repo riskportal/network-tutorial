@@ -8,11 +8,11 @@ An annotation maps biological terms to network nodes (e.g., Gene Ontology catego
 
 | Format         | Function                  | Example File                 |
 | -------------- | ------------------------- | ---------------------------- |
-| `.json`        | `load_json_annotation()`  | `go_biological_process.json` |
-| `.csv`         | `load_csv_annotation()`   | `go_biological_process.csv`  |
-| `.tsv`         | `load_tsv_annotation()`   | `go_biological_process.tsv`  |
-| `.xlsx`/`.xls` | `load_excel_annotation()` | `go_biological_process.xlsx` |
-| `dict`         | `load_dict_annotation()`  | Python-loaded JSON           |
+| `.json`        | `load_annotation_json()`  | `go_biological_process.json` |
+| `.csv`         | `load_annotation_csv()`   | `go_biological_process.csv`  |
+| `.tsv`         | `load_annotation_tsv()`   | `go_biological_process.tsv`  |
+| `.xlsx`/`.xls` | `load_annotation_excel()` | `go_biological_process.xlsx` |
+| `dict`         | `load_annotation_dict()`  | Python-loaded JSON           |
 
 Each method also accepts a `min_nodes_per_term` argument to exclude underpowered annotations.
 
@@ -21,7 +21,7 @@ Each method also accepts a `min_nodes_per_term` argument to exclude underpowered
 ## JSON Annotation
 
 ```python
-annotation = risk.load_json_annotation(
+annotation = risk.load_annotation_json(
     network=network,
     filepath="./data/json/annotation/go_biological_process.json",
     min_nodes_per_term=1,
@@ -36,7 +36,7 @@ annotation = risk.load_json_annotation(
 ## CSV Annotation
 
 ```python
-annotation = risk.load_csv_annotation(
+annotation = risk.load_annotation_csv(
     network=network,
     filepath="./data/csv/annotation/go_biological_process.csv",
     label_colname="label",
@@ -54,7 +54,7 @@ annotation = risk.load_csv_annotation(
 ## TSV Annotation
 
 ```python
-annotation = risk.load_tsv_annotation(
+annotation = risk.load_annotation_tsv(
     network=network,
     filepath="./data/tsv/annotation/go_biological_process.tsv",
     label_colname="label",
@@ -71,7 +71,7 @@ annotation = risk.load_tsv_annotation(
 ## Excel Annotation
 
 ```python
-annotation = risk.load_excel_annotation(
+annotation = risk.load_annotation_excel(
     network=network,
     filepath="./data/excel/annotation/go_biological_process.xlsx",
     label_colname="label",
@@ -96,7 +96,7 @@ import json
 with open("./data/json/annotation/go_biological_process.json") as file:
     annotation_dict = json.load(file)
 
-annotation = risk.load_dict_annotation(
+annotation = risk.load_annotation_dict(
     network=network,
     content=annotation_dict,
     min_nodes_per_term=1,

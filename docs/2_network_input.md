@@ -8,10 +8,10 @@ RISK includes dedicated loader functions for multiple network formats. Each retu
 
 | Format     | Function                        |
 | ---------- | ------------------------------- |
-| `.cys`     | `load_cytoscape_network()`      |
-| `.cyjs`    | `load_cytoscape_json_network()` |
-| `.gpickle` | `load_gpickle_network()`        |
-| `NetworkX` | `load_networkx_network()`       |
+| `.cys`     | `load_network_cytoscape()`      |
+| `.cyjs`    | `load_network_cyjs()` |
+| `.gpickle` | `load_network_gpickle()`        |
+| `NetworkX` | `load_network_networkx()`       |
 
 Each loader supports optional spherical projection, depth tuning, and node filtering.
 
@@ -22,7 +22,7 @@ Each loader supports optional spherical projection, depth tuning, and node filte
 Use this format if you've exported or styled your network in Cytoscape.
 
 ```python
-network = risk.load_cytoscape_network(
+network = risk.load_network_cytoscape(
     filepath="./data/cytoscape/michaelis_2023.cys",
     source_label="source",
     target_label="target",
@@ -44,7 +44,7 @@ network = risk.load_cytoscape_network(
 Structured network files exported from Cytoscape Web or JS-based tools.
 
 ```python
-network = risk.load_cytoscape_json_network(
+network = risk.load_network_cyjs(
     filepath="./data/cyjs/michaelis_2023.cyjs",
     source_label="source",
     target_label="target",
@@ -63,7 +63,7 @@ network = risk.load_cytoscape_json_network(
 Fast, native Python serialization of NetworkX graphs.
 
 ```python
-network = risk.load_gpickle_network(
+network = risk.load_network_gpickle(
     filepath="./data/gpickle/michaelis_2023.gpickle",
     compute_sphere=True,
     surface_depth=0.1,
@@ -80,7 +80,7 @@ Use this for reproducibility and performance when working with saved graphs.
 Load an in-memory NetworkX graph directly.
 
 ```python
-network = risk.load_networkx_network(
+network = risk.load_network_networkx(
     network=network,
     compute_sphere=True,
     surface_depth=0.1,

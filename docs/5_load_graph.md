@@ -8,8 +8,8 @@ RISK generates a `NetworkGraph` object for overrepresentation-based analysis and
 
 To build a `NetworkGraph`, you’ll need:
 
-- A preprocessed `network` (e.g., from `load_*_network()`)
-- An `annotation` object (from `load_*_annotation()`)
+- A preprocessed `network` (e.g., from `load_network_*()`)
+- An `annotation` object (from `load_annotation_*()`)
 - A `neighborhoods` object (from one of the overrepresentation tests)
 
 ```python
