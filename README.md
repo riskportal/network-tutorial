@@ -155,9 +155,10 @@ jupyter notebook
 
 ## Citation
 
-If you use RISK in your research, please cite:
+If you use RISK in your research, please reference the following:
 
-**Horecka et al.**, "RISK: a next-generation tool for biological network annotation and visualization", **Bioinformatics**, 2025. DOI: [10.5281/zenodo.xxxxxxx](https://doi.org/10.5281/zenodo.xxxxxxx)
+**Horecka et al.**, *"RISK: a next-generation tool for biological network annotation and visualization"*, 2025.  
+DOI: [10.5281/zenodo.xxxxxxx](https://doi.org/10.5281/zenodo.xxxxxxx)
 
 ## License
 
