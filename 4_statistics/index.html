@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://github.com/riskportal/network/4_statistics/">
       
       
-        <link rel="prev" href="../3_annotations/">
+        <link rel="prev" href="../3_annotation/">
       
       
         <link rel="next" href="../5_load_graph/">
@@ -586,12 +586,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../3_annotations/" class="md-nav__link">
+      <a href="../3_annotation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    3. Annotations
+    3. Annotation
     
   </span>
   
@@ -1050,7 +1050,7 @@
 <td>NetworkX graph</td>
 </tr>
 <tr>
-<td><code>annotations</code></td>
+<td><code>annotation</code></td>
 <td>Annotation dict</td>
 </tr>
 <tr>
@@ -1071,7 +1071,7 @@
 </tr>
 <tr>
 <td><code>null_distribution</code></td>
-<td><code>'network'</code> or <code>'annotations'</code></td>
+<td><code>'network'</code> or <code>'annotation'</code></td>
 </tr>
 <tr>
 <td><code>random_seed</code></td>
@@ -1079,13 +1079,13 @@
 </tr>
 </tbody>
 </table>
-<p>Choose from several distance metrics such as <code>'louvain'</code>, <code>'leiden'</code>, <code>'walktrap'</code>, and more. See the <a href="../tutorial.html">tutorial notebook</a> for full details. For <code>null_distribution</code>, choose <code>'network'</code> (default) or <code>'annotations'</code>.</p>
+<p>Choose from several distance metrics such as <code>'louvain'</code>, <code>'leiden'</code>, <code>'walktrap'</code>, and more. See the <a href="../tutorial.html">tutorial notebook</a> for full details. For <code>null_distribution</code>, choose <code>'network'</code> (default) or <code>'annotation'</code>.</p>
 <hr />
 <h2 id="1-permutation-test">1. Permutation Test<a class="headerlink" href="#1-permutation-test" title="Permanent link">&para;</a></h2>
 <p>Most robust method. Shuffles graph or annotations to build a null.</p>
-<div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_by_permutation</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_permutation</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
-    <span class="n">annotations</span><span class="o">=</span><span class="n">annotations</span><span class="p">,</span>
+    <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
     <span class="n">distance_metric</span><span class="o">=</span><span class="s2">&quot;louvain&quot;</span><span class="p">,</span>
     <span class="n">louvain_resolution</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span>
     <span class="n">leiden_resolution</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
@@ -1100,9 +1100,9 @@
 <hr />
 <h2 id="2-hypergeometric-test">2. Hypergeometric Test<a class="headerlink" href="#2-hypergeometric-test" title="Permanent link">&para;</a></h2>
 <p>Exact test based on finite sampling without replacement.</p>
-<div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_by_hypergeom</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_hypergeom</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
-    <span class="n">annotations</span><span class="o">=</span><span class="n">annotations</span><span class="p">,</span>
+    <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
     <span class="n">distance_metric</span><span class="o">=</span><span class="s2">&quot;louvain&quot;</span><span class="p">,</span>
     <span class="n">louvain_resolution</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span>
     <span class="n">fraction_shortest_edges</span><span class="o">=</span><span class="mf">0.275</span><span class="p">,</span>
@@ -1113,9 +1113,9 @@
 <hr />
 <h2 id="3-binomial-test">3. Binomial Test<a class="headerlink" href="#3-binomial-test" title="Permanent link">&para;</a></h2>
 <p>Models binary outcomes assuming independent trials.</p>
-<div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_by_binom</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_binom</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
-    <span class="n">annotations</span><span class="o">=</span><span class="n">annotations</span><span class="p">,</span>
+    <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
     <span class="n">distance_metric</span><span class="o">=</span><span class="s2">&quot;louvain&quot;</span><span class="p">,</span>
     <span class="n">louvain_resolution</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span>
     <span class="n">fraction_shortest_edges</span><span class="o">=</span><span class="mf">0.275</span><span class="p">,</span>
@@ -1126,9 +1126,9 @@
 <hr />
 <h2 id="4-chi-squared-test">4. Chi-squared Test<a class="headerlink" href="#4-chi-squared-test" title="Permanent link">&para;</a></h2>
 <p>Tests significance via contingency tables.</p>
-<div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_by_chi2</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_chi2</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
-    <span class="n">annotations</span><span class="o">=</span><span class="n">annotations</span><span class="p">,</span>
+    <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
     <span class="n">distance_metric</span><span class="o">=</span><span class="s2">&quot;louvain&quot;</span><span class="p">,</span>
     <span class="n">louvain_resolution</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span>
     <span class="n">fraction_shortest_edges</span><span class="o">=</span><span class="mf">0.275</span><span class="p">,</span>
@@ -1139,9 +1139,9 @@
 <hr />
 <h2 id="5-poisson-test">5. Poisson Test<a class="headerlink" href="#5-poisson-test" title="Permanent link">&para;</a></h2>
 <p>Evaluates deviation from expected frequency under Poisson.</p>
-<div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_by_poisson</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_poisson</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
-    <span class="n">annotations</span><span class="o">=</span><span class="n">annotations</span><span class="p">,</span>
+    <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
     <span class="n">distance_metric</span><span class="o">=</span><span class="s2">&quot;louvain&quot;</span><span class="p">,</span>
     <span class="n">louvain_resolution</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span>
     <span class="n">fraction_shortest_edges</span><span class="o">=</span><span class="mf">0.275</span><span class="p">,</span>
@@ -1152,9 +1152,9 @@
 <hr />
 <h2 id="6-z-score-test">6. Z-score Test<a class="headerlink" href="#6-z-score-test" title="Permanent link">&para;</a></h2>
 <p>Computes standardized overrepresentation scores for each cluster.</p>
-<div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_by_zscore</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_zscore</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
-    <span class="n">annotations</span><span class="o">=</span><span class="n">annotations</span><span class="p">,</span>
+    <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
     <span class="n">distance_metric</span><span class="o">=</span><span class="s2">&quot;louvain&quot;</span><span class="p">,</span>
     <span class="n">louvain_resolution</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span>
     <span class="n">fraction_shortest_edges</span><span class="o">=</span><span class="mf">0.275</span><span class="p">,</span>

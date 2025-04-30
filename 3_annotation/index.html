@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/riskportal/network/3_annotations/">
+        <link rel="canonical" href="https://github.com/riskportal/network/3_annotation/">
       
       
         <link rel="prev" href="../2_network_input/">
@@ -22,7 +22,7 @@
     
     
       
-        <title>3. Annotations - RISK Network Documentation</title>
+        <title>3. Annotation - RISK Network Documentation</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#loading-and-associating-annotations" class="md-skip">
+        <a href="#loading-and-associating-annotation-data" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3. Annotations
+              3. Annotation
             
           </span>
         </div>
@@ -600,7 +600,7 @@
   
   
   <span class="md-ellipsis">
-    3. Annotations
+    3. Annotation
     
   </span>
   
@@ -613,7 +613,7 @@
   
   
   <span class="md-ellipsis">
-    3. Annotations
+    3. Annotation
     
   </span>
   
@@ -645,36 +645,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#json-annotations" class="md-nav__link">
+  <a href="#json-annotation" class="md-nav__link">
     <span class="md-ellipsis">
-      JSON Annotations
+      JSON Annotation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#csv-annotations" class="md-nav__link">
+  <a href="#csv-annotation" class="md-nav__link">
     <span class="md-ellipsis">
-      CSV Annotations
+      CSV Annotation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tsv-annotations" class="md-nav__link">
+  <a href="#tsv-annotation" class="md-nav__link">
     <span class="md-ellipsis">
-      TSV Annotations
+      TSV Annotation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#excel-annotations" class="md-nav__link">
+  <a href="#excel-annotation" class="md-nav__link">
     <span class="md-ellipsis">
-      Excel Annotations
+      Excel Annotation
     </span>
   </a>
   
@@ -962,8 +962,8 @@
   
 
 
-<h1 id="loading-and-associating-annotations">Loading and Associating Annotations<a class="headerlink" href="#loading-and-associating-annotations" title="Permanent link">&para;</a></h1>
-<p>Annotations map biological terms to network nodes (e.g., Gene Ontology categories mapping GO terms to genes). RISK supports multiple input formats with dedicated loaders.</p>
+<h1 id="loading-and-associating-annotation-data">Loading and Associating Annotation Data<a class="headerlink" href="#loading-and-associating-annotation-data" title="Permanent link">&para;</a></h1>
+<p>An annotation maps biological terms to network nodes (e.g., Gene Ontology categories mapping GO terms to genes). RISK supports multiple input formats with dedicated loaders.</p>
 <hr />
 <h2 id="supported-input-formats">Supported Input Formats<a class="headerlink" href="#supported-input-formats" title="Permanent link">&para;</a></h2>
 <table>
@@ -977,37 +977,37 @@
 <tbody>
 <tr>
 <td><code>.json</code></td>
-<td><code>load_json_annotation()</code></td>
+<td><code>load_annotation_json()</code></td>
 <td><code>go_biological_process.json</code></td>
 </tr>
 <tr>
 <td><code>.csv</code></td>
-<td><code>load_csv_annotation()</code></td>
+<td><code>load_annotation_csv()</code></td>
 <td><code>go_biological_process.csv</code></td>
 </tr>
 <tr>
 <td><code>.tsv</code></td>
-<td><code>load_tsv_annotation()</code></td>
+<td><code>load_annotation_tsv()</code></td>
 <td><code>go_biological_process.tsv</code></td>
 </tr>
 <tr>
 <td><code>.xlsx</code>/<code>.xls</code></td>
-<td><code>load_excel_annotation()</code></td>
+<td><code>load_annotation_excel()</code></td>
 <td><code>go_biological_process.xlsx</code></td>
 </tr>
 <tr>
 <td><code>dict</code></td>
-<td><code>load_dict_annotation()</code></td>
+<td><code>load_annotation_dict()</code></td>
 <td>Python-loaded JSON</td>
 </tr>
 </tbody>
 </table>
 <p>Each method also accepts a <code>min_nodes_per_term</code> argument to exclude underpowered annotations.</p>
 <hr />
-<h2 id="json-annotations">JSON Annotations<a class="headerlink" href="#json-annotations" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">annotations</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_json_annotation</span><span class="p">(</span>
+<h2 id="json-annotation">JSON Annotation<a class="headerlink" href="#json-annotation" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">annotation</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_annotation_json</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
-    <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/json/annotations/go_biological_process.json&quot;</span><span class="p">,</span>
+    <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/json/annotation/go_biological_process.json&quot;</span><span class="p">,</span>
     <span class="n">min_nodes_per_term</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
@@ -1016,10 +1016,10 @@
 <li>Ideal for GO annotations exported from standard tools</li>
 </ul>
 <hr />
-<h2 id="csv-annotations">CSV Annotations<a class="headerlink" href="#csv-annotations" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">annotations</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_csv_annotation</span><span class="p">(</span>
+<h2 id="csv-annotation">CSV Annotation<a class="headerlink" href="#csv-annotation" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">annotation</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_annotation_csv</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
-    <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/csv/annotations/go_biological_process.csv&quot;</span><span class="p">,</span>
+    <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/csv/annotation/go_biological_process.csv&quot;</span><span class="p">,</span>
     <span class="n">label_colname</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span>
     <span class="n">nodes_colname</span><span class="o">=</span><span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
     <span class="n">nodes_delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span>
@@ -1031,10 +1031,10 @@
 <li>Use for flat structured data</li>
 </ul>
 <hr />
-<h2 id="tsv-annotations">TSV Annotations<a class="headerlink" href="#tsv-annotations" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">annotations</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_tsv_annotation</span><span class="p">(</span>
+<h2 id="tsv-annotation">TSV Annotation<a class="headerlink" href="#tsv-annotation" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">annotation</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_annotation_tsv</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
-    <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/tsv/annotations/go_biological_process.tsv&quot;</span><span class="p">,</span>
+    <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/tsv/annotation/go_biological_process.tsv&quot;</span><span class="p">,</span>
     <span class="n">label_colname</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span>
     <span class="n">nodes_colname</span><span class="o">=</span><span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
     <span class="n">nodes_delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span>
@@ -1045,10 +1045,10 @@
 <li>Tab-delimited version of the CSV format</li>
 </ul>
 <hr />
-<h2 id="excel-annotations">Excel Annotations<a class="headerlink" href="#excel-annotations" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">annotations</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_excel_annotation</span><span class="p">(</span>
+<h2 id="excel-annotation">Excel Annotation<a class="headerlink" href="#excel-annotation" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">annotation</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_annotation_excel</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
-    <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/excel/annotations/go_biological_process.xlsx&quot;</span><span class="p">,</span>
+    <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/excel/annotation/go_biological_process.xlsx&quot;</span><span class="p">,</span>
     <span class="n">label_colname</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span>
     <span class="n">nodes_colname</span><span class="o">=</span><span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
     <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;Sheet1&quot;</span><span class="p">,</span>
@@ -1064,12 +1064,12 @@
 <p>If you already have a dictionary loaded from another source:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./data/json/annotations/go_biological_process.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-    <span class="n">annotations_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./data/json/annotation/go_biological_process.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">annotation_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
 
-<span class="n">annotations</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_dict_annotation</span><span class="p">(</span>
+<span class="n">annotation</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_annotation_dict</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
-    <span class="n">content</span><span class="o">=</span><span class="n">annotations_dict</span><span class="p">,</span>
+    <span class="n">content</span><span class="o">=</span><span class="n">annotation_dict</span><span class="p">,</span>
     <span class="n">min_nodes_per_term</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>

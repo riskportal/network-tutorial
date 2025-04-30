@@ -586,12 +586,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../3_annotations/" class="md-nav__link">
+      <a href="../3_annotation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    3. Annotations
+    3. Annotation
     
   </span>
   
@@ -978,18 +978,18 @@
 
 
 <h1 id="creating-a-networkgraph">Creating a NetworkGraph<a class="headerlink" href="#creating-a-networkgraph" title="Permanent link">&para;</a></h1>
-<p>RISK generates a <code>NetworkGraph</code> object for overrepresentation-based analysis and visualization. This step integrates the network, annotations, and overrepresentation results into a cohesive structure with clustering, domain-level significance, and downstream plotting support.</p>
+<p>RISK generates a <code>NetworkGraph</code> object for overrepresentation-based analysis and visualization. This step integrates the network, annotation, and overrepresentation results into a cohesive structure with clustering, domain-level significance, and downstream plotting support.</p>
 <hr />
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <p>To build a <code>NetworkGraph</code>, you’ll need:</p>
 <ul>
-<li>A preprocessed <code>network</code> (e.g., from <code>load_*_network()</code>)</li>
-<li>An <code>annotations</code> object (from <code>load_*_annotation()</code>)</li>
+<li>A preprocessed <code>network</code> (e.g., from <code>load_network_*()</code>)</li>
+<li>An <code>annotation</code> object (from <code>load_annotation_*()</code>)</li>
 <li>A <code>neighborhoods</code> object (from one of the overrepresentation tests)</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="n">graph</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_graph</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
-    <span class="n">annotations</span><span class="o">=</span><span class="n">annotations</span><span class="p">,</span>
+    <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
     <span class="n">neighborhoods</span><span class="o">=</span><span class="n">neighborhoods</span><span class="p">,</span>
     <span class="n">tail</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
     <span class="n">pval_cutoff</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
@@ -1019,8 +1019,8 @@
 <td>A preprocessed <code>network</code></td>
 </tr>
 <tr>
-<td><code>annotations</code></td>
-<td>An <code>annotations</code> object</td>
+<td><code>annotation</code></td>
+<td>An <code>annotation</code> object</td>
 </tr>
 <tr>
 <td><code>neighborhoods</code></td>
