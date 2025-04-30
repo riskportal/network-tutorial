@@ -1,7 +1,7 @@
 {
-    "annotations": {
+    "annotation": {
         "filetype": "JSON",
-        "filepath": "./data/json/annotations/go_biological_process.json",
+        "filepath": "./data/json/annotation/go_biological_process.json",
         "min_nodes_per_term": 1
     },
     "datetime": "2025-04-24 17:36:38",

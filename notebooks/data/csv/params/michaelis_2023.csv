@@ -1,7 +1,7 @@
 parent_key,child_key,value
-annotations,filetype,JSON
-annotations,filepath,./data/json/annotations/go_biological_process.json
-annotations,min_nodes_per_term,1
+annotation,filetype,JSON
+annotation,filepath,./data/json/annotation/go_biological_process.json
+annotation,min_nodes_per_term,1
 datetime,,2025-04-24 17:36:38
 graph,tail,right
 graph,pval_cutoff,0.05
