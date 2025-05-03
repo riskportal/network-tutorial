@@ -14,7 +14,7 @@ An annotation maps biological terms to network nodes (e.g., Gene Ontology catego
 | `.xlsx`/`.xls` | `load_annotation_excel()` | `go_biological_process.xlsx` |
 | `dict`         | `load_annotation_dict()`  | Python-loaded JSON           |
 
-Each method also accepts a `min_nodes_per_term` argument to exclude underpowered annotations.
+Each method also accepts `min_nodes_per_term` and `max_nodes_per_term` to exclude underpowered or overly broad annotations.
 
 ---
 
@@ -25,6 +25,7 @@ annotation = risk.load_annotation_json(
     network=network,
     filepath="./data/json/annotation/go_biological_process.json",
     min_nodes_per_term=1,
+    max_nodes_per_term=10_000,
 )
 ```
 
@@ -43,6 +44,7 @@ annotation = risk.load_annotation_csv(
     nodes_colname="nodes",
     nodes_delimiter=";",
     min_nodes_per_term=1,
+    max_nodes_per_term=10_000,
 )
 ```
 
@@ -60,7 +62,8 @@ annotation = risk.load_annotation_tsv(
     label_colname="label",
     nodes_colname="nodes",
     nodes_delimiter=";",
-    min_nodes_per_term=2,
+    min_nodes_per_term=1,
+    max_nodes_per_term=10_000,
 )
 ```
 
@@ -79,6 +82,7 @@ annotation = risk.load_annotation_excel(
     sheet_name="Sheet1",
     nodes_delimiter=";",
     min_nodes_per_term=1,
+    max_nodes_per_term=10_000,
 )
 ```
 
@@ -100,6 +104,7 @@ annotation = risk.load_annotation_dict(
     network=network,
     content=annotation_dict,
     min_nodes_per_term=1,
+    max_nodes_per_term=10_000,
 )
 ```
 
