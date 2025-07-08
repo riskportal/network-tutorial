@@ -17,7 +17,7 @@ RISK is designed to:
 | **Clustering**     | Louvain, Leiden, Markov, Spinglass, etc.          |
 | **Statistics**     | Permutation, hypergeometric, chi-squared, z, etc. |
 | **File Formats**   | NetworkX, Cytoscape (.cys, .cyjs), GPickle        |
-| **Annotation**    | JSON, CSV, Excel, TSV, Python dict                |
+| **Annotation**     | JSON, CSV, Excel, TSV, Python dict                |
 | **Scalability**    | Networks with 500k+ edges on standard hardware    |
 | **Visual Output**  | High-resolution SVG, PNG, PDF, etc.               |
 | **Beyond Biology** | Used on physics citation network (Supp. Fig. S9)  |
@@ -46,7 +46,7 @@ The notebook focuses on a curated yeast PPI network (Michaelis et al., 2023), fi
 
 This notebook complements the Markdown documentation in this repository, but does not follow a strict 1-to-1 mapping. Use it for end-to-end examples and contextual guidance.
 
-You can also [launch the Quickstart notebook on Binder](https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb) for a fully interactive experience without installing anything locally.
+You can also <a href="https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb" target="_blank" rel="noopener">launch the Quickstart notebook on Binder</a> for a fully interactive experience without installing anything locally.
 
 ---
 
