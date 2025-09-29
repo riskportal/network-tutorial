@@ -16,18 +16,18 @@
 - **Try in Browser (Binder)**: [![Launch in Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb)
 - **Source Code**: [github.com/riskportal/network](https://github.com/riskportal/network)
 
-## Key Features of RISK
-
-- **Broad Data Compatibility**: Supports multiple network formats (e.g., NetworkX, Cytoscape, GPickle) and accepts user-provided annotations formatted as term–to–gene membership tables in JSON, CSV, TSV, Excel, or Python dictionaries.
-- **Flexible Clustering**: Offers Louvain, Leiden, Markov Clustering, Greedy Modularity, Label Propagation, Spinglass, and Walktrap, with user-defined resolution parameters to detect both coarse and fine-grained modules.
-- **Statistical Testing**: Provides hypergeometric, binomial, chi-squared, Poisson, z-score, and permutation tests, balancing speed with statistical rigor.
-- **High-Resolution Visualization**: Generates publication-ready figures with contour overlays, customizable node/edge properties, and export to SVG, PNG, or PDF.
+For a full description of RISK and its applications, see:
+<br>
+**Horecka and Röst (2025)**, _"RISK: a next-generation tool for biological network annotation and visualization"_.
+<br>
+DOI: [10.5281/zenodo.xxxxxxx](https://doi.org/10.5281/zenodo.xxxxxxx)
 
 ## Yeast Protein–Protein Interaction (PPI) Network Demonstration
 
-We applied RISK to a _Saccharomyces cerevisiae_ protein–protein interaction (PPI) network reported in Michaelis _et al._ (2023), which includes 3,839 proteins and 30,955 interactions. RISK identified compact, functional modules overrepresented in Gene Ontology Biological Process (GO BP) terms, as defined by Ashburner _et al._ (2000). These modules reveal the organization of biological networks, including ribosomal assembly, mitochondrial organization, and RNA polymerase activity (P < 0.0001).
+We applied RISK to a _Saccharomyces cerevisiae_ protein–protein interaction (PPI) network (Michaelis _et al_., 2023; 3,839 proteins, 30,955 interactions). RISK identified compact, functional modules overrepresented in Gene Ontology Biological Process (GO BP) terms (Ashburner _et al_., 2000), revealing biological organization including ribosomal assembly, mitochondrial organization, and RNA polymerase activity (P < 0.0001).
 
 [![Yeast PPI network annotated with GO BP terms](https://i.imgur.com/jQKatLY.jpeg)](https://i.imgur.com/jQKatLY.jpeg)
+**RISK workflow overview and analysis of the yeast PPI network**. GO BP terms are color-coded to represent key cellular processes—including ribosomal assembly, mitochondrial organization, and RNA polymerase activity (P < 0.0001).
 
 ## Party and Date Hubs
 
@@ -151,9 +151,10 @@ jupyter notebook
 
 ## Citation
 
-If you use RISK in your research, please reference the following:
+If you use RISK in your research, please cite the following:
 
-**Horecka and Röst**, _"RISK: a next-generation tool for biological network annotation and visualization"_, 2025.
+**Horecka and Röst (2025)**, _"RISK: a next-generation tool for biological network annotation and visualization"_.
+<br>
 DOI: [10.5281/zenodo.xxxxxxx](https://doi.org/10.5281/zenodo.xxxxxxx)
 
 ## License
