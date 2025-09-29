@@ -29,16 +29,6 @@ We applied RISK to a _Saccharomyces cerevisiae_ protein–protein interaction (P
 [![Yeast PPI network annotated with GO BP terms](https://i.imgur.com/jQKatLY.jpeg)](https://i.imgur.com/jQKatLY.jpeg)
 **RISK workflow overview and analysis of the yeast PPI network**. GO BP terms are color-coded to represent key cellular processes—including ribosomal assembly, mitochondrial organization, and RNA polymerase activity (P < 0.0001).
 
-## Party and Date Hubs
-
-RISK also identifies [**party hubs** and **date hubs**](https://www.nature.com/articles/nature02555.pdf) in the yeast PPI network. Party hubs (orange) are highly connected proteins that interact with many partners simultaneously, often forming stable protein complexes. Date hubs (cyan) interact with different partners under different conditions, enabling dynamic regulation.
-
-<p align="center">
-  <img src="https://i.imgur.com/ghXLwP0.png" width="75%" alt="Party and Date Hubs" />
-</p>
-
-The **GO BP contour overlay** highlights the spatial organization of biological processes, providing additional context for interpreting these hubs. For a full demonstration of this analysis, please refer to the [tutorial notebook](notebooks/tutorial.ipynb), which can be downloaded and run locally.
-
 ## Setting Up Python and Jupyter for RISK
 
 <details>
