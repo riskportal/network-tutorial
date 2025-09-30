@@ -45,9 +45,3 @@ The tutorial applies RISK to the _Saccharomyces cerevisiae_ protein–protein in
 This notebook complements the Markdown documentation in this repository. Use it for end-to-end examples and contextual guidance.
 
 You can also <a href="https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb" target="_blank" rel="noopener">launch the Quickstart notebook on Binder</a> for an interactive session without local installation.
-
----
-
-## Getting Started
-
-Continue to [1. Installation](./1_installation.md) to install RISK and set up your environment.
