@@ -1,4 +1,4 @@
-# Installation
+# Installation and Setup
 
 RISK is available on PyPI and supports Python 3.8 or later on major operating systems (Windows, macOS, Linux). Install the latest release with:
 

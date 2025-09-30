@@ -1,4 +1,4 @@
-# Loading and Associating Annotation Data
+# Loading Annotations into RISK
 
 Annotations must be provided by the user and formatted clearly to ensure compatibility with RISK loaders. We note that RISK does not bundle annotations; users should obtain curated resources such as Gene Ontology (Ashburner _et al_., 2000), CORUM (Tsitsiridis _et al_., 2022), or KEGG (Kanehisa _et al_., 2023) and format them as term–to–gene membership tables. Publicly available resources such as Gene Ontology (GO), CORUM, and KEGG offer standardized annotation files that can be adapted for use.
 
@@ -19,6 +19,8 @@ Annotations must be provided by the user and formatted clearly to ensure compati
 ---
 
 ## JSON Annotation
+
+Load annotation data directly from a JSON file and associate terms with network nodes.
 
 **Parameters:**
 
@@ -47,6 +49,8 @@ annotation = risk.load_annotation_json(
 ---
 
 ## CSV Annotation
+
+Load annotation data from a CSV file, specifying columns and delimiter for nodes.
 
 **Parameters:**
 
@@ -84,6 +88,8 @@ annotation = risk.load_annotation_csv(
 
 ## TSV Annotation
 
+Load annotation data from a tab-delimited file, similar to CSV but with tabs as separators.
+
 **Parameters:**
 
 - `network` (nx.Graph): Input NetworkX graph.
@@ -118,6 +124,8 @@ annotation = risk.load_annotation_tsv(
 ---
 
 ## Excel Annotation
+
+Load annotation data from an Excel workbook, with support for selecting specific sheets.
 
 **Parameters:**
 
@@ -155,6 +163,8 @@ annotation = risk.load_annotation_excel(
 ---
 
 ## Dictionary-Based Annotation
+
+Load annotation data already in memory as a Python dictionary.
 
 **Parameters:**
 

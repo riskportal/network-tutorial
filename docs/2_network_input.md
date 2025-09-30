@@ -1,4 +1,4 @@
-# Loading Network for RISK Analysis
+# Loading Networks into RISK
 
 RISK offers flexible loading functions compatible with multiple network formats, including Cytoscape session files, Cytoscape JSON exports, GPickle files, and in-memory NetworkX graphs. These loaders provide standardized NetworkX graph objects ready for downstream analysis, with options for preprocessing such as spherical projection, surface depth adjustment, and node filtering.
 

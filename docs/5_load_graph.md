@@ -1,4 +1,4 @@
-# NetworkGraph Creation and Usage
+# Building and Analyzing Networks
 
 The `NetworkGraph` object integrates network data, annotations, and overrepresentation results into a unified structure, supporting clustering, domain-level significance, and downstream visualization.
 
@@ -72,12 +72,16 @@ These attributes enable visualization, labeling, and export functionalities.
 
 ### Summarize results
 
+Load the analysis summary into a DataFrame to inspect matched members, counts, and significance values.
+
 ```python
 summary_df = graph.summary.load()
 summary_df.head()
 ```
 
 ### Export summary
+
+Export the processed summary table in common formats for downstream use or sharing.
 
 ```python
 graph.summary.to_csv("./data/csv/summary/michaelis_2023.csv")

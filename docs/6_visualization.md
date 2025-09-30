@@ -1,6 +1,6 @@
-# Visualization
+# Visualizing Networks in RISK
 
-RISK provides a flexible and powerful plotting interface via the `NetworkPlotter` object. This enables generation of publication-ready figures with detailed domain annotations, significance-driven coloring, KDE-based contours, and rich label customization.
+RISK provides a flexible and powerful plotting interface via the `NetworkPlotter` object. This enables generation of publication-ready figures with detailed domain annotations, significance-driven coloring, contours, and rich label customization.
 
 ---
 
@@ -96,18 +96,18 @@ plotter.plot_circle_perimeter(
 )
 ```
 
-_For a more flexible KDE-based layout boundary, see `plot_contour_perimeter()`._
+_For a more flexible countour-based layout boundary, see `plot_contour_perimeter()`._
 
 ---
 
 ## plot_contour_perimeter()
 
-Draw a KDE-based contour around the entire layout perimeter.
+Draw a contour around the entire layout perimeter.
 
 **Parameters:**
 
 - `levels` (int, optional): Number of contour levels.
-- `bandwidth` (float, optional): Bandwidth parameter for KDE.
+- `bandwidth` (float, optional): Bandwidth parameter for Kernel Density Estimation (KDE).
 - `grid_size` (int, optional): Resolution of the grid used for KDE.
 - `color` (str or tuple or list, optional): Color(s) for the contour lines.
 - `linestyle` (str, optional): Matplotlib line style string.
@@ -264,12 +264,12 @@ plotter.plot_subnetwork(
 
 ## plot_contours()
 
-Draw KDE contours for domains (e.g., GO term regions).
+Draw contours for domains (e.g., GO term regions).
 
 **Parameters:**
 
 - `levels` (int, optional): Number of contour levels.
-- `bandwidth` (float, optional): Bandwidth parameter for KDE.
+- `bandwidth` (float, optional): Bandwidth parameter for Kernel Density Estimation (KDE).
 - `grid_size` (int, optional): Resolution of the grid used for KDE.
 - `color` (list or str or tuple, optional): Colors for the contours.
 - `linestyle` (str, optional): Matplotlib line style string.
@@ -340,13 +340,13 @@ contour_colors = plotter.get_annotated_contour_colors(
 
 ## plot_subcontour()
 
-Draw a KDE contour around a subset of nodes.
+Draw a contour around a subset of nodes.
 
 **Parameters:**
 
 - `nodes` (list): List of node IDs to include in the contour.
 - `levels` (int, optional): Number of contour levels.
-- `bandwidth` (float, optional): Bandwidth parameter for KDE.
+- `bandwidth` (float, optional): Bandwidth parameter for Kernel Density Estimation (KDE).
 - `grid_size` (int, optional): Resolution of the grid used for KDE.
 - `color` (str or tuple, optional): Color of the contour.
 - `linestyle` (str, optional): Matplotlib line style string.

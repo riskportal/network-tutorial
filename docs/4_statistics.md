@@ -1,4 +1,4 @@
-# Statistical Tests for Annotation Significance
+# Summary of Statistical Methods
 
 RISK implements multiple statistical methods to assess overrepresentation of functional terms in network neighborhoods. Each method has strengths depending on dataset size, structure, and precision requirements.
 
