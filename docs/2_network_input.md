@@ -17,18 +17,6 @@ All loaders accept shared preprocessing parameters for spherical projection, sur
 
 ---
 
-## Shared Parameters
-
-| Parameter            | Description                                                       | Default |
-| -------------------- | ----------------------------------------------------------------- | ------- |
-| `compute_sphere`     | 3D spherical projection (Mercator-inspired)                       | `True`  |
-| `surface_depth`      | Adjusts node position relative to sphere surface (inward/outward) | `0.0`   |
-| `min_edges_per_node` | Filters nodes below this degree threshold                         | `0`     |
-
-These options enhance clarity, emphasize dense structures, and reduce noise.
-
----
-
 ## Cytoscape `.cys` Files
 
 Load Cytoscape session files exported from the desktop app.
