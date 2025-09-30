@@ -92,9 +92,3 @@ Remove a domain and retrieve its node labels:
 ```python
 domain_1_labels = graph.pop(1)
 ```
-
----
-
-## Next Step
-
-Proceed to [6. Visualization](./6_visualization.md) to plot overrepresented clusters and explore domain layout.

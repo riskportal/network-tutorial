@@ -184,9 +184,3 @@ annotation = risk.load_annotation_dict(
 - Loads annotation data from a Python dictionary in memory.
 - Annotations should follow the term–to–gene membership table format.
 - Examples include GO BP terms, CORUM complexes, and KEGG pathways.
-
----
-
-## Next Step
-
-Proceed to [4. Statistics](./4_statistics.md) to evaluate overrepresentation and assess significance of biological annotations.

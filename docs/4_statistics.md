@@ -17,12 +17,12 @@ RISK implements multiple statistical methods to assess overrepresentation of fun
 
 ### Choosing a test: quick guidance
 
-- **If assumptions are unclear / want a gold-standard null:** use **Permutation** (robust, slower).
-- **Finite population without replacement (standard GO enrichment):** use **Hypergeometric**.
-- **Need speed with large populations and small samples:** use **Binomial** (approximation to hypergeometric).
-- **Many categories and large counts:** use **Chi-squared** (fast), but ensure expected counts ≥ 5 per cell.
-- **Rare-event counts (sparse networks):** use **Poisson**; verify that a constant-rate assumption is reasonable.
-- **Just need a fast ranking score (not exact p-values):** use **Z-score**; treat results as heuristic when counts are small.
+- If assumptions are unclear / want a gold-standard null: use **Permutation** (robust, slower).
+- Finite population without replacement (standard GO enrichment): use **Hypergeometric**.
+- Need speed with large populations and small samples: use **Binomial** (approximation to hypergeometric).
+- Many categories and large counts: use **Chi-squared** (fast), but ensure expected counts ≥ 5 per cell.
+- Rare-event counts (sparse networks): use **Poisson**; verify that a constant-rate assumption is reasonable.
+- Just need a fast ranking score (not exact p-values): use **Z-score**; treat results as heuristic when counts are small.
 
 ---
 
@@ -269,9 +269,3 @@ neighborhoods = risk.load_neighborhoods_zscore(
     random_seed=887,
 )
 ```
-
----
-
-## Next Step
-
-Proceed to [5. Load Graph](./5_load_graph.md) to build a cluster-aware network object.

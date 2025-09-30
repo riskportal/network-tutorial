@@ -128,9 +128,3 @@ network = risk.load_network_networkx(
     min_edges_per_node=1,
 )
 ```
-
----
-
-## Next Step
-
-Proceed to [3. Annotation](./3_annotation.md) to map biological terms onto network nodes.

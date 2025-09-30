@@ -49,9 +49,3 @@ risk = RISK(verbose=True)
 
 - `verbose=True` enables console log messages.
 - The object provides modular access to clustering, statistics, and visualization components.
-
----
-
-## Next Step
-
-Continue to [Network Input](./2_network_input.md) to load your first graph.

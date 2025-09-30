@@ -551,9 +551,3 @@ plotter.show()
 ---
 
 ![Annotated Yeast PPI Network](images/go_bp_annotated.png)
-
----
-
-## Next Step
-
-For a complete list of configurable options, see [Parameters](./7_parameters.md).
