@@ -907,20 +907,20 @@
 <h2 id="create-a-networkgraph">Create a <code>NetworkGraph</code><a class="headerlink" href="#create-a-networkgraph" title="Permanent link">&para;</a></h2>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>network (nx.Graph)</code>: The network graph containing the nodes and edges to be analyzed.</li>
-<li><code>annotation (dict)</code>: Annotation data associated with the network.</li>
-<li><code>neighborhoods (dict)</code>: Neighborhood scores from enrichment/depletion analysis.</li>
-<li><code>tail (str, optional)</code>: Specifies test tail. Options: <code>'right'</code> (default), <code>'left'</code>, <code>'both'</code>.</li>
-<li><code>pval_cutoff (float, optional)</code>: Cutoff for raw p-values (0–1). Defaults to 0.01.</li>
-<li><code>fdr_cutoff (float, optional)</code>: Cutoff for FDR-corrected p-values (0–1). Defaults to 0.9999.</li>
-<li><code>impute_depth (int, optional)</code>: Depth for imputing missing values (≥0). Defaults to 1.</li>
-<li><code>prune_threshold (float, optional)</code>: Threshold for pruning weak edges (0–1). Defaults to 0.0.</li>
-<li><code>linkage_criterion (str, optional)</code>: Criterion for clustering. Options: <code>'distance'</code> (default), <code>'maxclust'</code>, <code>'off'</code>.</li>
-<li><code>linkage_method (str, optional)</code>: Hierarchical clustering method. Options: <code>'auto'</code>, <code>'single'</code>, <code>'complete'</code>, <code>'average'</code>, <code>'weighted'</code>, <code>'centroid'</code>, <code>'median'</code>, <code>'ward'</code>. Defaults to <code>'average'</code>.</li>
-<li><code>linkage_metric (str, optional)</code>: Distance metric. Options: <code>'auto'</code>, <code>'braycurtis'</code>, <code>'canberra'</code>, <code>'chebyshev'</code>, <code>'cityblock'</code>, <code>'correlation'</code>, <code>'cosine'</code>, <code>'dice'</code>, <code>'euclidean'</code>, <code>'hamming'</code>, <code>'jaccard'</code>, <code>'jensenshannon'</code>, <code>'kulczynski1'</code>, <code>'mahalanobis'</code>, <code>'matching'</code>, <code>'minkowski'</code>, <code>'rogerstanimoto'</code>, <code>'russellrao'</code>, <code>'seuclidean'</code>, <code>'sokalmichener'</code>, <code>'sokalsneath'</code>, <code>'sqeuclidean'</code>, <code>'yule'</code>. Defaults to <code>'yule'</code>.</li>
-<li><code>linkage_threshold (str or float, optional)</code>: Cutoff distance or <code>'auto'</code> for silhouette optimization. Defaults to 0.2.</li>
-<li><code>min_cluster_size (int, optional)</code>: Minimum cluster size. Defaults to 5.</li>
-<li><code>max_cluster_size (int, optional)</code>: Maximum cluster size. Defaults to 1000.</li>
+<li><code>network</code> (nx.Graph): The network graph containing the nodes and edges to be analyzed.</li>
+<li><code>annotation</code> (dict): Annotation data associated with the network.</li>
+<li><code>neighborhoods</code> (dict): Neighborhood scores from enrichment/depletion analysis.</li>
+<li><code>tail</code> (str, optional): Specifies test tail. Options: <code>'right'</code> (default), <code>'left'</code>, <code>'both'</code>.</li>
+<li><code>pval_cutoff</code> (float, optional): Cutoff for raw p-values (0–1). Defaults to 0.01.</li>
+<li><code>fdr_cutoff</code> (float, optional): Cutoff for FDR-corrected p-values (0–1). Defaults to 0.9999.</li>
+<li><code>impute_depth</code> (int, optional): Depth for imputing missing values (≥0). Defaults to 1.</li>
+<li><code>prune_threshold</code> (float, optional): Threshold for pruning weak edges (0–1). Defaults to 0.0.</li>
+<li><code>linkage_criterion</code> (str, optional): Criterion for clustering. Options: <code>'distance'</code> (default), <code>'maxclust'</code>, <code>'off'</code>.</li>
+<li><code>linkage_method</code> (str, optional): Hierarchical clustering method. Options: <code>'auto'</code>, <code>'single'</code>, <code>'complete'</code>, <code>'average'</code>, <code>'weighted'</code>, <code>'centroid'</code>, <code>'median'</code>, <code>'ward'</code>. Defaults to <code>'average'</code>.</li>
+<li><code>linkage_metric</code> (str, optional): Distance metric. Options: <code>'auto'</code>, <code>'braycurtis'</code>, <code>'canberra'</code>, <code>'chebyshev'</code>, <code>'cityblock'</code>, <code>'correlation'</code>, <code>'cosine'</code>, <code>'dice'</code>, <code>'euclidean'</code>, <code>'hamming'</code>, <code>'jaccard'</code>, <code>'jensenshannon'</code>, <code>'kulczynski1'</code>, <code>'mahalanobis'</code>, <code>'matching'</code>, <code>'minkowski'</code>, <code>'rogerstanimoto'</code>, <code>'russellrao'</code>, <code>'seuclidean'</code>, <code>'sokalmichener'</code>, <code>'sokalsneath'</code>, <code>'sqeuclidean'</code>, <code>'yule'</code>. Defaults to <code>'yule'</code>.</li>
+<li><code>linkage_threshold</code> (str or float, optional): Cutoff distance or <code>'auto'</code> for silhouette optimization. Defaults to 0.2.</li>
+<li><code>min_cluster_size</code> (int, optional): Minimum cluster size. Defaults to 5.</li>
+<li><code>max_cluster_size</code> (int, optional): Maximum cluster size. Defaults to 1000.</li>
 </ul>
 <p><strong>Returns:</strong></p>
 <ul>
