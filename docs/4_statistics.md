@@ -6,14 +6,14 @@ RISK implements multiple statistical methods to assess overrepresentation of fun
 
 ## Summary of Methods
 
-| Test           | Speed     | Primary use                              | When/Why (assumptions & notes)                                                                                              |
-| -------------- | --------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Permutation    | ⚖️ Medium | Most robust; non-parametric              | Distribution-free empirical null (permute network or labels); best when assumptions are unclear; computationally intensive. |
-| Hypergeometric | ⚖️ Medium | Standard for GO/pathway enrichment       | Finite population without replacement; exact count-based test for term–to–gene membership tables.                       |
-| Binomial       | ⚡ Fast   | Scalable approximation                   | With replacement/independent trials; good large-population approximation to hypergeometric when sample << population.    |
-| Chi-squared    | ⚡ Fast   | Contingency-table testing, large samples | For large counts; expected cell counts ≥ 5; very fast for big tables; avoid with sparse/low counts.                         |
-| Poisson        | ⚡ Fast   | Rare events, sparse networks             | Counts of independent events at ~constant rate; good when events are rare (small p, large n). Check for overdispersion.     |
-| Z-score        | ⚡ Fast   | Quick standardized scoring               | Normal approximation; great for rapid ranking at scale; avoid when counts are very small or highly skewed.                  |
+| Test           | Speed  | Primary use                              | When/Why (assumptions & notes)                                                                                              |
+| -------------- | ------ | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Permutation    | Medium | Most robust; non-parametric              | Distribution-free empirical null (permute network or labels); best when assumptions are unclear; computationally intensive. |
+| Hypergeometric | Medium | Standard for GO/pathway enrichment       | Finite population without replacement; exact count-based test for term–to–gene membership tables.                           |
+| Binomial       | Fast   | Scalable approximation                   | With replacement/independent trials; good large-population approximation to hypergeometric when sample << population.       |
+| Chi-squared    | Fast   | Contingency-table testing, large samples | For large counts; expected cell counts ≥ 5; very fast for big tables; avoid with sparse/low counts.                         |
+| Poisson        | Fast   | Rare events, sparse networks             | Counts of independent events at ~constant rate; good when events are rare (small p, large n). Check for overdispersion.     |
+| Z-score        | Fast   | Quick standardized scoring               | Normal approximation; great for rapid ranking at scale; avoid when counts are very small or highly skewed.                  |
 
 ### Choosing a test: quick guidance
 
@@ -38,17 +38,17 @@ Builds an empirical null by permuting either the network structure or annotation
 
 **Parameters:**
 
-- `network (nx.Graph)`: The network graph.
-- `annotation (dict)`: The annotation associated with the network.
-- `distance_metric (str, list, tuple, or np.ndarray, optional)`: Methods for community detection, supporting `louvain`, `greedy_modularity`, `label_propagation`, `leiden`, `markov_clustering`, `walktrap`, `spinglass`.
-- `louvain_resolution (float, optional)`: Resolution parameter for Louvain. Defaults to 0.1.
-- `leiden_resolution (float, optional)`: Resolution parameter for Leiden. Defaults to 1.0.
-- `fraction_shortest_edges (float, list, tuple, or np.ndarray, optional)`: Edge threshold(s) for subgraphs. Defaults to 0.5.
-- `score_metric (str, optional)`: Scoring metric used in permutation tests; options include `"sum"` (default) and `"stdev"`.
-- `num_permutations (int, optional)`: Number of permutations (only used in permutation test). Defaults to 1000.
-- `max_workers (int, optional)`: Number of parallel workers for permutation tests. Defaults to 1.
-- `null_distribution (str, optional)`: `"network"` (default) or `"annotation"`.
-- `random_seed (int, optional)`: Seed for reproducibility.
+- `network` (nx.Graph): The network graph.
+- `annotation` (dict): The annotation associated with the network.
+- `distance_metric` (str, list, tuple, or np.ndarray, optional): Methods for community detection, supporting `louvain`, `greedy_modularity`, `label_propagation`, `leiden`, `markov_clustering`, `walktrap`, `spinglass`.
+- `louvain_resolution` (float, optional): Resolution parameter for Louvain. Defaults to 0.1.
+- `leiden_resolution` (float, optional): Resolution parameter for Leiden. Defaults to 1.0.
+- `fraction_shortest_edges` (float, list, tuple, or np.ndarray, optional): Edge threshold(s) for subgraphs. Defaults to 0.5.
+- `score_metric` (str, optional): Scoring metric used in permutation tests; options include `"sum"` (default) and `"stdev"`.
+- `num_permutations` (int, optional): Number of permutations (only used in permutation test). Defaults to 1000.
+- `max_workers` (int, optional): Number of parallel workers for permutation tests. Defaults to 1.
+- `null_distribution` (str, optional): `"network"` (default) or `"annotation"`.
+- `random_seed` (int, optional): Seed for reproducibility.
 
 **Returns:**
 
@@ -84,14 +84,14 @@ Exact test based on finite sampling without replacement.
 
 **Parameters:**
 
-- `network (nx.Graph)`: The network graph.
-- `annotation (dict)`: The annotation associated with the network.
-- `distance_metric (str, list, tuple, or np.ndarray, optional)`: Methods for community detection, supporting `louvain`, `greedy_modularity`, `label_propagation`, `leiden`, `markov_clustering`, `walktrap`, `spinglass`.
-- `louvain_resolution (float, optional)`: Resolution parameter for Louvain. Defaults to 0.1.
-- `leiden_resolution (float, optional)`: Resolution parameter for Leiden. Defaults to 1.0.
-- `fraction_shortest_edges (float, list, tuple, or np.ndarray, optional)`: Edge threshold(s) for subgraphs. Defaults to 0.5.
-- `null_distribution (str, optional)`: `"network"` (default) or `"annotation"`.
-- `random_seed (int, optional)`: Seed for reproducibility.
+- `network` (nx.Graph): The network graph.
+- `annotation` (dict): The annotation associated with the network.
+- `distance_metric` (str, list, tuple, or np.ndarray, optional): Methods for community detection, supporting `louvain`, `greedy_modularity`, `label_propagation`, `leiden`, `markov_clustering`, `walktrap`, `spinglass`.
+- `louvain_resolution` (float, optional): Resolution parameter for Louvain. Defaults to 0.1.
+- `leiden_resolution` (float, optional): Resolution parameter for Leiden. Defaults to 1.0.
+- `fraction_shortest_edges` (float, list, tuple, or np.ndarray, optional): Edge threshold(s) for subgraphs. Defaults to 0.5.
+- `null_distribution` (str, optional): `"network"` (default) or `"annotation"`.
+- `random_seed` (int, optional): Seed for reproducibility.
 
 **Returns:**
 
@@ -124,14 +124,14 @@ Approximates overrepresentation via independent trials.
 
 **Parameters:**
 
-- `network (nx.Graph)`: The network graph.
-- `annotation (dict)`: The annotation associated with the network.
-- `distance_metric (str, list, tuple, or np.ndarray, optional)`: Methods for community detection, supporting `louvain`, `greedy_modularity`, `label_propagation`, `leiden`, `markov_clustering`, `walktrap`, `spinglass`.
-- `louvain_resolution (float, optional)`: Resolution parameter for Louvain. Defaults to 0.1.
-- `leiden_resolution (float, optional)`: Resolution parameter for Leiden. Defaults to 1.0.
-- `fraction_shortest_edges (float, list, tuple, or np.ndarray, optional)`: Edge threshold(s) for subgraphs. Defaults to 0.5.
-- `null_distribution (str, optional)`: `"network"` (default) or `"annotation"`.
-- `random_seed (int, optional)`: Seed for reproducibility.
+- `network` (nx.Graph): The network graph.
+- `annotation` (dict): The annotation associated with the network.
+- `distance_metric` (str, list, tuple, or np.ndarray, optional): Methods for community detection, supporting `louvain`, `greedy_modularity`, `label_propagation`, `leiden`, `markov_clustering`, `walktrap`, `spinglass`.
+- `louvain_resolution` (float, optional): Resolution parameter for Louvain. Defaults to 0.1.
+- `leiden_resolution` (float, optional): Resolution parameter for Leiden. Defaults to 1.0.
+- `fraction_shortest_edges` (float, list, tuple, or np.ndarray, optional): Edge threshold(s) for subgraphs. Defaults to 0.5.
+- `null_distribution` (str, optional): `"network"` (default) or `"annotation"`.
+- `random_seed` (int, optional): Seed for reproducibility.
 
 **Returns:**
 
@@ -164,14 +164,14 @@ Evaluates significance using contingency tables.
 
 **Parameters:**
 
-- `network (nx.Graph)`: The network graph.
-- `annotation (dict)`: The annotation associated with the network.
-- `distance_metric (str, list, tuple, or np.ndarray, optional)`: Methods for community detection, supporting `louvain`, `greedy_modularity`, `label_propagation`, `leiden`, `markov_clustering`, `walktrap`, `spinglass`.
-- `louvain_resolution (float, optional)`: Resolution parameter for Louvain. Defaults to 0.1.
-- `leiden_resolution (float, optional)`: Resolution parameter for Leiden. Defaults to 1.0.
-- `fraction_shortest_edges (float, list, tuple, or np.ndarray, optional)`: Edge threshold(s) for subgraphs. Defaults to 0.5.
-- `null_distribution (str, optional)`: `"network"` (default) or `"annotation"`.
-- `random_seed (int, optional)`: Seed for reproducibility.
+- `network` (nx.Graph): The network graph.
+- `annotation` (dict): The annotation associated with the network.
+- `distance_metric` (str, list, tuple, or np.ndarray, optional): Methods for community detection, supporting `louvain`, `greedy_modularity`, `label_propagation`, `leiden`, `markov_clustering`, `walktrap`, `spinglass`.
+- `louvain_resolution` (float, optional): Resolution parameter for Louvain. Defaults to 0.1.
+- `leiden_resolution` (float, optional): Resolution parameter for Leiden. Defaults to 1.0.
+- `fraction_shortest_edges` (float, list, tuple, or np.ndarray, optional): Edge threshold(s) for subgraphs. Defaults to 0.5.
+- `null_distribution` (str, optional): `"network"` (default) or `"annotation"`.
+- `random_seed` (int, optional): Seed for reproducibility.
 
 **Returns:**
 
@@ -204,14 +204,14 @@ Tests observed frequencies against a Poisson expectation.
 
 **Parameters:**
 
-- `network (nx.Graph)`: The network graph.
-- `annotation (dict)`: The annotation associated with the network.
-- `distance_metric (str, list, tuple, or np.ndarray, optional)`: Methods for community detection, supporting `louvain`, `greedy_modularity`, `label_propagation`, `leiden`, `markov_clustering`, `walktrap`, `spinglass`.
-- `louvain_resolution (float, optional)`: Resolution parameter for Louvain. Defaults to 0.1.
-- `leiden_resolution (float, optional)`: Resolution parameter for Leiden. Defaults to 1.0.
-- `fraction_shortest_edges (float, list, tuple, or np.ndarray, optional)`: Edge threshold(s) for subgraphs. Defaults to 0.5.
-- `null_distribution (str, optional)`: `"network"` (default) or `"annotation"`.
-- `random_seed (int, optional)`: Seed for reproducibility.
+- `network` (nx.Graph): The network graph.
+- `annotation` (dict): The annotation associated with the network.
+- `distance_metric` (str, list, tuple, or np.ndarray, optional): Methods for community detection, supporting `louvain`, `greedy_modularity`, `label_propagation`, `leiden`, `markov_clustering`, `walktrap`, `spinglass`.
+- `louvain_resolution` (float, optional): Resolution parameter for Louvain. Defaults to 0.1.
+- `leiden_resolution` (float, optional): Resolution parameter for Leiden. Defaults to 1.0.
+- `fraction_shortest_edges` (float, list, tuple, or np.ndarray, optional): Edge threshold(s) for subgraphs. Defaults to 0.5.
+- `null_distribution` (str, optional): `"network"` (default) or `"annotation"`.
+- `random_seed` (int, optional): Seed for reproducibility.
 
 **Returns:**
 
@@ -244,14 +244,14 @@ Computes standardized enrichment scores.
 
 **Parameters:**
 
-- `network (nx.Graph)`: The network graph.
-- `annotation (dict)`: The annotation associated with the network.
-- `distance_metric (str, list, tuple, or np.ndarray, optional)`: Methods for community detection, supporting `louvain`, `greedy_modularity`, `label_propagation`, `leiden`, `markov_clustering`, `walktrap`, `spinglass`.
-- `louvain_resolution (float, optional)`: Resolution parameter for Louvain. Defaults to 0.1.
-- `leiden_resolution (float, optional)`: Resolution parameter for Leiden. Defaults to 1.0.
-- `fraction_shortest_edges (float, list, tuple, or np.ndarray, optional)`: Edge threshold(s) for subgraphs. Defaults to 0.5.
-- `null_distribution (str, optional)`: `"network"` (default) or `"annotation"`.
-- `random_seed (int, optional)`: Seed for reproducibility.
+- `network` (nx.Graph): The network graph.
+- `annotation` (dict): The annotation associated with the network.
+- `distance_metric` (str, list, tuple, or np.ndarray, optional): Methods for community detection, supporting `louvain`, `greedy_modularity`, `label_propagation`, `leiden`, `markov_clustering`, `walktrap`, `spinglass`.
+- `louvain_resolution` (float, optional): Resolution parameter for Louvain. Defaults to 0.1.
+- `leiden_resolution` (float, optional): Resolution parameter for Leiden. Defaults to 1.0.
+- `fraction_shortest_edges` (float, list, tuple, or np.ndarray, optional): Edge threshold(s) for subgraphs. Defaults to 0.5.
+- `null_distribution` (str, optional): `"network"` (default) or `"annotation"`.
+- `random_seed` (int, optional): Seed for reproducibility.
 
 **Returns:**
 

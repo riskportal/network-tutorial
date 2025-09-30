@@ -8,20 +8,20 @@ The `NetworkGraph` object integrates network data, annotations, and overrepresen
 
 **Parameters:**
 
-- `network (nx.Graph)`: The network graph containing the nodes and edges to be analyzed.
-- `annotation (dict)`: Annotation data associated with the network.
-- `neighborhoods (dict)`: Neighborhood scores from enrichment/depletion analysis.
-- `tail (str, optional)`: Specifies test tail. Options: `'right'` (default), `'left'`, `'both'`.
-- `pval_cutoff (float, optional)`: Cutoff for raw p-values (0–1). Defaults to 0.01.
-- `fdr_cutoff (float, optional)`: Cutoff for FDR-corrected p-values (0–1). Defaults to 0.9999.
-- `impute_depth (int, optional)`: Depth for imputing missing values (≥0). Defaults to 1.
-- `prune_threshold (float, optional)`: Threshold for pruning weak edges (0–1). Defaults to 0.0.
-- `linkage_criterion (str, optional)`: Criterion for clustering. Options: `'distance'` (default), `'maxclust'`, `'off'`.
-- `linkage_method (str, optional)`: Hierarchical clustering method. Options: `'auto'`, `'single'`, `'complete'`, `'average'`, `'weighted'`, `'centroid'`, `'median'`, `'ward'`. Defaults to `'average'`.
-- `linkage_metric (str, optional)`: Distance metric. Options: `'auto'`, `'braycurtis'`, `'canberra'`, `'chebyshev'`, `'cityblock'`, `'correlation'`, `'cosine'`, `'dice'`, `'euclidean'`, `'hamming'`, `'jaccard'`, `'jensenshannon'`, `'kulczynski1'`, `'mahalanobis'`, `'matching'`, `'minkowski'`, `'rogerstanimoto'`, `'russellrao'`, `'seuclidean'`, `'sokalmichener'`, `'sokalsneath'`, `'sqeuclidean'`, `'yule'`. Defaults to `'yule'`.
-- `linkage_threshold (str or float, optional)`: Cutoff distance or `'auto'` for silhouette optimization. Defaults to 0.2.
-- `min_cluster_size (int, optional)`: Minimum cluster size. Defaults to 5.
-- `max_cluster_size (int, optional)`: Maximum cluster size. Defaults to 1000.
+- `network` (nx.Graph): The network graph containing the nodes and edges to be analyzed.
+- `annotation` (dict): Annotation data associated with the network.
+- `neighborhoods` (dict): Neighborhood scores from enrichment/depletion analysis.
+- `tail` (str, optional): Specifies test tail. Options: `'right'` (default), `'left'`, `'both'`.
+- `pval_cutoff` (float, optional): Cutoff for raw p-values (0–1). Defaults to 0.01.
+- `fdr_cutoff` (float, optional): Cutoff for FDR-corrected p-values (0–1). Defaults to 0.9999.
+- `impute_depth` (int, optional): Depth for imputing missing values (≥0). Defaults to 1.
+- `prune_threshold` (float, optional): Threshold for pruning weak edges (0–1). Defaults to 0.0.
+- `linkage_criterion` (str, optional): Criterion for clustering. Options: `'distance'` (default), `'maxclust'`, `'off'`.
+- `linkage_method` (str, optional): Hierarchical clustering method. Options: `'auto'`, `'single'`, `'complete'`, `'average'`, `'weighted'`, `'centroid'`, `'median'`, `'ward'`. Defaults to `'average'`.
+- `linkage_metric` (str, optional): Distance metric. Options: `'auto'`, `'braycurtis'`, `'canberra'`, `'chebyshev'`, `'cityblock'`, `'correlation'`, `'cosine'`, `'dice'`, `'euclidean'`, `'hamming'`, `'jaccard'`, `'jensenshannon'`, `'kulczynski1'`, `'mahalanobis'`, `'matching'`, `'minkowski'`, `'rogerstanimoto'`, `'russellrao'`, `'seuclidean'`, `'sokalmichener'`, `'sokalsneath'`, `'sqeuclidean'`, `'yule'`. Defaults to `'yule'`.
+- `linkage_threshold` (str or float, optional): Cutoff distance or `'auto'` for silhouette optimization. Defaults to 0.2.
+- `min_cluster_size` (int, optional): Minimum cluster size. Defaults to 5.
+- `max_cluster_size` (int, optional): Maximum cluster size. Defaults to 1000.
 
 **Returns:**
 
