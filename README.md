@@ -10,38 +10,24 @@
 [![Licence](https://img.shields.io/badge/license-GPLv3-purple.svg)](https://raw.githubusercontent.com/riskportal/network-tutorial/main/LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.xxxxxxx.svg)](https://doi.org/10.5281/zenodo.xxxxxxx)
 
-**RISK Network Tutorial** offers a detailed guide on using **RISK** (Regional Inference of Significant Kinships), a next-generation tool for biological network annotation and visualization. This guide details key functionalities and practical applications for network analysis using RISK.
+**RISK Network Tutorial** offers a detailed guide to using RISK (Regional Inference of Significant Kinships), a next-generation tool for biological network annotation and visualization. It walks users through core features and practical workflows for network analysis.
 
-- **Full Documentation:** [riskportal.github.io/network-tutorial](https://riskportal.github.io/network-tutorial)
-- **Try in Browser (Binder):** [![Launch in Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb)
-- **Source Code:** [github.com/riskportal/network](https://github.com/riskportal/network)
+- **Full Documentation**: [riskportal.github.io/network-tutorial](https://riskportal.github.io/network-tutorial)
+- **Try in Browser (Binder)**: [![Launch in Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb)
+- **Source Code**: [github.com/riskportal/network](https://github.com/riskportal/network)
 
-## Key Features of RISK
-
-Launch RISK tutorial instantly in Binder to interactively explore the workflow and analyses without any installation required.
-
-- Clustering Algorithms: Implements Louvain, Leiden, Markov Clustering, Greedy Modularity, Label Propagation, Spinglass, and Walktrap to identify structured network regions.
-- Statistical Analysis: Includes hypergeometric, permutation, binomial, chi-squared, Poisson, and z-score tests to assess annotation overrepresentation and significance.
-- Supports multiple file formats: Compatible with JSON, CSV, Cytoscape, and GPickle formats.
-- Publication-Ready Visualizations: Customizable figures with kernel density estimate overlays, node/edge adjustments, and high-resolution exports in multiple formats, including SVG, PNG, and PDF.
+For a full description of RISK and its applications, see:
+<br>
+**Horecka and Röst (2025)**, _"RISK: a next-generation tool for biological network annotation and visualization"_.
+<br>
+DOI: [10.5281/zenodo.xxxxxxx](https://doi.org/10.5281/zenodo.xxxxxxx)
 
 ## Yeast Protein–Protein Interaction (PPI) Network Demonstration
 
-In this demonstration, we use the yeast PPI network published by Michaelis et al. (2023), which contains 3,927 proteins and 31,004 interactions. We filtered the dataset to retain proteins with six or more interactions, emphasizing core functional interactions. The final dataset contains 2,059 nodes and 27,690 edges. RISK is applied to perform analyses such as network clustering and statistical overrepresentation of annotations.
+We applied RISK to a _Saccharomyces cerevisiae_ protein–protein interaction (PPI) network (Michaelis _et al_., 2023; 3,839 proteins, 30,955 interactions). RISK identified compact, functional modules overrepresented in Gene Ontology Biological Process (GO BP) terms (Ashburner _et al_., 2000), revealing biological organization including ribosomal assembly, mitochondrial organization, and RNA polymerase activity (P < 0.0001).
 
-Below is a visual representation of the yeast PPI interaction network, annotated with **Gene Ontology Biological Processes (GO BP)** terms:
-
-[![Yeast PPI network annotated with GO BP terms](https://i.imgur.com/lJHJrJr.jpeg)](https://i.imgur.com/lJHJrJr.jpeg)
-
-## Party and Date Hubs
-
-RISK also identifies [**party hubs** and **date hubs**](https://www.nature.com/articles/nature02555.pdf), two distinct types of central nodes in the network. Party hubs (orange) are highly connected proteins that interact with many partners simultaneously, often forming stable protein complexes. In contrast, date hubs (cyan) connect with different partners at different times or conditions, playing roles in dynamic regulatory interactions. This visualization highlights party and date hubs in the yeast network:
-
-<p align="center">
-  <img src="https://i.imgur.com/ghXLwP0.png" width="75%" alt="Party and Date Hubs" />
-</p>
-
-The **GO BP contour overlay** highlights the spatial organization of biological processes, providing additional context for interpreting these hubs. For a full demonstration of this analysis, please refer to the [tutorial notebook](notebooks/tutorial.ipynb), which can be downloaded and run locally.
+[![Yeast PPI network annotated with GO BP terms](https://i.imgur.com/jQKatLY.jpeg)](https://i.imgur.com/jQKatLY.jpeg)
+**RISK workflow overview and analysis of the yeast PPI network**. GO BP terms are color-coded to represent key cellular processes—including ribosomal assembly, mitochondrial organization, and RNA polymerase activity (P < 0.0001).
 
 ## Setting Up Python and Jupyter for RISK
 
@@ -155,9 +141,10 @@ jupyter notebook
 
 ## Citation
 
-If you use RISK in your research, please reference the following:
+If you use RISK in your research, please cite the following:
 
-**Horecka et al.**, *"RISK: a next-generation tool for biological network annotation and visualization"*, 2025.  
+**Horecka and Röst (2025)**, _"RISK: a next-generation tool for biological network annotation and visualization"_.
+<br>
 DOI: [10.5281/zenodo.xxxxxxx](https://doi.org/10.5281/zenodo.xxxxxxx)
 
 ## License

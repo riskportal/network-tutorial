@@ -2,4 +2,4 @@ matplotlib
 mkdocs-material
 networkx
 pandas
-risk-network==0.0.13
+risk-network

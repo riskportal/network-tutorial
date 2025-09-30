@@ -1,25 +1,51 @@
-# Loading a Network
+# Loading Network for RISK Analysis
 
-RISK includes dedicated loader functions for multiple network formats. Each returns a standardized `networkx` graph object for downstream analysis.
+RISK offers flexible loading functions compatible with multiple network formats, including Cytoscape session files, Cytoscape JSON exports, GPickle files, and in-memory NetworkX graphs. These loaders provide standardized NetworkX graph objects ready for downstream analysis, with options for preprocessing such as spherical projection, surface depth adjustment, and node filtering.
 
 ---
 
 ## Supported Input Formats
 
-| Format     | Function                        |
-| ---------- | ------------------------------- |
-| `.cys`     | `load_network_cytoscape()`      |
-| `.cyjs`    | `load_network_cyjs()` |
-| `.gpickle` | `load_network_gpickle()`        |
-| `NetworkX` | `load_network_networkx()`       |
+| Format     | Function                   |
+| ---------- | -------------------------- |
+| `.cys`     | `load_network_cytoscape()` |
+| `.cyjs`    | `load_network_cyjs()`      |
+| `.gpickle` | `load_network_gpickle()`   |
+| `NetworkX` | `load_network_networkx()`  |
 
-Each loader supports optional spherical projection, depth tuning, and node filtering.
+All loaders accept shared preprocessing parameters for spherical projection, surface depth, and node filtering.
+
+---
+
+## Shared Parameters
+
+| Parameter            | Description                                                       | Default |
+| -------------------- | ----------------------------------------------------------------- | ------- |
+| `compute_sphere`     | 3D spherical projection (Mercator-inspired)                       | `True`  |
+| `surface_depth`      | Adjusts node position relative to sphere surface (inward/outward) | `0.0`   |
+| `min_edges_per_node` | Filters nodes below this degree threshold                         | `0`     |
+
+These options enhance clarity, emphasize dense structures, and reduce noise.
 
 ---
 
 ## Cytoscape `.cys` Files
 
-Use this format if you've exported or styled your network in Cytoscape.
+Load Cytoscape session files exported from the desktop app.
+
+**Parameters:**
+
+- `filepath` (str): Path to the `.cys` file.
+- `source_label` (str): Name of the source node attribute.
+- `target_label` (str): Name of the target node attribute.
+- `view_name` (str): Name of the Cytoscape view to load.
+- `compute_sphere` (bool, default=True): Apply 3D Mercator-inspired spherical projection.
+- `surface_depth` (float, default=0.0): Inward/outward displacement relative to sphere surface.
+- `min_edges_per_node` (int, default=0): Minimum degree threshold for nodes.
+
+**Returns:**
+
+`nx.Graph`: The loaded and processed network as a NetworkX graph.
 
 ```python
 network = risk.load_network_cytoscape(
@@ -28,20 +54,29 @@ network = risk.load_network_cytoscape(
     target_label="target",
     view_name="",
     compute_sphere=True,
-    surface_depth=0.1,
+    surface_depth=0.0,
+    min_edges_per_node=0,
 )
 ```
-
-- `source_label`, `target_label`: Column names for edges
-- `view_name`: Load a specific layout (optional)
-- `compute_sphere`: Project layout onto a 3D sphere
-- `surface_depth`: Controls visual node "depth"
 
 ---
 
 ## Cytoscape JSON (`.cyjs`) Files
 
-Structured network files exported from Cytoscape Web or JS-based tools.
+Load JSON exports from Cytoscape Web or JavaScript pipelines.
+
+**Parameters:**
+
+- `filepath` (str): Path to the `.cyjs` file.
+- `source_label` (str): Name of the source node attribute.
+- `target_label` (str): Name of the target node attribute.
+- `compute_sphere` (bool, default=True): Apply 3D Mercator-inspired spherical projection.
+- `surface_depth` (float, default=0.0): Inward/outward displacement relative to sphere surface.
+- `min_edges_per_node` (int, default=0): Minimum degree threshold for nodes.
+
+**Returns:**
+
+`nx.Graph`: The loaded and processed network as a NetworkX graph.
 
 ```python
 network = risk.load_network_cyjs(
@@ -50,57 +85,61 @@ network = risk.load_network_cyjs(
     target_label="target",
     compute_sphere=True,
     surface_depth=0.1,
-    min_edges_per_node=0,
+    min_edges_per_node=1,
 )
 ```
-
-- `min_edges_per_node`: Filters out sparsely connected nodes
 
 ---
 
 ## GPickle (`.gpickle`) Files
 
-Fast, native Python serialization of NetworkX graphs.
+Fast, Python-native serialization of NetworkX graphs preserving all attributes. Recommended for reproducibility and performance.
+
+**Parameters:**
+
+- `filepath` (str): Path to the `.gpickle` file.
+- `compute_sphere` (bool, default=True): Apply 3D Mercator-inspired spherical projection.
+- `surface_depth` (float, default=0.0): Inward/outward displacement relative to sphere surface.
+- `min_edges_per_node` (int, default=0): Minimum degree threshold for nodes.
+
+**Returns:**
+
+`nx.Graph`: The loaded and processed network as a NetworkX graph.
 
 ```python
 network = risk.load_network_gpickle(
     filepath="./data/gpickle/michaelis_2023.gpickle",
     compute_sphere=True,
     surface_depth=0.1,
-    min_edges_per_node=0,
+    min_edges_per_node=1,
 )
 ```
-
-Use this for reproducibility and performance when working with saved graphs.
 
 ---
 
 ## NetworkX Graphs
 
-Load an in-memory NetworkX graph directly.
+Load directly from an in-memory `networkx.Graph`. Integrates seamlessly when the graph is already loaded.
+
+**Parameters:**
+
+- `network` (nx.Graph): The input NetworkX graph.
+- `compute_sphere` (bool, default=True): Apply 3D Mercator-inspired spherical projection.
+- `surface_depth` (float, default=0.0): Inward/outward displacement relative to sphere surface.
+- `min_edges_per_node` (int, default=0): Minimum degree threshold for nodes.
+
+**Returns:**
+
+`nx.Graph`: The loaded and processed network as a NetworkX graph.
 
 ```python
 network = risk.load_network_networkx(
     network=network,
     compute_sphere=True,
     surface_depth=0.1,
-    min_edges_per_node=0,
+    min_edges_per_node=1,
 )
 ```
-
-Useful if you've already constructed a graph using other tools or workflows.
-
----
-
-## Spherical Projection and Depth
-
-All formats support these shared preprocessing parameters:
-
-- `compute_sphere=True`: Projects nodes from 2D to a 3D spherical layout (Mercator-inspired)
-- `surface_depth`: Push or pull nodes inward/outward to reflect density or importance
-- `min_edges_per_node`: Removes low-degree noise
-
-These features improve layout clarity and biological interpretability.
 
 ---
 

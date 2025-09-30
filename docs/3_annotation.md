@@ -1,6 +1,6 @@
 # Loading and Associating Annotation Data
 
-An annotation maps biological terms to network nodes (e.g., Gene Ontology categories mapping GO terms to genes). RISK supports multiple input formats with dedicated loaders.
+Annotations must be provided by the user and formatted clearly to ensure compatibility with RISK loaders. We note that RISK does not bundle annotations; users should obtain curated resources such as Gene Ontology (Ashburner et al., 2000), CORUM (Tsitsiridis et al., 2022), or KEGG (Kanehisa et al., 2023) and format them as term–to–gene membership tables. Publicly available resources such as Gene Ontology (GO), CORUM, and KEGG offer standardized annotation files that can be adapted for use.
 
 ---
 
@@ -12,13 +12,24 @@ An annotation maps biological terms to network nodes (e.g., Gene Ontology catego
 | `.csv`         | `load_annotation_csv()`   | `go_biological_process.csv`  |
 | `.tsv`         | `load_annotation_tsv()`   | `go_biological_process.tsv`  |
 | `.xlsx`/`.xls` | `load_annotation_excel()` | `go_biological_process.xlsx` |
-| `dict`         | `load_annotation_dict()`  | Python-loaded JSON           |
+| `dict`         | `load_annotation_dict()`  | Python dictionary in memory  |
 
-Each method also accepts `min_nodes_per_term` and `max_nodes_per_term` to exclude underpowered or overly broad annotations.
+Annotations must be provided by the user and formatted clearly to ensure compatibility with RISK loaders. Publicly available resources such as Gene Ontology (GO), CORUM, and KEGG offer standardized annotation files that can be adapted for use.
 
 ---
 
 ## JSON Annotation
+
+**Parameters:**
+
+- `network` (nx.Graph): Input NetworkX graph.
+- `filepath` (str): Path to the `.json` file.
+- `min_nodes_per_term` (int, default=1): Minimum number of nodes required for a term to be included.
+- `max_nodes_per_term` (int, default=10,000): Maximum number of nodes allowed for a term.
+
+**Returns:**
+
+`dict`: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.
 
 ```python
 annotation = risk.load_annotation_json(
@@ -29,12 +40,27 @@ annotation = risk.load_annotation_json(
 )
 ```
 
-- Load term-to-node mappings from a JSON dictionary
-- Ideal for GO annotations exported from standard tools
+- Loads GO BP annotations directly from JSON files.
+- Annotations should follow the term–to–gene membership table format.
+- Examples include GO BP terms, CORUM complexes, and KEGG pathways.
 
 ---
 
 ## CSV Annotation
+
+**Parameters:**
+
+- `network` (nx.Graph): Input NetworkX graph.
+- `filepath` (str): Path to the `.csv` file.
+- `label_colname` (str): Column name for annotation labels.
+- `nodes_colname` (str): Column name for nodes in the annotation.
+- `nodes_delimiter` (str, default=';'): Delimiter to split multiple nodes in a cell.
+- `min_nodes_per_term` (int, default=1): Minimum number of nodes required for a term to be included.
+- `max_nodes_per_term` (int, default=10,000): Maximum number of nodes allowed for a term.
+
+**Returns:**
+
+`dict`: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.
 
 ```python
 annotation = risk.load_annotation_csv(
@@ -48,12 +74,29 @@ annotation = risk.load_annotation_csv(
 )
 ```
 
-- Columns: one for labels, one for semicolon-separated nodes
-- Use for flat structured data
+- Loads annotation data from CSV files.
+- Requires specifying column names for labels and nodes.
+- Use `nodes_delimiter` to split multiple nodes per term (default = `;`).
+- Annotations should follow the term–to–gene membership table format.
+- Examples include GO BP terms, CORUM complexes, and KEGG pathways.
 
 ---
 
 ## TSV Annotation
+
+**Parameters:**
+
+- `network` (nx.Graph): Input NetworkX graph.
+- `filepath` (str): Path to the `.tsv` file.
+- `label_colname` (str): Column name for annotation labels.
+- `nodes_colname` (str): Column name for nodes in the annotation.
+- `nodes_delimiter` (str, default=';'): Delimiter to split multiple nodes in a cell.
+- `min_nodes_per_term` (int, default=1): Minimum number of nodes required for a term to be included.
+- `max_nodes_per_term` (int, default=10,000): Maximum number of nodes allowed for a term.
+
+**Returns:**
+
+`dict`: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.
 
 ```python
 annotation = risk.load_annotation_tsv(
@@ -67,11 +110,29 @@ annotation = risk.load_annotation_tsv(
 )
 ```
 
-- Tab-delimited version of the CSV format
+- Loads annotation data from TSV files.
+- Same parameters as CSV loader, but expects tab-delimited input.
+- Annotations should follow the term–to–gene membership table format.
+- Examples include GO BP terms, CORUM complexes, and KEGG pathways.
 
 ---
 
 ## Excel Annotation
+
+**Parameters:**
+
+- `network` (nx.Graph): Input NetworkX graph.
+- `filepath` (str): Path to the Excel `.xlsx` or `.xls` file.
+- `label_colname` (str): Column name for annotation labels.
+- `nodes_colname` (str): Column name for nodes in the annotation.
+- `sheet_name` (str, default='Sheet1'): Name of the sheet to load.
+- `nodes_delimiter` (str, default=';'): Delimiter to split multiple nodes in a cell.
+- `min_nodes_per_term` (int, default=1): Minimum number of nodes required for a term to be included.
+- `max_nodes_per_term` (int, default=10,000): Maximum number of nodes allowed for a term.
+
+**Returns:**
+
+`dict`: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.
 
 ```python
 annotation = risk.load_annotation_excel(
@@ -86,13 +147,25 @@ annotation = risk.load_annotation_excel(
 )
 ```
 
-- Specify a sheet name to target structured spreadsheets
+- Loads annotation data from Excel workbooks.
+- Allows loading from specific sheets.
+- Annotations should follow the term–to–gene membership table format.
+- Examples include GO BP terms, CORUM complexes, and KEGG pathways.
 
 ---
 
 ## Dictionary-Based Annotation
 
-If you already have a dictionary loaded from another source:
+**Parameters:**
+
+- `network` (nx.Graph): Input NetworkX graph.
+- `content` (dict): Python dictionary containing annotation data.
+- `min_nodes_per_term` (int, default=1): Minimum number of nodes required for a term to be included.
+- `max_nodes_per_term` (int, default=10,000): Maximum number of nodes allowed for a term.
+
+**Returns:**
+
+`dict`: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.
 
 ```python
 import json
@@ -108,10 +181,12 @@ annotation = risk.load_annotation_dict(
 )
 ```
 
-Use this method to work with annotations already in memory.
+- Loads annotation data from a Python dictionary in memory.
+- Annotations should follow the term–to–gene membership table format.
+- Examples include GO BP terms, CORUM complexes, and KEGG pathways.
 
 ---
 
 ## Next Step
 
-Proceed to [4. Statistics](./4_statistics.md) to evaluate term overrepresentation.
+Proceed to [4. Statistics](./4_statistics.md) to evaluate overrepresentation and assess significance of biological annotations.

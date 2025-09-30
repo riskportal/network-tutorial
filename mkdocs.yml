@@ -43,9 +43,7 @@ nav:
       - 4. Statistics: 4_statistics.md
       - 5. Load Graph: 5_load_graph.md
       - 6. Visualization: 6_visualization.md
-  - Advanced:
-      - 7. Advanced Plotting: 7_advanced_plotting.md
-      - 8. Parameters: 8_parameters.md
+      - 7. Parameters: 7_parameters.md
   - Full Tutorial (HTML): tutorial.html
   - Download Tutorial Notebook & Data: tutorial.zip
   - Interactive Quickstart (Binder): https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb
