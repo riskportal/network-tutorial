@@ -276,26 +276,6 @@
   
   
   
-    
-    
-      <li class="md-tabs__item">
-        <a href="../7_advanced_plotting/" class="md-tabs__link">
-          
-  
-  
-  Advanced
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
     <li class="md-tabs__item">
       <a href="../tutorial.html" class="md-tabs__link">
         
@@ -776,54 +756,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Advanced
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Advanced
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -831,35 +763,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../7_advanced_plotting/" class="md-nav__link">
+      <a href="../7_parameters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    7. Advanced Plotting
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../8_parameters/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    8. Parameters
+    7. Parameters
     
   </span>
   
@@ -963,7 +872,7 @@
 
 
 <h1 id="loading-and-associating-annotation-data">Loading and Associating Annotation Data<a class="headerlink" href="#loading-and-associating-annotation-data" title="Permanent link">&para;</a></h1>
-<p>An annotation maps biological terms to network nodes (e.g., Gene Ontology categories mapping GO terms to genes). RISK supports multiple input formats with dedicated loaders.</p>
+<p>Annotations must be provided by the user and formatted clearly to ensure compatibility with RISK loaders. We note that RISK does not bundle annotations; users should obtain curated resources such as Gene Ontology (Ashburner et al., 2000), CORUM (Tsitsiridis et al., 2022), or KEGG (Kanehisa et al., 2023) and format them as term–to–gene membership tables. Publicly available resources such as Gene Ontology (GO), CORUM, and KEGG offer standardized annotation files that can be adapted for use.</p>
 <hr />
 <h2 id="supported-input-formats">Supported Input Formats<a class="headerlink" href="#supported-input-formats" title="Permanent link">&para;</a></h2>
 <table>
@@ -998,13 +907,22 @@
 <tr>
 <td><code>dict</code></td>
 <td><code>load_annotation_dict()</code></td>
-<td>Python-loaded JSON</td>
+<td>Python dictionary in memory</td>
 </tr>
 </tbody>
 </table>
-<p>Each method also accepts <code>min_nodes_per_term</code> and <code>max_nodes_per_term</code> to exclude underpowered or overly broad annotations.</p>
+<p>Annotations must be provided by the user and formatted clearly to ensure compatibility with RISK loaders. Publicly available resources such as Gene Ontology (GO), CORUM, and KEGG offer standardized annotation files that can be adapted for use.</p>
 <hr />
 <h2 id="json-annotation">JSON Annotation<a class="headerlink" href="#json-annotation" title="Permanent link">&para;</a></h2>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>network</code> (nx.Graph): Input NetworkX graph.</li>
+<li><code>filepath</code> (str): Path to the <code>.json</code> file.</li>
+<li><code>min_nodes_per_term</code> (int, default=1): Minimum number of nodes required for a term to be included.</li>
+<li><code>max_nodes_per_term</code> (int, default=10,000): Maximum number of nodes allowed for a term.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p><code>dict</code>: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.</p>
 <div class="highlight"><pre><span></span><code><span class="n">annotation</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_annotation_json</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
     <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/json/annotation/go_biological_process.json&quot;</span><span class="p">,</span>
@@ -1013,11 +931,24 @@
 <span class="p">)</span>
 </code></pre></div>
 <ul>
-<li>Load term-to-node mappings from a JSON dictionary</li>
-<li>Ideal for GO annotations exported from standard tools</li>
+<li>Loads GO BP annotations directly from JSON files.</li>
+<li>Annotations should follow the term–to–gene membership table format.</li>
+<li>Examples include GO BP terms, CORUM complexes, and KEGG pathways.</li>
 </ul>
 <hr />
 <h2 id="csv-annotation">CSV Annotation<a class="headerlink" href="#csv-annotation" title="Permanent link">&para;</a></h2>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>network</code> (nx.Graph): Input NetworkX graph.</li>
+<li><code>filepath</code> (str): Path to the <code>.csv</code> file.</li>
+<li><code>label_colname</code> (str): Column name for annotation labels.</li>
+<li><code>nodes_colname</code> (str): Column name for nodes in the annotation.</li>
+<li><code>nodes_delimiter</code> (str, default=';'): Delimiter to split multiple nodes in a cell.</li>
+<li><code>min_nodes_per_term</code> (int, default=1): Minimum number of nodes required for a term to be included.</li>
+<li><code>max_nodes_per_term</code> (int, default=10,000): Maximum number of nodes allowed for a term.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p><code>dict</code>: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.</p>
 <div class="highlight"><pre><span></span><code><span class="n">annotation</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_annotation_csv</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
     <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/csv/annotation/go_biological_process.csv&quot;</span><span class="p">,</span>
@@ -1029,11 +960,26 @@
 <span class="p">)</span>
 </code></pre></div>
 <ul>
-<li>Columns: one for labels, one for semicolon-separated nodes</li>
-<li>Use for flat structured data</li>
+<li>Loads annotation data from CSV files.</li>
+<li>Requires specifying column names for labels and nodes.</li>
+<li>Use <code>nodes_delimiter</code> to split multiple nodes per term (default = <code>;</code>).</li>
+<li>Annotations should follow the term–to–gene membership table format.</li>
+<li>Examples include GO BP terms, CORUM complexes, and KEGG pathways.</li>
 </ul>
 <hr />
 <h2 id="tsv-annotation">TSV Annotation<a class="headerlink" href="#tsv-annotation" title="Permanent link">&para;</a></h2>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>network</code> (nx.Graph): Input NetworkX graph.</li>
+<li><code>filepath</code> (str): Path to the <code>.tsv</code> file.</li>
+<li><code>label_colname</code> (str): Column name for annotation labels.</li>
+<li><code>nodes_colname</code> (str): Column name for nodes in the annotation.</li>
+<li><code>nodes_delimiter</code> (str, default=';'): Delimiter to split multiple nodes in a cell.</li>
+<li><code>min_nodes_per_term</code> (int, default=1): Minimum number of nodes required for a term to be included.</li>
+<li><code>max_nodes_per_term</code> (int, default=10,000): Maximum number of nodes allowed for a term.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p><code>dict</code>: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.</p>
 <div class="highlight"><pre><span></span><code><span class="n">annotation</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_annotation_tsv</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
     <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/tsv/annotation/go_biological_process.tsv&quot;</span><span class="p">,</span>
@@ -1045,10 +991,26 @@
 <span class="p">)</span>
 </code></pre></div>
 <ul>
-<li>Tab-delimited version of the CSV format</li>
+<li>Loads annotation data from TSV files.</li>
+<li>Same parameters as CSV loader, but expects tab-delimited input.</li>
+<li>Annotations should follow the term–to–gene membership table format.</li>
+<li>Examples include GO BP terms, CORUM complexes, and KEGG pathways.</li>
 </ul>
 <hr />
 <h2 id="excel-annotation">Excel Annotation<a class="headerlink" href="#excel-annotation" title="Permanent link">&para;</a></h2>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>network</code> (nx.Graph): Input NetworkX graph.</li>
+<li><code>filepath</code> (str): Path to the Excel <code>.xlsx</code> or <code>.xls</code> file.</li>
+<li><code>label_colname</code> (str): Column name for annotation labels.</li>
+<li><code>nodes_colname</code> (str): Column name for nodes in the annotation.</li>
+<li><code>sheet_name</code> (str, default='Sheet1'): Name of the sheet to load.</li>
+<li><code>nodes_delimiter</code> (str, default=';'): Delimiter to split multiple nodes in a cell.</li>
+<li><code>min_nodes_per_term</code> (int, default=1): Minimum number of nodes required for a term to be included.</li>
+<li><code>max_nodes_per_term</code> (int, default=10,000): Maximum number of nodes allowed for a term.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p><code>dict</code>: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.</p>
 <div class="highlight"><pre><span></span><code><span class="n">annotation</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_annotation_excel</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
     <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/excel/annotation/go_biological_process.xlsx&quot;</span><span class="p">,</span>
@@ -1061,11 +1023,22 @@
 <span class="p">)</span>
 </code></pre></div>
 <ul>
-<li>Specify a sheet name to target structured spreadsheets</li>
+<li>Loads annotation data from Excel workbooks.</li>
+<li>Allows loading from specific sheets.</li>
+<li>Annotations should follow the term–to–gene membership table format.</li>
+<li>Examples include GO BP terms, CORUM complexes, and KEGG pathways.</li>
 </ul>
 <hr />
 <h2 id="dictionary-based-annotation">Dictionary-Based Annotation<a class="headerlink" href="#dictionary-based-annotation" title="Permanent link">&para;</a></h2>
-<p>If you already have a dictionary loaded from another source:</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>network</code> (nx.Graph): Input NetworkX graph.</li>
+<li><code>content</code> (dict): Python dictionary containing annotation data.</li>
+<li><code>min_nodes_per_term</code> (int, default=1): Minimum number of nodes required for a term to be included.</li>
+<li><code>max_nodes_per_term</code> (int, default=10,000): Maximum number of nodes allowed for a term.</li>
+</ul>
+<p><strong>Returns:</strong></p>
+<p><code>dict</code>: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./data/json/annotation/go_biological_process.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
@@ -1078,10 +1051,14 @@
     <span class="n">max_nodes_per_term</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
-<p>Use this method to work with annotations already in memory.</p>
+<ul>
+<li>Loads annotation data from a Python dictionary in memory.</li>
+<li>Annotations should follow the term–to–gene membership table format.</li>
+<li>Examples include GO BP terms, CORUM complexes, and KEGG pathways.</li>
+</ul>
 <hr />
 <h2 id="next-step">Next Step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h2>
-<p>Proceed to <a href="../4_statistics/">4. Statistics</a> to evaluate term overrepresentation.</p>
+<p>Proceed to <a href="../4_statistics/">4. Statistics</a> to evaluate overrepresentation and assess significance of biological annotations.</p>
 
 
 

@@ -276,26 +276,6 @@
   
   
   
-    
-    
-      <li class="md-tabs__item">
-        <a href="../7_advanced_plotting/" class="md-tabs__link">
-          
-  
-  
-  Advanced
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
     <li class="md-tabs__item">
       <a href="../tutorial.html" class="md-tabs__link">
         
@@ -542,18 +522,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-importing-risk" class="md-nav__link">
+  <a href="#importing-risk" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Importing RISK
+      Importing RISK
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-initializing-risk" class="md-nav__link">
+  <a href="#initializing-risk" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Initializing RISK
+      Initializing RISK
     </span>
   </a>
   
@@ -740,54 +720,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Advanced
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Advanced
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -795,35 +727,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../7_advanced_plotting/" class="md-nav__link">
+      <a href="../7_parameters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    7. Advanced Plotting
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../8_parameters/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    8. Parameters
+    7. Parameters
     
   </span>
   
@@ -927,7 +836,7 @@
 
 
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
-<p>To get started, install the <code>risk-network</code> package using pip:</p>
+<p>RISK is available on PyPI and supports Python 3.8 or later on major operating systems (Windows, macOS, Linux). Install the latest release with:</p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>risk-network<span class="w"> </span>--upgrade
 </code></pre></div>
 <p>To install from source:</p>
@@ -936,28 +845,29 @@
 pip<span class="w"> </span>install<span class="w"> </span>.
 </code></pre></div>
 <hr />
-<h2 id="1-importing-risk">1. Importing RISK<a class="headerlink" href="#1-importing-risk" title="Permanent link">&para;</a></h2>
-<p>After installing, verify the installation and import the package:</p>
+<h2 id="importing-risk">Importing RISK<a class="headerlink" href="#importing-risk" title="Permanent link">&para;</a></h2>
+<p>Verify the installation and import the package:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">risk</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">risk</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 </code></pre></div>
-<p>To use RISK's core functionalities:</p>
+<p>The core functionality is accessed through the <code>RISK</code> class:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">risk</span><span class="w"> </span><span class="kn">import</span> <span class="n">RISK</span>
 </code></pre></div>
-<p>If using a Jupyter notebook, enable inline plotting:</p>
+<p>For Jupyter notebooks, enable inline plotting:</p>
 <div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 </code></pre></div>
 <hr />
-<h2 id="2-initializing-risk">2. Initializing RISK<a class="headerlink" href="#2-initializing-risk" title="Permanent link">&para;</a></h2>
-<p>Create a <code>RISK</code> object to access network analysis functions:</p>
+<h2 id="initializing-risk">Initializing RISK<a class="headerlink" href="#initializing-risk" title="Permanent link">&para;</a></h2>
+<p>Initialize a <code>RISK</code> object to start analysis:</p>
 <div class="highlight"><pre><span></span><code><span class="n">risk</span> <span class="o">=</span> <span class="n">RISK</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
 <ul>
-<li><code>verbose=True</code> enables log messages in the console.</li>
+<li><code>verbose=True</code> enables console log messages.</li>
+<li>The object provides modular access to clustering, statistics, and visualization components.</li>
 </ul>
 <hr />
 <h2 id="next-step">Next Step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h2>
-<p>Continue to <a href="../2_network_input/">2. Network Input</a> to import your first graph.</p>
+<p>Continue to <a href="../2_network_input/">Network Input</a> to load your first graph.</p>
 
 
 
