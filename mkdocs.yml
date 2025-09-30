@@ -8,8 +8,8 @@ theme:
   logo: images/risk_logo.png
   favicon: images/risk_logo.ico
   features:
-    - navigation.tabs
     - navigation.top
+    - navigation.expand
     - content.code.copy
     - toc.integrate
   palette:
