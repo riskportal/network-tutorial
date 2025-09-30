@@ -1,40 +1,36 @@
 # Welcome to RISK Network Documentation
 
-**RISK** (Regional Inference of Significant Kinships) is a scalable, modular tool for annotating and visualizing biological networks. It combines clustering, statistical overrepresentation, and clean publication-ready visualizations—all in one streamlined package.
+**RISK** (Regional Inference of Significant Kinships) is a modular, scalable tool for biological network annotation and visualization. It integrates community detection, rigorous statistical testing, and high-resolution visualization in a single streamlined framework.
 
-Whether you're new to RISK or just looking to fine-tune your workflow, these docs walk you through setup, usage, and advanced features.
+These docs guide you through installation, usage, and advanced features.
 
 ![RISK](images/risk_fig1.jpeg)
 
 ## Getting Started
 
-Start here to set up and understand the basics:
+Begin here for setup and core concepts:
 
-- [0. Intro](0_intro.md): Overview and key concepts
+- [0. Introduction](0_intro.md): Overview of RISK and key principles
 - [1. Installation](1_installation.md): Install RISK on your system
 
-You can also explore the tutorial notebook:
+Interactive tutorials:
 
-- <a href="https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb" target="_blank" rel="noopener">Launch Quickstart in Binder (no install)</a>
-- [View Full Tutorial (HTML)](tutorial.html)
-- [Download Tutorial Notebook and Data (.zip)](tutorial.zip)
+- <a href="https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb" target="_blank" rel="noopener">Launch Quickstart in Binder</a> (no installation required)
+- [Full Tutorial (HTML)](tutorial.html)
+- [Download Tutorial + Data (ZIP)](tutorial.zip)
 
 ## Core Features
 
 - [2. Network Input](2_network_input.md)
 - [3. Annotation](3_annotation.md)
-- [4. Statistics](4_statistics.md)
-- [5. Load & Analyze Graph](5_load_graph.md)
+- [4. Statistical Tests](4_statistics.md)
+- [5. Loading and Analyzing Networks](5_load_graph.md)
 - [6. Visualization](6_visualization.md)
-
-## Advanced Use
-
-- [7. Advanced Plotting](7_advanced_plotting.md)
-- [8. Parameter Export](8_parameters.md)
+- [7. Parameter Management](7_parameters.md)
 
 ---
 
-If you’re working in a Jupyter notebook, download [tutorial.zip](tutorial.zip) for a fully interactive example. Or view the static HTML version at [tutorial.html](tutorial.html).
+For interactive examples, use [tutorial.zip](tutorial.zip) in Jupyter or view the [static HTML version](tutorial.html).
 
-Contributions welcome on [GitHub](https://github.com/riskportal/network-tutorial).
-You can also explore the [RISK source code](https://github.com/riskportal/network) on GitHub.
+Contributions are welcome on [GitHub](https://github.com/riskportal/network-tutorial).
+You can also explore the [RISK source code](https://github.com/riskportal/network).

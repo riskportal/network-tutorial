@@ -1,6 +1,6 @@
 # Installation
 
-To get started, install the `risk-network` package using pip:
+RISK is available on PyPI and supports Python 3.8 or later on major operating systems (Windows, macOS, Linux). Install the latest release with:
 
 ```bash
 pip install risk-network --upgrade
@@ -16,22 +16,22 @@ pip install .
 
 ---
 
-## 1. Importing RISK
+## Importing RISK
 
-After installing, verify the installation and import the package:
+Verify the installation and import the package:
 
 ```python
 import risk
 print(risk.__version__)
 ```
 
-To use RISK's core functionalities:
+The core functionality is accessed through the `RISK` class:
 
 ```python
 from risk import RISK
 ```
 
-If using a Jupyter notebook, enable inline plotting:
+For Jupyter notebooks, enable inline plotting:
 
 ```python
 %matplotlib inline
@@ -39,18 +39,19 @@ If using a Jupyter notebook, enable inline plotting:
 
 ---
 
-## 2. Initializing RISK
+## Initializing RISK
 
-Create a `RISK` object to access network analysis functions:
+Initialize a `RISK` object to start analysis:
 
 ```python
 risk = RISK(verbose=True)
 ```
 
-- `verbose=True` enables log messages in the console.
+- `verbose=True` enables console log messages.
+- The object provides modular access to clustering, statistics, and visualization components.
 
 ---
 
 ## Next Step
 
-Continue to [2. Network Input](./2_network_input.md) to import your first graph.
+Continue to [Network Input](./2_network_input.md) to load your first graph.
