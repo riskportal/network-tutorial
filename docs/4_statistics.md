@@ -9,8 +9,8 @@ RISK implements multiple statistical methods to assess overrepresentation of fun
 | Test           | Speed     | Primary use                              | When/Why (assumptions & notes)                                                                                              |
 | -------------- | --------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | Permutation    | ⚖️ Medium | Most robust; non-parametric              | Distribution-free empirical null (permute network or labels); best when assumptions are unclear; computationally intensive. |
-| Hypergeometric | ⚖️ Medium | Standard for GO/pathway enrichment       | Finite population **without replacement**; exact count-based test for term–to–gene membership tables.                       |
-| Binomial       | ⚡ Fast   | Scalable approximation                   | **With replacement/independent trials**; good large-population approximation to hypergeometric when sample ≪ population.    |
+| Hypergeometric | ⚖️ Medium | Standard for GO/pathway enrichment       | Finite population without replacement; exact count-based test for term–to–gene membership tables.                       |
+| Binomial       | ⚡ Fast   | Scalable approximation                   | With replacement/independent trials; good large-population approximation to hypergeometric when sample ≪ population.    |
 | Chi-squared    | ⚡ Fast   | Contingency-table testing, large samples | For large counts; expected cell counts ≳ 5; very fast for big tables; avoid with sparse/low counts.                         |
 | Poisson        | ⚡ Fast   | Rare events, sparse networks             | Counts of independent events at ~constant rate; good when events are rare (small p, large n). Check for overdispersion.     |
 | Z-score        | ⚡ Fast   | Quick standardized scoring               | Normal approximation; great for rapid ranking at scale; avoid when counts are very small or highly skewed.                  |
@@ -33,7 +33,7 @@ Builds an empirical null by permuting either the network structure or annotation
 **When to use:**
 
 - Non-parametric and distribution-free; ideal when analytical assumptions (independence, variance, distribution) are doubtful.
-- Supports flexible nulls (permute network topology **or** term labels) to match study design.
+- Supports flexible nulls (permute network topology or term labels) to match study design.
 - Most robust option but computationally intensive; prefer for smaller networks or final confirmation analyses.
 
 **Parameters:**
@@ -79,7 +79,7 @@ Exact test based on finite sampling without replacement.
 **When to use:**
 
 - Standard for GO/pathway overrepresentation with term–to–gene membership tables.
-- Appropriate for **finite populations sampled without replacement** (e.g., selected cluster vs whole network).
+- Appropriate for finite populations sampled without replacement (e.g., selected cluster vs whole network).
 - Exact test; more accurate than approximations when sample is not negligible relative to the population.
 
 **Parameters:**
@@ -119,7 +119,7 @@ Approximates overrepresentation via independent trials.
 **When to use:**
 
 - Fast approximation to hypergeometric when the population is large and the sample is small (sample ≪ population).
-- Assumes **independent trials / with-replacement** sampling; use when this is reasonable or as a scalable proxy.
+- Assumes independent trials / with-replacement sampling; use when this is reasonable or as a scalable proxy.
 - Useful for very large networks where exact tests are costly.
 
 **Parameters:**
@@ -198,7 +198,7 @@ Tests observed frequencies against a Poisson expectation.
 
 **When to use:**
 
-- Suitable for **rare-event** counts under an approximately constant rate; independence between events is assumed.
+- Suitable for rare-event counts under an approximately constant rate; independence between events is assumed.
 - Approximates binomial when event probability is small and the number of trials is large (small p, large n).
 - Effective for sparse networks; check for overdispersion before use.
 
