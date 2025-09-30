@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#visualization" class="md-skip">
+        <a href="#visualizing-networks-in-risk" class="md-skip">
           Skip to content
         </a>
       
@@ -818,8 +818,8 @@
   
 
 
-<h1 id="visualization">Visualization<a class="headerlink" href="#visualization" title="Permanent link">&para;</a></h1>
-<p>RISK provides a flexible and powerful plotting interface via the <code>NetworkPlotter</code> object. This enables generation of publication-ready figures with detailed domain annotations, significance-driven coloring, KDE-based contours, and rich label customization.</p>
+<h1 id="visualizing-networks-in-risk">Visualizing Networks in RISK<a class="headerlink" href="#visualizing-networks-in-risk" title="Permanent link">&para;</a></h1>
+<p>RISK provides a flexible and powerful plotting interface via the <code>NetworkPlotter</code> object. This enables generation of publication-ready figures with detailed domain annotations, significance-driven coloring, contours, and rich label customization.</p>
 <hr />
 <h2 id="create-a-networkplotter">Create a <code>NetworkPlotter</code><a class="headerlink" href="#create-a-networkplotter" title="Permanent link">&para;</a></h2>
 <p>You must first load your <code>NetworkGraph</code> object into a <code>NetworkPlotter</code>.</p>
@@ -899,14 +899,14 @@
     <span class="n">fill_alpha</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
-<p><em>For a more flexible KDE-based layout boundary, see <code>plot_contour_perimeter()</code>.</em></p>
+<p><em>For a more flexible countour-based layout boundary, see <code>plot_contour_perimeter()</code>.</em></p>
 <hr />
 <h2 id="plot_contour_perimeter">plot_contour_perimeter()<a class="headerlink" href="#plot_contour_perimeter" title="Permanent link">&para;</a></h2>
-<p>Draw a KDE-based contour around the entire layout perimeter.</p>
+<p>Draw a contour around the entire layout perimeter.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>levels</code> (int, optional): Number of contour levels.</li>
-<li><code>bandwidth</code> (float, optional): Bandwidth parameter for KDE.</li>
+<li><code>bandwidth</code> (float, optional): Bandwidth parameter for Kernel Density Estimation (KDE).</li>
 <li><code>grid_size</code> (int, optional): Resolution of the grid used for KDE.</li>
 <li><code>color</code> (str or tuple or list, optional): Color(s) for the contour lines.</li>
 <li><code>linestyle</code> (str, optional): Matplotlib line style string.</li>
@@ -1039,11 +1039,11 @@
 </code></pre></div>
 <hr />
 <h2 id="plot_contours">plot_contours()<a class="headerlink" href="#plot_contours" title="Permanent link">&para;</a></h2>
-<p>Draw KDE contours for domains (e.g., GO term regions).</p>
+<p>Draw contours for domains (e.g., GO term regions).</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>levels</code> (int, optional): Number of contour levels.</li>
-<li><code>bandwidth</code> (float, optional): Bandwidth parameter for KDE.</li>
+<li><code>bandwidth</code> (float, optional): Bandwidth parameter for Kernel Density Estimation (KDE).</li>
 <li><code>grid_size</code> (int, optional): Resolution of the grid used for KDE.</li>
 <li><code>color</code> (list or str or tuple, optional): Colors for the contours.</li>
 <li><code>linestyle</code> (str, optional): Matplotlib line style string.</li>
@@ -1105,12 +1105,12 @@
 </code></pre></div>
 <hr />
 <h2 id="plot_subcontour">plot_subcontour()<a class="headerlink" href="#plot_subcontour" title="Permanent link">&para;</a></h2>
-<p>Draw a KDE contour around a subset of nodes.</p>
+<p>Draw a contour around a subset of nodes.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>nodes</code> (list): List of node IDs to include in the contour.</li>
 <li><code>levels</code> (int, optional): Number of contour levels.</li>
-<li><code>bandwidth</code> (float, optional): Bandwidth parameter for KDE.</li>
+<li><code>bandwidth</code> (float, optional): Bandwidth parameter for Kernel Density Estimation (KDE).</li>
 <li><code>grid_size</code> (int, optional): Resolution of the grid used for KDE.</li>
 <li><code>color</code> (str or tuple, optional): Color of the contour.</li>
 <li><code>linestyle</code> (str, optional): Matplotlib line style string.</li>

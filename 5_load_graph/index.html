@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#networkgraph-creation-and-usage" class="md-skip">
+        <a href="#building-and-analyzing-networks" class="md-skip">
           Skip to content
         </a>
       
@@ -758,7 +758,7 @@
   
 
 
-<h1 id="networkgraph-creation-and-usage">NetworkGraph Creation and Usage<a class="headerlink" href="#networkgraph-creation-and-usage" title="Permanent link">&para;</a></h1>
+<h1 id="building-and-analyzing-networks">Building and Analyzing Networks<a class="headerlink" href="#building-and-analyzing-networks" title="Permanent link">&para;</a></h1>
 <p>The <code>NetworkGraph</code> object integrates network data, annotations, and overrepresentation results into a unified structure, supporting clustering, domain-level significance, and downstream visualization.</p>
 <hr />
 <h2 id="create-a-networkgraph">Create a <code>NetworkGraph</code><a class="headerlink" href="#create-a-networkgraph" title="Permanent link">&para;</a></h2>
@@ -820,10 +820,12 @@
 <hr />
 <h2 id="example-workflow">Example Workflow<a class="headerlink" href="#example-workflow" title="Permanent link">&para;</a></h2>
 <h3 id="summarize-results">Summarize results<a class="headerlink" href="#summarize-results" title="Permanent link">&para;</a></h3>
+<p>Load the analysis summary into a DataFrame to inspect matched members, counts, and significance values.</p>
 <div class="highlight"><pre><span></span><code><span class="n">summary_df</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
 <span class="n">summary_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div>
 <h3 id="export-summary">Export summary<a class="headerlink" href="#export-summary" title="Permanent link">&para;</a></h3>
+<p>Export the processed summary table in common formats for downstream use or sharing.</p>
 <div class="highlight"><pre><span></span><code><span class="n">graph</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;./data/csv/summary/michaelis_2023.csv&quot;</span><span class="p">)</span>
 <span class="n">graph</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;./data/json/summary/michaelis_2023.json&quot;</span><span class="p">)</span>
 <span class="n">graph</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">to_txt</span><span class="p">(</span><span class="s2">&quot;./data/txt/summary/michaelis_2023.txt&quot;</span><span class="p">)</span>
