@@ -10,8 +10,8 @@ RISK implements multiple statistical methods to assess overrepresentation of fun
 | -------------- | --------- | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
 | Permutation    | ⚖️ Medium | Most robust; non-parametric              | Distribution-free empirical null (permute network or labels); best when assumptions are unclear; computationally intensive. |
 | Hypergeometric | ⚖️ Medium | Standard for GO/pathway enrichment       | Finite population without replacement; exact count-based test for term–to–gene membership tables.                       |
-| Binomial       | ⚡ Fast   | Scalable approximation                   | With replacement/independent trials; good large-population approximation to hypergeometric when sample ≪ population.    |
-| Chi-squared    | ⚡ Fast   | Contingency-table testing, large samples | For large counts; expected cell counts ≳ 5; very fast for big tables; avoid with sparse/low counts.                         |
+| Binomial       | ⚡ Fast   | Scalable approximation                   | With replacement/independent trials; good large-population approximation to hypergeometric when sample << population.    |
+| Chi-squared    | ⚡ Fast   | Contingency-table testing, large samples | For large counts; expected cell counts ≥ 5; very fast for big tables; avoid with sparse/low counts.                         |
 | Poisson        | ⚡ Fast   | Rare events, sparse networks             | Counts of independent events at ~constant rate; good when events are rare (small p, large n). Check for overdispersion.     |
 | Z-score        | ⚡ Fast   | Quick standardized scoring               | Normal approximation; great for rapid ranking at scale; avoid when counts are very small or highly skewed.                  |
 
@@ -20,7 +20,7 @@ RISK implements multiple statistical methods to assess overrepresentation of fun
 - **If assumptions are unclear / want a gold-standard null:** use **Permutation** (robust, slower).
 - **Finite population without replacement (standard GO enrichment):** use **Hypergeometric**.
 - **Need speed with large populations and small samples:** use **Binomial** (approximation to hypergeometric).
-- **Many categories and large counts:** use **Chi-squared** (fast), but ensure expected counts ≳ 5 per cell.
+- **Many categories and large counts:** use **Chi-squared** (fast), but ensure expected counts ≥ 5 per cell.
 - **Rare-event counts (sparse networks):** use **Poisson**; verify that a constant-rate assumption is reasonable.
 - **Just need a fast ranking score (not exact p-values):** use **Z-score**; treat results as heuristic when counts are small.
 
@@ -118,7 +118,7 @@ Approximates overrepresentation via independent trials.
 
 **When to use:**
 
-- Fast approximation to hypergeometric when the population is large and the sample is small (sample ≪ population).
+- Fast approximation to hypergeometric when the population is large and the sample is small (sample << population).
 - Assumes independent trials / with-replacement sampling; use when this is reasonable or as a scalable proxy.
 - Useful for very large networks where exact tests are costly.
 
@@ -159,7 +159,7 @@ Evaluates significance using contingency tables.
 **When to use:**
 
 - Best for large-sample contingency analyses across multiple categories.
-- Rule of thumb: expected counts per cell should be ≳ 5; avoid with sparse tables (consider permutation or exact alternatives).
+- Rule of thumb: expected counts per cell should be ≥ 5; avoid with sparse tables (consider permutation or exact alternatives).
 - Extremely fast and scalable for big matrices.
 
 **Parameters:**
