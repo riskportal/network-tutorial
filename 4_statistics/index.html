@@ -88,7 +88,9 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="RISK Network Documentation" class="md-header__button md-logo" aria-label="RISK Network Documentation" data-md-component="logo">
       
@@ -205,133 +207,6 @@
       
         
           
-            
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Home
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../0_intro/" class="md-tabs__link">
-          
-  
-  
-  Getting Started
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../2_network_input/" class="md-tabs__link">
-          
-  
-  
-  Core Features
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../tutorial.html" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Full Tutorial (HTML)
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../tutorial.zip" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Download Tutorial Notebook & Data
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Interactive Quickstart (Binder)
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -345,12 +220,10 @@
                     
 
 
-  
-
 
   
 
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="RISK Network Documentation" class="md-nav__button md-logo" aria-label="RISK Network Documentation" data-md-component="logo">
       
@@ -406,15 +279,14 @@
     
     
     
-      
-      
-    
     
     <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -502,21 +374,15 @@
     
     
     
-      
-        
-        
-      
-      
     
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -711,15 +577,6 @@
   <a href="#z-score-test" class="md-nav__link">
     <span class="md-ellipsis">
       Z-score Test
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-step" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next Step
     </span>
   </a>
   
@@ -949,12 +806,12 @@
 </table>
 <h3 id="choosing-a-test-quick-guidance">Choosing a test: quick guidance<a class="headerlink" href="#choosing-a-test-quick-guidance" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>If assumptions are unclear / want a gold-standard null:</strong> use <strong>Permutation</strong> (robust, slower).</li>
-<li><strong>Finite population without replacement (standard GO enrichment):</strong> use <strong>Hypergeometric</strong>.</li>
-<li><strong>Need speed with large populations and small samples:</strong> use <strong>Binomial</strong> (approximation to hypergeometric).</li>
-<li><strong>Many categories and large counts:</strong> use <strong>Chi-squared</strong> (fast), but ensure expected counts ≥ 5 per cell.</li>
-<li><strong>Rare-event counts (sparse networks):</strong> use <strong>Poisson</strong>; verify that a constant-rate assumption is reasonable.</li>
-<li><strong>Just need a fast ranking score (not exact p-values):</strong> use <strong>Z-score</strong>; treat results as heuristic when counts are small.</li>
+<li>If assumptions are unclear / want a gold-standard null: use <strong>Permutation</strong> (robust, slower).</li>
+<li>Finite population without replacement (standard GO enrichment): use <strong>Hypergeometric</strong>.</li>
+<li>Need speed with large populations and small samples: use <strong>Binomial</strong> (approximation to hypergeometric).</li>
+<li>Many categories and large counts: use <strong>Chi-squared</strong> (fast), but ensure expected counts ≥ 5 per cell.</li>
+<li>Rare-event counts (sparse networks): use <strong>Poisson</strong>; verify that a constant-rate assumption is reasonable.</li>
+<li>Just need a fast ranking score (not exact p-values): use <strong>Z-score</strong>; treat results as heuristic when counts are small.</li>
 </ul>
 <hr />
 <h2 id="permutation-test">Permutation Test<a class="headerlink" href="#permutation-test" title="Permanent link">&para;</a></h2>
@@ -1172,9 +1029,6 @@
     <span class="n">random_seed</span><span class="o">=</span><span class="mi">887</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
-<hr />
-<h2 id="next-step">Next Step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h2>
-<p>Proceed to <a href="../5_load_graph/">5. Load Graph</a> to build a cluster-aware network object.</p>
 
 
 
@@ -1229,7 +1083,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.expand", "content.code.copy", "toc.integrate"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.56ea9cef.min.js"></script>
