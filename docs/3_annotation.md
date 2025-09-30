@@ -1,6 +1,6 @@
 # Loading and Associating Annotation Data
 
-Annotations must be provided by the user and formatted clearly to ensure compatibility with RISK loaders. We note that RISK does not bundle annotations; users should obtain curated resources such as Gene Ontology (Ashburner et al., 2000), CORUM (Tsitsiridis et al., 2022), or KEGG (Kanehisa et al., 2023) and format them as term–to–gene membership tables. Publicly available resources such as Gene Ontology (GO), CORUM, and KEGG offer standardized annotation files that can be adapted for use.
+Annotations must be provided by the user and formatted clearly to ensure compatibility with RISK loaders. We note that RISK does not bundle annotations; users should obtain curated resources such as Gene Ontology (Ashburner _et al_., 2000), CORUM (Tsitsiridis _et al_., 2022), or KEGG (Kanehisa _et al_., 2023) and format them as term–to–gene membership tables. Publicly available resources such as Gene Ontology (GO), CORUM, and KEGG offer standardized annotation files that can be adapted for use.
 
 ---
 
