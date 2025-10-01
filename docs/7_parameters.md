@@ -23,6 +23,8 @@ Export RISK analysis parameters—from network loading to visualization—in com
 
 **Shared Parameters:**
 
+Shared parameters among export methods.
+
 - `filepath` (str): The path where the file will be saved.
 
 ### Export to CSV

@@ -1,6 +1,6 @@
-# Summary of Clustering Algorithms and Statistical Methods
+# Clustering Algorithms and Statistical Methods
 
-RISK implements several community detection algorithms and statistical tests to support functional annotation of networks. Clustering algorithms detect structured regions of varying size and compactness, while statistical methods evaluate overrepresentation of biological terms within these regions. The choice of algorithm or test depends on network scale, density, and biological context, influencing the resolution, granularity, and rigor of the resulting modules and enrichment results.
+Clustering algorithms detect structured regions of varying size and compactness, while statistical methods evaluate overrepresentation of biological terms within these regions. The choice of algorithm or test depends on network scale, density, and biological context, influencing the resolution, granularity, and rigor of the resulting modules and overrepresentation results.
 
 ---
 
@@ -8,15 +8,15 @@ RISK implements several community detection algorithms and statistical tests to 
 
 Before applying statistical tests, RISK groups nodes into modules using community detection. Each algorithm has strengths for different network sizes and contexts.
 
-| Algorithm             | Speed  | Primary use                                | When/Why (assumptions & notes)                                                                                              |
-| --------------------- | ------ | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
-| Louvain               | Fast   | Default, scalable to very large networks   | Greedy modularity optimization (Blondel et al., 2008); efficient for >10⁴ nodes; may produce disconnected subclusters.     |
-| Leiden                | Fast   | Improved Louvain with better resolution    | Guarantees well-connected communities; more stable than Louvain (Traag et al., 2019); slightly higher runtime.             |
-| Markov Clustering     | Medium | Detect smaller, compact complexes          | Flow-based algorithm (Van Dongen, 2008); good for protein complexes or tightly connected submodules.                       |
-| Walktrap              | Medium | Hierarchical detection in mid-sized graphs | Random-walk based (Pons & Latapy, 2005); effective for local structure; slower on >10⁴ nodes.                              |
-| Greedy Modularity     | Fast   | Coarse partitioning                        | Optimizes modularity via agglomeration; very fast but suffers from resolution limit (Newman, 2004).                        |
-| Label Propagation     | Fast   | Quick heuristic                            | Unsupervised label spreading; no objective function; non-deterministic and unstable (Raghavan et al., 2007).               |
-| Spinglass             | Slow   | Small networks; theoretical interest       | Statistical mechanics approach (Reichardt & Bornholdt, 2006); finds communities by simulating spin states; computationally intensive. |
+| Algorithm         | Speed  | Primary use                                | When/Why (assumptions & notes)                                                                                                        |
+| ----------------- | ------ | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Louvain           | Fast   | Default, scalable to very large networks   | Greedy modularity optimization (Blondel et al., 2008); efficient for >10⁴ nodes; may produce disconnected subclusters.                |
+| Leiden            | Fast   | Improved Louvain with better resolution    | Guarantees well-connected communities; more stable than Louvain (Traag et al., 2019); slightly higher runtime.                        |
+| Markov Clustering | Medium | Detect smaller, compact complexes          | Flow-based algorithm (Van Dongen, 2008); good for protein complexes or tightly connected submodules.                                  |
+| Walktrap          | Medium | Hierarchical detection in mid-sized graphs | Random-walk based (Pons & Latapy, 2005); effective for local structure; slower on >10⁴ nodes.                                         |
+| Greedy Modularity | Fast   | Coarse partitioning                        | Optimizes modularity via agglomeration; very fast but suffers from resolution limit (Newman, 2004).                                   |
+| Label Propagation | Fast   | Quick heuristic                            | Unsupervised label spreading; no objective function; non-deterministic and unstable (Raghavan et al., 2007).                          |
+| Spinglass         | Slow   | Small networks; theoretical interest       | Statistical mechanics approach (Reichardt & Bornholdt, 2006); finds communities by simulating spin states; computationally intensive. |
 
 ### Choosing an algorithm: quick guidance
 
@@ -30,14 +30,14 @@ Before applying statistical tests, RISK groups nodes into modules using communit
 
 ## Summary of Statistical Methods
 
-RISK implements a suite of statistical tests—ranging from fast approximations to rigorous overrepresentation analysis—to assess functional term enrichment in network neighborhoods. Each method has strengths depending on dataset size, structure, and precision requirements.
+RISK implements a suite of statistical tests—ranging from fast approximations to rigorous overrepresentation analysis—to assess functional term overrepresentation in network neighborhoods. Each method has strengths depending on dataset size, structure, and precision requirements.
 
-| Test           | Speed  | Primary use                           | When/Why (assumptions & notes)                                                                                                   |
-| -------------- | ------ | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Permutation    | Slow   | Most rigorous; non-parametric         | Distribution-free empirical null (permute network or labels); preferred when assumptions are unclear; computationally intensive. |
-| Hypergeometric | Medium | Standard for GO/pathway enrichment    | Exact test for finite populations sampled without replacement; widely used for term–to–gene membership tables.                   |
-| Chi-squared    | Fast   | Approximate contingency-table testing | Suitable for large samples with expected counts ≥ 5 per cell; fast but approximate; avoid with sparse/low counts.                |
-| Binomial       | Fast   | Scalable approximation                | Fast approximation assuming independent trials/with-replacement; useful for large populations with small samples.                |
+| Test           | Speed  | Primary use                                | When/Why (assumptions & notes)                                                                                                   |
+| -------------- | ------ | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| Permutation    | Medium | Most rigorous; non-parametric              | Distribution-free empirical null (permute network or labels); preferred when assumptions are unclear; computationally intensive. |
+| Hypergeometric | Medium | Standard for GO/pathway overrepresentation | Exact test for finite populations sampled without replacement; widely used for term–to–gene membership tables.                   |
+| Chi-squared    | Fast   | Approximate contingency-table testing      | Suitable for large samples with expected counts ≥ 5 per cell; fast but approximate; avoid with sparse/low counts.                |
+| Binomial       | Fast   | Scalable approximation                     | Fast approximation assuming independent trials/with-replacement; useful for large populations with small samples.                |
 
 ### Choosing a test: quick guidance
 
@@ -45,9 +45,9 @@ RISK implements a suite of statistical tests—ranging from fast approximations 
 - For large samples with many categories and sufficient counts: **Chi-squared** offers a fast approximate test.
 - For speed and scalability with large populations and small samples: use **Binomial** as a practical approximation.
 
-### Shared Parameters
+## Shared Parameters
 
-Parameters common among statistical methods.
+Shared parameters among statistical methods.
 
 - `network` (nx.Graph): The network graph.
 - `annotation` (dict): The annotation associated with the network.
@@ -81,9 +81,7 @@ Builds an empirical null by permuting either the network structure or annotation
 
 **Additional Parameters:**
 
-- `score_metric` (str, optional): Metric used to score neighborhoods. Options include:
-  - `'sum'`: Sums the annotation values within each neighborhood. _(default)_
-  - `'stdev'`: Computes the standard deviation of annotation values within each neighborhood.
+- `score_metric` (str, optional): Metric used to score neighborhoods. Options include: - `'sum'`: Sums the annotation values within each neighborhood. _(default)_ - `'stdev'`: Computes the standard deviation of annotation values within each neighborhood.
 - `num_permutations` (int, optional): Number of permutations for significance testing. Defaults to 1000.
 - `max_workers` (int, optional): Maximum number of workers for parallel computation. Defaults to 1.
 
@@ -185,3 +183,9 @@ neighborhoods = risk.load_neighborhoods_binom(
     random_seed=888,
 )
 ```
+
+---
+
+## Next Step
+
+[Building and Analyzing Networks](5_analyzing_results.md)

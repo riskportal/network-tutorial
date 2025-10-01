@@ -1,6 +1,6 @@
 # Visualizing Networks in RISK
 
-RISK provides a flexible and powerful plotting interface via the `NetworkPlotter` object. This enables generation of publication-ready figures with detailed domain annotations, significance-driven coloring, contours, and rich label customization.
+Visualization highlights relationships within the network, making modular structure and functional associations easier to interpret. RISK provides a flexible and powerful plotting interface via the `NetworkPlotter` object. This enables generation of publication-ready figures with detailed domain annotations, significance-driven coloring, contours, and rich label customization.
 
 ---
 
@@ -563,3 +563,9 @@ plotter.show()
 ---
 
 ![Annotated Yeast PPI Network](images/go_bp_annotated.png)
+
+---
+
+## Next Step
+
+[Overview of `risk.params`](7_parameters.md)

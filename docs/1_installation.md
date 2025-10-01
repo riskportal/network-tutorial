@@ -15,8 +15,6 @@ pip install .
 pip install -e .  # for editable/development install
 ```
 
----
-
 ## Importing RISK
 
 Verify the installation and import the package:
@@ -38,15 +36,18 @@ For Jupyter notebooks, enable inline plotting:
 %matplotlib inline
 ```
 
----
-
 ## Initializing RISK
 
-Initialize a `RISK` object to start analysis:
+`RISK` provides modular access to clustering, statistics, and visualization components. Initialize it to start analysis:
+
+**Parameters:**
+
+- `verbose` (bool): Controls whether log messages are printed. If `True`, log messages are printed to the console. Defaults to True.
 
 ```python
 risk = RISK(verbose=True)
 ```
 
-- `verbose=True` enables console log messages.
-- The object provides modular access to clustering, statistics, and visualization components.
+## Next Step
+
+[Loading Networks into RISK](2_network_input.md)

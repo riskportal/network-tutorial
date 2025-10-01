@@ -1,6 +1,6 @@
 # Welcome to RISK Network Documentation
 
-**RISK** (Regional Inference of Significant Kinships) is a modular, scalable tool for biological network annotation and visualization. It integrates community detection, rigorous statistical testing, and high-resolution visualization in a single streamlined framework.
+**RISK** (Regional Inference of Significant Kinships) is a modular, scalable tool for biological network annotation and visualization. It integrates community detection, rigorous statistical testing, and high-resolution visualization in a single framework.
 
 These docs guide you through installation, usage, and advanced features.
 
@@ -24,7 +24,7 @@ Interactive tutorials:
 - [2. Network Input](2_network_input.md)
 - [3. Annotation Input](3_annotation_input.md)
 - [4. Clustering & Statistics](4_clustering_statistics.md)
-- [5. Graph Setup](5_graph_setup.md)
+- [5. Analyzing Results](5_analyzing_results.md)
 - [6. Visualization](6_visualization.md)
 - [7. Parameters](7_parameters.md)
 
