@@ -1,6 +1,6 @@
 # Overview of `risk.params`
 
-The `risk.params` module in the RISK package is used to manage and export parameters related to your analysis. It lets you configure, save, and share the parameters used across the pipeline, improving reproducibility. _Note: reloading a RISK instance from a saved parameter file is not currently supported._
+The `risk.params` module manages and exports analysis parameters, supporting inspection, saving, and sharing to improve reproducibility. _Note: Reloading a RISK instance from a saved parameter file is not currently supported._
 
 ---
 
@@ -19,13 +19,15 @@ loaded_params = risk.params.load()
 
 ## Exporting Parameters
 
+Export RISK analysis parameters—from network loading to visualization—in common formats for downstream use or sharing.
+
+**Shared Parameters:**
+
+- `filepath` (str): The path where the file will be saved.
+
 ### Export to CSV
 
 Exports the parameter dictionary to a `.csv` file.
-
-**Parameters:**
-
-- `filepath` (str): The path where the CSV file will be saved.
 
 ```python
 risk.params.to_csv(filepath="./data/csv/params/michaelis_2023.csv")
@@ -35,21 +37,13 @@ risk.params.to_csv(filepath="./data/csv/params/michaelis_2023.csv")
 
 Exports the parameter dictionary to a `.json` file. The hierarchical structure is preserved.
 
-**Parameters:**
-
-- `filepath` (str): The path where the JSON file will be saved.
-
 ```python
 risk.params.to_json(filepath="./data/json/params/michaelis_2023.json")
 ```
 
 ### Export to Text
 
-Exports the parameter dictionary to a formatted `.txt` file.
-
-**Parameters:**
-
-- `filepath` (str): The path where the text file will be saved.
+Exports the parameter dictionary to a plain `.txt` file in human‑readable format.
 
 ```python
 risk.params.to_txt(filepath="./data/txt/params/michaelis_2023.txt")
