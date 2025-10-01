@@ -12,21 +12,21 @@ RISK is designed to:
 
 ## What makes RISK different?
 
-| Feature            | RISK                                                  |
-| ------------------ | ----------------------------------------------------- |
-| **Clustering**     | Louvain, Leiden, Markov, Spinglass, etc.              |
-| **Statistics**     | Permutation, hypergeometric, chi-squared, z, etc.     |
-| **File Formats**   | NetworkX, Cytoscape (.cys, .cyjs), GPickle            |
-| **Annotation**     | JSON, CSV, Excel, TSV, Python dict                    |
-| **Scalability**    | Networks with 500k+ edges on standard hardware        |
-| **Visual Output**  | High-resolution SVG, PNG, PDF                         |
-| **Beyond Biology** | Applied to a physics citation network (Supp. Fig. S7) |
+| Feature            | RISK                                                                                          |
+| ------------------ | --------------------------------------------------------------------------------------------- |
+| **Clustering**     | Louvain, Leiden, Markov Clustering, Spinglass, Walktrap, Greedy Modularity, Label Propagation |
+| **Statistics**     | Hypergeometric, Chi-squared, Binomial, Permutation                                            |
+| **File Formats**   | NetworkX, Cytoscape (.cyjs), GPickle                                                          |
+| **Annotation**     | JSON, CSV, Excel, TSV, Python dict                                                            |
+| **Scalability**    | Networks with 500k+ edges on standard hardware                                                |
+| **Visual Output**  | High-resolution SVG, PNG, PDF                                                                 |
+| **Beyond Biology** | Applied to a physics citation network (Supp. Fig. S7)                                         |
 
 ## Example Applications
 
 - Functional module identification in yeast PPI and GI networks
 - Pathway mapping for synthetic lethality analyses
-- Drug–target prediction via annotation overrepresentation
+- Drug–target prediction from overrepresentation analysis
 - Cross-domain network exploration in physics and other disciplines
 
 ---
