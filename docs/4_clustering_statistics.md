@@ -30,12 +30,12 @@ RISK implements several community detection algorithms and statistical tests to 
 
 RISK implements a suite of statistical tests—ranging from fast approximations to rigorous overrepresentation analysis—to assess functional term enrichment in network neighborhoods. Each method has strengths depending on dataset size, structure, and precision requirements.
 
-| Test           | Speed  | Primary use                              | When/Why (assumptions & notes)                                                                                              |
-| -------------- | ------ | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Permutation    | Slow   | Most rigorous; non-parametric             | Distribution-free empirical null (permute network or labels); preferred when assumptions are unclear; computationally intensive. |
-| Hypergeometric | Medium | Standard for GO/pathway enrichment       | Exact test for finite populations sampled without replacement; widely used for term–to–gene membership tables.               |
-| Chi-squared    | Fast   | Approximate contingency-table testing    | Suitable for large samples with expected counts ≥ 5 per cell; fast but approximate; avoid with sparse/low counts.            |
-| Binomial       | Fast   | Scalable approximation                    | Fast approximation assuming independent trials/with-replacement; useful for large populations with small samples.            |
+| Test           | Speed  | Primary use                           | When/Why (assumptions & notes)                                                                                                   |
+| -------------- | ------ | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Permutation    | Slow   | Most rigorous; non-parametric         | Distribution-free empirical null (permute network or labels); preferred when assumptions are unclear; computationally intensive. |
+| Hypergeometric | Medium | Standard for GO/pathway enrichment    | Exact test for finite populations sampled without replacement; widely used for term–to–gene membership tables.                   |
+| Chi-squared    | Fast   | Approximate contingency-table testing | Suitable for large samples with expected counts ≥ 5 per cell; fast but approximate; avoid with sparse/low counts.                |
+| Binomial       | Fast   | Scalable approximation                | Fast approximation assuming independent trials/with-replacement; useful for large populations with small samples.                |
 
 ### Choosing a test: quick guidance
 
