@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/riskportal/network/5_load_graph/">
+        <link rel="canonical" href="https://github.com/riskportal/network/3_annotation_input/">
       
       
-        <link rel="prev" href="../4_statistics/">
+        <link rel="prev" href="../2_network_input/">
       
       
-        <link rel="next" href="../6_visualization/">
+        <link rel="next" href="../4_clustering_statistics/">
       
       
       <link rel="icon" href="../images/risk_logo.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>5. Load Graph - RISK Network Documentation</title>
+        <title>3. Annotation Input - RISK Network Documentation</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#building-and-analyzing-networks" class="md-skip">
+        <a href="#loading-annotations-into-risk" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5. Load Graph
+              3. Annotation Input
             
           </span>
         </div>
@@ -316,12 +316,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../0_intro/" class="md-nav__link">
+      <a href="../0_introduction/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    0. Intro
+    0. Introduction
     
   </span>
   
@@ -429,52 +429,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../3_annotation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    3. Annotation
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../4_statistics/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    4. Statistics
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -492,7 +446,7 @@
   
   
   <span class="md-ellipsis">
-    5. Load Graph
+    3. Annotation Input
     
   </span>
   
@@ -505,7 +459,7 @@
   
   
   <span class="md-ellipsis">
-    5. Load Graph
+    3. Annotation Input
     
   </span>
   
@@ -528,86 +482,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-a-networkgraph" class="md-nav__link">
+  <a href="#supported-input-formats" class="md-nav__link">
     <span class="md-ellipsis">
-      Create a NetworkGraph
+      Supported Input Formats
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-attributes" class="md-nav__link">
+  <a href="#json-annotation" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Attributes
+      JSON Annotation
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Key Attributes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#domain-level" class="md-nav__link">
-    <span class="md-ellipsis">
-      Domain-Level
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#node-level" class="md-nav__link">
-    <span class="md-ellipsis">
-      Node-Level
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-workflow" class="md-nav__link">
+  <a href="#csv-annotation" class="md-nav__link">
     <span class="md-ellipsis">
-      Example Workflow
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example Workflow">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#summarize-results" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summarize results
+      CSV Annotation
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#export-summary" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#tsv-annotation" class="md-nav__link">
     <span class="md-ellipsis">
-      Export summary
+      TSV Annotation
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#clean-domains" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#excel-annotation" class="md-nav__link">
     <span class="md-ellipsis">
-      Clean domains
+      Excel Annotation
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#dictionary-based-annotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dictionary-Based Annotation
+    </span>
+  </a>
   
 </li>
       
@@ -615,6 +539,52 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_clustering_statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4. Clustering & Statistics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5_graph_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. Graph Setup
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -758,81 +728,166 @@
   
 
 
-<h1 id="building-and-analyzing-networks">Building and Analyzing Networks<a class="headerlink" href="#building-and-analyzing-networks" title="Permanent link">&para;</a></h1>
-<p>The <code>NetworkGraph</code> object integrates network data, annotations, and overrepresentation results into a unified structure, supporting clustering, domain-level significance, and downstream visualization.</p>
+<h1 id="loading-annotations-into-risk">Loading Annotations into RISK<a class="headerlink" href="#loading-annotations-into-risk" title="Permanent link">&para;</a></h1>
+<p>Annotations must be provided by the user and formatted clearly to ensure compatibility with RISK loaders. We note that RISK does not bundle annotations; users should obtain curated resources such as Gene Ontology (Ashburner <em>et al</em>., 2000), CORUM (Tsitsiridis <em>et al</em>., 2022), or KEGG (Kanehisa <em>et al</em>., 2023) and format them as term–to–node (e.g., genes/proteins) membership tables. Publicly available resources such as Gene Ontology (GO), CORUM, and KEGG offer standardized annotation files that can be adapted for use.</p>
 <hr />
-<h2 id="create-a-networkgraph">Create a <code>NetworkGraph</code><a class="headerlink" href="#create-a-networkgraph" title="Permanent link">&para;</a></h2>
+<h2 id="supported-input-formats">Supported Input Formats<a class="headerlink" href="#supported-input-formats" title="Permanent link">&para;</a></h2>
+<p><em>Node IDs must match the network’s node labels; unmapped IDs are ignored. Terms may overlap, and a node can belong to multiple terms. Terms outside <code>min_nodes_per_term</code> and <code>max_nodes_per_term</code> are filtered.</em></p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.json</code></td>
+<td><code>load_annotation_json()</code></td>
+<td>Import annotations from a JSON file.</td>
+</tr>
+<tr>
+<td><code>.csv</code></td>
+<td><code>load_annotation_csv()</code></td>
+<td>Import from a CSV file (supports delimiter).</td>
+</tr>
+<tr>
+<td><code>.tsv</code></td>
+<td><code>load_annotation_tsv()</code></td>
+<td>Import from a tab-separated file.</td>
+</tr>
+<tr>
+<td><code>.xlsx</code>/<code>.xls</code></td>
+<td><code>load_annotation_excel()</code></td>
+<td>Import from a specified Excel sheet.</td>
+</tr>
+<tr>
+<td><code>dict</code></td>
+<td><code>load_annotation_dict()</code></td>
+<td>Load annotations from a Python dictionary in memory.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="json-annotation">JSON Annotation<a class="headerlink" href="#json-annotation" title="Permanent link">&para;</a></h2>
+<p>Load annotation data directly from a JSON file and associate terms with network nodes.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>network</code> (nx.Graph): The network graph containing the nodes and edges to be analyzed.</li>
-<li><code>annotation</code> (dict): Annotation data associated with the network.</li>
-<li><code>neighborhoods</code> (dict): Neighborhood scores from enrichment/depletion analysis.</li>
-<li><code>tail</code> (str, optional): Specifies test tail. Options: <code>'right'</code> (default), <code>'left'</code>, <code>'both'</code>.</li>
-<li><code>pval_cutoff</code> (float, optional): Cutoff for raw p-values (0–1). Defaults to 0.01.</li>
-<li><code>fdr_cutoff</code> (float, optional): Cutoff for FDR-corrected p-values (0–1). Defaults to 0.9999.</li>
-<li><code>impute_depth</code> (int, optional): Depth for imputing missing values (≥0). Defaults to 1.</li>
-<li><code>prune_threshold</code> (float, optional): Threshold for pruning weak edges (0–1). Defaults to 0.0.</li>
-<li><code>linkage_criterion</code> (str, optional): Criterion for clustering. Options: <code>'distance'</code> (default), <code>'maxclust'</code>, <code>'off'</code>.</li>
-<li><code>linkage_method</code> (str, optional): Hierarchical clustering method. Options: <code>'auto'</code>, <code>'single'</code>, <code>'complete'</code>, <code>'average'</code>, <code>'weighted'</code>, <code>'centroid'</code>, <code>'median'</code>, <code>'ward'</code>. Defaults to <code>'average'</code>.</li>
-<li><code>linkage_metric</code> (str, optional): Distance metric. Options: <code>'auto'</code>, <code>'braycurtis'</code>, <code>'canberra'</code>, <code>'chebyshev'</code>, <code>'cityblock'</code>, <code>'correlation'</code>, <code>'cosine'</code>, <code>'dice'</code>, <code>'euclidean'</code>, <code>'hamming'</code>, <code>'jaccard'</code>, <code>'jensenshannon'</code>, <code>'kulczynski1'</code>, <code>'mahalanobis'</code>, <code>'matching'</code>, <code>'minkowski'</code>, <code>'rogerstanimoto'</code>, <code>'russellrao'</code>, <code>'seuclidean'</code>, <code>'sokalmichener'</code>, <code>'sokalsneath'</code>, <code>'sqeuclidean'</code>, <code>'yule'</code>. Defaults to <code>'yule'</code>.</li>
-<li><code>linkage_threshold</code> (str or float, optional): Cutoff distance or <code>'auto'</code> for silhouette optimization. Defaults to 0.2.</li>
-<li><code>min_cluster_size</code> (int, optional): Minimum cluster size. Defaults to 5.</li>
-<li><code>max_cluster_size</code> (int, optional): Maximum cluster size. Defaults to 1000.</li>
+<li><code>network</code> (nx.Graph): The network to which the annotation is related.</li>
+<li><code>filepath</code> (str): Path to the JSON annotation file.</li>
+<li><code>min_nodes_per_term</code> (int, optional): The minimum number of network nodes required for each annotation term to be included. Defaults to 1.</li>
+<li><code>max_nodes_per_term</code> (int, optional): The maximum number of network nodes required for each annotation term to be included. Defaults to 10_000.</li>
 </ul>
-<p><strong>Returns:</strong></p>
-<ul>
-<li><code>NetworkGraph</code>: A <code>NetworkGraph</code> object representing the processed network, ready for analysis and visualization.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="n">graph</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_graph</span><span class="p">(</span>
+<p><strong>Returns:</strong>
+<code>dict</code>: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.</p>
+<div class="highlight"><pre><span></span><code><span class="n">annotation</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_annotation_json</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
-    <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
-    <span class="n">neighborhoods</span><span class="o">=</span><span class="n">neighborhoods</span><span class="p">,</span>
-    <span class="n">tail</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
-    <span class="n">pval_cutoff</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
-    <span class="n">fdr_cutoff</span><span class="o">=</span><span class="mf">0.9999</span><span class="p">,</span>
-    <span class="n">impute_depth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-    <span class="n">prune_threshold</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
-    <span class="n">linkage_criterion</span><span class="o">=</span><span class="s2">&quot;distance&quot;</span><span class="p">,</span>
-    <span class="n">linkage_method</span><span class="o">=</span><span class="s2">&quot;average&quot;</span><span class="p">,</span>
-    <span class="n">linkage_metric</span><span class="o">=</span><span class="s2">&quot;yule&quot;</span><span class="p">,</span>
-    <span class="n">linkage_threshold</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
-    <span class="n">min_cluster_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-    <span class="n">max_cluster_size</span><span class="o">=</span><span class="mi">1000</span>
+    <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/json/annotation/go_biological_process.json&quot;</span><span class="p">,</span>
+    <span class="n">min_nodes_per_term</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">max_nodes_per_term</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
-<h2 id="key-attributes">Key Attributes<a class="headerlink" href="#key-attributes" title="Permanent link">&para;</a></h2>
-<p>The <code>NetworkGraph</code> object exposes several mappings for cluster and node information:</p>
-<h3 id="domain-level">Domain-Level<a class="headerlink" href="#domain-level" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>domain_id_to_node_ids_map</code></li>
-<li><code>domain_id_to_node_labels_map</code></li>
-<li><code>domain_id_to_domain_terms_map</code></li>
-<li><code>domain_id_to_domain_info_map</code></li>
-</ul>
-<h3 id="node-level">Node-Level<a class="headerlink" href="#node-level" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>node_id_to_node_label_map</code></li>
-<li><code>node_label_to_node_id_map</code></li>
-<li><code>node_label_to_significance_map</code></li>
-<li><code>node_significance_sums</code></li>
-</ul>
-<p>These attributes enable visualization, labeling, and export functionalities.</p>
 <hr />
-<h2 id="example-workflow">Example Workflow<a class="headerlink" href="#example-workflow" title="Permanent link">&para;</a></h2>
-<h3 id="summarize-results">Summarize results<a class="headerlink" href="#summarize-results" title="Permanent link">&para;</a></h3>
-<p>Load the analysis summary into a DataFrame to inspect matched members, counts, and significance values.</p>
-<div class="highlight"><pre><span></span><code><span class="n">summary_df</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
-<span class="n">summary_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<h2 id="csv-annotation">CSV Annotation<a class="headerlink" href="#csv-annotation" title="Permanent link">&para;</a></h2>
+<p>Load annotation data from a CSV file, specifying columns and delimiter for nodes.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>network</code> (nx.Graph): The network to which the annotation is related.</li>
+<li><code>filepath</code> (str): Path to the CSV annotation file.</li>
+<li><code>label_colname</code> (str): Name of the column containing the annotation term (e.g., GO term).</li>
+<li><code>nodes_colname</code> (str): Name of the column containing the nodes associated with each label.</li>
+<li><code>nodes_delimiter</code> (str, optional): Delimiter used to separate multiple nodes within the nodes column. Defaults to ';'.</li>
+<li><code>min_nodes_per_term</code> (int, optional): The minimum number of network nodes required for each annotation term to be included. Defaults to 1.</li>
+<li><code>max_nodes_per_term</code> (int, optional): The maximum number of network nodes required for each annotation term to be included. Defaults to 10_000.</li>
+</ul>
+<p><strong>Returns:</strong>
+<code>dict</code>: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.</p>
+<div class="highlight"><pre><span></span><code><span class="n">annotation</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_annotation_csv</span><span class="p">(</span>
+    <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
+    <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/csv/annotation/go_biological_process.csv&quot;</span><span class="p">,</span>
+    <span class="n">label_colname</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span>
+    <span class="n">nodes_colname</span><span class="o">=</span><span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
+    <span class="n">nodes_delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span>
+    <span class="n">min_nodes_per_term</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">max_nodes_per_term</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
+<span class="p">)</span>
 </code></pre></div>
-<h3 id="export-summary">Export summary<a class="headerlink" href="#export-summary" title="Permanent link">&para;</a></h3>
-<p>Export the processed summary table in common formats for downstream use or sharing.</p>
-<div class="highlight"><pre><span></span><code><span class="n">graph</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;./data/csv/summary/michaelis_2023.csv&quot;</span><span class="p">)</span>
-<span class="n">graph</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s2">&quot;./data/json/summary/michaelis_2023.json&quot;</span><span class="p">)</span>
-<span class="n">graph</span><span class="o">.</span><span class="n">summary</span><span class="o">.</span><span class="n">to_txt</span><span class="p">(</span><span class="s2">&quot;./data/txt/summary/michaelis_2023.txt&quot;</span><span class="p">)</span>
+<hr />
+<h2 id="tsv-annotation">TSV Annotation<a class="headerlink" href="#tsv-annotation" title="Permanent link">&para;</a></h2>
+<p>Load annotation data from a tab-delimited file, similar to CSV but with tabs as separators.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>network</code> (nx.Graph): The network to which the annotation is related.</li>
+<li><code>filepath</code> (str): Path to the TSV annotation file.</li>
+<li><code>label_colname</code> (str): Name of the column containing the annotation term (e.g., GO term).</li>
+<li><code>nodes_colname</code> (str): Name of the column containing the nodes associated with each label.</li>
+<li><code>nodes_delimiter</code> (str, optional): Delimiter used to separate multiple nodes within the nodes column. Defaults to ';'.</li>
+<li><code>min_nodes_per_term</code> (int, optional): The minimum number of network nodes required for each annotation term to be included. Defaults to 1.</li>
+<li><code>max_nodes_per_term</code> (int, optional): The maximum number of network nodes required for each annotation term to be included. Defaults to 10_000.</li>
+</ul>
+<p><strong>Returns:</strong>
+<code>dict</code>: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.</p>
+<div class="highlight"><pre><span></span><code><span class="n">annotation</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_annotation_tsv</span><span class="p">(</span>
+    <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
+    <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/tsv/annotation/go_biological_process.tsv&quot;</span><span class="p">,</span>
+    <span class="n">label_colname</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span>
+    <span class="n">nodes_colname</span><span class="o">=</span><span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
+    <span class="n">nodes_delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span>
+    <span class="n">min_nodes_per_term</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">max_nodes_per_term</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
+<span class="p">)</span>
 </code></pre></div>
-<h3 id="clean-domains">Clean domains<a class="headerlink" href="#clean-domains" title="Permanent link">&para;</a></h3>
-<p>Remove a domain and retrieve its node labels:</p>
-<div class="highlight"><pre><span></span><code><span class="n">domain_1_labels</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<hr />
+<h2 id="excel-annotation">Excel Annotation<a class="headerlink" href="#excel-annotation" title="Permanent link">&para;</a></h2>
+<p>Load annotation data from an Excel workbook, with support for selecting specific sheets.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>network</code> (nx.Graph): The network to which the annotation is related.</li>
+<li><code>filepath</code> (str): Path to the Excel annotation file.</li>
+<li><code>label_colname</code> (str): Name of the column containing the annotation term (e.g., GO term).</li>
+<li><code>nodes_colname</code> (str): Name of the column containing the nodes associated with each label.</li>
+<li><code>sheet_name</code> (str, optional): The name of the Excel sheet to load. Defaults to 'Sheet1'.</li>
+<li><code>nodes_delimiter</code> (str, optional): Delimiter used to separate multiple nodes within the nodes column. Defaults to ';'.</li>
+<li><code>min_nodes_per_term</code> (int, optional): The minimum number of network nodes required for each annotation term to be included. Defaults to 1.</li>
+<li><code>max_nodes_per_term</code> (int, optional): The maximum number of network nodes required for each annotation term to be included. Defaults to 10_000.</li>
+</ul>
+<p><strong>Returns:</strong>
+<code>dict</code>: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.</p>
+<div class="highlight"><pre><span></span><code><span class="n">annotation</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_annotation_excel</span><span class="p">(</span>
+    <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
+    <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/excel/annotation/go_biological_process.xlsx&quot;</span><span class="p">,</span>
+    <span class="n">label_colname</span><span class="o">=</span><span class="s2">&quot;label&quot;</span><span class="p">,</span>
+    <span class="n">nodes_colname</span><span class="o">=</span><span class="s2">&quot;nodes&quot;</span><span class="p">,</span>
+    <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;Sheet1&quot;</span><span class="p">,</span>
+    <span class="n">nodes_delimiter</span><span class="o">=</span><span class="s2">&quot;;&quot;</span><span class="p">,</span>
+    <span class="n">min_nodes_per_term</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">max_nodes_per_term</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="dictionary-based-annotation">Dictionary-Based Annotation<a class="headerlink" href="#dictionary-based-annotation" title="Permanent link">&para;</a></h2>
+<p>Load annotation data already in memory as a Python dictionary.</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>network</code> (nx.Graph): The network to which the annotation is related.</li>
+<li><code>content</code> (dict): The annotation dictionary to load.</li>
+<li><code>min_nodes_per_term</code> (int, optional): The minimum number of network nodes required for each annotation term to be included. Defaults to 1.</li>
+<li><code>max_nodes_per_term</code> (int, optional): The maximum number of network nodes required for each annotation term to be included. Defaults to 10_000.</li>
+</ul>
+<p><strong>Returns:</strong>
+<code>dict</code>: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./data/json/annotation/go_biological_process.json&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">annotation_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+<span class="n">annotation</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_annotation_dict</span><span class="p">(</span>
+    <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
+    <span class="n">content</span><span class="o">=</span><span class="n">annotation_dict</span><span class="p">,</span>
+    <span class="n">min_nodes_per_term</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">max_nodes_per_term</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
+<span class="p">)</span>
 </code></pre></div>
 
 

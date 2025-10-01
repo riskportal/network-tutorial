@@ -14,7 +14,7 @@
         <link rel="prev" href="../1_installation/">
       
       
-        <link rel="next" href="../3_annotation/">
+        <link rel="next" href="../3_annotation_input/">
       
       
       <link rel="icon" href="../images/risk_logo.ico">
@@ -316,12 +316,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../0_intro/" class="md-nav__link">
+      <a href="../0_introduction/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    0. Intro
+    0. Introduction
     
   </span>
   
@@ -519,12 +519,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../3_annotation/" class="md-nav__link">
+      <a href="../3_annotation_input/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    3. Annotation
+    3. Annotation Input
     
   </span>
   
@@ -542,12 +542,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../4_statistics/" class="md-nav__link">
+      <a href="../4_clustering_statistics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    4. Statistics
+    4. Clustering & Statistics
     
   </span>
   
@@ -565,12 +565,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../5_load_graph/" class="md-nav__link">
+      <a href="../5_graph_setup/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    5. Load Graph
+    5. Graph Setup
     
   </span>
   
@@ -727,25 +727,30 @@
 <thead>
 <tr>
 <th>Format</th>
-<th>Function</th>
+<th>Method</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>.cys</code></td>
 <td><code>load_network_cytoscape()</code></td>
+<td>Load directly from Cytoscape session files; supports source/target labels and optional view selection.</td>
 </tr>
 <tr>
 <td><code>.cyjs</code></td>
 <td><code>load_network_cyjs()</code></td>
+<td>Import Cytoscape JSON format; specify source and target labels for nodes and edges.</td>
 </tr>
 <tr>
 <td><code>.gpickle</code></td>
 <td><code>load_network_gpickle()</code></td>
+<td>Reload serialized NetworkX graphs; preserves full network structure.</td>
 </tr>
 <tr>
 <td><code>NetworkX</code></td>
 <td><code>load_network_networkx()</code></td>
+<td>Convert an existing NetworkX graph object into a RISK-compatible format.</td>
 </tr>
 </tbody>
 </table>
@@ -755,16 +760,16 @@
 <p>Load Cytoscape session files exported from the desktop app.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>filepath</code> (str): Path to the <code>.cys</code> file.</li>
-<li><code>source_label</code> (str): Name of the source node attribute.</li>
-<li><code>target_label</code> (str): Name of the target node attribute.</li>
-<li><code>view_name</code> (str): Name of the Cytoscape view to load.</li>
-<li><code>compute_sphere</code> (bool, default=True): Apply 3D Mercator-inspired spherical projection.</li>
-<li><code>surface_depth</code> (float, default=0.0): Inward/outward displacement relative to sphere surface.</li>
-<li><code>min_edges_per_node</code> (int, default=0): Minimum degree threshold for nodes.</li>
+<li><code>filepath</code> (str): Path to the Cytoscape file.</li>
+<li><code>source_label</code> (str, optional): Source node label. Defaults to "source".</li>
+<li><code>target_label</code> (str, optional): Target node label. Defaults to "target".</li>
+<li><code>view_name</code> (str, optional): Specific view name to load. Defaults to "".</li>
+<li><code>compute_sphere</code> (bool, optional): Whether to map nodes from a 2D plane onto a 3D spherical surface using a spherical projection. Defaults to True.</li>
+<li><code>surface_depth</code> (float, optional): Adjusts the depth of nodes relative to the spherical surface, enhancing visualization of clustering. Defaults to 0.0.</li>
+<li><code>min_edges_per_node</code> (int, optional): Minimum number of edges per node. Values &gt;0 prune nodes with fewer edges. Defaults to 0.</li>
 </ul>
-<p><strong>Returns:</strong></p>
-<p><code>nx.Graph</code>: The loaded and processed network as a NetworkX graph.</p>
+<p><strong>Returns:</strong>
+<code>nx.Graph</code>: The loaded and processed network as a NetworkX graph.</p>
 <div class="highlight"><pre><span></span><code><span class="n">network</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_network_cytoscape</span><span class="p">(</span>
     <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/cytoscape/michaelis_2023.cys&quot;</span><span class="p">,</span>
     <span class="n">source_label</span><span class="o">=</span><span class="s2">&quot;source&quot;</span><span class="p">,</span>
@@ -780,15 +785,15 @@
 <p>Load JSON exports from Cytoscape Web or JavaScript pipelines.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>filepath</code> (str): Path to the <code>.cyjs</code> file.</li>
-<li><code>source_label</code> (str): Name of the source node attribute.</li>
-<li><code>target_label</code> (str): Name of the target node attribute.</li>
-<li><code>compute_sphere</code> (bool, default=True): Apply 3D Mercator-inspired spherical projection.</li>
-<li><code>surface_depth</code> (float, default=0.0): Inward/outward displacement relative to sphere surface.</li>
-<li><code>min_edges_per_node</code> (int, default=0): Minimum degree threshold for nodes.</li>
+<li><code>filepath</code> (str): Path to the Cytoscape JSON file.</li>
+<li><code>source_label</code> (str, optional): Source node label. Defaults to "source".</li>
+<li><code>target_label</code> (str, optional): Target node label. Defaults to "target".</li>
+<li><code>compute_sphere</code> (bool, optional): Whether to map nodes from a 2D plane onto a 3D spherical surface using a spherical projection. Defaults to True.</li>
+<li><code>surface_depth</code> (float, optional): Adjusts the depth of nodes relative to the spherical surface, enhancing visualization of clustering. Defaults to 0.0.</li>
+<li><code>min_edges_per_node</code> (int, optional): Minimum number of edges per node. Values &gt;0 prune nodes with fewer edges. Defaults to 0.</li>
 </ul>
-<p><strong>Returns:</strong></p>
-<p><code>nx.Graph</code>: The loaded and processed network as a NetworkX graph.</p>
+<p><strong>Returns:</strong>
+<code>nx.Graph</code>: The loaded and processed network as a NetworkX graph.</p>
 <div class="highlight"><pre><span></span><code><span class="n">network</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_network_cyjs</span><span class="p">(</span>
     <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/cyjs/michaelis_2023.cyjs&quot;</span><span class="p">,</span>
     <span class="n">source_label</span><span class="o">=</span><span class="s2">&quot;source&quot;</span><span class="p">,</span>
@@ -803,13 +808,13 @@
 <p>Fast, Python-native serialization of NetworkX graphs preserving all attributes. Recommended for reproducibility and performance.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>filepath</code> (str): Path to the <code>.gpickle</code> file.</li>
-<li><code>compute_sphere</code> (bool, default=True): Apply 3D Mercator-inspired spherical projection.</li>
-<li><code>surface_depth</code> (float, default=0.0): Inward/outward displacement relative to sphere surface.</li>
-<li><code>min_edges_per_node</code> (int, default=0): Minimum degree threshold for nodes.</li>
+<li><code>filepath</code> (str): Path to the GPickle file.</li>
+<li><code>compute_sphere</code> (bool, optional): Whether to map nodes from a 2D plane onto a 3D spherical surface using a spherical projection. Defaults to True.</li>
+<li><code>surface_depth</code> (float, optional): Adjusts the depth of nodes relative to the spherical surface, enhancing visualization of clustering. Defaults to 0.0.</li>
+<li><code>min_edges_per_node</code> (int, optional): Minimum number of edges per node. Values &gt;0 prune nodes with fewer edges. Defaults to 0.</li>
 </ul>
-<p><strong>Returns:</strong></p>
-<p><code>nx.Graph</code>: The loaded and processed network as a NetworkX graph.</p>
+<p><strong>Returns:</strong>
+<code>nx.Graph</code>: The loaded and processed network as a NetworkX graph.</p>
 <div class="highlight"><pre><span></span><code><span class="n">network</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_network_gpickle</span><span class="p">(</span>
     <span class="n">filepath</span><span class="o">=</span><span class="s2">&quot;./data/gpickle/michaelis_2023.gpickle&quot;</span><span class="p">,</span>
     <span class="n">compute_sphere</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
@@ -822,13 +827,13 @@
 <p>Load directly from an in-memory <code>networkx.Graph</code>. Integrates seamlessly when the graph is already loaded.</p>
 <p><strong>Parameters:</strong></p>
 <ul>
-<li><code>network</code> (nx.Graph): The input NetworkX graph.</li>
-<li><code>compute_sphere</code> (bool, default=True): Apply 3D Mercator-inspired spherical projection.</li>
-<li><code>surface_depth</code> (float, default=0.0): Inward/outward displacement relative to sphere surface.</li>
-<li><code>min_edges_per_node</code> (int, default=0): Minimum degree threshold for nodes.</li>
+<li><code>network</code> (nx.Graph): A NetworkX graph object.</li>
+<li><code>compute_sphere</code> (bool, optional): Whether to map nodes from a 2D plane onto a 3D spherical surface using a spherical projection. Defaults to True.</li>
+<li><code>surface_depth</code> (float, optional): Adjusts the depth of nodes relative to the spherical surface, enhancing visualization of clustering. Defaults to 0.0.</li>
+<li><code>min_edges_per_node</code> (int, optional): Minimum number of edges per node. Values &gt;0 prune nodes with fewer edges. Defaults to 0.</li>
 </ul>
-<p><strong>Returns:</strong></p>
-<p><code>nx.Graph</code>: The loaded and processed network as a NetworkX graph.</p>
+<p><strong>Returns:</strong>
+<code>nx.Graph</code>: The loaded and processed network as a NetworkX graph.</p>
 <div class="highlight"><pre><span></span><code><span class="n">network</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_network_networkx</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
     <span class="n">compute_sphere</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>

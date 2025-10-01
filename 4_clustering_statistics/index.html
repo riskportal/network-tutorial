@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://github.com/riskportal/network/4_statistics/">
+        <link rel="canonical" href="https://github.com/riskportal/network/4_clustering_statistics/">
       
       
-        <link rel="prev" href="../3_annotation/">
+        <link rel="prev" href="../3_annotation_input/">
       
       
-        <link rel="next" href="../5_load_graph/">
+        <link rel="next" href="../5_graph_setup/">
       
       
       <link rel="icon" href="../images/risk_logo.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>4. Statistics - RISK Network Documentation</title>
+        <title>4. Clustering & Statistics - RISK Network Documentation</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#summary-of-statistical-methods" class="md-skip">
+        <a href="#summary-of-clustering-algorithms-and-statistical-methods" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              4. Statistics
+              4. Clustering & Statistics
             
           </span>
         </div>
@@ -316,12 +316,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../0_intro/" class="md-nav__link">
+      <a href="../0_introduction/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    0. Intro
+    0. Introduction
     
   </span>
   
@@ -432,12 +432,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../3_annotation/" class="md-nav__link">
+      <a href="../3_annotation_input/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    3. Annotation
+    3. Annotation Input
     
   </span>
   
@@ -469,7 +469,7 @@
   
   
   <span class="md-ellipsis">
-    4. Statistics
+    4. Clustering & Statistics
     
   </span>
   
@@ -482,7 +482,7 @@
   
   
   <span class="md-ellipsis">
-    4. Statistics
+    4. Clustering & Statistics
     
   </span>
   
@@ -505,19 +505,52 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#summary-of-methods" class="md-nav__link">
+  <a href="#summary-of-clustering-algorithms" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary of Methods
+      Summary of Clustering Algorithms
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Summary of Methods">
+    <nav class="md-nav" aria-label="Summary of Clustering Algorithms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choosing-an-algorithm-quick-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Choosing an algorithm: quick guidance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-statistical-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary of Statistical Methods
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary of Statistical Methods">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#choosing-a-test-quick-guidance" class="md-nav__link">
     <span class="md-ellipsis">
       Choosing a test: quick guidance
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shared Parameters
     </span>
   </a>
   
@@ -547,15 +580,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#binomial-test" class="md-nav__link">
-    <span class="md-ellipsis">
-      Binomial Test
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#chi-squared-test" class="md-nav__link">
     <span class="md-ellipsis">
       Chi-squared Test
@@ -565,18 +589,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#poisson-test" class="md-nav__link">
+  <a href="#binomial-test" class="md-nav__link">
     <span class="md-ellipsis">
-      Poisson Test
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#z-score-test" class="md-nav__link">
-    <span class="md-ellipsis">
-      Z-score Test
+      Binomial Test
     </span>
   </a>
   
@@ -598,12 +613,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../5_load_graph/" class="md-nav__link">
+      <a href="../5_graph_setup/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    5. Load Graph
+    5. Graph Setup
     
   </span>
   
@@ -752,10 +767,75 @@
   
 
 
-<h1 id="summary-of-statistical-methods">Summary of Statistical Methods<a class="headerlink" href="#summary-of-statistical-methods" title="Permanent link">&para;</a></h1>
-<p>RISK implements multiple statistical methods to assess overrepresentation of functional terms in network neighborhoods. Each method has strengths depending on dataset size, structure, and precision requirements.</p>
+<h1 id="summary-of-clustering-algorithms-and-statistical-methods">Summary of Clustering Algorithms and Statistical Methods<a class="headerlink" href="#summary-of-clustering-algorithms-and-statistical-methods" title="Permanent link">&para;</a></h1>
+<p>RISK implements several community detection algorithms and statistical tests to support functional annotation of networks. Clustering algorithms detect structured regions of varying size and compactness, while statistical methods evaluate overrepresentation of biological terms within these regions. The choice of algorithm or test depends on network scale, density, and biological context, influencing the resolution, granularity, and rigor of the resulting modules and enrichment results.</p>
 <hr />
-<h2 id="summary-of-methods">Summary of Methods<a class="headerlink" href="#summary-of-methods" title="Permanent link">&para;</a></h2>
+<h2 id="summary-of-clustering-algorithms">Summary of Clustering Algorithms<a class="headerlink" href="#summary-of-clustering-algorithms" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Speed</th>
+<th>Primary use</th>
+<th>When/Why (assumptions &amp; notes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Louvain</strong></td>
+<td>Fast</td>
+<td>Default, scalable to very large networks</td>
+<td>Greedy modularity optimization (Blondel <em>et al.</em>, 2008); efficient for &gt;10⁴ nodes; may produce disconnected subclusters.</td>
+</tr>
+<tr>
+<td><strong>Leiden</strong></td>
+<td>Fast</td>
+<td>Improved Louvain with better resolution</td>
+<td>Guarantees well‑connected communities; more stable than Louvain (Traag <em>et al.</em>, 2019); slightly higher runtime.</td>
+</tr>
+<tr>
+<td><strong>Markov Clustering</strong></td>
+<td>Medium</td>
+<td>Detect smaller, compact complexes</td>
+<td>Flow‑based algorithm (Van Dongen, 2008); good for protein complexes or tightly connected submodules.</td>
+</tr>
+<tr>
+<td><strong>Walktrap</strong></td>
+<td>Medium</td>
+<td>Hierarchical detection in mid‑sized graphs</td>
+<td>Random‑walk based (Pons &amp; Latapy, 2005); effective for local structure; slower on &gt;10⁴ nodes.</td>
+</tr>
+<tr>
+<td><strong>Greedy Modularity</strong></td>
+<td>Fast</td>
+<td>Coarse partitioning</td>
+<td>Optimizes modularity via agglomeration; very fast but suffers from the resolution limit (Newman, 2004).</td>
+</tr>
+<tr>
+<td><strong>Label Propagation</strong></td>
+<td>Fast</td>
+<td>Quick heuristic</td>
+<td>Unsupervised label spreading; no objective function; non‑deterministic and unstable (Raghavan <em>et al.</em>, 2007).</td>
+</tr>
+<tr>
+<td><strong>Spinglass</strong></td>
+<td>Medium</td>
+<td>Small networks; theoretical interest</td>
+<td>Statistical mechanics approach (Reichardt &amp; Bornholdt, 2006); supports overlapping modules; computationally intensive.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="choosing-an-algorithm-quick-guidance">Choosing an algorithm: quick guidance<a class="headerlink" href="#choosing-an-algorithm-quick-guidance" title="Permanent link">&para;</a></h3>
+<ul>
+<li>For large networks (&gt;10⁴ nodes): <strong>Louvain</strong> or <strong>Leiden</strong> (fast, scalable).</li>
+<li>For small, compact complexes: <strong>Markov Clustering</strong> (protein complexes, submodules).</li>
+<li>For hierarchical/local structure: <strong>Walktrap</strong> (medium size).</li>
+<li>For exploratory speed: <strong>Greedy</strong> or <strong>Label Propagation</strong> (but less precise).</li>
+<li>For research/theory on small graphs: <strong>Spinglass</strong> (rarely used in practice).</li>
+</ul>
+<hr />
+<h2 id="summary-of-statistical-methods">Summary of Statistical Methods<a class="headerlink" href="#summary-of-statistical-methods" title="Permanent link">&para;</a></h2>
+<p>RISK implements a suite of statistical tests—ranging from fast approximations to rigorous overrepresentation analysis—to assess functional term enrichment in network neighborhoods. Each method has strengths depending on dataset size, structure, and precision requirements.</p>
 <table>
 <thead>
 <tr>
@@ -768,50 +848,56 @@
 <tbody>
 <tr>
 <td>Permutation</td>
-<td>Medium</td>
-<td>Most robust; non-parametric</td>
-<td>Distribution-free empirical null (permute network or labels); best when assumptions are unclear; computationally intensive.</td>
+<td>Slow</td>
+<td>Most rigorous; non-parametric</td>
+<td>Distribution-free empirical null (permute network or labels); preferred when assumptions are unclear; computationally intensive.</td>
 </tr>
 <tr>
 <td>Hypergeometric</td>
 <td>Medium</td>
 <td>Standard for GO/pathway enrichment</td>
-<td>Finite population without replacement; exact count-based test for term–to–gene membership tables.</td>
+<td>Exact test for finite populations sampled without replacement; widely used for term–to–gene membership tables.</td>
+</tr>
+<tr>
+<td>Chi-squared</td>
+<td>Fast</td>
+<td>Approximate contingency-table testing</td>
+<td>Suitable for large samples with expected counts ≥ 5 per cell; fast but approximate; avoid with sparse/low counts.</td>
 </tr>
 <tr>
 <td>Binomial</td>
 <td>Fast</td>
 <td>Scalable approximation</td>
-<td>With replacement/independent trials; good large-population approximation to hypergeometric when sample &lt;&lt; population.</td>
-</tr>
-<tr>
-<td>Chi-squared</td>
-<td>Fast</td>
-<td>Contingency-table testing, large samples</td>
-<td>For large counts; expected cell counts ≥ 5; very fast for big tables; avoid with sparse/low counts.</td>
-</tr>
-<tr>
-<td>Poisson</td>
-<td>Fast</td>
-<td>Rare events, sparse networks</td>
-<td>Counts of independent events at ~constant rate; good when events are rare (small p, large n). Check for overdispersion.</td>
-</tr>
-<tr>
-<td>Z-score</td>
-<td>Fast</td>
-<td>Quick standardized scoring</td>
-<td>Normal approximation; great for rapid ranking at scale; avoid when counts are very small or highly skewed.</td>
+<td>Fast approximation assuming independent trials/with-replacement; useful for large populations with small samples.</td>
 </tr>
 </tbody>
 </table>
 <h3 id="choosing-a-test-quick-guidance">Choosing a test: quick guidance<a class="headerlink" href="#choosing-a-test-quick-guidance" title="Permanent link">&para;</a></h3>
 <ul>
-<li>If assumptions are unclear / want a gold-standard null: use <strong>Permutation</strong> (robust, slower).</li>
-<li>Finite population without replacement (standard GO enrichment): use <strong>Hypergeometric</strong>.</li>
-<li>Need speed with large populations and small samples: use <strong>Binomial</strong> (approximation to hypergeometric).</li>
-<li>Many categories and large counts: use <strong>Chi-squared</strong> (fast), but ensure expected counts ≥ 5 per cell.</li>
-<li>Rare-event counts (sparse networks): use <strong>Poisson</strong>; verify that a constant-rate assumption is reasonable.</li>
-<li>Just need a fast ranking score (not exact p-values): use <strong>Z-score</strong>; treat results as heuristic when counts are small.</li>
+<li>For rigorous overrepresentation analysis with minimal assumptions: use <strong>Permutation</strong> or <strong>Hypergeometric</strong>.</li>
+<li>For large samples with many categories and sufficient counts: <strong>Chi-squared</strong> offers a fast approximate test.</li>
+<li>For speed and scalability with large populations and small samples: use <strong>Binomial</strong> as a practical approximation.</li>
+</ul>
+<h3 id="shared-parameters">Shared Parameters<a class="headerlink" href="#shared-parameters" title="Permanent link">&para;</a></h3>
+<p>Parameters common among statistical methods.</p>
+<ul>
+<li><code>network</code> (nx.Graph): The network graph.</li>
+<li><code>annotation</code> (dict): The annotation associated with the network.</li>
+<li><code>distance_metric</code> (str, list, tuple, or np.ndarray, optional): Method(s) used to compute distances for community detection. You can specify a single method or a list/tuple/array of methods to apply multiple community detection algorithms. Options include:</li>
+<li><code>'louvain'</code>: Applies the Louvain method for community detection. <em>(default)</em></li>
+<li><code>'greedy_modularity'</code>: Detects communities in a graph based on the greedy optimization of modularity.</li>
+<li><code>'label_propagation'</code>: Uses label propagation to find communities.</li>
+<li><code>'leiden'</code>: Applies the Leiden method for community detection.</li>
+<li><code>'markov_clustering'</code>: Implements the Markov Clustering Algorithm.</li>
+<li><code>'walktrap'</code>: Detects communities via random walks.</li>
+<li><code>'spinglass'</code>: Community detection based on the spinglass model.</li>
+<li><code>louvain_resolution</code> (float, optional): Resolution parameter for the Louvain method. Only applies if <code>'louvain'</code> is one of the distance metrics. Defaults to 0.1.</li>
+<li><code>leiden_resolution</code> (float, optional): Resolution parameter for the Leiden method. Only applies if <code>'leiden'</code> is one of the distance metrics. Defaults to 1.0.</li>
+<li><code>fraction_shortest_edges</code> (float, list, tuple, or np.ndarray, optional): Shortest edge rank fraction threshold(s) for creating subgraphs. Can be a single float for one threshold or a list/tuple of floats corresponding to multiple thresholds. Defaults to 0.5.</li>
+<li><code>null_distribution</code> (str, optional): Defines the type of null distribution to use for comparison. Options include:</li>
+<li><code>'network'</code>: Randomly permuted network structure. <em>(default)</em></li>
+<li><code>'annotation'</code>: Randomly permuted annotations.</li>
+<li><code>random_seed</code> (int, optional): Seed for random number generation in permutation test. Defaults to 888.</li>
 </ul>
 <hr />
 <h2 id="permutation-test">Permutation Test<a class="headerlink" href="#permutation-test" title="Permanent link">&para;</a></h2>
@@ -820,37 +906,28 @@
 <ul>
 <li>Non-parametric and distribution-free; ideal when analytical assumptions (independence, variance, distribution) are doubtful.</li>
 <li>Supports flexible nulls (permute network topology or term labels) to match study design.</li>
-<li>Most robust option but computationally intensive; prefer for smaller networks or final confirmation analyses.</li>
+<li>Most rigorous option but computationally intensive; prefer for smaller networks or final confirmation analyses.</li>
 </ul>
-<p><strong>Parameters:</strong></p>
+<p><strong>Additional Parameters:</strong></p>
 <ul>
-<li><code>network</code> (nx.Graph): The network graph.</li>
-<li><code>annotation</code> (dict): The annotation associated with the network.</li>
-<li><code>distance_metric</code> (str, list, tuple, or np.ndarray, optional): Methods for community detection, supporting <code>louvain</code>, <code>greedy_modularity</code>, <code>label_propagation</code>, <code>leiden</code>, <code>markov_clustering</code>, <code>walktrap</code>, <code>spinglass</code>.</li>
-<li><code>louvain_resolution</code> (float, optional): Resolution parameter for Louvain. Defaults to 0.1.</li>
-<li><code>leiden_resolution</code> (float, optional): Resolution parameter for Leiden. Defaults to 1.0.</li>
-<li><code>fraction_shortest_edges</code> (float, list, tuple, or np.ndarray, optional): Edge threshold(s) for subgraphs. Defaults to 0.5.</li>
-<li><code>score_metric</code> (str, optional): Scoring metric used in permutation tests; options include <code>"sum"</code> (default) and <code>"stdev"</code>.</li>
-<li><code>num_permutations</code> (int, optional): Number of permutations (only used in permutation test). Defaults to 1000.</li>
-<li><code>max_workers</code> (int, optional): Number of parallel workers for permutation tests. Defaults to 1.</li>
-<li><code>null_distribution</code> (str, optional): <code>"network"</code> (default) or <code>"annotation"</code>.</li>
-<li><code>random_seed</code> (int, optional): Seed for reproducibility.</li>
+<li><code>score_metric</code> (str, optional): Metric used to score neighborhoods. Options include:</li>
+<li><code>'sum'</code>: Sums the annotation values within each neighborhood. <em>(default)</em></li>
+<li><code>'stdev'</code>: Computes the standard deviation of annotation values within each neighborhood.</li>
+<li><code>num_permutations</code> (int, optional): Number of permutations for significance testing. Defaults to 1000.</li>
+<li><code>max_workers</code> (int, optional): Maximum number of workers for parallel computation. Defaults to 1.</li>
 </ul>
-<p><strong>Returns:</strong></p>
-<ul>
-<li><code>dict</code>: A dictionary containing the computed significance of neighborhoods within the network.</li>
-</ul>
+<p><strong>Returns:</strong>
+<code>dict</code>: A dictionary containing the computed significance of neighborhoods within the network.</p>
 <div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_permutation</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
     <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
     <span class="n">distance_metric</span><span class="o">=</span><span class="s2">&quot;louvain&quot;</span><span class="p">,</span>
-    <span class="n">louvain_resolution</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span>
-    <span class="n">leiden_resolution</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-    <span class="n">fraction_shortest_edges</span><span class="o">=</span><span class="mf">0.225</span><span class="p">,</span>
-    <span class="n">score_metric</span><span class="o">=</span><span class="s2">&quot;stdev&quot;</span><span class="p">,</span>
+    <span class="n">louvain_resolution</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">fraction_shortest_edges</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">score_metric</span><span class="o">=</span><span class="s2">&quot;sum&quot;</span><span class="p">,</span>
     <span class="n">null_distribution</span><span class="o">=</span><span class="s2">&quot;network&quot;</span><span class="p">,</span>
     <span class="n">num_permutations</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
-    <span class="n">random_seed</span><span class="o">=</span><span class="mi">887</span><span class="p">,</span>
+    <span class="n">random_seed</span><span class="o">=</span><span class="mi">888</span><span class="p">,</span>
     <span class="n">max_workers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
@@ -863,65 +940,16 @@
 <li>Appropriate for finite populations sampled without replacement (e.g., selected cluster vs whole network).</li>
 <li>Exact test; more accurate than approximations when sample is not negligible relative to the population.</li>
 </ul>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><code>network</code> (nx.Graph): The network graph.</li>
-<li><code>annotation</code> (dict): The annotation associated with the network.</li>
-<li><code>distance_metric</code> (str, list, tuple, or np.ndarray, optional): Methods for community detection, supporting <code>louvain</code>, <code>greedy_modularity</code>, <code>label_propagation</code>, <code>leiden</code>, <code>markov_clustering</code>, <code>walktrap</code>, <code>spinglass</code>.</li>
-<li><code>louvain_resolution</code> (float, optional): Resolution parameter for Louvain. Defaults to 0.1.</li>
-<li><code>leiden_resolution</code> (float, optional): Resolution parameter for Leiden. Defaults to 1.0.</li>
-<li><code>fraction_shortest_edges</code> (float, list, tuple, or np.ndarray, optional): Edge threshold(s) for subgraphs. Defaults to 0.5.</li>
-<li><code>null_distribution</code> (str, optional): <code>"network"</code> (default) or <code>"annotation"</code>.</li>
-<li><code>random_seed</code> (int, optional): Seed for reproducibility.</li>
-</ul>
-<p><strong>Returns:</strong></p>
-<ul>
-<li><code>dict</code>: A dictionary containing the computed significance of neighborhoods within the network.</li>
-</ul>
+<p><strong>Returns:</strong>
+<code>dict</code>: A dictionary containing the computed significance of neighborhoods within the network.</p>
 <div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_hypergeom</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
     <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
     <span class="n">distance_metric</span><span class="o">=</span><span class="s2">&quot;louvain&quot;</span><span class="p">,</span>
-    <span class="n">louvain_resolution</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span>
-    <span class="n">leiden_resolution</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-    <span class="n">fraction_shortest_edges</span><span class="o">=</span><span class="mf">0.225</span><span class="p">,</span>
+    <span class="n">louvain_resolution</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">fraction_shortest_edges</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
     <span class="n">null_distribution</span><span class="o">=</span><span class="s2">&quot;network&quot;</span><span class="p">,</span>
-    <span class="n">random_seed</span><span class="o">=</span><span class="mi">887</span><span class="p">,</span>
-<span class="p">)</span>
-</code></pre></div>
-<hr />
-<h2 id="binomial-test">Binomial Test<a class="headerlink" href="#binomial-test" title="Permanent link">&para;</a></h2>
-<p>Approximates overrepresentation via independent trials.</p>
-<p><strong>When to use:</strong></p>
-<ul>
-<li>Fast approximation to hypergeometric when the population is large and the sample is small (sample &lt;&lt; population).</li>
-<li>Assumes independent trials / with-replacement sampling; use when this is reasonable or as a scalable proxy.</li>
-<li>Useful for very large networks where exact tests are costly.</li>
-</ul>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><code>network</code> (nx.Graph): The network graph.</li>
-<li><code>annotation</code> (dict): The annotation associated with the network.</li>
-<li><code>distance_metric</code> (str, list, tuple, or np.ndarray, optional): Methods for community detection, supporting <code>louvain</code>, <code>greedy_modularity</code>, <code>label_propagation</code>, <code>leiden</code>, <code>markov_clustering</code>, <code>walktrap</code>, <code>spinglass</code>.</li>
-<li><code>louvain_resolution</code> (float, optional): Resolution parameter for Louvain. Defaults to 0.1.</li>
-<li><code>leiden_resolution</code> (float, optional): Resolution parameter for Leiden. Defaults to 1.0.</li>
-<li><code>fraction_shortest_edges</code> (float, list, tuple, or np.ndarray, optional): Edge threshold(s) for subgraphs. Defaults to 0.5.</li>
-<li><code>null_distribution</code> (str, optional): <code>"network"</code> (default) or <code>"annotation"</code>.</li>
-<li><code>random_seed</code> (int, optional): Seed for reproducibility.</li>
-</ul>
-<p><strong>Returns:</strong></p>
-<ul>
-<li><code>dict</code>: A dictionary containing the computed significance of neighborhoods within the network.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_binom</span><span class="p">(</span>
-    <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
-    <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
-    <span class="n">distance_metric</span><span class="o">=</span><span class="s2">&quot;louvain&quot;</span><span class="p">,</span>
-    <span class="n">louvain_resolution</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span>
-    <span class="n">leiden_resolution</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-    <span class="n">fraction_shortest_edges</span><span class="o">=</span><span class="mf">0.225</span><span class="p">,</span>
-    <span class="n">null_distribution</span><span class="o">=</span><span class="s2">&quot;network&quot;</span><span class="p">,</span>
-    <span class="n">random_seed</span><span class="o">=</span><span class="mi">887</span><span class="p">,</span>
+    <span class="n">random_seed</span><span class="o">=</span><span class="mi">888</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
 <hr />
@@ -929,104 +957,41 @@
 <p>Evaluates significance using contingency tables.</p>
 <p><strong>When to use:</strong></p>
 <ul>
-<li>Best for large-sample contingency analyses across multiple categories.</li>
-<li>Rule of thumb: expected counts per cell should be ≥ 5; avoid with sparse tables (consider permutation or exact alternatives).</li>
-<li>Extremely fast and scalable for big matrices.</li>
+<li>Suitable for large-sample contingency analyses across multiple categories.</li>
+<li>Rule of thumb: expected counts per cell should be ≥ 5; avoid with sparse tables.</li>
+<li>Fast and scalable but approximate; consider permutation or exact tests for sparse data.</li>
 </ul>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><code>network</code> (nx.Graph): The network graph.</li>
-<li><code>annotation</code> (dict): The annotation associated with the network.</li>
-<li><code>distance_metric</code> (str, list, tuple, or np.ndarray, optional): Methods for community detection, supporting <code>louvain</code>, <code>greedy_modularity</code>, <code>label_propagation</code>, <code>leiden</code>, <code>markov_clustering</code>, <code>walktrap</code>, <code>spinglass</code>.</li>
-<li><code>louvain_resolution</code> (float, optional): Resolution parameter for Louvain. Defaults to 0.1.</li>
-<li><code>leiden_resolution</code> (float, optional): Resolution parameter for Leiden. Defaults to 1.0.</li>
-<li><code>fraction_shortest_edges</code> (float, list, tuple, or np.ndarray, optional): Edge threshold(s) for subgraphs. Defaults to 0.5.</li>
-<li><code>null_distribution</code> (str, optional): <code>"network"</code> (default) or <code>"annotation"</code>.</li>
-<li><code>random_seed</code> (int, optional): Seed for reproducibility.</li>
-</ul>
-<p><strong>Returns:</strong></p>
-<ul>
-<li><code>dict</code>: A dictionary containing the computed significance of neighborhoods within the network.</li>
-</ul>
+<p><strong>Returns:</strong>
+<code>dict</code>: A dictionary containing the computed significance of neighborhoods within the network.</p>
 <div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_chi2</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
     <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
     <span class="n">distance_metric</span><span class="o">=</span><span class="s2">&quot;louvain&quot;</span><span class="p">,</span>
-    <span class="n">louvain_resolution</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span>
-    <span class="n">leiden_resolution</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-    <span class="n">fraction_shortest_edges</span><span class="o">=</span><span class="mf">0.225</span><span class="p">,</span>
+    <span class="n">louvain_resolution</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">fraction_shortest_edges</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
     <span class="n">null_distribution</span><span class="o">=</span><span class="s2">&quot;network&quot;</span><span class="p">,</span>
-    <span class="n">random_seed</span><span class="o">=</span><span class="mi">887</span><span class="p">,</span>
+    <span class="n">random_seed</span><span class="o">=</span><span class="mi">888</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
 <hr />
-<h2 id="poisson-test">Poisson Test<a class="headerlink" href="#poisson-test" title="Permanent link">&para;</a></h2>
-<p>Tests observed frequencies against a Poisson expectation.</p>
+<h2 id="binomial-test">Binomial Test<a class="headerlink" href="#binomial-test" title="Permanent link">&para;</a></h2>
+<p>Fast approximation to overrepresentation based on independent trials.</p>
 <p><strong>When to use:</strong></p>
 <ul>
-<li>Suitable for rare-event counts under an approximately constant rate; independence between events is assumed.</li>
-<li>Approximates binomial when event probability is small and the number of trials is large (small p, large n).</li>
-<li>Effective for sparse networks; check for overdispersion before use.</li>
+<li>Provides a scalable approximation to the hypergeometric test, assuming independent trials or sampling with replacement.</li>
+<li>Useful for very large populations with small samples where exact tests are computationally costly.</li>
+<li>Offers speed and scalability while being less precise than exact methods.</li>
 </ul>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><code>network</code> (nx.Graph): The network graph.</li>
-<li><code>annotation</code> (dict): The annotation associated with the network.</li>
-<li><code>distance_metric</code> (str, list, tuple, or np.ndarray, optional): Methods for community detection, supporting <code>louvain</code>, <code>greedy_modularity</code>, <code>label_propagation</code>, <code>leiden</code>, <code>markov_clustering</code>, <code>walktrap</code>, <code>spinglass</code>.</li>
-<li><code>louvain_resolution</code> (float, optional): Resolution parameter for Louvain. Defaults to 0.1.</li>
-<li><code>leiden_resolution</code> (float, optional): Resolution parameter for Leiden. Defaults to 1.0.</li>
-<li><code>fraction_shortest_edges</code> (float, list, tuple, or np.ndarray, optional): Edge threshold(s) for subgraphs. Defaults to 0.5.</li>
-<li><code>null_distribution</code> (str, optional): <code>"network"</code> (default) or <code>"annotation"</code>.</li>
-<li><code>random_seed</code> (int, optional): Seed for reproducibility.</li>
-</ul>
-<p><strong>Returns:</strong></p>
-<ul>
-<li><code>dict</code>: A dictionary containing the computed significance of neighborhoods within the network.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_poisson</span><span class="p">(</span>
+<p><strong>Returns:</strong>
+<code>dict</code>: A dictionary containing the computed significance of neighborhoods within the network.</p>
+<div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_binom</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
     <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
     <span class="n">distance_metric</span><span class="o">=</span><span class="s2">&quot;louvain&quot;</span><span class="p">,</span>
-    <span class="n">louvain_resolution</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span>
-    <span class="n">leiden_resolution</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-    <span class="n">fraction_shortest_edges</span><span class="o">=</span><span class="mf">0.225</span><span class="p">,</span>
+    <span class="n">louvain_resolution</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">fraction_shortest_edges</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
     <span class="n">null_distribution</span><span class="o">=</span><span class="s2">&quot;network&quot;</span><span class="p">,</span>
-    <span class="n">random_seed</span><span class="o">=</span><span class="mi">887</span><span class="p">,</span>
-<span class="p">)</span>
-</code></pre></div>
-<hr />
-<h2 id="z-score-test">Z-score Test<a class="headerlink" href="#z-score-test" title="Permanent link">&para;</a></h2>
-<p>Computes standardized enrichment scores.</p>
-<p><strong>When to use:</strong></p>
-<ul>
-<li>Fastest option for large-scale screening and ranking.</li>
-<li>Relies on normal approximation (via CLT); works best with moderate-to-large counts.</li>
-<li>Treat as heuristic for very small counts or highly skewed distributions; confirm key findings with an exact or permutation test.</li>
-</ul>
-<p><strong>Parameters:</strong></p>
-<ul>
-<li><code>network</code> (nx.Graph): The network graph.</li>
-<li><code>annotation</code> (dict): The annotation associated with the network.</li>
-<li><code>distance_metric</code> (str, list, tuple, or np.ndarray, optional): Methods for community detection, supporting <code>louvain</code>, <code>greedy_modularity</code>, <code>label_propagation</code>, <code>leiden</code>, <code>markov_clustering</code>, <code>walktrap</code>, <code>spinglass</code>.</li>
-<li><code>louvain_resolution</code> (float, optional): Resolution parameter for Louvain. Defaults to 0.1.</li>
-<li><code>leiden_resolution</code> (float, optional): Resolution parameter for Leiden. Defaults to 1.0.</li>
-<li><code>fraction_shortest_edges</code> (float, list, tuple, or np.ndarray, optional): Edge threshold(s) for subgraphs. Defaults to 0.5.</li>
-<li><code>null_distribution</code> (str, optional): <code>"network"</code> (default) or <code>"annotation"</code>.</li>
-<li><code>random_seed</code> (int, optional): Seed for reproducibility.</li>
-</ul>
-<p><strong>Returns:</strong></p>
-<ul>
-<li><code>dict</code>: A dictionary containing the computed significance of neighborhoods within the network.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_zscore</span><span class="p">(</span>
-    <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
-    <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
-    <span class="n">distance_metric</span><span class="o">=</span><span class="s2">&quot;louvain&quot;</span><span class="p">,</span>
-    <span class="n">louvain_resolution</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span>
-    <span class="n">leiden_resolution</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-    <span class="n">fraction_shortest_edges</span><span class="o">=</span><span class="mf">0.225</span><span class="p">,</span>
-    <span class="n">null_distribution</span><span class="o">=</span><span class="s2">&quot;network&quot;</span><span class="p">,</span>
-    <span class="n">random_seed</span><span class="o">=</span><span class="mi">887</span><span class="p">,</span>
+    <span class="n">random_seed</span><span class="o">=</span><span class="mi">888</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
 
