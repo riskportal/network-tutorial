@@ -12,6 +12,7 @@ To install from source:
 git clone https://github.com/riskportal/network.git
 cd network
 pip install .
+pip install -e .  # for editable/development install
 ```
 
 ---
