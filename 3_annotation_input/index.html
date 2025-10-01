@@ -491,6 +491,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#shared-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shared Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#json-annotation" class="md-nav__link">
     <span class="md-ellipsis">
       JSON Annotation
@@ -535,6 +544,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Step
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -574,12 +592,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../5_graph_setup/" class="md-nav__link">
+      <a href="../5_analyzing_results/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    5. Graph Setup
+    5. Analyzing Results
     
   </span>
   
@@ -729,7 +747,24 @@
 
 
 <h1 id="loading-annotations-into-risk">Loading Annotations into RISK<a class="headerlink" href="#loading-annotations-into-risk" title="Permanent link">&para;</a></h1>
-<p>Annotations must be provided by the user and formatted clearly to ensure compatibility with RISK loaders. We note that RISK does not bundle annotations; users should obtain curated resources such as Gene Ontology (Ashburner <em>et al</em>., 2000), CORUM (Tsitsiridis <em>et al</em>., 2022), or KEGG (Kanehisa <em>et al</em>., 2023) and format them as term–to–node (e.g., genes/proteins) membership tables. Publicly available resources such as Gene Ontology (GO), CORUM, and KEGG offer standardized annotation files that can be adapted for use.</p>
+<p>Annotations provide the biological context for RISK by linking network clusters to functional terms (e.g., cellular components, metabolic pathways, protein complexes). They enable downstream statistical tests to evaluate whether specific functions are overrepresented within detected network clusters.</p>
+<p>Annotations must be provided by the user and formatted clearly to ensure compatibility with RISK loaders. We note that RISK does not bundle annotations; users should obtain curated resources such as Gene Ontology (GO) (Ashburner <em>et al</em>., 2000), CORUM (Tsitsiridis <em>et al</em>., 2022), or KEGG (Kanehisa <em>et al</em>., 2023) and format them as term–to–node (e.g., genes/proteins) membership tables. Publicly available resources such as GO, CORUM, and KEGG offer standardized annotation files that can be adapted for use.</p>
+<p>For example, a simple JSON/dictionary representation could be:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;proline biosynthetic process&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;CAR2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PRO1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PRO2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;PRO3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;YHR033W&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;glyoxylate metabolic process&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;DAL7&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;GOR1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;ICL1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;IDP1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;IDP2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;IDP3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;LEU2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;MDH3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;MLS1&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr />
 <h2 id="supported-input-formats">Supported Input Formats<a class="headerlink" href="#supported-input-formats" title="Permanent link">&para;</a></h2>
 <p><em>Node IDs must match the network’s node labels; unmapped IDs are ignored. Terms may overlap, and a node can belong to multiple terms. Terms outside <code>min_nodes_per_term</code> and <code>max_nodes_per_term</code> are filtered.</em></p>
@@ -769,15 +804,19 @@
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="json-annotation">JSON Annotation<a class="headerlink" href="#json-annotation" title="Permanent link">&para;</a></h2>
-<p>Load annotation data directly from a JSON file and associate terms with network nodes.</p>
-<p><strong>Parameters:</strong></p>
+<h2 id="shared-parameters">Shared Parameters<a class="headerlink" href="#shared-parameters" title="Permanent link">&para;</a></h2>
+<p>Shared parameters among annotation loaders.</p>
 <ul>
 <li><code>network</code> (nx.Graph): The network to which the annotation is related.</li>
-<li><code>filepath</code> (str): Path to the JSON annotation file.</li>
 <li><code>min_nodes_per_term</code> (int, optional): The minimum number of network nodes required for each annotation term to be included. Defaults to 1.</li>
 <li><code>max_nodes_per_term</code> (int, optional): The maximum number of network nodes required for each annotation term to be included. Defaults to 10_000.</li>
+</ul>
+<hr />
+<h2 id="json-annotation">JSON Annotation<a class="headerlink" href="#json-annotation" title="Permanent link">&para;</a></h2>
+<p>Load annotation data from a JSON file and associate terms with network nodes.</p>
+<p><strong>Additional Parameters:</strong></p>
+<ul>
+<li><code>filepath</code> (str): Path to the JSON annotation file.</li>
 </ul>
 <p><strong>Returns:</strong>
 <code>dict</code>: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.</p>
@@ -791,15 +830,12 @@
 <hr />
 <h2 id="csv-annotation">CSV Annotation<a class="headerlink" href="#csv-annotation" title="Permanent link">&para;</a></h2>
 <p>Load annotation data from a CSV file, specifying columns and delimiter for nodes.</p>
-<p><strong>Parameters:</strong></p>
+<p><strong>Additional Parameters:</strong></p>
 <ul>
-<li><code>network</code> (nx.Graph): The network to which the annotation is related.</li>
 <li><code>filepath</code> (str): Path to the CSV annotation file.</li>
 <li><code>label_colname</code> (str): Name of the column containing the annotation term (e.g., GO term).</li>
 <li><code>nodes_colname</code> (str): Name of the column containing the nodes associated with each label.</li>
 <li><code>nodes_delimiter</code> (str, optional): Delimiter used to separate multiple nodes within the nodes column. Defaults to ';'.</li>
-<li><code>min_nodes_per_term</code> (int, optional): The minimum number of network nodes required for each annotation term to be included. Defaults to 1.</li>
-<li><code>max_nodes_per_term</code> (int, optional): The maximum number of network nodes required for each annotation term to be included. Defaults to 10_000.</li>
 </ul>
 <p><strong>Returns:</strong>
 <code>dict</code>: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.</p>
@@ -816,15 +852,12 @@
 <hr />
 <h2 id="tsv-annotation">TSV Annotation<a class="headerlink" href="#tsv-annotation" title="Permanent link">&para;</a></h2>
 <p>Load annotation data from a tab-delimited file, similar to CSV but with tabs as separators.</p>
-<p><strong>Parameters:</strong></p>
+<p><strong>Additional Parameters:</strong></p>
 <ul>
-<li><code>network</code> (nx.Graph): The network to which the annotation is related.</li>
 <li><code>filepath</code> (str): Path to the TSV annotation file.</li>
 <li><code>label_colname</code> (str): Name of the column containing the annotation term (e.g., GO term).</li>
 <li><code>nodes_colname</code> (str): Name of the column containing the nodes associated with each label.</li>
 <li><code>nodes_delimiter</code> (str, optional): Delimiter used to separate multiple nodes within the nodes column. Defaults to ';'.</li>
-<li><code>min_nodes_per_term</code> (int, optional): The minimum number of network nodes required for each annotation term to be included. Defaults to 1.</li>
-<li><code>max_nodes_per_term</code> (int, optional): The maximum number of network nodes required for each annotation term to be included. Defaults to 10_000.</li>
 </ul>
 <p><strong>Returns:</strong>
 <code>dict</code>: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.</p>
@@ -841,16 +874,13 @@
 <hr />
 <h2 id="excel-annotation">Excel Annotation<a class="headerlink" href="#excel-annotation" title="Permanent link">&para;</a></h2>
 <p>Load annotation data from an Excel workbook, with support for selecting specific sheets.</p>
-<p><strong>Parameters:</strong></p>
+<p><strong>Additional Parameters:</strong></p>
 <ul>
-<li><code>network</code> (nx.Graph): The network to which the annotation is related.</li>
 <li><code>filepath</code> (str): Path to the Excel annotation file.</li>
 <li><code>label_colname</code> (str): Name of the column containing the annotation term (e.g., GO term).</li>
 <li><code>nodes_colname</code> (str): Name of the column containing the nodes associated with each label.</li>
 <li><code>sheet_name</code> (str, optional): The name of the Excel sheet to load. Defaults to 'Sheet1'.</li>
 <li><code>nodes_delimiter</code> (str, optional): Delimiter used to separate multiple nodes within the nodes column. Defaults to ';'.</li>
-<li><code>min_nodes_per_term</code> (int, optional): The minimum number of network nodes required for each annotation term to be included. Defaults to 1.</li>
-<li><code>max_nodes_per_term</code> (int, optional): The maximum number of network nodes required for each annotation term to be included. Defaults to 10_000.</li>
 </ul>
 <p><strong>Returns:</strong>
 <code>dict</code>: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.</p>
@@ -868,12 +898,9 @@
 <hr />
 <h2 id="dictionary-based-annotation">Dictionary-Based Annotation<a class="headerlink" href="#dictionary-based-annotation" title="Permanent link">&para;</a></h2>
 <p>Load annotation data already in memory as a Python dictionary.</p>
-<p><strong>Parameters:</strong></p>
+<p><strong>Additional Parameters:</strong></p>
 <ul>
-<li><code>network</code> (nx.Graph): The network to which the annotation is related.</li>
 <li><code>content</code> (dict): The annotation dictionary to load.</li>
-<li><code>min_nodes_per_term</code> (int, optional): The minimum number of network nodes required for each annotation term to be included. Defaults to 1.</li>
-<li><code>max_nodes_per_term</code> (int, optional): The maximum number of network nodes required for each annotation term to be included. Defaults to 10_000.</li>
 </ul>
 <p><strong>Returns:</strong>
 <code>dict</code>: A dictionary containing ordered nodes, ordered annotations, and the annotation matrix.</p>
@@ -889,6 +916,9 @@
     <span class="n">max_nodes_per_term</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
+<hr />
+<h2 id="next-step">Next Step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h2>
+<p><a href="../4_clustering_statistics/">Clustering Algorithms and Statistical Methods</a></p>
 
 
 

@@ -406,6 +406,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Step
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -538,12 +547,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../5_graph_setup/" class="md-nav__link">
+      <a href="../5_analyzing_results/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    5. Graph Setup
+    5. Analyzing Results
     
   </span>
   
@@ -702,7 +711,6 @@
 pip<span class="w"> </span>install<span class="w"> </span>.
 pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="w">  </span><span class="c1"># for editable/development install</span>
 </code></pre></div>
-<hr />
 <h2 id="importing-risk">Importing RISK<a class="headerlink" href="#importing-risk" title="Permanent link">&para;</a></h2>
 <p>Verify the installation and import the package:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">risk</span>
@@ -714,15 +722,16 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <p>For Jupyter notebooks, enable inline plotting:</p>
 <div class="highlight"><pre><span></span><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 </code></pre></div>
-<hr />
 <h2 id="initializing-risk">Initializing RISK<a class="headerlink" href="#initializing-risk" title="Permanent link">&para;</a></h2>
-<p>Initialize a <code>RISK</code> object to start analysis:</p>
+<p><code>RISK</code> provides modular access to clustering, statistics, and visualization components. Initialize it to start analysis:</p>
+<p><strong>Parameters:</strong></p>
+<ul>
+<li><code>verbose</code> (bool): Controls whether log messages are printed. If <code>True</code>, log messages are printed to the console. Defaults to True.</li>
+</ul>
 <div class="highlight"><pre><span></span><code><span class="n">risk</span> <span class="o">=</span> <span class="n">RISK</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div>
-<ul>
-<li><code>verbose=True</code> enables console log messages.</li>
-<li>The object provides modular access to clustering, statistics, and visualization components.</li>
-</ul>
+<h2 id="next-step">Next Step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h2>
+<p><a href="../2_network_input/">Loading Networks into RISK</a></p>
 
 
 

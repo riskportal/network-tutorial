@@ -468,6 +468,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#shared-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shared Parameters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cytoscape-cys-files" class="md-nav__link">
     <span class="md-ellipsis">
       Cytoscape .cys Files
@@ -498,6 +507,15 @@
   <a href="#networkx-graphs" class="md-nav__link">
     <span class="md-ellipsis">
       NetworkX Graphs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Step
     </span>
   </a>
   
@@ -565,12 +583,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../5_graph_setup/" class="md-nav__link">
+      <a href="../5_analyzing_results/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    5. Graph Setup
+    5. Analyzing Results
     
   </span>
   
@@ -720,7 +738,8 @@
 
 
 <h1 id="loading-networks-into-risk">Loading Networks into RISK<a class="headerlink" href="#loading-networks-into-risk" title="Permanent link">&para;</a></h1>
-<p>RISK offers flexible loading functions compatible with multiple network formats, including Cytoscape session files, Cytoscape JSON exports, GPickle files, and in-memory NetworkX graphs. These loaders provide standardized NetworkX graph objects ready for downstream analysis, with options for preprocessing such as spherical projection, surface depth adjustment, and node filtering.</p>
+<p>Networks form the foundation of any RISK analysis, representing nodes (e.g., genes, proteins, papers) and the edges, or relationships, connecting them.</p>
+<p>RISK provides flexible loading functions compatible with multiple formats—including Cytoscape session files, Cytoscape JSON exports, GPickle files, and in-memory NetworkX graphs. These loaders standardize input into NetworkX graph objects ready for downstream analysis, with options for preprocessing such as spherical projection, surface depth adjustment, and node filtering.</p>
 <hr />
 <h2 id="supported-input-formats">Supported Input Formats<a class="headerlink" href="#supported-input-formats" title="Permanent link">&para;</a></h2>
 <table>
@@ -735,7 +754,7 @@
 <tr>
 <td><code>.cys</code></td>
 <td><code>load_network_cytoscape()</code></td>
-<td>Load directly from Cytoscape session files; supports source/target labels and optional view selection.</td>
+<td>Load from Cytoscape session files; supports source/target labels and optional view selection.</td>
 </tr>
 <tr>
 <td><code>.cyjs</code></td>
@@ -754,19 +773,22 @@
 </tr>
 </tbody>
 </table>
-<p>All loaders accept shared preprocessing parameters for spherical projection, surface depth, and node filtering.</p>
+<h2 id="shared-parameters">Shared Parameters<a class="headerlink" href="#shared-parameters" title="Permanent link">&para;</a></h2>
+<p>Shared parameters among network loaders.</p>
+<ul>
+<li><code>compute_sphere</code> (bool, optional): Whether to map nodes from a 2D plane onto a 3D spherical surface using a spherical projection. Defaults to True.</li>
+<li><code>surface_depth</code> (float, optional): Adjusts the depth of nodes relative to the spherical surface, enhancing visualization of clustering. Defaults to 0.0.</li>
+<li><code>min_edges_per_node</code> (int, optional): Minimum number of edges per node. Values &gt;0 prune nodes with fewer edges. Defaults to 0.</li>
+</ul>
 <hr />
 <h2 id="cytoscape-cys-files">Cytoscape <code>.cys</code> Files<a class="headerlink" href="#cytoscape-cys-files" title="Permanent link">&para;</a></h2>
 <p>Load Cytoscape session files exported from the desktop app.</p>
-<p><strong>Parameters:</strong></p>
+<p><strong>Additional Parameters:</strong></p>
 <ul>
 <li><code>filepath</code> (str): Path to the Cytoscape file.</li>
 <li><code>source_label</code> (str, optional): Source node label. Defaults to "source".</li>
 <li><code>target_label</code> (str, optional): Target node label. Defaults to "target".</li>
 <li><code>view_name</code> (str, optional): Specific view name to load. Defaults to "".</li>
-<li><code>compute_sphere</code> (bool, optional): Whether to map nodes from a 2D plane onto a 3D spherical surface using a spherical projection. Defaults to True.</li>
-<li><code>surface_depth</code> (float, optional): Adjusts the depth of nodes relative to the spherical surface, enhancing visualization of clustering. Defaults to 0.0.</li>
-<li><code>min_edges_per_node</code> (int, optional): Minimum number of edges per node. Values &gt;0 prune nodes with fewer edges. Defaults to 0.</li>
 </ul>
 <p><strong>Returns:</strong>
 <code>nx.Graph</code>: The loaded and processed network as a NetworkX graph.</p>
@@ -783,14 +805,11 @@
 <hr />
 <h2 id="cytoscape-json-cyjs-files">Cytoscape JSON (<code>.cyjs</code>) Files<a class="headerlink" href="#cytoscape-json-cyjs-files" title="Permanent link">&para;</a></h2>
 <p>Load JSON exports from Cytoscape Web or JavaScript pipelines.</p>
-<p><strong>Parameters:</strong></p>
+<p><strong>Additional Parameters:</strong></p>
 <ul>
 <li><code>filepath</code> (str): Path to the Cytoscape JSON file.</li>
 <li><code>source_label</code> (str, optional): Source node label. Defaults to "source".</li>
 <li><code>target_label</code> (str, optional): Target node label. Defaults to "target".</li>
-<li><code>compute_sphere</code> (bool, optional): Whether to map nodes from a 2D plane onto a 3D spherical surface using a spherical projection. Defaults to True.</li>
-<li><code>surface_depth</code> (float, optional): Adjusts the depth of nodes relative to the spherical surface, enhancing visualization of clustering. Defaults to 0.0.</li>
-<li><code>min_edges_per_node</code> (int, optional): Minimum number of edges per node. Values &gt;0 prune nodes with fewer edges. Defaults to 0.</li>
 </ul>
 <p><strong>Returns:</strong>
 <code>nx.Graph</code>: The loaded and processed network as a NetworkX graph.</p>
@@ -806,12 +825,9 @@
 <hr />
 <h2 id="gpickle-gpickle-files">GPickle (<code>.gpickle</code>) Files<a class="headerlink" href="#gpickle-gpickle-files" title="Permanent link">&para;</a></h2>
 <p>Fast, Python-native serialization of NetworkX graphs preserving all attributes. Recommended for reproducibility and performance.</p>
-<p><strong>Parameters:</strong></p>
+<p><strong>Additional Parameters:</strong></p>
 <ul>
 <li><code>filepath</code> (str): Path to the GPickle file.</li>
-<li><code>compute_sphere</code> (bool, optional): Whether to map nodes from a 2D plane onto a 3D spherical surface using a spherical projection. Defaults to True.</li>
-<li><code>surface_depth</code> (float, optional): Adjusts the depth of nodes relative to the spherical surface, enhancing visualization of clustering. Defaults to 0.0.</li>
-<li><code>min_edges_per_node</code> (int, optional): Minimum number of edges per node. Values &gt;0 prune nodes with fewer edges. Defaults to 0.</li>
 </ul>
 <p><strong>Returns:</strong>
 <code>nx.Graph</code>: The loaded and processed network as a NetworkX graph.</p>
@@ -824,13 +840,10 @@
 </code></pre></div>
 <hr />
 <h2 id="networkx-graphs">NetworkX Graphs<a class="headerlink" href="#networkx-graphs" title="Permanent link">&para;</a></h2>
-<p>Load directly from an in-memory <code>networkx.Graph</code>. Integrates seamlessly when the graph is already loaded.</p>
-<p><strong>Parameters:</strong></p>
+<p>Load from an in-memory <code>networkx.Graph</code>. Integrates seamlessly when the graph is already loaded.</p>
+<p><strong>Additional Parameters:</strong></p>
 <ul>
 <li><code>network</code> (nx.Graph): A NetworkX graph object.</li>
-<li><code>compute_sphere</code> (bool, optional): Whether to map nodes from a 2D plane onto a 3D spherical surface using a spherical projection. Defaults to True.</li>
-<li><code>surface_depth</code> (float, optional): Adjusts the depth of nodes relative to the spherical surface, enhancing visualization of clustering. Defaults to 0.0.</li>
-<li><code>min_edges_per_node</code> (int, optional): Minimum number of edges per node. Values &gt;0 prune nodes with fewer edges. Defaults to 0.</li>
 </ul>
 <p><strong>Returns:</strong>
 <code>nx.Graph</code>: The loaded and processed network as a NetworkX graph.</p>
@@ -841,6 +854,9 @@
     <span class="n">min_edges_per_node</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
+<hr />
+<h2 id="next-step">Next Step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h2>
+<p><a href="../3_annotation_input/">Loading Annotations into RISK</a></p>
 
 
 

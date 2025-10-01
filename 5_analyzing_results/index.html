@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://github.com/riskportal/network/5_graph_setup/">
+        <link rel="canonical" href="https://github.com/riskportal/network/5_analyzing_results/">
       
       
         <link rel="prev" href="../4_clustering_statistics/">
@@ -22,7 +22,7 @@
     
     
       
-        <title>5. Graph Setup - RISK Network Documentation</title>
+        <title>5. Analyzing Results - RISK Network Documentation</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#building-and-analyzing-networks" class="md-skip">
+        <a href="#building-and-analyzing-results" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5. Graph Setup
+              5. Analyzing Results
             
           </span>
         </div>
@@ -492,7 +492,7 @@
   
   
   <span class="md-ellipsis">
-    5. Graph Setup
+    5. Analyzing Results
     
   </span>
   
@@ -505,7 +505,7 @@
   
   
   <span class="md-ellipsis">
-    5. Graph Setup
+    5. Analyzing Results
     
   </span>
   
@@ -597,6 +597,15 @@
   <a href="#clean-domains" class="md-nav__link">
     <span class="md-ellipsis">
       Clean domains
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Step
     </span>
   </a>
   
@@ -749,7 +758,7 @@
   
 
 
-<h1 id="building-and-analyzing-networks">Building and Analyzing Networks<a class="headerlink" href="#building-and-analyzing-networks" title="Permanent link">&para;</a></h1>
+<h1 id="building-and-analyzing-results">Building and Analyzing Results<a class="headerlink" href="#building-and-analyzing-results" title="Permanent link">&para;</a></h1>
 <p>The <code>NetworkGraph</code> object integrates network data, annotations, and overrepresentation results into a unified structure, supporting clustering, domain-level significance, and downstream visualization.</p>
 <hr />
 <h2 id="create-a-networkgraph">Create a <code>NetworkGraph</code><a class="headerlink" href="#create-a-networkgraph" title="Permanent link">&para;</a></h2>
@@ -825,6 +834,7 @@
 <h3 id="export-summary">Export Summary<a class="headerlink" href="#export-summary" title="Permanent link">&para;</a></h3>
 <p>Export the processed summary table in common formats for downstream use or sharing.</p>
 <p><strong>Shared Parameters:</strong></p>
+<p>Shared parameters among export methods.</p>
 <ul>
 <li><code>filepath</code> (str): The path where the file will be saved.</li>
 </ul>
@@ -836,6 +846,9 @@
 <p>Remove a domain (in-place) and retrieve its node labels:</p>
 <div class="highlight"><pre><span></span><code><span class="n">domain_1_labels</span> <span class="o">=</span> <span class="n">graph</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
+<hr />
+<h2 id="next-step">Next Step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h2>
+<p><a href="../6_visualization/">Visualizing Networks in RISK</a></p>
 
 
 

@@ -14,7 +14,7 @@
         <link rel="prev" href="../3_annotation_input/">
       
       
-        <link rel="next" href="../5_graph_setup/">
+        <link rel="next" href="../5_analyzing_results/">
       
       
       <link rel="icon" href="../images/risk_logo.ico">
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#summary-of-clustering-algorithms-and-statistical-methods" class="md-skip">
+        <a href="#clustering-algorithms-and-statistical-methods" class="md-skip">
           Skip to content
         </a>
       
@@ -547,17 +547,17 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#shared-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       Shared Parameters
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -597,6 +597,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Step
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -613,12 +622,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../5_graph_setup/" class="md-nav__link">
+      <a href="../5_analyzing_results/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    5. Graph Setup
+    5. Analyzing Results
     
   </span>
   
@@ -767,10 +776,11 @@
   
 
 
-<h1 id="summary-of-clustering-algorithms-and-statistical-methods">Summary of Clustering Algorithms and Statistical Methods<a class="headerlink" href="#summary-of-clustering-algorithms-and-statistical-methods" title="Permanent link">&para;</a></h1>
-<p>RISK implements several community detection algorithms and statistical tests to support functional annotation of networks. Clustering algorithms detect structured regions of varying size and compactness, while statistical methods evaluate overrepresentation of biological terms within these regions. The choice of algorithm or test depends on network scale, density, and biological context, influencing the resolution, granularity, and rigor of the resulting modules and enrichment results.</p>
+<h1 id="clustering-algorithms-and-statistical-methods">Clustering Algorithms and Statistical Methods<a class="headerlink" href="#clustering-algorithms-and-statistical-methods" title="Permanent link">&para;</a></h1>
+<p>Clustering algorithms detect structured regions of varying size and compactness, while statistical methods evaluate overrepresentation of biological terms within these regions. The choice of algorithm or test depends on network scale, density, and biological context, influencing the resolution, granularity, and rigor of the resulting modules and overrepresentation results.</p>
 <hr />
 <h2 id="summary-of-clustering-algorithms">Summary of Clustering Algorithms<a class="headerlink" href="#summary-of-clustering-algorithms" title="Permanent link">&para;</a></h2>
+<p>Before applying statistical tests, RISK groups nodes into modules using community detection. Each algorithm has strengths for different network sizes and contexts.</p>
 <table>
 <thead>
 <tr>
@@ -782,46 +792,46 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Louvain</strong></td>
+<td>Louvain</td>
 <td>Fast</td>
 <td>Default, scalable to very large networks</td>
-<td>Greedy modularity optimization (Blondel <em>et al.</em>, 2008); efficient for &gt;10⁴ nodes; may produce disconnected subclusters.</td>
+<td>Greedy modularity optimization (Blondel et al., 2008); efficient for &gt;10⁴ nodes; may produce disconnected subclusters.</td>
 </tr>
 <tr>
-<td><strong>Leiden</strong></td>
+<td>Leiden</td>
 <td>Fast</td>
 <td>Improved Louvain with better resolution</td>
-<td>Guarantees well‑connected communities; more stable than Louvain (Traag <em>et al.</em>, 2019); slightly higher runtime.</td>
+<td>Guarantees well-connected communities; more stable than Louvain (Traag et al., 2019); slightly higher runtime.</td>
 </tr>
 <tr>
-<td><strong>Markov Clustering</strong></td>
+<td>Markov Clustering</td>
 <td>Medium</td>
 <td>Detect smaller, compact complexes</td>
-<td>Flow‑based algorithm (Van Dongen, 2008); good for protein complexes or tightly connected submodules.</td>
+<td>Flow-based algorithm (Van Dongen, 2008); good for protein complexes or tightly connected submodules.</td>
 </tr>
 <tr>
-<td><strong>Walktrap</strong></td>
+<td>Walktrap</td>
 <td>Medium</td>
-<td>Hierarchical detection in mid‑sized graphs</td>
-<td>Random‑walk based (Pons &amp; Latapy, 2005); effective for local structure; slower on &gt;10⁴ nodes.</td>
+<td>Hierarchical detection in mid-sized graphs</td>
+<td>Random-walk based (Pons &amp; Latapy, 2005); effective for local structure; slower on &gt;10⁴ nodes.</td>
 </tr>
 <tr>
-<td><strong>Greedy Modularity</strong></td>
+<td>Greedy Modularity</td>
 <td>Fast</td>
 <td>Coarse partitioning</td>
-<td>Optimizes modularity via agglomeration; very fast but suffers from the resolution limit (Newman, 2004).</td>
+<td>Optimizes modularity via agglomeration; very fast but suffers from resolution limit (Newman, 2004).</td>
 </tr>
 <tr>
-<td><strong>Label Propagation</strong></td>
+<td>Label Propagation</td>
 <td>Fast</td>
 <td>Quick heuristic</td>
-<td>Unsupervised label spreading; no objective function; non‑deterministic and unstable (Raghavan <em>et al.</em>, 2007).</td>
+<td>Unsupervised label spreading; no objective function; non-deterministic and unstable (Raghavan et al., 2007).</td>
 </tr>
 <tr>
-<td><strong>Spinglass</strong></td>
-<td>Medium</td>
+<td>Spinglass</td>
+<td>Slow</td>
 <td>Small networks; theoretical interest</td>
-<td>Statistical mechanics approach (Reichardt &amp; Bornholdt, 2006); supports overlapping modules; computationally intensive.</td>
+<td>Statistical mechanics approach (Reichardt &amp; Bornholdt, 2006); finds communities by simulating spin states; computationally intensive.</td>
 </tr>
 </tbody>
 </table>
@@ -835,7 +845,7 @@
 </ul>
 <hr />
 <h2 id="summary-of-statistical-methods">Summary of Statistical Methods<a class="headerlink" href="#summary-of-statistical-methods" title="Permanent link">&para;</a></h2>
-<p>RISK implements a suite of statistical tests—ranging from fast approximations to rigorous overrepresentation analysis—to assess functional term enrichment in network neighborhoods. Each method has strengths depending on dataset size, structure, and precision requirements.</p>
+<p>RISK implements a suite of statistical tests—ranging from fast approximations to rigorous overrepresentation analysis—to assess functional term overrepresentation in network neighborhoods. Each method has strengths depending on dataset size, structure, and precision requirements.</p>
 <table>
 <thead>
 <tr>
@@ -848,14 +858,14 @@
 <tbody>
 <tr>
 <td>Permutation</td>
-<td>Slow</td>
+<td>Medium</td>
 <td>Most rigorous; non-parametric</td>
 <td>Distribution-free empirical null (permute network or labels); preferred when assumptions are unclear; computationally intensive.</td>
 </tr>
 <tr>
 <td>Hypergeometric</td>
 <td>Medium</td>
-<td>Standard for GO/pathway enrichment</td>
+<td>Standard for GO/pathway overrepresentation</td>
 <td>Exact test for finite populations sampled without replacement; widely used for term–to–gene membership tables.</td>
 </tr>
 <tr>
@@ -878,8 +888,8 @@
 <li>For large samples with many categories and sufficient counts: <strong>Chi-squared</strong> offers a fast approximate test.</li>
 <li>For speed and scalability with large populations and small samples: use <strong>Binomial</strong> as a practical approximation.</li>
 </ul>
-<h3 id="shared-parameters">Shared Parameters<a class="headerlink" href="#shared-parameters" title="Permanent link">&para;</a></h3>
-<p>Parameters common among statistical methods.</p>
+<h2 id="shared-parameters">Shared Parameters<a class="headerlink" href="#shared-parameters" title="Permanent link">&para;</a></h2>
+<p>Shared parameters among statistical methods.</p>
 <ul>
 <li><code>network</code> (nx.Graph): The network graph.</li>
 <li><code>annotation</code> (dict): The annotation associated with the network.</li>
@@ -910,9 +920,7 @@
 </ul>
 <p><strong>Additional Parameters:</strong></p>
 <ul>
-<li><code>score_metric</code> (str, optional): Metric used to score neighborhoods. Options include:</li>
-<li><code>'sum'</code>: Sums the annotation values within each neighborhood. <em>(default)</em></li>
-<li><code>'stdev'</code>: Computes the standard deviation of annotation values within each neighborhood.</li>
+<li><code>score_metric</code> (str, optional): Metric used to score neighborhoods. Options include: - <code>'sum'</code>: Sums the annotation values within each neighborhood. <em>(default)</em> - <code>'stdev'</code>: Computes the standard deviation of annotation values within each neighborhood.</li>
 <li><code>num_permutations</code> (int, optional): Number of permutations for significance testing. Defaults to 1000.</li>
 <li><code>max_workers</code> (int, optional): Maximum number of workers for parallel computation. Defaults to 1.</li>
 </ul>
@@ -994,6 +1002,9 @@
     <span class="n">random_seed</span><span class="o">=</span><span class="mi">888</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
+<hr />
+<h2 id="next-step">Next Step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h2>
+<p><a href="../5_analyzing_results/">Building and Analyzing Networks</a></p>
 
 
 
