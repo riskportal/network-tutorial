@@ -6,12 +6,12 @@ RISK offers flexible loading functions compatible with multiple network formats,
 
 ## Supported Input Formats
 
-| Format     | Function                   |
-| ---------- | -------------------------- |
-| `.cys`     | `load_network_cytoscape()` |
-| `.cyjs`    | `load_network_cyjs()`      |
-| `.gpickle` | `load_network_gpickle()`   |
-| `NetworkX` | `load_network_networkx()`  |
+| Format     | Method                     | Description                                                                                            |
+| ---------- | -------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `.cys`     | `load_network_cytoscape()` | Load directly from Cytoscape session files; supports source/target labels and optional view selection. |
+| `.cyjs`    | `load_network_cyjs()`      | Import Cytoscape JSON format; specify source and target labels for nodes and edges.                    |
+| `.gpickle` | `load_network_gpickle()`   | Reload serialized NetworkX graphs; preserves full network structure.                                   |
+| `NetworkX` | `load_network_networkx()`  | Convert an existing NetworkX graph object into a RISK-compatible format.                               |
 
 All loaders accept shared preprocessing parameters for spherical projection, surface depth, and node filtering.
 
@@ -23,16 +23,15 @@ Load Cytoscape session files exported from the desktop app.
 
 **Parameters:**
 
-- `filepath` (str): Path to the `.cys` file.
-- `source_label` (str): Name of the source node attribute.
-- `target_label` (str): Name of the target node attribute.
-- `view_name` (str): Name of the Cytoscape view to load.
-- `compute_sphere` (bool, default=True): Apply 3D Mercator-inspired spherical projection.
-- `surface_depth` (float, default=0.0): Inward/outward displacement relative to sphere surface.
-- `min_edges_per_node` (int, default=0): Minimum degree threshold for nodes.
+- `filepath` (str): Path to the Cytoscape file.
+- `source_label` (str, optional): Source node label. Defaults to "source".
+- `target_label` (str, optional): Target node label. Defaults to "target".
+- `view_name` (str, optional): Specific view name to load. Defaults to "".
+- `compute_sphere` (bool, optional): Whether to map nodes from a 2D plane onto a 3D spherical surface using a spherical projection. Defaults to True.
+- `surface_depth` (float, optional): Adjusts the depth of nodes relative to the spherical surface, enhancing visualization of clustering. Defaults to 0.0.
+- `min_edges_per_node` (int, optional): Minimum number of edges per node. Values >0 prune nodes with fewer edges. Defaults to 0.
 
 **Returns:**
-
 `nx.Graph`: The loaded and processed network as a NetworkX graph.
 
 ```python
@@ -55,15 +54,14 @@ Load JSON exports from Cytoscape Web or JavaScript pipelines.
 
 **Parameters:**
 
-- `filepath` (str): Path to the `.cyjs` file.
-- `source_label` (str): Name of the source node attribute.
-- `target_label` (str): Name of the target node attribute.
-- `compute_sphere` (bool, default=True): Apply 3D Mercator-inspired spherical projection.
-- `surface_depth` (float, default=0.0): Inward/outward displacement relative to sphere surface.
-- `min_edges_per_node` (int, default=0): Minimum degree threshold for nodes.
+- `filepath` (str): Path to the Cytoscape JSON file.
+- `source_label` (str, optional): Source node label. Defaults to "source".
+- `target_label` (str, optional): Target node label. Defaults to "target".
+- `compute_sphere` (bool, optional): Whether to map nodes from a 2D plane onto a 3D spherical surface using a spherical projection. Defaults to True.
+- `surface_depth` (float, optional): Adjusts the depth of nodes relative to the spherical surface, enhancing visualization of clustering. Defaults to 0.0.
+- `min_edges_per_node` (int, optional): Minimum number of edges per node. Values >0 prune nodes with fewer edges. Defaults to 0.
 
 **Returns:**
-
 `nx.Graph`: The loaded and processed network as a NetworkX graph.
 
 ```python
@@ -85,13 +83,12 @@ Fast, Python-native serialization of NetworkX graphs preserving all attributes. 
 
 **Parameters:**
 
-- `filepath` (str): Path to the `.gpickle` file.
-- `compute_sphere` (bool, default=True): Apply 3D Mercator-inspired spherical projection.
-- `surface_depth` (float, default=0.0): Inward/outward displacement relative to sphere surface.
-- `min_edges_per_node` (int, default=0): Minimum degree threshold for nodes.
+- `filepath` (str): Path to the GPickle file.
+- `compute_sphere` (bool, optional): Whether to map nodes from a 2D plane onto a 3D spherical surface using a spherical projection. Defaults to True.
+- `surface_depth` (float, optional): Adjusts the depth of nodes relative to the spherical surface, enhancing visualization of clustering. Defaults to 0.0.
+- `min_edges_per_node` (int, optional): Minimum number of edges per node. Values >0 prune nodes with fewer edges. Defaults to 0.
 
 **Returns:**
-
 `nx.Graph`: The loaded and processed network as a NetworkX graph.
 
 ```python
@@ -111,13 +108,12 @@ Load directly from an in-memory `networkx.Graph`. Integrates seamlessly when the
 
 **Parameters:**
 
-- `network` (nx.Graph): The input NetworkX graph.
-- `compute_sphere` (bool, default=True): Apply 3D Mercator-inspired spherical projection.
-- `surface_depth` (float, default=0.0): Inward/outward displacement relative to sphere surface.
-- `min_edges_per_node` (int, default=0): Minimum degree threshold for nodes.
+- `network` (nx.Graph): A NetworkX graph object.
+- `compute_sphere` (bool, optional): Whether to map nodes from a 2D plane onto a 3D spherical surface using a spherical projection. Defaults to True.
+- `surface_depth` (float, optional): Adjusts the depth of nodes relative to the spherical surface, enhancing visualization of clustering. Defaults to 0.0.
+- `min_edges_per_node` (int, optional): Minimum number of edges per node. Values >0 prune nodes with fewer edges. Defaults to 0.
 
 **Returns:**
-
 `nx.Graph`: The loaded and processed network as a NetworkX graph.
 
 ```python
