@@ -41,7 +41,7 @@ nav:
       - 2. Network Input: 2_network_input.md
       - 3. Annotation Input: 3_annotation_input.md
       - 4. Clustering & Statistics: 4_clustering_statistics.md
-      - 5. Graph Setup: 5_graph_setup.md
+      - 5. Analyzing Results: 5_analyzing_results.md
       - 6. Visualization: 6_visualization.md
       - 7. Parameters: 7_parameters.md
   - Full Tutorial (HTML): tutorial.html
