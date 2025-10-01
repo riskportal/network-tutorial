@@ -1,10 +1,34 @@
-# Summary of Statistical Methods
+# Summary of Clustering Algorithms and Statistical Methods
 
-RISK implements multiple statistical methods to assess overrepresentation of functional terms in network neighborhoods. Each method has strengths depending on dataset size, structure, and precision requirements.
+RISK implements several community detection algorithms and statistical tests to support functional annotation of networks. Clustering algorithms detect structured regions of varying size and density, while statistical methods evaluate overrepresentation of biological terms within these regions. The choice of algorithm or test depends on network scale, density, and biological context, influencing the resolution, granularity, and rigor of the resulting modules and enrichment results.
 
 ---
 
-## Summary of Methods
+## Summary of Clustering Algorithms
+
+| Algorithm          | Speed   | Primary use                                 | When/Why (assumptions & notes)                                                                 |
+| ------------------ | ------- | ------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Louvain**        | Fast    | Default, scalable to very large networks    | Greedy modularity optimization (Blondel _et al_., 2008); efficient for >10⁴ nodes; may produce disconnected subclusters. |
+| **Leiden**         | Fast    | Improved Louvain with better resolution     | Guarantees well-connected communities; more stable than Louvain (Traag _et al_., 2019); slightly higher runtime.        |
+| **Markov Clustering (MCL)** | Medium | Detect smaller, dense complexes              | Flow-based algorithm (Van Dongen, 2008); good for protein complexes or tightly connected submodules.                |
+| **Walktrap**       | Medium  | Hierarchical detection in mid-sized graphs  | Random-walk based (Pons & Latapy, 2005); effective for local structure; slower on >10⁴ nodes.                         |
+| **Greedy Modularity** | Fast | Coarse partitioning                         | Optimizes modularity via agglomeration; very fast but favors large, broad clusters (Newman, 2004).              |
+| **Label Propagation** | Fast | Quick heuristic                             | Unsupervised label spreading; no objective function; non-deterministic and unstable (Zhu & Ghahramani, 2002).             |
+| **Spinglass**      | Slow    | Small networks; theoretical interest        | Statistical mechanics approach (Reichardt & Bornholdt, 2006); supports overlapping modules; computationally intensive.         |
+
+### Choosing an algorithm: quick guidance
+
+- For large networks (>10⁴ nodes): **Louvain** or **Leiden** (fast, scalable).
+- For small, dense complexes: **MCL** (protein complexes, submodules).
+- For hierarchical/local structure: **Walktrap** (medium size).
+- For exploratory speed: **Greedy** or **Label Propagation** (but less precise).
+- For research/theory on small graphs: **Spinglass** (rarely used in practice).
+
+---
+
+## Summary of Statistical Methods
+
+RISK implements multiple statistical methods to assess overrepresentation of functional terms in network neighborhoods. Each method has strengths depending on dataset size, structure, and precision requirements.
 
 | Test           | Speed  | Primary use                              | When/Why (assumptions & notes)                                                                                              |
 | -------------- | ------ | ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |

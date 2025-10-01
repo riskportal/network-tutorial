@@ -23,7 +23,7 @@ Interactive tutorials:
 
 - [2. Network Input](2_network_input.md)
 - [3. Annotation](3_annotation.md)
-- [4. Statistical Tests](4_statistics.md)
+- [4. Clustering & Statistics](4_clustering_statistics.md)
 - [5. Loading and Analyzing Networks](5_load_graph.md)
 - [6. Visualization](6_visualization.md)
 - [7. Parameter Management](7_parameters.md)

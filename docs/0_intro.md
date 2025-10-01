@@ -35,7 +35,7 @@ RISK is designed to:
 
 For a complete workflow, see [tutorial.html](tutorial.html), which demonstrates all key steps—from loading a network to generating publication-ready figures—in a single notebook. You can also [download the notebook and data as a ZIP](tutorial.zip).
 
-The tutorial applies RISK to the _Saccharomyces cerevisiae_ protein–protein interaction (PPI) network (Michaelis _et al._, 2023; 3,839 nodes, 30,955 edges). It illustrates:
+The tutorial applies RISK to the _Saccharomyces cerevisiae_ protein–protein interaction (PPI) network (Michaelis _et al_., 2023; 3,839 nodes, 30,955 edges). It illustrates:
 
 - Network clustering and module detection
 - Annotation-based overrepresentation analysis
