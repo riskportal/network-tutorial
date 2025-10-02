@@ -1,7 +1,7 @@
 site_name: RISK Documentation
-site_url: https://github.com/riskportal/network
-repo_url: https://github.com/riskportal/network-tutorial
-repo_name: network-tutorial
+site_url: https://github.com/riskportal/risk
+repo_url: https://github.com/riskportal/risk-docs
+repo_name: risk-docs
 theme:
   name: material
   custom_dir: docs/overrides
@@ -46,6 +46,6 @@ nav:
       - 7. Analysis Parameters: 7_parameters.md
   - Full Tutorial (HTML): tutorial.html
   - Download Tutorial Notebook & Data: tutorial.zip
-  - Interactive Quickstart (Binder): https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb
+  - Interactive Quickstart (Binder): https://mybinder.org/v2/gh/riskportal/risk-docs/HEAD?filepath=notebooks/quickstart.ipynb
 extra_css:
   - stylesheets/extra.css

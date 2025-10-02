@@ -60,4 +60,4 @@ These export functions allow parameters to be shared and archived. For downstrea
 - `graph.summary.to_txt()`
 
 For an interactive example showing how these parameters fit into a full RISK workflow, see [tutorial.html](tutorial.html) or [download the tutorial notebook and data](tutorial.zip).
-You can also <a href="https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb" target="_blank" rel="noopener">launch the Quickstart notebook on Binder</a> to explore the workflow without local installation.
+You can also <a href="https://mybinder.org/v2/gh/riskportal/risk-docs/HEAD?filepath=notebooks/quickstart.ipynb" target="_blank" rel="noopener">launch the Quickstart notebook on Binder</a> to explore the workflow without local installation.

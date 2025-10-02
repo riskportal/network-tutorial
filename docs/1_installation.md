@@ -9,7 +9,7 @@ pip install risk-network --upgrade
 To install from source:
 
 ```bash
-git clone https://github.com/riskportal/network.git
+git clone https://github.com/riskportal/risk.git
 cd network
 pip install .
 pip install -e .  # for editable/development install

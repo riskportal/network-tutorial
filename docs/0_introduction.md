@@ -42,7 +42,7 @@ The tutorial applies RISK to the _Saccharomyces cerevisiae_ protein–protein in
 
 This notebook complements this documentation—use it for end-to-end examples and contextual guidance.
 
-<a href="https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb" target="_blank" rel="noopener">You can also launch the Quickstart notebook on Binder</a> for an interactive session without local installation.
+<a href="https://mybinder.org/v2/gh/riskportal/risk-docs/HEAD?filepath=notebooks/quickstart.ipynb" target="_blank" rel="noopener">You can also launch the Quickstart notebook on Binder</a> for an interactive session without local installation.
 
 ## Next Step
 

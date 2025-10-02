@@ -14,7 +14,7 @@ Begin here for setup and core concepts:
 
 Interactive tutorials:
 
-- <a href="https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb" target="_blank" rel="noopener">Launch Quickstart in Binder</a> (no installation required)
+- <a href="https://mybinder.org/v2/gh/riskportal/risk-docs/HEAD?filepath=notebooks/quickstart.ipynb" target="_blank" rel="noopener">Launch Quickstart in Binder</a> (no installation required)
 - [Full Tutorial (HTML)](tutorial.html)
 - [Download Tutorial + Data (ZIP)](tutorial.zip)
 
@@ -31,5 +31,5 @@ Interactive tutorials:
 
 For interactive examples, use [tutorial.zip](tutorial.zip) in Jupyter or view the [static HTML version](tutorial.html).
 
-Contributions are welcome on [GitHub](https://github.com/riskportal/network-tutorial).
-Explore the [RISK source code](https://github.com/riskportal/network).
+Contributions are welcome on [GitHub](https://github.com/riskportal/risk-docs).
+Explore the [RISK source code](https://github.com/riskportal/risk).

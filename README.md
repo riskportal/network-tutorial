@@ -3,14 +3,14 @@
 <br>
 
 ![Python](https://img.shields.io/badge/python-3.8%2B-yellow)
-[![Licence](https://img.shields.io/badge/license-GPLv3-purple.svg)](https://raw.githubusercontent.com/riskportal/network-tutorial/main/LICENSE)
+[![Licence](https://img.shields.io/badge/license-GPLv3-purple.svg)](https://raw.githubusercontent.com/riskportal/risk-docs/main/LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.xxxxxxx.svg)](https://doi.org/10.5281/zenodo.xxxxxxx)
 
 **RISK Docs** offers a detailed guide to using RISK (Regional Inference of Significant Kinships), a next-generation tool for biological network annotation and visualization. It walks users through core features and practical workflows for network analysis.
 
-- **Full Documentation**: [riskportal.github.io/network-tutorial](https://riskportal.github.io/network-tutorial)
-- **Try in Browser (Binder)**: [![Launch in Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb)
-- **Source Code**: [github.com/riskportal/network](https://github.com/riskportal/network)
+- **Full Documentation**: [riskportal.github.io/risk-docs](https://riskportal.github.io/risk-docs)
+- **Try in Browser (Binder)**: [![Launch in Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/riskportal/risk-docs/HEAD?filepath=notebooks/quickstart.ipynb)
+- **Source Code**: [github.com/riskportal/risk](https://github.com/riskportal/risk)
 
 For a full description of RISK and its applications, see:
 <br>
@@ -101,8 +101,8 @@ pip install jupyter
 To install the dependencies for this tutorial, run:
 
 ```bash
-git clone https://github.com/riskportal/network-tutorial.git
-cd network-tutorial
+git clone https://github.com/riskportal/risk-docs.git
+cd risk-docs
 ```
 
 </details>
