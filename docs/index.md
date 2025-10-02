@@ -26,7 +26,7 @@ Interactive tutorials:
 - [4. Clustering & Statistics](4_clustering_statistics.md)
 - [5. Analyzing Results](5_analyzing_results.md)
 - [6. Visualization](6_visualization.md)
-- [7. Parameters](7_parameters.md)
+- [7. Analysis Parameters](7_parameters.md)
 
 ---
 

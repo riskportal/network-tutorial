@@ -1,12 +1,12 @@
 # Visualizing Networks in RISK
 
-Visualization highlights relationships within the network, making modular structure and functional associations easier to interpret. RISK provides a flexible and powerful plotting interface via the `NetworkPlotter` object. This enables generation of publication-ready figures with detailed domain annotations, significance-driven coloring, contours, and rich label customization.
+Visualization highlights clusters within the network to make modular structure and functional associations easier to interpret. RISK provides a flexible and powerful plotting interface via the `NetworkPlotter` object. This enables generation of publication-ready figures with detailed domain annotations, significance-driven coloring, contours, and rich label customization.
 
 ---
 
 ## Create a `NetworkPlotter`
 
-You must first load your `NetworkGraph` object into a `NetworkPlotter`.
+Load your `NetworkGraph` object into a `NetworkPlotter`.
 
 **Parameters:**
 
