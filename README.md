@@ -1,8 +1,4 @@
-# RISK Network Tutorial
-
-<p align="center">
-  <img src="https://i.imgur.com/8TleEJs.png" width="50%" alt="RISK Network logo" />
-</p>
+# RISK Tutorial
 
 <br>
 
@@ -10,7 +6,7 @@
 [![Licence](https://img.shields.io/badge/license-GPLv3-purple.svg)](https://raw.githubusercontent.com/riskportal/network-tutorial/main/LICENSE)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.xxxxxxx.svg)](https://doi.org/10.5281/zenodo.xxxxxxx)
 
-**RISK Network Tutorial** offers a detailed guide to using RISK (Regional Inference of Significant Kinships), a next-generation tool for biological network annotation and visualization. It walks users through core features and practical workflows for network analysis.
+**RISK Tutorial** offers a detailed guide to using RISK (Regional Inference of Significant Kinships), a next-generation tool for biological network annotation and visualization. It walks users through core features and practical workflows for network analysis.
 
 - **Full Documentation**: [riskportal.github.io/network-tutorial](https://riskportal.github.io/network-tutorial)
 - **Try in Browser (Binder)**: [![Launch in Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/riskportal/network-tutorial/HEAD?filepath=notebooks/quickstart.ipynb)
