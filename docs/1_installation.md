@@ -20,8 +20,8 @@ pip install -e .  # for editable/development install
 Verify the installation and import the package:
 
 ```python
-import risk
-print(risk.__version__)
+import risk as r
+print(f"RISK version: {r.__version__}")
 ```
 
 The core functionality is accessed through the `RISK` class:
