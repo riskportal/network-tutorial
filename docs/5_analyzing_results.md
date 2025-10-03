@@ -12,23 +12,23 @@ The `NetworkGraph` object integrates network data, annotations, and overrepresen
 - `annotation` (dict): The annotation associated with the network, typically derived from biological or functional data.
 - `neighborhoods` (dict): The neighborhoods object, containing data from enrichment or depletion analysis.
 - `tail` (str, optional): Specifies the tail of the statistical test to use. Options include:
-  - `'right'`: For enrichment. _(default)_
-  - `'left'`: For depletion.
-  - `'both'`: For two-tailed analysis.
+    - `'right'`: For enrichment. _(default)_
+    - `'left'`: For depletion.
+    - `'both'`: For two-tailed analysis.
 - `pval_cutoff` (float, optional): Cutoff value for p-values to determine significance. Range: Any value between 0 and 1. Defaults to 0.01.
 - `fdr_cutoff` (float, optional): Cutoff value for FDR-corrected p-values. Range: Any value between 0 and 1. Defaults to 0.9999.
 - `impute_depth` (int, optional): Depth for imputing missing values. Defaults to 1.
 - `prune_threshold` (float, optional): Threshold for pruning weak edges from the network graph. Range: Any value between 0 and 1. Defaults to 0.0.
 - `linkage_criterion` (str, optional): Criterion for clustering. Defaults to 'distance'. Options include:
-  - `'distance'`: Clusters are formed based on distance.
-  - `'maxclust'`: Clusters are formed based on the maximum number of clusters.
-  - `'off'`: Disables clustering; terms remain separate.
+    - `'distance'`: Clusters are formed based on distance.
+    - `'maxclust'`: Clusters are formed based on the maximum number of clusters.
+    - `'off'`: Disables clustering; terms remain separate.
 - `linkage_method` (str, optional): Method used for hierarchical clustering. Defaults to 'average'. Options include:
-  - `'auto'`: Automatically determines the optimal method using the silhouette score.
-  - Other options: `'single'`, `'complete'`, `'average'`, `'weighted'`, `'centroid'`, `'median'`, `'ward'`.
+    - `'auto'`: Automatically determines the optimal method using the silhouette score.
+    - Other options: `'single'`, `'complete'`, `'average'`, `'weighted'`, `'centroid'`, `'median'`, `'ward'`.
 - `linkage_metric` (str, optional): Distance metric used for clustering. Defaults to 'yule'. Options include:
-  - `'auto'`: Automatically determines the optimal metric using the silhouette score.
-  - Other options: `'braycurtis'`, `'canberra'`, `'chebyshev'`, `'cityblock'`, `'correlation'`, `'cosine'`, `'dice'`, `'euclidean'`, `'hamming'`, `'jaccard'`, `'jensenshannon'`, `'kulczynski1'`, `'mahalanobis'`, `'matching'`, `'minkowski'`, `'rogerstanimoto'`, `'russellrao'`, `'seuclidean'`, `'sokalmichener'`, `'sokalsneath'`, `'sqeuclidean'`, `'yule'`.
+    - `'auto'`: Automatically determines the optimal metric using the silhouette score.
+    - Other options: `'braycurtis'`, `'canberra'`, `'chebyshev'`, `'cityblock'`, `'correlation'`, `'cosine'`, `'dice'`, `'euclidean'`, `'hamming'`, `'jaccard'`, `'jensenshannon'`, `'kulczynski1'`, `'mahalanobis'`, `'matching'`, `'minkowski'`, `'rogerstanimoto'`, `'russellrao'`, `'seuclidean'`, `'sokalmichener'`, `'sokalsneath'`, `'sqeuclidean'`, `'yule'`.
 - `linkage_threshold` (str or float, optional): The cutoff distance for forming flat clusters in hierarchical clustering. Accepts either a numeric threshold or `'auto'` to enable automatic threshold optimization using the silhouette score. Range depends on metric. Defaults to 0.2.
 - `min_cluster_size` (int, optional): Minimum size of clusters to be formed. Defaults to 5.
 - `max_cluster_size` (int, optional): Maximum size of clusters to be formed. Defaults to 1000.

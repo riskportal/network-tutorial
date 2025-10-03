@@ -138,11 +138,11 @@ Render nodes and edges with styles derived from significance-aware helpers.
 
 - `node_size` (int or np.ndarray, optional): Size of the nodes. Can be a single integer or an array of sizes. Defaults to 50.
 - `node_shape` (str, optional): Shape of the nodes. Options include:
-  - `'o'`: Circle. _(default)_
-  - `'s'`: Square.
-  - `'^'`: Triangle up.
-  - `'v'`: Triangle down.
-  - Other options: `'p'`, `'P'`, `'h'`, `'H'`, `'8'`, `'d'`, `'D'`, `'>'`, `'<`, `'|'`, `'_'`.
+    - `'o'`: Circle. _(default)_
+    - `'s'`: Square.
+    - `'^'`: Triangle up.
+    - `'v'`: Triangle down.
+    - Other options: `'p'`, `'P'`, `'h'`, `'H'`, `'8'`, `'d'`, `'D'`, `'>'`, `'<`, `'|'`, `'_'`.
 - `node_edgewidth` (float, optional): Width of the edges around each node. Defaults to 1.0.
 - `edge_width` (float, optional): Width of the edges in the plot. Defaults to 1.0.
 - `node_color` (str, list, tuple, or np.ndarray, optional): Color of the nodes. Can be a single color (e.g., `"white"`, `"red"`, `(0.5, 0.5, 0.5)` for RGB, or `(0.5, 0.5, 0.5, 0.8)` for RGBA) or an array of such colors. Defaults to "white".
@@ -238,11 +238,11 @@ Overlay a selected group of nodes and their connecting edges with distinct styli
 - `nodes` (list, tuple, or np.ndarray): List of node labels to include in the subnetwork. Accepts nested lists.
 - `node_size` (int or np.ndarray, optional): Size of the nodes. Can be a single integer or an array of sizes. Defaults to 50.
 - `node_shape` (str, optional): Shape of the nodes. Options include:
-  - `'o'`: Circle. _(default)_
-  - `'s'`: Square.
-  - `'^'`: Triangle up.
-  - `'v'`: Triangle down.
-  - Other options: `'p'`, `'P'`, `'h'`, `'H'`, `'8'`, `'d'`, `'D'`, `'>'`, `'<`, `'|'`, `'_'`.
+    - `'o'`: Circle. _(default)_
+    - `'s'`: Square.
+    - `'^'`: Triangle up.
+    - `'v'`: Triangle down.
+    - Other options: `'p'`, `'P'`, `'h'`, `'H'`, `'8'`, `'d'`, `'D'`, `'>'`, `'<`, `'|'`, `'_'`.
 - `node_edgewidth` (float, optional): Width of the node edges. Defaults to 1.0.
 - `edge_width` (float, optional): Width of the edges in the subnetwork plot. Defaults to 1.0.
 - `node_color` (str, list, tuple, or np.ndarray, optional): Color of the nodes. Can be a single color (e.g., `"red"`, `(0.5, 0.5, 0.5)` for RGB, or `(0.5, 0.5, 0.5, 0.8)` for RGBA) or an array of such colors. Defaults to "white".
@@ -494,9 +494,9 @@ Add a single label tied to a chosen set of nodes (arrow points to centroid). Use
 - `scale` (float, optional): Scale factor for positioning the label around the perimeter. Defaults to 1.05.
 - `offset` (float, optional): Offset distance for the label from the perimeter. Defaults to 0.10.
 - `font` (str, optional): Font name for the label. Defaults to "DejaVu Sans".
-  - Options: Any valid font name (e.g., `"DejaVu Sans"`, `"Times New Roman"`).
+    - Options: Any valid font name (e.g., `"DejaVu Sans"`, `"Times New Roman"`).
 - `fontsize` (int, optional): Font size for the label. Defaults to 10.
-  - Options: Any integer value representing font size.
+    - Options: Any integer value representing font size.
 - `fontcolor` (str, list, tuple, or np.ndarray, optional): Color of the label text. Can be a string (e.g., `"black"`), an RGB or RGBA value, or an array of such values. Defaults to "black".
 - `fontalpha` (float, None, optional): Transparency level for the label font. Range: `0.0` (fully transparent) to `1.0` (fully opaque). If provided, it overrides any existing alpha values found in `fontcolor`. Defaults to 1.0.
 - `arrow_linewidth` (float, optional): Line width of the arrow pointing to the centroid. Defaults to 1.

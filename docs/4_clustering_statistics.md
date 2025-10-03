@@ -52,19 +52,19 @@ Shared parameters among statistical methods.
 - `network` (nx.Graph): The network graph.
 - `annotation` (dict): The annotation associated with the network.
 - `distance_metric` (str, list, tuple, or np.ndarray, optional): Method(s) used to compute distances for community detection. You can specify a single method or a list/tuple/array of methods to apply multiple community detection algorithms. Options include:
-  - `'louvain'`: Applies the Louvain method for community detection. _(default)_
-  - `'greedy_modularity'`: Detects communities in a graph based on the greedy optimization of modularity.
-  - `'label_propagation'`: Uses label propagation to find communities.
-  - `'leiden'`: Applies the Leiden method for community detection.
-  - `'markov_clustering'`: Implements the Markov Clustering Algorithm.
-  - `'walktrap'`: Detects communities via random walks.
-  - `'spinglass'`: Community detection based on the spinglass model.
+    - `'louvain'`: Applies the Louvain method for community detection. _(default)_
+    - `'greedy_modularity'`: Detects communities in a graph based on the greedy optimization of modularity.
+    - `'label_propagation'`: Uses label propagation to find communities.
+    - `'leiden'`: Applies the Leiden method for community detection.
+    - `'markov_clustering'`: Implements the Markov Clustering Algorithm.
+    - `'walktrap'`: Detects communities via random walks.
+    - `'spinglass'`: Community detection based on the spinglass model.
 - `louvain_resolution` (float, optional): Resolution parameter for the Louvain method. Only applies if `'louvain'` is one of the distance metrics. Defaults to 0.1.
 - `leiden_resolution` (float, optional): Resolution parameter for the Leiden method. Only applies if `'leiden'` is one of the distance metrics. Defaults to 1.0.
 - `fraction_shortest_edges` (float, list, tuple, or np.ndarray, optional): Shortest edge rank fraction threshold(s) for creating subgraphs. Can be a single float for one threshold or a list/tuple of floats corresponding to multiple thresholds. Defaults to 0.5.
 - `null_distribution` (str, optional): Defines the type of null distribution to use for comparison. Options include:
-  - `'network'`: Randomly permuted network structure. _(default)_
-  - `'annotation'`: Randomly permuted annotations.
+    - `'network'`: Randomly permuted network structure. _(default)_
+    - `'annotation'`: Randomly permuted annotations.
 - `random_seed` (int, optional): Seed for random number generation in permutation test. Defaults to 888.
 
 ---
