@@ -7517,10 +7517,10 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="RISK-Network-Tutorial-and-Examples">RISK Network Tutorial and Examples<a class="anchor-link" href="#RISK-Network-Tutorial-and-Examples">¶</a></h1><p>Welcome to the <strong>RISK</strong> tutorial repository. This guide introduces <code>tutorial.ipynb</code>, a comprehensive walkthrough of <strong>RISK (Regional Inference of Significant Kinships)</strong> — a modular framework for biological network annotation and visualization. RISK integrates community detection algorithms, statistical overrepresentation analysis, and publication-quality plotting to support large-scale, reproducible network analysis.</p>
+<h1 id="RISK-Tutorial-and-Examples">RISK Tutorial and Examples<a class="anchor-link" href="#RISK-Tutorial-and-Examples">¶</a></h1><p>Welcome to the <strong>RISK</strong> tutorial notebook. This guide introduces <code>tutorial.ipynb</code>, a comprehensive walkthrough of <strong>RISK (Regional Inference of Significant Kinships)</strong> — a modular framework for biological network annotation and visualization. RISK integrates community detection algorithms, statistical overrepresentation analysis, and publication-quality plotting to support large-scale, reproducible network analysis.</p>
 <p>Whether you're new to network analysis or aiming to explore advanced workflows, this tutorial covers key functionalities, practical examples, and reproducible pipelines.</p>
 <hr/>
-<h2 id="Yeast-Protein%E2%80%93Protein-Interaction-(PPI)-Network-Demonstration">Yeast Protein–Protein Interaction (PPI) Network Demonstration<a class="anchor-link" href="#Yeast-Protein%E2%80%93Protein-Interaction-(PPI)-Network-Demonstration">¶</a></h2><p>In this example, we apply RISK to the <strong>yeast PPI network</strong> from Michaelis *et al., 2023, comprising <strong>3,839 proteins</strong> and <strong>30,955 interactions</strong>. This network serves as a benchmark for demonstrating how RISK identifies compact functional modules and performs annotation enrichment.</p>
+<h2 id="Yeast-Protein%E2%80%93Protein-Interaction-(PPI)-Network-Demonstration">Yeast Protein–Protein Interaction (PPI) Network Demonstration<a class="anchor-link" href="#Yeast-Protein%E2%80%93Protein-Interaction-(PPI)-Network-Demonstration">¶</a></h2><p>In this example, we apply RISK to the <strong>yeast PPI network</strong> from Michaelis <em>et al</em>., 2023, comprising <strong>3,839 proteins</strong> and <strong>30,955 interactions</strong>. This network serves as a benchmark for demonstrating how RISK identifies compact functional modules and performs annotation enrichment.</p>
 <p>In this tutorial, we:</p>
 <ul>
 <li><strong>Cluster</strong> the network using scalable community detection algorithms (e.g., Louvain, Leiden).</li>
@@ -7532,14 +7532,13 @@ a.anchor-link {
 <h2 id="Tutorial-Sections">Tutorial Sections<a class="anchor-link" href="#Tutorial-Sections">¶</a></h2><ul>
 <li><a href="#0-installing-risk">0. Installing RISK</a></li>
 <li><a href="#1-importing-risk">1. Importing RISK</a></li>
-<li><a href="#2-risk-object-initialization">2. RISK Object Initialization</a></li>
-<li><a href="#3-loading-network-for-risk-analysis">3. Loading Network for RISK Analysis</a></li>
-<li><a href="#4-loading-and-associating-annotations-with-the-network">4. Loading and Associating Annotations with the Network</a></li>
-<li><a href="#5-statistical-tests-for-annotation-significance-calculation">5. Statistical Tests for Annotation Significance Calculation</a></li>
-<li><a href="#6-loading-the-network-graph">6. Loading the Network Graph</a></li>
-<li><a href="#7-visualizing-the-network-graph">7. Visualizing the Network Graph</a></li>
+<li><a href="#2-initializing-risk">2. Initializing RISK</a></li>
+<li><a href="#3-loading-networks-into-risk">3. Loading Networks into RISK</a></li>
+<li><a href="#4-loading-annotations-into-risk">4. Loading Annotations into RISK</a></li>
+<li><a href="#5-clustering-algorithms-and-statistical-methods">5. Clustering Algorithms and Statistical Methods</a></li>
+<li><a href="#6-building-and-analyzing-results">6. Building and Analyzing Results</a></li>
+<li><a href="#7-visualizing-networks-in-risk">7. Visualizing Networks in RISK</a></li>
 <li><a href="#8-overview-of-riskparams">8. Overview of risk.params</a></li>
-<li><a href="#9-advanced-plotting">9. Advanced Plotting</a></li>
 </ul>
 </div>
 </div>
@@ -7572,7 +7571,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># !pip install risk-network --upgrade</span>
@@ -7600,6 +7599,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="1.-Importing-RISK">1. Importing RISK<a class="anchor-link" href="#1.-Importing-RISK">¶</a></h2><p>After installing RISK, the next step is to import it into your notebook. You can verify that the installation was successful by checking the version of the package.</p>
+<h5 id="Back-to-Top"><a href="#risk-network-tutorial-and-examples">Back to Top</a><a class="anchor-link" href="#Back-to-Top">¶</a></h5>
 </div>
 </div>
 </div>
@@ -7608,13 +7608,13 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">risk</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">risk</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">r</span>
 
 <span class="c1"># Check the version of the RISK package to ensure it's installed correctly</span>
-<span class="n">risk</span><span class="o">.</span><span class="n">__version__</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"RISK version: </span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7624,10 +7624,11 @@ a.anchor-link {
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>'0.0.14'</pre>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>RISK version: 0.0.15
+</pre>
 </div>
 </div>
 </div>
@@ -7648,7 +7649,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">risk</span><span class="w"> </span><span class="kn">import</span> <span class="n">RISK</span>
@@ -7729,7 +7730,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.-RISK-Object-Initialization">2. RISK Object Initialization<a class="anchor-link" href="#2.-RISK-Object-Initialization">¶</a></h2><p>This code block initializes a RISK object with specific parameters. Below is a description of each parameter:</p>
+<h2 id="2.-Initializing-RISK">2. Initializing RISK<a class="anchor-link" href="#2.-Initializing-RISK">¶</a></h2><p>This code block initializes a RISK object with specific parameters. Below is a description of each parameter:</p>
 <h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
 <li><code>verbose</code> (bool): Controls whether log messages are printed. If <code>True</code>, log messages are printed to the console. Defaults to <code>True</code>.</li>
 </ul>
@@ -7771,13 +7772,39 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.-Loading-Network-for-RISK-Analysis">3. Loading Network for RISK Analysis<a class="anchor-link" href="#3.-Loading-Network-for-RISK-Analysis">¶</a></h2><p>In this section, we demonstrate various methods for loading a network into the RISK package to enable comprehensive biological network analysis. RISK supports multiple input formats, offering flexibility in importing your network data. Below are examples of how to load networks from different sources:</p>
-<h3 id="Supported-Network-Formats:">Supported Network Formats:<a class="anchor-link" href="#Supported-Network-Formats:">¶</a></h3><ul>
-<li><strong>Cytoscape Files (<code>.cys</code>)</strong>: Load networks directly from Cytoscape files using the <code>load_network_cytoscape</code> method. This is particularly useful for complex networks visualized or processed in Cytoscape. You can specify the source and target node labels and optionally select a specific view from the file.</li>
-<li><strong>Cytoscape JSON Files (<code>.cyjs</code>)</strong>: If your network data is saved in Cytoscape JSON format, the <code>load_network_cyjs</code> method allows you to import it while specifying the source and target labels for accurate node and edge interpretation.</li>
-<li><strong>GPickle Files (<code>.gpickle</code>)</strong>: Networks serialized in <code>.gpickle</code> format can be reloaded using the <code>load_network_gpickle</code> method. This approach is ideal for preserving and reloading complex network structures without data loss.</li>
-<li><strong>NetworkX Graphs</strong>: If your networks are in a NetworkX graph object, the <code>load_network_networkx</code> method converts them to a RISK-compatible format. This step is convenient for integrating existing NetworkX workflows with RISK.</li>
-</ul>
+<h2 id="3.-Loading-Networks-into-RISK">3. Loading Networks into RISK<a class="anchor-link" href="#3.-Loading-Networks-into-RISK">¶</a></h2><p>Networks form the foundation of any RISK analysis, representing nodes (e.g., genes, proteins, papers) and the edges, or relationships, connecting them.</p>
+<p>RISK provides flexible loading functions compatible with multiple formats—including Cytoscape session files, Cytoscape JSON exports, GPickle files, and in-memory NetworkX graphs. These loaders standardize input into NetworkX graph objects ready for downstream analysis, with options for preprocessing such as spherical projection, surface depth adjustment, and node filtering.</p>
+<h3 id="Supported-Network-Formats">Supported Network Formats<a class="anchor-link" href="#Supported-Network-Formats">¶</a></h3><table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cytoscape (<code>.cys</code>)</strong></td>
+<td><code>load_network_cytoscape</code></td>
+<td>Import from Cytoscape session files; supports source/target labels and view selection.</td>
+</tr>
+<tr>
+<td><strong>Cytoscape JSON (<code>.cyjs</code>)</strong></td>
+<td><code>load_network_cyjs</code></td>
+<td>Import from Cytoscape JSON exports; specify source/target labels for nodes/edges.</td>
+</tr>
+<tr>
+<td><strong>GPickle (<code>.gpickle</code>)</strong></td>
+<td><code>load_network_gpickle</code></td>
+<td>Reload networks serialized with GPickle; preserves complex structures.</td>
+</tr>
+<tr>
+<td><strong>NetworkX Graph</strong></td>
+<td><code>load_network_networkx</code></td>
+<td>Convert existing NetworkX objects into RISK-compatible format.</td>
+</tr>
+</tbody>
+</table>
 <h5 id="Back-to-Top"><a href="#risk-network-tutorial-and-examples">Back to Top</a><a class="anchor-link" href="#Back-to-Top">¶</a></h5>
 </div>
 </div>
@@ -7789,7 +7816,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Cytoscape-Files-(.cys)">Cytoscape Files (.cys)<a class="anchor-link" href="#Cytoscape-Files-(.cys)">¶</a></h3><h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
+<h3 id="Cytoscape-Files-(.cys)">Cytoscape Files (.cys)<a class="anchor-link" href="#Cytoscape-Files-(.cys)">¶</a></h3><p>Load Cytoscape session files exported from the desktop app.</p>
+<h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
 <li><strong><code>filepath</code> (str)</strong>: Path to the Cytoscape file.</li>
 <li><strong><code>source_label</code> (str, optional)</strong>: Source node label. Defaults to <code>"source"</code>.</li>
 <li><strong><code>target_label</code> (str, optional)</strong>: Target node label. Defaults to <code>"target"</code>.</li>
@@ -7859,7 +7887,8 @@ Final edge count: 30955
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Cytoscape-JSON-Files-(.cyjs)">Cytoscape JSON Files (.cyjs)<a class="anchor-link" href="#Cytoscape-JSON-Files-(.cyjs)">¶</a></h3><h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
+<h3 id="Cytoscape-JSON-Files-(.cyjs)">Cytoscape JSON Files (.cyjs)<a class="anchor-link" href="#Cytoscape-JSON-Files-(.cyjs)">¶</a></h3><p>Load JSON exports from Cytoscape Web or JavaScript pipelines.</p>
+<h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
 <li><strong><code>filepath</code> (str)</strong>: Path to the Cytoscape JSON file.</li>
 <li><strong><code>source_label</code> (str, optional)</strong>: Source node label. Default is <code>"source"</code>.</li>
 <li><strong><code>target_label</code> (str, optional)</strong>: Target node label. Default is <code>"target"</code>.</li>
@@ -7927,7 +7956,8 @@ Final edge count: 30955
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="GPickle-Files-(.gpickle)">GPickle Files (.gpickle)<a class="anchor-link" href="#GPickle-Files-(.gpickle)">¶</a></h3><h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
+<h3 id="GPickle-Files-(.gpickle)">GPickle Files (.gpickle)<a class="anchor-link" href="#GPickle-Files-(.gpickle)">¶</a></h3><p>Fast, Python-native serialization of NetworkX graphs preserving all attributes. Recommended for reproducibility and performance.</p>
+<h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
 <li><strong><code>filepath</code> (str)</strong>: Path to the GPickle file.</li>
 <li><strong><code>compute_sphere</code> (bool, optional)</strong>: Whether to map nodes from a 2D plane onto a 3D spherical surface using a Mercator projection. Defaults to <code>True</code>. This enables visualization of nodes on a sphere for improved spatial representation, particularly in applications where spatial relationships are crucial (e.g., networks with global-scale data or modular clustering).</li>
 <li><strong><code>surface_depth</code> (float, optional)</strong>: Adjusts the depth of nodes relative to the spherical surface, enhancing visualization of clustering. Defaults to <code>0.0</code>. Positive values pull clustered nodes closer to the center of the sphere, creating a clear visual distinction for denser regions. Negative values push nodes outward, emphasizing peripheral or sparse clusters while retaining their relative positions. A value of <code>0.0</code> keeps all nodes on the sphere's surface.</li>
@@ -7991,7 +8021,8 @@ Final edge count: 30955
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="NetworkX-Graphs">NetworkX Graphs<a class="anchor-link" href="#NetworkX-Graphs">¶</a></h3><h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
+<h3 id="NetworkX-Graphs">NetworkX Graphs<a class="anchor-link" href="#NetworkX-Graphs">¶</a></h3><p>Load from an in-memory <code>networkx.Graph</code>. Integrates seamlessly when the graph is already loaded.</p>
+<h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
 <li><strong><code>network</code> (nx.Graph)</strong>: A NetworkX graph object.</li>
 <li><strong><code>compute_sphere</code> (bool, optional)</strong>: Whether to map nodes from a 2D plane onto a 3D spherical surface using a Mercator projection. Defaults to <code>True</code>. This enables visualization of nodes on a sphere for improved spatial representation, particularly in applications where spatial relationships are crucial (e.g., networks with global-scale data or modular clustering).</li>
 <li><strong><code>surface_depth</code> (float, optional)</strong>: Adjusts the depth of nodes relative to the spherical surface, enhancing visualization of clustering. Defaults to <code>0.0</code>. Positive values pull clustered nodes closer to the center of the sphere, creating a clear visual distinction for denser regions. Negative values push nodes outward, emphasizing peripheral or sparse clusters while retaining their relative positions. A value of <code>0.0</code> keeps all nodes on the sphere's surface.</li>
@@ -8065,29 +8096,45 @@ Final edge count: 30955
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4.-Loading-and-Associating-Annotations-with-the-Network">4. Loading and Associating Annotations with the Network<a class="anchor-link" href="#4.-Loading-and-Associating-Annotations-with-the-Network">¶</a></h2><p>In this section, we demonstrate how to load various types of annotation and associate them with the network for comprehensive analysis using the RISK package. Annotation add context to the network by linking nodes to specific biological terms, such as Gene Ontology (GO) terms.</p>
-<h3 id="Supported-Annotation-Formats:">Supported Annotation Formats:<a class="anchor-link" href="#Supported-Annotation-Formats:">¶</a></h3><ol>
-<li><strong>JSON Annotation</strong>:<ul>
-<li>Load annotation from a JSON file and associate them with the network.</li>
-<li>Example: GO Biological Process (BP) annotations in <code>go_biological_process.json</code>.</li>
-</ul>
-</li>
-<li><strong>CSV Annotation</strong>:<ul>
-<li>Load annotation from a CSV file, using a custom delimiter for column separation.</li>
-<li>Example: GO Biological Process (BP) annotations in <code>go_biological_process.csv</code>.</li>
-</ul>
-</li>
-<li><strong>TSV Annotation</strong>:<ul>
-<li>Load annotation from a TSV file, with tab-separated values for columns.</li>
-<li>Example: GO Biological Process (BP) annotations in <code>go_biological_process.tsv</code>.</li>
-</ul>
-</li>
-<li><strong>Excel Annotation</strong>:<ul>
-<li>Load annotation from a specified sheet in an Excel file, allowing the integration of spreadsheet data.</li>
-<li>Example: GO Biological Process (BP) annotations in <code>go_biological_process.xlsx</code>.</li>
-</ul>
-</li>
-</ol>
+<h2 id="4.-Loading-Annotations-into-RISK">4. Loading Annotations into RISK<a class="anchor-link" href="#4.-Loading-Annotations-into-RISK">¶</a></h2><p>Annotations provide the biological context for RISK by linking network clusters to functional terms (e.g., cellular components, metabolic pathways, protein complexes). They enable downstream statistical tests to evaluate whether specific functions are overrepresented within detected network clusters.</p>
+<p>Annotations must be provided by the user and formatted clearly to ensure compatibility with RISK loaders. We note that RISK does not bundle annotations; users should obtain curated resources such as Gene Ontology (GO) (Ashburner <em>et al</em>., 2000), CORUM (Tsitsiridis <em>et al</em>., 2022), or KEGG (Kanehisa <em>et al</em>., 2023) and format them as term–to–node (e.g., genes/proteins) membership tables. Publicly available resources such as Gene Ontology, CORUM, and KEGG offer standardized annotation files that can be adapted for use.</p>
+<p>For example, a simple JSON/dictionary representation could be:</p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">"proline biosynthetic process"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"CAR2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"PRO1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"PRO2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"PRO3"</span><span class="p">,</span><span class="w"> </span><span class="s2">"YHR033W"</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">"glyoxylate metabolic process"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"DAL7"</span><span class="p">,</span><span class="w"> </span><span class="s2">"GOR1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"ICL1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"IDP1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"IDP2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"IDP3"</span><span class="p">,</span><span class="w"> </span><span class="s2">"LEU2"</span><span class="p">,</span><span class="w"> </span><span class="s2">"MDH3"</span><span class="p">,</span><span class="w"> </span><span class="s2">"MLS1"</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+<h3 id="Supported-Annotation-Formats">Supported Annotation Formats<a class="anchor-link" href="#Supported-Annotation-Formats">¶</a></h3><table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>JSON</strong></td>
+<td><code>load_annotation_json</code></td>
+<td>Import annotations from a JSON term–to–gene mapping file.</td>
+</tr>
+<tr>
+<td><strong>CSV</strong></td>
+<td><code>load_annotation_csv</code></td>
+<td>Import from a CSV file (supports custom delimiters).</td>
+</tr>
+<tr>
+<td><strong>TSV</strong></td>
+<td><code>load_annotation_tsv</code></td>
+<td>Import from a tab-separated file.</td>
+</tr>
+<tr>
+<td><strong>Excel</strong></td>
+<td><code>load_annotation_excel</code></td>
+<td>Import annotations from a specified sheet in an XLSX file.</td>
+</tr>
+</tbody>
+</table>
 <h5 id="Back-to-Top"><a href="#risk-network-tutorial-and-examples">Back to Top</a><a class="anchor-link" href="#Back-to-Top">¶</a></h5>
 </div>
 </div>
@@ -8099,7 +8146,8 @@ Final edge count: 30955
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="JSON-Files-(.json)">JSON Files (.json)<a class="anchor-link" href="#JSON-Files-(.json)">¶</a></h3><h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
+<h3 id="JSON-Files-(.json)">JSON Files (.json)<a class="anchor-link" href="#JSON-Files-(.json)">¶</a></h3><p>Load annotation data from a JSON file and associate terms with network nodes.</p>
+<h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
 <li><strong><code>network</code> (NetworkX graph)</strong>: The network to which the annotation is related.</li>
 <li><strong><code>filepath</code> (str)</strong>: Path to the JSON annotation file.</li>
 <li><strong><code>min_nodes_per_term</code> (int, optional)</strong>: The minimum number of network nodes required for each annotation term to be included. Defaults to <code>1</code>.</li>
@@ -8164,7 +8212,8 @@ Number of remaining annotation terms: 1293
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="CSV-Files-(.csv)">CSV Files (.csv)<a class="anchor-link" href="#CSV-Files-(.csv)">¶</a></h3><h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
+<h3 id="CSV-Files-(.csv)">CSV Files (.csv)<a class="anchor-link" href="#CSV-Files-(.csv)">¶</a></h3><p>Load annotation data from a CSV file, specifying columns and delimiter for nodes.</p>
+<h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
 <li><strong><code>network</code> (nx.Graph)</strong>: The NetworkX graph to which the annotation is related.</li>
 <li><strong><code>filepath</code> (str)</strong>: Path to the CSV annotation file.</li>
 <li><strong><code>label_colname</code> (str)</strong>: Name of the column containing the labels (e.g., GO terms).</li>
@@ -8235,7 +8284,8 @@ Number of remaining annotation terms: 1293
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="TSV-Files-(.tsv)">TSV Files (.tsv)<a class="anchor-link" href="#TSV-Files-(.tsv)">¶</a></h3><h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
+<h3 id="TSV-Files-(.tsv)">TSV Files (.tsv)<a class="anchor-link" href="#TSV-Files-(.tsv)">¶</a></h3><p>Load annotation data from a tab-delimited file, similar to CSV but with tabs as separators.</p>
+<h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
 <li><strong><code>network</code> (nx.Graph)</strong>: The NetworkX graph to which the annotation is related.</li>
 <li><strong><code>filepath</code> (str)</strong>: Path to the TSV annotation file.</li>
 <li><strong><code>label_colname</code> (str)</strong>: Name of the column containing the labels (e.g., GO terms).</li>
@@ -8306,7 +8356,8 @@ Number of remaining annotation terms: 1293
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Excel-Files-(.xlsx,-.xls)">Excel Files (.xlsx, .xls)<a class="anchor-link" href="#Excel-Files-(.xlsx,-.xls)">¶</a></h3><h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
+<h3 id="Excel-Files-(.xlsx,-.xls)">Excel Files (.xlsx, .xls)<a class="anchor-link" href="#Excel-Files-(.xlsx,-.xls)">¶</a></h3><p>Load annotation data from an Excel workbook, with support for selecting specific sheets.</p>
+<h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
 <li><strong><code>network</code> (nx.Graph)</strong>: The NetworkX graph to which the annotation are related.</li>
 <li><strong><code>filepath</code> (str)</strong>: Path to the Excel annotation file.</li>
 <li><strong><code>label_colname</code> (str)</strong>: Name of the column containing the labels (e.g., GO terms).</li>
@@ -8379,7 +8430,8 @@ Number of remaining annotation terms: 1293
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Dictionary-Annotation">Dictionary Annotation<a class="anchor-link" href="#Dictionary-Annotation">¶</a></h3><h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
+<h3 id="Dictionary-Annotation">Dictionary Annotation<a class="anchor-link" href="#Dictionary-Annotation">¶</a></h3><p>Load annotation data already in memory as a Python dictionary.</p>
+<h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
 <li><strong><code>network</code> (nx.Graph)</strong>: The NetworkX graph to which the annotation are related.</li>
 <li><strong><code>content</code> (dict)</strong>: The annotation dictionary to load.</li>
 <li><strong><code>min_nodes_per_term</code> (int, optional)</strong>: The minimum number of network nodes required for each annotation term to be included. Defaults to <code>1</code>.</li>
@@ -8458,54 +8510,114 @@ Number of remaining annotation terms: 1293
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5.-Statistical-Tests-for-Annotation-Significance-Calculation">5. Statistical Tests for Annotation Significance Calculation<a class="anchor-link" href="#5.-Statistical-Tests-for-Annotation-Significance-Calculation">¶</a></h2><h3 id="Summary-of-Statistical-Tests">Summary of Statistical Tests<a class="anchor-link" href="#Summary-of-Statistical-Tests">¶</a></h3><p>This section introduces six statistical tests for assessing annotation enrichment and depletion within biological networks. Each method has unique strengths and trade-offs, making them suitable for different scenarios.</p>
-<p>These statistical tests have been carefully optimized for performance, accuracy, and adaptability to ensure reliable application across diverse network datasets.</p>
-<h4 id="Permutation-Test">Permutation Test<a class="anchor-link" href="#Permutation-Test">¶</a></h4><ul>
-<li><strong>Speed</strong>: Slow (depends on the number of permutations).</li>
-<li><strong>Pros</strong>: Distribution-free; highly robust and adaptable to any data.</li>
-<li><strong>Cons</strong>: Computationally expensive, especially for large datasets with many permutations.</li>
-</ul>
-<h4 id="Hypergeometric-Test">Hypergeometric Test<a class="anchor-link" href="#Hypergeometric-Test">¶</a></h4><ul>
-<li><strong>Speed</strong>: Moderate (exact test).</li>
-<li><strong>Pros</strong>: Precise for finite populations; ideal for gene sets or pathway analyses.</li>
-<li><strong>Cons</strong>: Becomes computationally and memory intensive for large-scale data; assumes finite sampling.</li>
-</ul>
-<h4 id="Binomial-Test">Binomial Test<a class="anchor-link" href="#Binomial-Test">¶</a></h4><ul>
-<li><strong>Speed</strong>: Fast (efficient and vectorizable).</li>
-<li><strong>Pros</strong>: Models binary outcomes directly; computationally lightweight.</li>
-<li><strong>Cons</strong>: Assumes independent trials and a fixed probability.</li>
-</ul>
-<h4 id="Chi-Squared-Test">Chi-Squared Test<a class="anchor-link" href="#Chi-Squared-Test">¶</a></h4><ul>
-<li><strong>Speed</strong>: Very fast (optimized for contingency tables).</li>
-<li><strong>Pros</strong>: Widely applicable; highly efficient for large datasets.</li>
-<li><strong>Cons</strong>: Requires sufficiently large sample sizes for accuracy; less reliable for small datasets or sparse data.</li>
-</ul>
-<h4 id="Poisson-Test">Poisson Test<a class="anchor-link" href="#Poisson-Test">¶</a></h4><ul>
-<li><strong>Speed</strong>: Fast (efficient for large datasets).</li>
-<li><strong>Pros</strong>: Handles rare events well; suitable for sparse networks or substructures.</li>
-<li><strong>Cons</strong>: Assumes independence and a Poisson-distributed expected frequency.</li>
-</ul>
-<h4 id="Z-Score-Test">Z-Score Test<a class="anchor-link" href="#Z-Score-Test">¶</a></h4><ul>
-<li><strong>Speed</strong>: Very fast (vectorized and simple).</li>
-<li><strong>Pros</strong>: Scalable to large datasets; conceptually straightforward.</li>
-<li><strong>Cons</strong>: Relies on approximations; less precise for small datasets or rare events.</li>
-</ul>
-<h5 id="Back-to-Top"><a href="#risk-network-tutorial-and-examples">Back to Top</a><a class="anchor-link" href="#Back-to-Top">¶</a></h5><hr/>
-<h3 id="Applying-the-Statistical-Tests">Applying the Statistical Tests<a class="anchor-link" href="#Applying-the-Statistical-Tests">¶</a></h3><p>Each of these tests provides methods for evaluating the statistical significance of annotation enrichment or depletion within biological networks. Below are brief descriptions and the corresponding functions to apply each test:</p>
+<h2 id="5.-Clustering-Algorithms-and-Statistical-Methods">5. Clustering Algorithms and Statistical Methods<a class="anchor-link" href="#5.-Clustering-Algorithms-and-Statistical-Methods">¶</a></h2><p>Clustering algorithms detect structured regions of varying size and compactness, while statistical methods evaluate overrepresentation of biological terms within these regions. The choice of algorithm or test depends on network scale, density, and biological context, influencing the resolution, granularity, and rigor of the resulting modules and overrepresentation results.</p>
+<h3 id="Summary-of-Clustering-Methods">Summary of Clustering Methods<a class="anchor-link" href="#Summary-of-Clustering-Methods">¶</a></h3><p>Before applying statistical tests, RISK groups nodes into modules using community detection. Each algorithm has strengths for different network sizes and contexts.</p>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Speed</th>
+<th>Primary use</th>
+<th>When/Why (assumptions &amp; notes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Louvain</td>
+<td>Fast</td>
+<td>Default, scalable to very large networks</td>
+<td>Greedy modularity optimization (Blondel et al., 2008); efficient for &gt;10⁴ nodes; may produce disconnected subclusters.</td>
+</tr>
+<tr>
+<td>Leiden</td>
+<td>Fast</td>
+<td>Improved Louvain with better resolution</td>
+<td>Guarantees well-connected communities; more stable than Louvain (Traag et al., 2019); slightly higher runtime.</td>
+</tr>
+<tr>
+<td>Markov Clustering</td>
+<td>Medium</td>
+<td>Detect smaller, compact complexes</td>
+<td>Flow-based algorithm (Van Dongen, 2008); good for protein complexes or tightly connected submodules.</td>
+</tr>
+<tr>
+<td>Walktrap</td>
+<td>Medium</td>
+<td>Hierarchical detection in mid-sized graphs</td>
+<td>Random-walk based (Pons &amp; Latapy, 2005); effective for local structure; slower on &gt;10⁴ nodes.</td>
+</tr>
+<tr>
+<td>Greedy Modularity</td>
+<td>Fast</td>
+<td>Coarse partitioning</td>
+<td>Optimizes modularity via agglomeration; very fast but suffers from resolution limit (Newman, 2004).</td>
+</tr>
+<tr>
+<td>Label Propagation</td>
+<td>Fast</td>
+<td>Quick heuristic</td>
+<td>Unsupervised label spreading; no objective function; non-deterministic and unstable (Raghavan et al., 2007).</td>
+</tr>
+<tr>
+<td>Spinglass</td>
+<td>Slow</td>
+<td>Small networks; theoretical interest</td>
+<td>Statistical mechanics approach (Reichardt &amp; Bornholdt, 2006); finds communities by simulating spin states; computationally intensive.</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="Summary-of-Statistical-Tests">Summary of Statistical Tests<a class="anchor-link" href="#Summary-of-Statistical-Tests">¶</a></h3><p>RISK implements a suite of statistical tests—ranging from fast approximations to rigorous overrepresentation analysis—to assess functional term enrichment in network neighborhoods. Each method has strengths depending on dataset size, structure, and precision requirements.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Speed</th>
+<th>Primary use</th>
+<th>When/Why (assumptions &amp; notes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Permutation</td>
+<td>Slow</td>
+<td>Most rigorous; non-parametric</td>
+<td>Distribution-free empirical null (permute network or labels); preferred when assumptions are unclear; computationally intensive.</td>
+</tr>
+<tr>
+<td>Hypergeometric</td>
+<td>Medium</td>
+<td>Standard for GO/pathway enrichment</td>
+<td>Exact test for finite populations sampled without replacement; widely used for term–to–gene membership tables.</td>
+</tr>
+<tr>
+<td>Chi-squared</td>
+<td>Fast</td>
+<td>Approximate contingency-table testing</td>
+<td>Suitable for large samples with expected counts ≥ 5 per cell; fast but approximate; avoid with sparse/low counts.</td>
+</tr>
+<tr>
+<td>Binomial</td>
+<td>Fast</td>
+<td>Scalable approximation</td>
+<td>Fast approximation assuming independent trials/with-replacement; useful for large populations with small samples.</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h3 id="Applying-Clustering-and-Statistical-Tests">Applying Clustering and Statistical Tests<a class="anchor-link" href="#Applying-Clustering-and-Statistical-Tests">¶</a></h3><p>RISK exposes clustering and statistical functions for flexible workflows:</p>
 <ul>
-<li><p><strong>Permutation Test</strong>: This test reshuffles the annotation data to create a null distribution, evaluating the statistical significance of observed annotation enrichment or depletion within the network. Use the <code>load_neighborhoods_permutation</code> function to specify the number of permutations, random seed, and other parameters for flexibility.</p>
-</li>
-<li><p><strong>Hypergeometric Test</strong>: This test assesses the probability of observing a specific number of annotated nodes in a subnetwork, given the overall annotation distribution. Use the <code>load_neighborhoods_hypergeom</code> function for finite population scenarios like gene sets or pathway analyses.</p>
-</li>
-<li><p><strong>Binomial Test</strong>: This test models the probability of observing a certain number of successes in a fixed number of independent trials. Use the <code>load_neighborhoods_binom</code> function to handle binary outcomes efficiently.</p>
-</li>
-<li><p><strong>Chi-Squared Test</strong>: This test evaluates the significance of associations in contingency tables. Use the <code>load_neighborhoods_chi2</code> function for fast analysis of large-scale data.</p>
-</li>
-<li><p><strong>Poisson Test</strong>: This test evaluates whether the observed frequency of annotated nodes in a subnetwork deviates significantly from the expected frequency based on a Poisson distribution. Use the <code>load_neighborhoods_poisson</code> function to model rare events or sparse networks.</p>
-</li>
-<li><p><strong>Z-Score Test</strong>: This test calculates z-scores to evaluate deviations from the expected annotation frequencies. Use the <code>load_neighborhoods_zscore</code> function for scalable and quick analysis of large datasets.</p>
+<li><strong>Clustering</strong>: Choose an algorithm via <code>distance_metric</code> (e.g., <code>"louvain"</code>, <code>"leiden"</code>, <code>"markov_clustering"</code>).</li>
+<li><strong>Statistical Tests</strong>: Apply one of the following functions:<ul>
+<li><code>load_neighborhoods_permutation</code></li>
+<li><code>load_neighborhoods_hypergeom</code></li>
+<li><code>load_neighborhoods_chi2</code></li>
+<li><code>load_neighborhoods_binom</code></li>
+</ul>
 </li>
 </ul>
+<p>Clustering defines the modules; statistical tests assess their biological significance.</p>
+<h5 id="Back-to-Top"><a href="#risk-network-tutorial-and-examples">Back to Top</a><a class="anchor-link" href="#Back-to-Top">¶</a></h5>
 </div>
 </div>
 </div>
@@ -8516,7 +8628,8 @@ Number of remaining annotation terms: 1293
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Permutation-Test">Permutation Test<a class="anchor-link" href="#Permutation-Test">¶</a></h3><h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
+<h3 id="Permutation-Test">Permutation Test<a class="anchor-link" href="#Permutation-Test">¶</a></h3><p>Builds an empirical null by permuting either the network structure or annotation labels.</p>
+<h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
 <li><strong><code>network</code> (nx.Graph)</strong>: The network graph.</li>
 <li><strong><code>annotation</code> (dict)</strong>: The annotation associated with the network.</li>
 <li><strong><code>distance_metric</code> (str, list, tuple, or np.ndarray, optional)</strong>: Method(s) used to compute distances for community detection. You can specify a single method or a list/tuple/array of methods to apply multiple community detection algorithms. Options include:<ul>
@@ -8616,7 +8729,8 @@ Random seed: 887
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Hypergeometric-Test">Hypergeometric Test<a class="anchor-link" href="#Hypergeometric-Test">¶</a></h3><h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
+<h3 id="Hypergeometric-Test">Hypergeometric Test<a class="anchor-link" href="#Hypergeometric-Test">¶</a></h3><p>Exact test based on finite sampling without replacement.</p>
+<h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
 <li><strong><code>network</code> (nx.Graph)</strong>: The network graph.</li>
 <li><strong><code>annotation</code> (dict)</strong>: The annotation associated with the network.</li>
 <li><strong><code>distance_metric</code> (str, list, tuple, or np.ndarray, optional)</strong>: Method(s) used to compute distances for community detection. You can specify a single method or a list/tuple/array of methods to apply multiple community detection algorithms. Options include:<ul>
@@ -8690,93 +8804,14 @@ Random seed: 887
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=46c3d743-b102-4632-9844-af585193e4be">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Binomial-Test">Binomial Test<a class="anchor-link" href="#Binomial-Test">¶</a></h3><h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
-<li><strong><code>network</code> (nx.Graph)</strong>: The network graph.</li>
-<li><strong><code>annotation</code> (dict)</strong>: The annotation associated with the network.</li>
-<li><strong><code>distance_metric</code> (str, list, tuple, or np.ndarray, optional)</strong>: Method(s) used to compute distances for community detection. You can specify a single method or a list/tuple/array of methods to apply multiple community detection algorithms. Options include:<ul>
-<li><code>'louvain'</code>: Applies the Louvain method for community detection. <em>(default)</em></li>
-<li><code>'greedy_modularity'</code>: Detects communities in a graph based on the greedy optimization of modularity.</li>
-<li><code>'label_propagation'</code>: Uses label propagation to find communities.</li>
-<li><code>'leiden'</code> Applies the Leiden method for community detection.</li>
-<li><code>'markov_clustering'</code>: Implements the Markov Clustering Algorithm.</li>
-<li><code>'walktrap'</code>: Detects communities via random walks.</li>
-<li><code>'spinglass'</code>: Community detection based on the spinglass model.</li>
-</ul>
-</li>
-<li><strong><code>louvain_resolution</code> (float, optional)</strong>: Resolution parameter for the Louvain method. Only applies if <code>'louvain'</code> is one of the distance metrics. Defaults to <code>0.1</code>.</li>
-<li><strong><code>leiden_resolution</code> (float, optional)</strong>: Resolution parameter for Leiden clustering. Only applies if <code>'leiden'</code> is one of the distance metrics. Defaults to <code>1.0</code>.</li>
-<li><strong><code>fraction_shortest_edges</code> (float, list, tuple, or np.ndarray, optional)</strong>: Shortest edge rank fraction threshold(s) for creating subgraphs. Can be a single float for one threshold or a list/tuple of floats corresponding to multiple thresholds. Defaults to <code>0.5</code>.</li>
-<li><strong><code>null_distribution</code> (str, optional)</strong>: Defines the type of null distribution to use for comparison. Options include:<ul>
-<li><code>'network'</code>: Randomly permuted network structure. <em>(default)</em></li>
-<li><code>'annotation'</code>: Randomly permuted annotations.</li>
-</ul>
-</li>
-<li><strong><code>random_seed</code> (int, optional)</strong>: Seed for random number generation in permutation test. Defaults to <code>888</code>.</li>
-</ul>
-<h4 id="Returns">Returns<a class="anchor-link" href="#Returns">¶</a></h4><ul>
-<li><strong><code>dict</code></strong>: A dictionary containing the computed significance of neighborhoods within the network.</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=07ad8e23-2f64-4e9e-b32f-e47078c4a656">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Perform annotation significance analysis by computing p-values for network neighborhoods using binomial test</span>
-
-<span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_binom</span><span class="p">(</span>
-    <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
-    <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
-    <span class="n">distance_metric</span><span class="o">=</span><span class="s2">"louvain"</span><span class="p">,</span>
-    <span class="n">louvain_resolution</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span>
-    <span class="n">leiden_resolution</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-    <span class="n">fraction_shortest_edges</span><span class="o">=</span><span class="mf">0.225</span><span class="p">,</span>
-    <span class="n">null_distribution</span><span class="o">=</span><span class="s2">"network"</span><span class="p">,</span>
-    <span class="n">random_seed</span><span class="o">=</span><span class="mi">887</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>---------------------
-Running binomial test
----------------------
-Null distribution: 'network'
-Distance metric: 'louvain (resolution=5.0)'
-Edge length threshold: 0.25
-Random seed: 887
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1eaba75d-d6a9-446e-b3b0-f86ff80823a4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Chi-squared-Test">Chi-squared Test<a class="anchor-link" href="#Chi-squared-Test">¶</a></h3><h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
+<h3 id="Chi-squared-Test">Chi-squared Test<a class="anchor-link" href="#Chi-squared-Test">¶</a></h3><p>Evaluates significance using contingency tables.</p>
+<h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
 <li><strong><code>network</code> (nx.Graph)</strong>: The network graph.</li>
 <li><strong><code>annotation</code> (dict)</strong>: The annotation associated with the network.</li>
 <li><strong><code>distance_metric</code> (str, list, tuple, or np.ndarray, optional)</strong>: Method(s) used to compute distances for community detection. You can specify a single method or a list/tuple/array of methods to apply multiple community detection algorithms. Options include:<ul>
@@ -8850,13 +8885,14 @@ Random seed: 887
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c4f013f5-d69f-4f6c-a5df-69d981f68dfd">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=46c3d743-b102-4632-9844-af585193e4be">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Poisson-Test">Poisson Test<a class="anchor-link" href="#Poisson-Test">¶</a></h3><h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
+<h3 id="Binomial-Test">Binomial Test<a class="anchor-link" href="#Binomial-Test">¶</a></h3><p>Fast approximation to overrepresentation based on independent trials.</p>
+<h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
 <li><strong><code>network</code> (nx.Graph)</strong>: The network graph.</li>
 <li><strong><code>annotation</code> (dict)</strong>: The annotation associated with the network.</li>
 <li><strong><code>distance_metric</code> (str, list, tuple, or np.ndarray, optional)</strong>: Method(s) used to compute distances for community detection. You can specify a single method or a list/tuple/array of methods to apply multiple community detection algorithms. Options include:<ul>
@@ -8885,17 +8921,17 @@ Random seed: 887
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=215021f2-b1bb-4345-964a-a4ed803cfcf3">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=07ad8e23-2f64-4e9e-b32f-e47078c4a656">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Perform annotation significance analysis by computing p-values for network neighborhoods using Poisson test</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Perform annotation significance analysis by computing p-values for network neighborhoods using binomial test</span>
 
-<span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_poisson</span><span class="p">(</span>
+<span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_binom</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
     <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
     <span class="n">distance_metric</span><span class="o">=</span><span class="s2">"louvain"</span><span class="p">,</span>
@@ -8917,89 +8953,9 @@ Random seed: 887
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>--------------------
-Running Poisson test
---------------------
-Null distribution: 'network'
-Distance metric: 'louvain (resolution=5.0)'
-Edge length threshold: 0.25
-Random seed: 887
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bfd7b319-3abb-40d3-9013-c20ff9da5e52">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Z-score-Test">Z-score Test<a class="anchor-link" href="#Z-score-Test">¶</a></h3><h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
-<li><strong><code>network</code> (nx.Graph)</strong>: The network graph.</li>
-<li><strong><code>annotation</code> (dict)</strong>: The annotation associated with the network.</li>
-<li><strong><code>distance_metric</code> (str, list, tuple, or np.ndarray, optional)</strong>: Method(s) used to compute distances for community detection. You can specify a single method or a list/tuple/array of methods to apply multiple community detection algorithms. Options include:<ul>
-<li><code>'louvain'</code>: Applies the Louvain method for community detection. <em>(default)</em></li>
-<li><code>'greedy_modularity'</code>: Detects communities in a graph based on the greedy optimization of modularity.</li>
-<li><code>'label_propagation'</code>: Uses label propagation to find communities.</li>
-<li><code>'leiden'</code> Applies the Leiden method for community detection.</li>
-<li><code>'markov_clustering'</code>: Implements the Markov Clustering Algorithm.</li>
-<li><code>'walktrap'</code>: Detects communities via random walks.</li>
-<li><code>'spinglass'</code>: Community detection based on the spinglass model.</li>
-</ul>
-</li>
-<li><strong><code>louvain_resolution</code> (float, optional)</strong>: Resolution parameter for the Louvain method. Only applies if <code>'louvain'</code> is one of the distance metrics. Defaults to <code>0.1</code>.</li>
-<li><strong><code>leiden_resolution</code> (float, optional)</strong>: Resolution parameter for Leiden clustering. Only applies if <code>'leiden'</code> is one of the distance metrics. Defaults to <code>1.0</code>.</li>
-<li><strong><code>fraction_shortest_edges</code> (float, list, tuple, or np.ndarray, optional)</strong>: Shortest edge rank fraction threshold(s) for creating subgraphs. Can be a single float for one threshold or a list/tuple of floats corresponding to multiple thresholds. Defaults to <code>0.5</code>.</li>
-<li><strong><code>null_distribution</code> (str, optional)</strong>: Defines the type of null distribution to use for comparison. Options include:<ul>
-<li><code>'network'</code>: Randomly permuted network structure. <em>(default)</em></li>
-<li><code>'annotation'</code>: Randomly permuted annotations.</li>
-</ul>
-</li>
-<li><strong><code>random_seed</code> (int, optional)</strong>: Seed for random number generation in permutation test. Defaults to <code>888</code>.</li>
-</ul>
-<h4 id="Returns">Returns<a class="anchor-link" href="#Returns">¶</a></h4><ul>
-<li><strong><code>dict</code></strong>: A dictionary containing the computed significance of neighborhoods within the network.</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=393e83a9-13b2-4e82-b8fa-9fdd52338ad1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Perform annotation significance analysis by computing p-values for network neighborhoods using Z-score test</span>
-
-<span class="n">neighborhoods</span> <span class="o">=</span> <span class="n">risk</span><span class="o">.</span><span class="n">load_neighborhoods_zscore</span><span class="p">(</span>
-    <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
-    <span class="n">annotation</span><span class="o">=</span><span class="n">annotation</span><span class="p">,</span>
-    <span class="n">distance_metric</span><span class="o">=</span><span class="s2">"louvain"</span><span class="p">,</span>
-    <span class="n">louvain_resolution</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span>
-    <span class="n">leiden_resolution</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-    <span class="n">fraction_shortest_edges</span><span class="o">=</span><span class="mf">0.225</span><span class="p">,</span>
-    <span class="n">null_distribution</span><span class="o">=</span><span class="s2">"network"</span><span class="p">,</span>
-    <span class="n">random_seed</span><span class="o">=</span><span class="mi">887</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>--------------------
-Running z-score test
---------------------
+<pre>---------------------
+Running binomial test
+---------------------
 Null distribution: 'network'
 Distance metric: 'louvain (resolution=5.0)'
 Edge length threshold: 0.25
@@ -9027,7 +8983,7 @@ Random seed: 887
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6.-Loading-the-Network-Graph">6. Loading the Network Graph<a class="anchor-link" href="#6.-Loading-the-Network-Graph">¶</a></h2><p>The <code>load_graph</code> function in RISK generates a <code>NetworkGraph</code> object for analyzing the network. This function integrates various network components, such as annotations and neighborhood scores, and provides options to customize clustering and analysis parameters.</p>
+<h2 id="6.-Building-and-Analyzing-Results">6. Building and Analyzing Results<a class="anchor-link" href="#6.-Building-and-Analyzing-Results">¶</a></h2><p>The <code>NetworkGraph</code> object integrates network data, annotations, and overrepresentation results into a unified structure, supporting clustering, domain-level significance, and downstream visualization. The <code>load_graph</code> function generates a <code>NetworkGraph</code> object for analyzing the network. This function integrates various network components, such as clusters with overrepresented annotation terms, and provides options to customize clustering and analysis parameters.</p>
 <h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
 <li><strong><code>network</code> (nx.Graph)</strong>: The network graph containing the nodes and edges to be analyzed.</li>
 <li><strong><code>annotation</code> (dict)</strong>: The annotation associated with the network, typically derived from biological or functional data.</li>
@@ -9556,7 +9512,7 @@ Analysis summary exported to text file: ./data/txt/summary/michaelis_2023.txt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7.-Visualizing-the-Network-Graph">7. Visualizing the Network Graph<a class="anchor-link" href="#7.-Visualizing-the-Network-Graph">¶</a></h2><p>The <code>load_plotter</code> function in RISK initializes a <code>NetworkPlotter</code> object, enabling you to visualize the network graph. You can customize various aspects of the plot, such as the figure size and background color.</p>
+<h2 id="7.-Visualizing-Networks-in-RISK">7. Visualizing Networks in RISK<a class="anchor-link" href="#7.-Visualizing-Networks-in-RISK">¶</a></h2><p>Visualization highlights relationships within the network, making modular structure and functional associations easier to interpret. RISK provides a flexible and powerful plotting interface via the <code>NetworkPlotter</code> object. This enables generation of publication-ready figures with detailed domain annotations, significance-driven coloring, contours, and rich label customization. The <code>load_plotter</code> function in RISK initializes a <code>NetworkPlotter</code> object for visualizing the network. Parameters are highly customizable, allowing you to adjust various aspects of the plot, such as the figure size and background color.</p>
 <h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
 <li><strong><code>graph</code> (NetworkGraph)</strong>: The <code>NetworkGraph</code> object containing the network structure to be visualized.</li>
 <li><strong><code>figsize</code> (tuple, optional)</strong>: Size of the figure, specified as a tuple <code>(width, height)</code> in inches. Defaults to <code>(10, 10)</code>.</li>
@@ -9748,7 +9704,7 @@ Loading plotter
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Plotting-the-Contour-Perimeter">Plotting the Contour Perimeter<a class="anchor-link" href="#Plotting-the-Contour-Perimeter">¶</a></h3><p>The <code>plot_contour_perimeter</code> function in RISK plots a Kernel Density Estimate (KDE)-based contour around the network, representing its perimeter. This method allows for flexible customization of the contour levels, color, and transparency.</p>
+<h3 id="Plotting-the-Contour-Perimeter">Plotting the Contour Perimeter<a class="anchor-link" href="#Plotting-the-Contour-Perimeter">¶</a></h3><p>The <code>plot_contour_perimeter</code> function in RISK plots a Kernel Density Estimation (KDE)-based contour around the network, representing its perimeter. This method allows for flexible customization of the contour levels, color, and transparency.</p>
 <h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
 <li><strong><code>scale</code> (float, optional)</strong>: Scaling factor for the perimeter size. Defaults to <code>1.0</code>.</li>
 <li><strong><code>levels</code> (int, optional)</strong>: Number of contour levels. Defaults to <code>3</code>.</li>
@@ -9984,7 +9940,7 @@ Loading plotter
 <hr/>
 <h3 id="Annotated-Contour-Color-Parameters-(for-param-color)">Annotated Contour Color Parameters (for param <code>color</code>)<a class="anchor-link" href="#Annotated-Contour-Color-Parameters-(for-param-color)">¶</a></h3><p>These parameters allow you to define or generate contour colors based on a colormap or specific colors. The <code>get_annotated_contour_colors</code> function is applied to the <code>color</code> parameter to generate these contour colors.</p>
 <h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
-<li><strong><code>cmap</code> (str, optional)</strong>: The colormap to use for contour colors. Defaults to <code>"gist_rainbow"</code>. For domains with multiple nodes, the brightest color (based on the sum of RGB values) will be selected.</li>
+<li><strong><code>cmap</code> (str, optional)</strong>: The colormap to use for contour colors. Defaults to <code>"gist_rainbow"</code>.</li>
 <li><strong><code>color</code> (str, list, tuple, np.ndarray, or None, optional)</strong>: A specific color to use for all contours. Can be a string (e.g., <code>"red"</code>), an RGB or RGBA value, or an array of such values (strings, RGB, or RGBA). If specified, this will overwrite the colormap (<code>cmap</code>). Defaults to <code>None</code>.</li>
 <li><strong><code>blend_colors</code> (bool, optional)</strong>: Whether to blend colors for nodes with multiple domains. Defaults to <code>False</code>.</li>
 <li><strong><code>blend_gamma</code> (float, optional)</strong>: Gamma correction factor for perceptual color blending. Defaults to <code>2.2</code>.</li>
@@ -10136,7 +10092,7 @@ Loading plotter
 <hr/>
 <h3 id="Annotated-Label-Color-Parameters-(for-params-fontcolor-and-arrow_color)">Annotated Label Color Parameters (for params <code>fontcolor</code> and <code>arrow_color</code>)<a class="anchor-link" href="#Annotated-Label-Color-Parameters-(for-params-fontcolor-and-arrow_color)">¶</a></h3><p>Customize the appearance of the labels with a colormap or a specific color. The <code>get_annotated_label_colors</code> function is applied to the <code>fontcolor</code> and <code>arrow_color</code> parameters to generate these label colors.</p>
 <h4 id="Parameters">Parameters<a class="anchor-link" href="#Parameters">¶</a></h4><ul>
-<li><strong><code>cmap</code> (str, optional)</strong>: The colormap to use for label colors. For domains with multiple nodes, the brightest color (based on the sum of RGB values) will be selected. Defaults to <code>"gist_rainbow"</code>.</li>
+<li><strong><code>cmap</code> (str, optional)</strong>: The colormap to use for label colors. Defaults to <code>"gist_rainbow"</code>.</li>
 <li><strong><code>color</code> (str, list, tuple, np.ndarray, or None, optional)</strong>: A specific color to use for all labels. Can be a string (e.g., <code>"red"</code>), an RGB or RGBA value, or an array of such values (strings, RGB, or RGBA). <strong>Warning</strong>: If specified, this will overwrite the colormap (<code>cmap</code>). Defaults to <code>None</code>.</li>
 <li><strong><code>blend_colors</code> (bool, optional)</strong>: Whether to blend colors for nodes with multiple domains. Defaults to <code>False</code>.</li>
 <li><strong><code>blend_gamma</code> (float, optional)</strong>: Gamma correction factor for perceptual color blending. Defaults to <code>2.2</code>.</li>
@@ -10627,7 +10583,7 @@ Loading plotter
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="8.-Overview-of-risk.params">8. Overview of <code>risk.params</code><a class="anchor-link" href="#8.-Overview-of-risk.params">¶</a></h2><p>The <code>risk.params</code> module in the RISK package is crucial for managing and exporting parameters related to network analysis. It provides methods to configure, save, and share the parameters used in your analysis. Below are the key methods offered by the <code>risk.params</code> module:</p>
+<h2 id="8.-Overview-of-risk.params">8. Overview of <code>risk.params</code><a class="anchor-link" href="#8.-Overview-of-risk.params">¶</a></h2><p>The <code>risk.params</code> module manages and exports analysis parameters, supporting inspection, saving, and sharing to improve reproducibility. <em>Note: Reloading a RISK instance from a saved parameter file is not currently supported.</em></p>
 <h3 id="Loading-Parameters">Loading Parameters<a class="anchor-link" href="#Loading-Parameters">¶</a></h3><p>The <code>load</code> method imports parameters from a predefined source, converting any <code>np.ndarray</code> values to lists for easier processing.</p>
 <h4 id="Returns">Returns<a class="anchor-link" href="#Returns">¶</a></h4><ul>
 <li><strong><code>dict</code></strong>: A dictionary containing the processed parameters.</li>

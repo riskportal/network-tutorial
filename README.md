@@ -1,8 +1,8 @@
 # RISK Documentation
 
 ![Python](https://img.shields.io/badge/python-3.8%2B-yellow)
+[![pypiv](https://img.shields.io/pypi/v/risk-network.svg)](https://pypi.python.org/pypi/risk-network)
 [![Licence](https://img.shields.io/badge/license-GPLv3-purple.svg)](https://raw.githubusercontent.com/riskportal/risk-docs/main/LICENSE)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.xxxxxxx.svg)](https://doi.org/10.5281/zenodo.xxxxxxx)
 
 **RISK Documentation** offers a detailed guide to using RISK (Regional Inference of Significant Kinships), a next-generation tool for biological network annotation and visualization. It walks users through core features and practical workflows for network analysis.
 
