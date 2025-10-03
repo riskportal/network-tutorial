@@ -939,12 +939,14 @@
 <p><strong>Parameters:</strong></p>
 <ul>
 <li><code>node_size</code> (int or np.ndarray, optional): Size of the nodes. Can be a single integer or an array of sizes. Defaults to 50.</li>
-<li><code>node_shape</code> (str, optional): Shape of the nodes. Options include:</li>
+<li><code>node_shape</code> (str, optional): Shape of the nodes. Options include:<ul>
 <li><code>'o'</code>: Circle. <em>(default)</em></li>
 <li><code>'s'</code>: Square.</li>
 <li><code>'^'</code>: Triangle up.</li>
 <li><code>'v'</code>: Triangle down.</li>
 <li>Other options: <code>'p'</code>, <code>'P'</code>, <code>'h'</code>, <code>'H'</code>, <code>'8'</code>, <code>'d'</code>, <code>'D'</code>, <code>'&gt;'</code>, <code>'&lt;</code>, <code>'|'</code>, <code>'_'</code>.</li>
+</ul>
+</li>
 <li><code>node_edgewidth</code> (float, optional): Width of the edges around each node. Defaults to 1.0.</li>
 <li><code>edge_width</code> (float, optional): Width of the edges in the plot. Defaults to 1.0.</li>
 <li><code>node_color</code> (str, list, tuple, or np.ndarray, optional): Color of the nodes. Can be a single color (e.g., <code>"white"</code>, <code>"red"</code>, <code>(0.5, 0.5, 0.5)</code> for RGB, or <code>(0.5, 0.5, 0.5, 0.8)</code> for RGBA) or an array of such colors. Defaults to "white".</li>
@@ -1022,12 +1024,14 @@
 <ul>
 <li><code>nodes</code> (list, tuple, or np.ndarray): List of node labels to include in the subnetwork. Accepts nested lists.</li>
 <li><code>node_size</code> (int or np.ndarray, optional): Size of the nodes. Can be a single integer or an array of sizes. Defaults to 50.</li>
-<li><code>node_shape</code> (str, optional): Shape of the nodes. Options include:</li>
+<li><code>node_shape</code> (str, optional): Shape of the nodes. Options include:<ul>
 <li><code>'o'</code>: Circle. <em>(default)</em></li>
 <li><code>'s'</code>: Square.</li>
 <li><code>'^'</code>: Triangle up.</li>
 <li><code>'v'</code>: Triangle down.</li>
 <li>Other options: <code>'p'</code>, <code>'P'</code>, <code>'h'</code>, <code>'H'</code>, <code>'8'</code>, <code>'d'</code>, <code>'D'</code>, <code>'&gt;'</code>, <code>'&lt;</code>, <code>'|'</code>, <code>'_'</code>.</li>
+</ul>
+</li>
 <li><code>node_edgewidth</code> (float, optional): Width of the node edges. Defaults to 1.0.</li>
 <li><code>edge_width</code> (float, optional): Width of the edges in the subnetwork plot. Defaults to 1.0.</li>
 <li><code>node_color</code> (str, list, tuple, or np.ndarray, optional): Color of the nodes. Can be a single color (e.g., <code>"red"</code>, <code>(0.5, 0.5, 0.5)</code> for RGB, or <code>(0.5, 0.5, 0.5, 0.8)</code> for RGBA) or an array of such colors. Defaults to "white".</li>
@@ -1246,10 +1250,14 @@
 <li><code>radial_position</code> (float, optional): Radial angle for positioning the label around the network's perimeter. Range: <code>0-360</code> degrees. Defaults to 0.0.</li>
 <li><code>scale</code> (float, optional): Scale factor for positioning the label around the perimeter. Defaults to 1.05.</li>
 <li><code>offset</code> (float, optional): Offset distance for the label from the perimeter. Defaults to 0.10.</li>
-<li><code>font</code> (str, optional): Font name for the label. Defaults to "DejaVu Sans".</li>
+<li><code>font</code> (str, optional): Font name for the label. Defaults to "DejaVu Sans".<ul>
 <li>Options: Any valid font name (e.g., <code>"DejaVu Sans"</code>, <code>"Times New Roman"</code>).</li>
-<li><code>fontsize</code> (int, optional): Font size for the label. Defaults to 10.</li>
+</ul>
+</li>
+<li><code>fontsize</code> (int, optional): Font size for the label. Defaults to 10.<ul>
 <li>Options: Any integer value representing font size.</li>
+</ul>
+</li>
 <li><code>fontcolor</code> (str, list, tuple, or np.ndarray, optional): Color of the label text. Can be a string (e.g., <code>"black"</code>), an RGB or RGBA value, or an array of such values. Defaults to "black".</li>
 <li><code>fontalpha</code> (float, None, optional): Transparency level for the label font. Range: <code>0.0</code> (fully transparent) to <code>1.0</code> (fully opaque). If provided, it overrides any existing alpha values found in <code>fontcolor</code>. Defaults to 1.0.</li>
 <li><code>arrow_linewidth</code> (float, optional): Line width of the arrow pointing to the centroid. Defaults to 1.</li>

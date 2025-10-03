@@ -893,7 +893,7 @@
 <ul>
 <li><code>network</code> (nx.Graph): The network graph.</li>
 <li><code>annotation</code> (dict): The annotation associated with the network.</li>
-<li><code>distance_metric</code> (str, list, tuple, or np.ndarray, optional): Method(s) used to compute distances for community detection. You can specify a single method or a list/tuple/array of methods to apply multiple community detection algorithms. Options include:</li>
+<li><code>distance_metric</code> (str, list, tuple, or np.ndarray, optional): Method(s) used to compute distances for community detection. You can specify a single method or a list/tuple/array of methods to apply multiple community detection algorithms. Options include:<ul>
 <li><code>'louvain'</code>: Applies the Louvain method for community detection. <em>(default)</em></li>
 <li><code>'greedy_modularity'</code>: Detects communities in a graph based on the greedy optimization of modularity.</li>
 <li><code>'label_propagation'</code>: Uses label propagation to find communities.</li>
@@ -901,12 +901,16 @@
 <li><code>'markov_clustering'</code>: Implements the Markov Clustering Algorithm.</li>
 <li><code>'walktrap'</code>: Detects communities via random walks.</li>
 <li><code>'spinglass'</code>: Community detection based on the spinglass model.</li>
+</ul>
+</li>
 <li><code>louvain_resolution</code> (float, optional): Resolution parameter for the Louvain method. Only applies if <code>'louvain'</code> is one of the distance metrics. Defaults to 0.1.</li>
 <li><code>leiden_resolution</code> (float, optional): Resolution parameter for the Leiden method. Only applies if <code>'leiden'</code> is one of the distance metrics. Defaults to 1.0.</li>
 <li><code>fraction_shortest_edges</code> (float, list, tuple, or np.ndarray, optional): Shortest edge rank fraction threshold(s) for creating subgraphs. Can be a single float for one threshold or a list/tuple of floats corresponding to multiple thresholds. Defaults to 0.5.</li>
-<li><code>null_distribution</code> (str, optional): Defines the type of null distribution to use for comparison. Options include:</li>
+<li><code>null_distribution</code> (str, optional): Defines the type of null distribution to use for comparison. Options include:<ul>
 <li><code>'network'</code>: Randomly permuted network structure. <em>(default)</em></li>
 <li><code>'annotation'</code>: Randomly permuted annotations.</li>
+</ul>
+</li>
 <li><code>random_seed</code> (int, optional): Seed for random number generation in permutation test. Defaults to 888.</li>
 </ul>
 <hr />
