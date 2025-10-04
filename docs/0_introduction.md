@@ -10,24 +10,24 @@ RISK is designed to:
 - Scale to networks with hundreds of thousands of edges on standard hardware
 - Generalize beyond biology to interdisciplinary networks
 
-## What makes RISK different?
+## RISK Features
 
-| Feature            | RISK                                                                                          |
+| Category           | Capabilities                                                                                  |
 | ------------------ | --------------------------------------------------------------------------------------------- |
 | **Clustering**     | Louvain, Leiden, Markov Clustering, Spinglass, Walktrap, Greedy Modularity, Label Propagation |
-| **Statistics**     | Permutation, Hypergeometric, Chi-squared, Binomial                                            |
-| **File Formats**   | NetworkX, Cytoscape, Cytoscape JSON, GPickle                                                  |
-| **Annotation**     | JSON, CSV, Excel, TSV, Python dict                                                            |
-| **Scalability**    | Networks with 500k+ edges on standard hardware                                                |
-| **Visual Output**  | High-resolution SVG, PNG, PDF                                                                 |
-| **Beyond Biology** | Applied to a physics citation network (Supp. Fig. S7)                                         |
+| **Statistical Tests** | Permutation, Hypergeometric, Chi-squared, Binomial                                         |
+| **Network Formats**  | Cytoscape, Cytoscape JSON, GPickle, NetworkX                                                  |
+| **Annotation Formats** | JSON, CSV, TSV, Excel, Python dictionary                                                  |
+| **Scalability**    | Efficient analysis of networks with 500k+ edges on standard hardware                          |
+| **Visualization**  | High-resolution outputs (SVG, PNG, PDF)                                                       |
+| **Cross-domain Use** | Demonstrated on physics citation networks (Supplementary Fig. S7)                           |
 
 ## Example Applications
 
-- Functional module identification in yeast PPI and GI networks
-- Pathway mapping for synthetic lethality analyses
-- Drug–target prediction from overrepresentation analysis
-- Cross-domain network exploration in physics and other disciplines
+- Functional module identification in _S. cerevisiae_ PPI and GI networks
+- Chemical–genetic interaction (Chem-GI) mapping to infer compound targets
+- Microbial interaction networks to reveal host–pathogen relationships
+- Cross-domain application to non-biological networks (e.g., physics citation networks)
 
 ## Interactive Examples
 
